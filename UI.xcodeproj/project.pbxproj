@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD1FE2181C4FFFBE005F95D3 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2171C4FFFBE005F95D3 /* Points.swift */; };
 		BD1FE21A1C4FFFEA005F95D3 /* PointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */; };
 		BD1FE21B1C500434005F95D3 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1FE1F21C4FF00E005F95D3 /* UI.framework */; };
+		BD1FE2221C500AF3005F95D3 /* OffsetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */; };
+		BD1FE22B1C500F4D005F95D3 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22A1C500F4D005F95D3 /* SizeTests.swift */; };
+		BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22D1C500FA8005F95D3 /* GeometryType.swift */; };
+		BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22E1C500FA8005F95D3 /* Offset.swift */; };
+		BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22F1C500FA8005F95D3 /* Points.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +25,11 @@
 		BD1FE2031C4FF1A4005F95D3 /* package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = package.swift; sourceTree = "<group>"; };
 		BD1FE2091C4FF290005F95D3 /* universal.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = universal.xcconfig; sourceTree = "<group>"; };
 		BD1FE20F1C4FF402005F95D3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD1FE2171C4FFFBE005F95D3 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Points.swift; path = ../../../Desktop/UI/Sources/Points.swift; sourceTree = "<group>"; };
-		BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointsTests.swift; path = ../../../Desktop/UI/Tests/PointsTests.swift; sourceTree = "<group>"; };
+		BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsTests.swift; sourceTree = "<group>"; };
+		BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetTests.swift; sourceTree = "<group>"; };
+		BD1FE22D1C500FA8005F95D3 /* GeometryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryType.swift; sourceTree = "<group>"; };
+		BD1FE22E1C500FA8005F95D3 /* Offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offset.swift; sourceTree = "<group>"; };
+		BD1FE22F1C500FA8005F95D3 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +77,7 @@
 		BD1FE1FF1C4FF1A4005F95D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BD1FE21C1C500862005F95D3 /* Geometry */,
+				BD1FE22C1C500FA8005F95D3 /* Geometry */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -78,18 +85,21 @@
 		BD1FE2001C4FF1A4005F95D3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */,
 				BD1FE2011C4FF1A4005F95D3 /* Info.plist */,
+				BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */,
+				BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		BD1FE21C1C500862005F95D3 /* Geometry */ = {
+		BD1FE22C1C500FA8005F95D3 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				BD1FE2171C4FFFBE005F95D3 /* Points.swift */,
+				BD1FE22D1C500FA8005F95D3 /* GeometryType.swift */,
+				BD1FE22E1C500FA8005F95D3 /* Offset.swift */,
+				BD1FE22F1C500FA8005F95D3 /* Points.swift */,
 			);
-			name = Geometry;
+			path = Geometry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD1FE2181C4FFFBE005F95D3 /* Points.swift in Sources */,
+				BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */,
+				BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */,
+				BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1FE2221C500AF3005F95D3 /* OffsetTests.swift in Sources */,
 				BD1FE21A1C4FFFEA005F95D3 /* PointsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
