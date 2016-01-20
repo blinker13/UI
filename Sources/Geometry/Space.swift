@@ -1,7 +1,7 @@
 
-public struct Offset : GeometryType, CustomStringConvertible {
+public struct Space : GeometryType, CustomStringConvertible {
 
-	public static let zero = Offset()
+	public static let zero = Space()
 
 	public var top:Points
 	public var right:Points
@@ -33,12 +33,12 @@ public struct Offset : GeometryType, CustomStringConvertible {
 	// MARK: - CustomStringConvertible
 
 	public var description:String {
-		return "Offset(top:\(top), right:\(right), bottom:\(bottom), left:\(left))"
+		return "Space(top:\(top), right:\(right), bottom:\(bottom), left:\(left))"
 	}
 }
 
 // MARK: - Operators
 
-public func == (left:Offset, right:Offset) -> Bool {
+public func == (left:Space, right:Space) -> Bool {
 	return (left.top == right.top && left.left == right.left && left.bottom == right.bottom && left.right == right.right)
 }
