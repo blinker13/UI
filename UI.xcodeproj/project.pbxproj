@@ -19,6 +19,8 @@
 		BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2381C501AE1005F95D3 /* ColorTests.swift */; };
 		BD1FE2421C504365005F95D3 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2411C504365005F95D3 /* Border.swift */; };
 		BD1FE2441C504387005F95D3 /* BorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2431C504387005F95D3 /* BorderTests.swift */; };
+		BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2451C5047E3005F95D3 /* Shadow.swift */; };
+		BD1FE2481C504CA8005F95D3 /* ShadowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		BD1FE2381C501AE1005F95D3 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		BD1FE2411C504365005F95D3 /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		BD1FE2431C504387005F95D3 /* BorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTests.swift; sourceTree = "<group>"; };
+		BD1FE2451C5047E3005F95D3 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 				BD1FE2381C501AE1005F95D3 /* ColorTests.swift */,
 				BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */,
 				BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */,
+				BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */,
 				BD1FE22A1C500F4D005F95D3 /* SizeTests.swift */,
 			);
 			path = Tests;
@@ -123,6 +128,7 @@
 			children = (
 				BD1FE2411C504365005F95D3 /* Border.swift */,
 				BD1FE2361C501ABB005F95D3 /* Color.swift */,
+				BD1FE2451C5047E3005F95D3 /* Shadow.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 				BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */,
 				BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */,
 				BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */,
+				BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */,
 				BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +258,7 @@
 				BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */,
 				BD1FE21A1C4FFFEA005F95D3 /* PointsTests.swift in Sources */,
 				BD1FE22B1C500F4D005F95D3 /* SizeTests.swift in Sources */,
+				BD1FE2481C504CA8005F95D3 /* ShadowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
