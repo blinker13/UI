@@ -14,6 +14,7 @@
 		BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22D1C500FA8005F95D3 /* GeometryType.swift */; };
 		BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22E1C500FA8005F95D3 /* Offset.swift */; };
 		BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22F1C500FA8005F95D3 /* Points.swift */; };
+		BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2301C500FA8005F95D3 /* Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,11 @@
 		BD1FE20F1C4FF402005F95D3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsTests.swift; sourceTree = "<group>"; };
 		BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetTests.swift; sourceTree = "<group>"; };
+		BD1FE22A1C500F4D005F95D3 /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
 		BD1FE22D1C500FA8005F95D3 /* GeometryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryType.swift; sourceTree = "<group>"; };
 		BD1FE22E1C500FA8005F95D3 /* Offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offset.swift; sourceTree = "<group>"; };
 		BD1FE22F1C500FA8005F95D3 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
+		BD1FE2301C500FA8005F95D3 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 				BD1FE2011C4FF1A4005F95D3 /* Info.plist */,
 				BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */,
 				BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */,
+				BD1FE22A1C500F4D005F95D3 /* SizeTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -98,6 +102,7 @@
 				BD1FE22D1C500FA8005F95D3 /* GeometryType.swift */,
 				BD1FE22E1C500FA8005F95D3 /* Offset.swift */,
 				BD1FE22F1C500FA8005F95D3 /* Points.swift */,
+				BD1FE2301C500FA8005F95D3 /* Size.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */,
 				BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */,
 				BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */,
 				BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */,
@@ -220,6 +226,7 @@
 			files = (
 				BD1FE2221C500AF3005F95D3 /* OffsetTests.swift in Sources */,
 				BD1FE21A1C4FFFEA005F95D3 /* PointsTests.swift in Sources */,
+				BD1FE22B1C500F4D005F95D3 /* SizeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
