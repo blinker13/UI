@@ -1,8 +1,10 @@
 
 public struct Space : GeometryType, CustomStringConvertible {
 
-	public static let zero = Space()
+    public static let zero:Space = 0.0
 
+    // MARK: -
+    
 	public var top:Points
 	public var right:Points
 	public var bottom:Points
