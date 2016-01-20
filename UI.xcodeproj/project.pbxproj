@@ -15,6 +15,8 @@
 		BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22E1C500FA8005F95D3 /* Offset.swift */; };
 		BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22F1C500FA8005F95D3 /* Points.swift */; };
 		BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2301C500FA8005F95D3 /* Size.swift */; };
+		BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2361C501ABB005F95D3 /* Color.swift */; };
+		BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2381C501AE1005F95D3 /* ColorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		BD1FE22E1C500FA8005F95D3 /* Offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offset.swift; sourceTree = "<group>"; };
 		BD1FE22F1C500FA8005F95D3 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		BD1FE2301C500FA8005F95D3 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		BD1FE2361C501ABB005F95D3 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BD1FE2381C501AE1005F95D3 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		BD1FE1FF1C4FF1A4005F95D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BD1FE2351C501ABB005F95D3 /* Drawing */,
 				BD1FE22C1C500FA8005F95D3 /* Geometry */,
 			);
 			path = Sources;
@@ -89,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				BD1FE2011C4FF1A4005F95D3 /* Info.plist */,
+				BD1FE2381C501AE1005F95D3 /* ColorTests.swift */,
 				BD1FE2211C500AF3005F95D3 /* OffsetTests.swift */,
 				BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */,
 				BD1FE22A1C500F4D005F95D3 /* SizeTests.swift */,
@@ -105,6 +111,14 @@
 				BD1FE2301C500FA8005F95D3 /* Size.swift */,
 			);
 			path = Geometry;
+			sourceTree = "<group>";
+		};
+		BD1FE2351C501ABB005F95D3 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				BD1FE2361C501ABB005F95D3 /* Color.swift */,
+			);
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +230,7 @@
 				BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */,
 				BD1FE2321C500FA8005F95D3 /* Offset.swift in Sources */,
 				BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */,
+				BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */,
 				BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1FE2221C500AF3005F95D3 /* OffsetTests.swift in Sources */,
+				BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */,
 				BD1FE21A1C4FFFEA005F95D3 /* PointsTests.swift in Sources */,
 				BD1FE22B1C500F4D005F95D3 /* SizeTests.swift in Sources */,
 			);
