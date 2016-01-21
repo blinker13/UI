@@ -33,6 +33,7 @@
 		BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0A1C51593100EB1200 /* GlyphTests.swift */; };
 		BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0C1C515DB800EB1200 /* FontTests.swift */; };
 		BDC67E101C51960000EB1200 /* ComponentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0F1C51960000EB1200 /* ComponentType.swift */; };
+		BDC67E121C5197BA00EB1200 /* ContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E111C5197BA00EB1200 /* ContainerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		BDC67E0A1C51593100EB1200 /* GlyphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
 		BDC67E0C1C515DB800EB1200 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
 		BDC67E0F1C51960000EB1200 /* ComponentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentType.swift; sourceTree = "<group>"; };
+		BDC67E111C5197BA00EB1200 /* ContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				BDC67E0F1C51960000EB1200 /* ComponentType.swift */,
+				BDC67E111C5197BA00EB1200 /* ContainerType.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */,
 				BD1FE2421C504365005F95D3 /* Border.swift in Sources */,
 				BDC67E071C51508400EB1200 /* Font.swift in Sources */,
+				BDC67E121C5197BA00EB1200 /* ContainerType.swift in Sources */,
 				BDC67E101C51960000EB1200 /* ComponentType.swift in Sources */,
 				BD1FE2571C50592A005F95D3 /* Alignment.swift in Sources */,
 				BD1FE2321C500FA8005F95D3 /* Space.swift in Sources */,
