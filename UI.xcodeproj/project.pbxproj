@@ -35,6 +35,7 @@
 		BDC67E101C51960000EB1200 /* ComponentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0F1C51960000EB1200 /* ComponentType.swift */; };
 		BDC67E121C5197BA00EB1200 /* ContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E111C5197BA00EB1200 /* ContainerType.swift */; };
 		BDC67E141C51990900EB1200 /* TextualType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E131C51990900EB1200 /* TextualType.swift */; };
+		BDC67E161C51A41400EB1200 /* VisualType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E151C51A41400EB1200 /* VisualType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		BDC67E0F1C51960000EB1200 /* ComponentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentType.swift; sourceTree = "<group>"; };
 		BDC67E111C5197BA00EB1200 /* ContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerType.swift; sourceTree = "<group>"; };
 		BDC67E131C51990900EB1200 /* TextualType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextualType.swift; sourceTree = "<group>"; };
+		BDC67E151C51A41400EB1200 /* VisualType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				BDC67E0F1C51960000EB1200 /* ComponentType.swift */,
 				BDC67E111C5197BA00EB1200 /* ContainerType.swift */,
 				BDC67E131C51990900EB1200 /* TextualType.swift */,
+				BDC67E151C51A41400EB1200 /* VisualType.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */,
 				BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */,
 				BD1FE2551C505910005F95D3 /* Distribution.swift in Sources */,
+				BDC67E161C51A41400EB1200 /* VisualType.swift in Sources */,
 				BD1FE24A1C505348005F95D3 /* Offset.swift in Sources */,
 				BD1FE2561C505927005F95D3 /* Arrangement.swift in Sources */,
 				BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */,
