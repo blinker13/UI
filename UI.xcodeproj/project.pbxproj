@@ -27,6 +27,7 @@
 		BD1FE2561C505927005F95D3 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2521C5058DA005F95D3 /* Arrangement.swift */; };
 		BD1FE2571C50592A005F95D3 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2501C505892005F95D3 /* Alignment.swift */; };
 		BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2591C505D05005F95D3 /* TextType.swift */; };
+		BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25B1C505E8C005F95D3 /* Glyph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		BD1FE2521C5058DA005F95D3 /* Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		BD1FE2541C505910005F95D3 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		BD1FE2591C505D05005F95D3 /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
+		BD1FE25B1C505E8C005F95D3 /* Glyph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glyph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 		BD1FE2581C505CF0005F95D3 /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				BD1FE25B1C505E8C005F95D3 /* Glyph.swift */,
 				BD1FE2591C505D05005F95D3 /* TextType.swift */,
 			);
 			path = Text;
@@ -281,6 +284,7 @@
 				BD1FE2321C500FA8005F95D3 /* Space.swift in Sources */,
 				BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */,
 				BD1FE2331C500FA8005F95D3 /* Points.swift in Sources */,
+				BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */,
 				BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */,
 				BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */,
 				BD1FE2551C505910005F95D3 /* Distribution.swift in Sources */,
