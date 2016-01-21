@@ -24,6 +24,7 @@
 		BD1FE24A1C505348005F95D3 /* Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2491C505348005F95D3 /* Offset.swift */; };
 		BD1FE24C1C5054DE005F95D3 /* OffsetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */; };
 		BD1FE2511C505892005F95D3 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2501C505892005F95D3 /* Alignment.swift */; };
+		BD1FE2531C5058DA005F95D3 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2521C5058DA005F95D3 /* Arrangement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		BD1FE2491C505348005F95D3 /* Offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offset.swift; sourceTree = "<group>"; };
 		BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetTests.swift; sourceTree = "<group>"; };
 		BD1FE2501C505892005F95D3 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
+		BD1FE2521C5058DA005F95D3 /* Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BD1FE2501C505892005F95D3 /* Alignment.swift */,
+				BD1FE2521C5058DA005F95D3 /* Arrangement.swift */,
 			);
 			path = Layouting;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				BD1FE2441C504387005F95D3 /* BorderTests.swift in Sources */,
 				BD1FE2511C505892005F95D3 /* Alignment.swift in Sources */,
+				BD1FE2531C5058DA005F95D3 /* Arrangement.swift in Sources */,
 				BD1FE24C1C5054DE005F95D3 /* OffsetTests.swift in Sources */,
 				BD1FE2221C500AF3005F95D3 /* SpaceTests.swift in Sources */,
 				BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */,
