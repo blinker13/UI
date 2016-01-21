@@ -23,6 +23,7 @@
 		BD1FE2481C504CA8005F95D3 /* ShadowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */; };
 		BD1FE24A1C505348005F95D3 /* Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2491C505348005F95D3 /* Offset.swift */; };
 		BD1FE24C1C5054DE005F95D3 /* OffsetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */; };
+		BD1FE2511C505892005F95D3 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2501C505892005F95D3 /* Alignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowTests.swift; sourceTree = "<group>"; };
 		BD1FE2491C505348005F95D3 /* Offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offset.swift; sourceTree = "<group>"; };
 		BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetTests.swift; sourceTree = "<group>"; };
+		BD1FE2501C505892005F95D3 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				BD1FE2351C501ABB005F95D3 /* Drawing */,
 				BD1FE22C1C500FA8005F95D3 /* Geometry */,
+				BD1FE24F1C505880005F95D3 /* Layouting */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -137,6 +140,14 @@
 				BD1FE2451C5047E3005F95D3 /* Shadow.swift */,
 			);
 			path = Drawing;
+			sourceTree = "<group>";
+		};
+		BD1FE24F1C505880005F95D3 /* Layouting */ = {
+			isa = PBXGroup;
+			children = (
+				BD1FE2501C505892005F95D3 /* Alignment.swift */,
+			);
+			path = Layouting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1FE2441C504387005F95D3 /* BorderTests.swift in Sources */,
+				BD1FE2511C505892005F95D3 /* Alignment.swift in Sources */,
 				BD1FE24C1C5054DE005F95D3 /* OffsetTests.swift in Sources */,
 				BD1FE2221C500AF3005F95D3 /* SpaceTests.swift in Sources */,
 				BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */,
