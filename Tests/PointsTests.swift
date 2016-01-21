@@ -21,7 +21,7 @@ class PointsTests: XCTestCase {
 		XCTAssertEqualWithAccuracy(Points(99.99).clamp(max:13.13), 13.13, accuracy:PointsTests.accuracy)
 	}
 
-    func test_clampWithEqual() {
-        XCTAssertEqualWithAccuracy(Points(1.0).clamp(), 1.0, accuracy:PointsTests.accuracy)
-    }
+	func test_clampWithEqual() {
+		XCTAssertEqualWithAccuracy(Points(1.0).clamp(), 1.0, accuracy:PointsTests.accuracy)
+	}
 }

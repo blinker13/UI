@@ -1,5 +1,5 @@
 
 public enum Arrangement {
-    case Horizontal
-    case Vertical
+	case Horizontal
+	case Vertical
 }

@@ -76,13 +76,13 @@ class SpaceTests: XCTestCase {
 		XCTAssertEqual(subject.right, 13.0)
 	}
 
-    func test_init_literal() {
-        let subject:Space = 13.0
-        XCTAssertEqual(subject.top, 13.0)
-        XCTAssertEqual(subject.left, 13.0)
-        XCTAssertEqual(subject.bottom, 13.0)
-        XCTAssertEqual(subject.right, 13.0)
-    }
+	func test_init_literal() {
+		let subject:Space = 13.0
+		XCTAssertEqual(subject.top, 13.0)
+		XCTAssertEqual(subject.left, 13.0)
+		XCTAssertEqual(subject.bottom, 13.0)
+		XCTAssertEqual(subject.right, 13.0)
+	}
 
 	// MARK: - ZeroType
 

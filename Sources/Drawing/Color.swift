@@ -15,12 +15,12 @@ public struct Color : Equatable {
 
 	// MARK: -
 
-    public init(components:Components, alpha:Points) {
-        self.alpha = alpha.clamp()
-        self.components = components
-    }
+	public init(components:Components, alpha:Points) {
+		self.alpha = alpha.clamp()
+		self.components = components
+	}
 
-    public init(white:Points, alpha:Points = 1.0) {
+	public init(white:Points, alpha:Points = 1.0) {
 		self.init(components:.Gray(white.clamp()), alpha:alpha)
 	}
 
@@ -70,13 +70,13 @@ extension Color {
 // MARK: - Operators
 
 public func == (left:Color, right:Color) -> Bool {
-    return (left.alpha == right.alpha && left.components == right.components)
+	return (left.alpha == right.alpha && left.components == right.components)
 }
 
 public func == (left:Color.Components, right:Color.Components) -> Bool {
-    switch (left, right) {
-        case (let .RGB(r1, g1, b1), let .RGB(r2, g2, b2)): return r1 == r2 && g1 == g2 && b1 == b2
-        case (let .Gray(x1), let .Gray(x2)): return x1 == x2
-        default: return false
-    }
+	switch (left, right) {
+		case (let .RGB(r1, g1, b1), let .RGB(r2, g2, b2)): return r1 == r2 && g1 == g2 && b1 == b2
+		case (let .Gray(x1), let .Gray(x2)): return x1 == x2
+		default: return false
+	}
 }

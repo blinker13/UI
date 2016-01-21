@@ -1,7 +1,7 @@
 
 public struct Size : GeometryType, CustomStringConvertible {
 
-    public static let zero:Size = 0.0
+	public static let zero:Size = 0.0
 
 	// MARK: -
 

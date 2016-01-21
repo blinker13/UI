@@ -1,32 +1,32 @@
 
 public struct Offset : GeometryType, CustomStringConvertible {
 
-    public static let zero:Offset = 0.0
+	public static let zero:Offset = 0.0
 
-    // MARK: -
+	// MARK: -
 
-    public var horizontal:Points
-    public var vertical:Points
+	public var horizontal:Points
+	public var vertical:Points
 
-    // MARK: -
+	// MARK: -
 
-    public init(horizontal:Points = 0.0, vertical:Points = 0.0) {
-        (self.horizontal, self.vertical) = (horizontal, vertical)
-    }
+	public init(horizontal:Points = 0.0, vertical:Points = 0.0) {
+		(self.horizontal, self.vertical) = (horizontal, vertical)
+	}
 
-    public init(floatLiteral value:Points) {
-        self.init(horizontal:value, vertical:value)
-    }
+	public init(floatLiteral value:Points) {
+		self.init(horizontal:value, vertical:value)
+	}
 
-    // MARK: - CustomStringConvertible
+	// MARK: - CustomStringConvertible
 
-    public var description:String {
-        return "Offset(horizontal:\(horizontal), vertical:\(vertical))"
-    }
+	public var description:String {
+		return "Offset(horizontal:\(horizontal), vertical:\(vertical))"
+	}
 }
 
 // MARK: - Operators
 
 public func == (left:Offset, right:Offset) -> Bool {
-    return (left.horizontal == right.horizontal && left.vertical == right.vertical)
+	return (left.horizontal == right.horizontal && left.vertical == right.vertical)
 }
