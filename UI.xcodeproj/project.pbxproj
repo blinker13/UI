@@ -107,9 +107,9 @@
 		BD1FE1FF1C4FF1A4005F95D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BD1FE2351C501ABB005F95D3 /* Drawing */,
 				BD1FE22C1C500FA8005F95D3 /* Geometry */,
 				BD1FE24F1C505880005F95D3 /* Layouting */,
+				BD1FE2351C501ABB005F95D3 /* Rendering */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			path = Geometry;
 			sourceTree = "<group>";
 		};
-		BD1FE2351C501ABB005F95D3 /* Drawing */ = {
+		BD1FE2351C501ABB005F95D3 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
 				BD1FE2411C504365005F95D3 /* Border.swift */,
@@ -149,7 +149,7 @@
 				BD1FE2451C5047E3005F95D3 /* Shadow.swift */,
 				BD1FE2581C505CF0005F95D3 /* Text */,
 			);
-			path = Drawing;
+			path = Rendering;
 			sourceTree = "<group>";
 		};
 		BD1FE24F1C505880005F95D3 /* Layouting */ = {
