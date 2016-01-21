@@ -32,14 +32,14 @@ public struct Space : GeometryType, CustomStringConvertible {
 		self.init(top:value, right:value, bottom:value, left:value)
 	}
 
-	// MARK: - CustomStringConvertible
+	// MARK: -
 
 	public var description:String {
 		return "Space(top:\(top), right:\(right), bottom:\(bottom), left:\(left))"
 	}
 }
 
-// MARK: - Operators
+// MARK: -
 
 public func == (left:Space, right:Space) -> Bool {
 	return (left.top == right.top && left.left == right.left && left.bottom == right.bottom && left.right == right.right)

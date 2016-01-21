@@ -3,6 +3,16 @@ import CoreGraphics
 
 public struct Color : Equatable {
 
+	public static let clear = Color(white:0.0, alpha:0.0)
+
+	public static let black		= Color(white:0.0)
+	public static let darkGray	= Color(white:0.333)
+	public static let gray		= Color(white:0.5)
+	public static let lightGray	= Color(white:0.667)
+	public static let white		= Color(white:1.0)
+
+	// MARK: -
+
 	public enum Components {
 		case RGB(Points, Points, Points)
 		case Gray(Points)
@@ -27,18 +37,6 @@ public struct Color : Equatable {
 	public init(red:Points, green:Points, blue:Points, alpha:Points = 1.0) {
 		self.init(components:.RGB(red.clamp(), green.clamp(), blue.clamp()), alpha:alpha)
 	}
-}
-
-// MARK: -
-
-extension Color {
-	public static let black		= Color(white:0.0)
-	public static let darkGray	= Color(white:0.333)
-	public static let gray		= Color(white:0.5)
-	public static let lightGray	= Color(white:0.667)
-	public static let white		= Color(white:1.0)
-
-	public static let clear		= Color(white:0.0, alpha:0.0)
 }
 
 // MARK: -

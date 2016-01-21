@@ -19,14 +19,14 @@ public struct Size : GeometryType, CustomStringConvertible {
 		self.init(min:value, max:value)
 	}
 
-	// MARK: - CustomStringConvertible
+	// MARK: -
 
 	public var description:String {
 		return "Size(min:\(min), max:\(max))"
 	}
 }
 
-// MARK: - Operators
+// MARK: -
 
 public func == (left:Size, right:Size) -> Bool {
 	return (left.min == right.min && left.max == right.max)

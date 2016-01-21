@@ -2,8 +2,8 @@
 public struct Border {
 
 	public var color:Color
-	public var radius = Points(0.0)
-	public var width = Points(0.0)
+	public var radius:Points
+	public var width:Points
 
 	// MARK: -
 

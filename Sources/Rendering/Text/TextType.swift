@@ -5,21 +5,10 @@ public protocol TextType : CollectionType, StringLiteralConvertible {
 	init(content:String)
 }
 
-// MARK: - CollectionType
+// MARK: -
 
 extension TextType {
-	public var startIndex:String.Index {
-		return content.startIndex
-	}
 
-	public var endIndex:String.Index {
-		return content.endIndex
-	}
-}
-
-// MARK: - StringLiteralConvertible
-
-extension TextType {
 	public init(unicodeScalarLiteral value:StringLiteralType) {
 		self.init(content:"\(value)")
 	}
@@ -30,5 +19,15 @@ extension TextType {
 
 	public init(stringLiteral value:String) {
 		self.init(content:value)
+	}
+
+	// MARK: -
+
+	public var startIndex:String.Index {
+		return content.startIndex
+	}
+
+	public var endIndex:String.Index {
+		return content.endIndex
 	}
 }

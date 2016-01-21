@@ -18,14 +18,14 @@ public struct Offset : GeometryType, CustomStringConvertible {
 		self.init(horizontal:value, vertical:value)
 	}
 
-	// MARK: - CustomStringConvertible
+	// MARK: -
 
 	public var description:String {
 		return "Offset(horizontal:\(horizontal), vertical:\(vertical))"
 	}
 }
 
-// MARK: - Operators
+// MARK: -
 
 public func == (left:Offset, right:Offset) -> Bool {
 	return (left.horizontal == right.horizontal && left.vertical == right.vertical)
