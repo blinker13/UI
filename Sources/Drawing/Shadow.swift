@@ -3,13 +3,13 @@ public struct Shadow {
 
     public var alpha:Points
     public var color:Color
-    public var space:Space
+    public var offset:Offset
     public var radius:Points
 
     // MARK: -
 
-    public init(alpha:Points = 0.0, color:Color = .shadow, space:Space = .zero, radius:Points = 3.0) {
-        (self.alpha, self.color, self.space, self.radius) = (alpha, color, space, radius)
+    public init(alpha:Points = 0.0, color:Color = .shadow, offset:Offset = .zero, radius:Points = 3.0) {
+        (self.alpha, self.color, self.offset, self.radius) = (alpha, color, offset, radius)
     }
 }
 
