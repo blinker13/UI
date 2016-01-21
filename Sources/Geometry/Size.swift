@@ -1,5 +1,5 @@
 
-public struct Size : GeometryType, CustomStringConvertible {
+public struct Size : GeometryType {
 
 	public static let zero:Size = 0.0
 

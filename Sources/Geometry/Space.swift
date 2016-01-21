@@ -1,5 +1,5 @@
 
-public struct Space : GeometryType, CustomStringConvertible {
+public struct Space : GeometryType {
 
 	public static let zero:Space = 0.0
 

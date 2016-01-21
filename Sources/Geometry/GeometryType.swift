@@ -1,5 +1,5 @@
 
-public protocol GeometryType : Equatable, FloatLiteralConvertible {
+public protocol GeometryType : Equatable, CustomStringConvertible, FloatLiteralConvertible {
 	static var zero:Self { get }
 }
 

@@ -1,5 +1,5 @@
 
-public struct Offset : GeometryType, CustomStringConvertible {
+public struct Offset : GeometryType {
 
 	public static let zero:Offset = 0.0
 
