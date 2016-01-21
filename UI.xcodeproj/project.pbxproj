@@ -29,6 +29,9 @@
 		BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2591C505D05005F95D3 /* TextType.swift */; };
 		BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25B1C505E8C005F95D3 /* Glyph.swift */; };
 		BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */; };
+		BDC67E071C51508400EB1200 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E061C51508400EB1200 /* Font.swift */; };
+		BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0A1C51593100EB1200 /* GlyphTests.swift */; };
+		BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0C1C515DB800EB1200 /* FontTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		BD1FE2591C505D05005F95D3 /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
 		BD1FE25B1C505E8C005F95D3 /* Glyph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glyph.swift; sourceTree = "<group>"; };
 		BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
+		BDC67E061C51508400EB1200 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		BDC67E0A1C51593100EB1200 /* GlyphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
+		BDC67E0C1C515DB800EB1200 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,8 @@
 				BD1FE2011C4FF1A4005F95D3 /* Info.plist */,
 				BD1FE2431C504387005F95D3 /* BorderTests.swift */,
 				BD1FE2381C501AE1005F95D3 /* ColorTests.swift */,
+				BDC67E0C1C515DB800EB1200 /* FontTests.swift */,
+				BDC67E0A1C51593100EB1200 /* GlyphTests.swift */,
 				BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */,
 				BD1FE2191C4FFFEA005F95D3 /* PointsTests.swift */,
 				BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */,
@@ -168,6 +176,7 @@
 		BD1FE2581C505CF0005F95D3 /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				BDC67E061C51508400EB1200 /* Font.swift */,
 				BD1FE25B1C505E8C005F95D3 /* Glyph.swift */,
 				BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */,
 				BD1FE2591C505D05005F95D3 /* TextType.swift */,
@@ -283,6 +292,7 @@
 			files = (
 				BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */,
 				BD1FE2421C504365005F95D3 /* Border.swift in Sources */,
+				BDC67E071C51508400EB1200 /* Font.swift in Sources */,
 				BD1FE2571C50592A005F95D3 /* Alignment.swift in Sources */,
 				BD1FE2321C500FA8005F95D3 /* Space.swift in Sources */,
 				BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */,
@@ -304,7 +314,9 @@
 			files = (
 				BD1FE2441C504387005F95D3 /* BorderTests.swift in Sources */,
 				BD1FE24C1C5054DE005F95D3 /* OffsetTests.swift in Sources */,
+				BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */,
 				BD1FE2221C500AF3005F95D3 /* SpaceTests.swift in Sources */,
+				BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */,
 				BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */,
 				BD1FE21A1C4FFFEA005F95D3 /* PointsTests.swift in Sources */,
 				BD1FE22B1C500F4D005F95D3 /* SizeTests.swift in Sources */,
