@@ -5,30 +5,30 @@ public struct Space : GeometryType {
 
 	// MARK: -
 	
-	public var top:Points
-	public var right:Points
-	public var bottom:Points
-	public var left:Points
+	public var top:Unit
+	public var right:Unit
+	public var bottom:Unit
+	public var left:Unit
 
 	// MARK: -
 
-	public init(top:Points = 0.0, right:Points = 0.0, bottom:Points = 0.0, left:Points = 0.0) {
+	public init(top:Unit = 0.0, right:Unit = 0.0, bottom:Unit = 0.0, left:Unit = 0.0) {
 		(self.top, self.left, self.bottom, self.right) = (top, left, bottom, right)
 	}
 
-	public init(horizontal:Points, vertical:Points) {
+	public init(horizontal:Unit, vertical:Unit) {
 		self.init(top:vertical, right:horizontal, bottom:vertical, left:horizontal)
 	}
 
-	public init(horizontal:Points) {
+	public init(horizontal:Unit) {
 		self.init(right:horizontal, left:horizontal)
 	}
 
-	public init(vertical:Points) {
+	public init(vertical:Unit) {
 		self.init(top:vertical, bottom:vertical)
 	}
 
-	public init(floatLiteral value:Points) {
+	public init(floatLiteral value:Unit) {
 		self.init(top:value, right:value, bottom:value, left:value)
 	}
 

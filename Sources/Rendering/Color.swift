@@ -14,27 +14,27 @@ public struct Color : Equatable {
 	// MARK: -
 
 	public enum Components {
-		case RGB(Points, Points, Points)
-		case Gray(Points)
+		case RGB(Unit, Unit, Unit)
+		case Gray(Unit)
 	}
 
 	// MARK: -
 
 	public let components:Components
-	public let alpha:Points
+	public let alpha:Unit
 
 	// MARK: -
 
-	public init(components:Components, alpha:Points) {
+	public init(components:Components, alpha:Unit) {
 		self.alpha = alpha.clamp()
 		self.components = components
 	}
 
-	public init(white:Points, alpha:Points = 1.0) {
+	public init(white:Unit, alpha:Unit = 1.0) {
 		self.init(components:.Gray(white.clamp()), alpha:alpha)
 	}
 
-	public init(red:Points, green:Points, blue:Points, alpha:Points = 1.0) {
+	public init(red:Unit, green:Unit, blue:Unit, alpha:Unit = 1.0) {
 		self.init(components:.RGB(red.clamp(), green.clamp(), blue.clamp()), alpha:alpha)
 	}
 }
@@ -43,21 +43,21 @@ public struct Color : Equatable {
 
 extension Color {
 	
-	public var red:Points {
+	public var red:Unit {
 		switch components {
 			case let .RGB(r, _, _): return r
 			case let .Gray(x): return x
 		}
 	}
 
-	public var green:Points {
+	public var green:Unit {
 		switch components {
 			case let .RGB(_, g, _): return g
 			case let .Gray(x): return x
 		}
 	}
 
-	public var blue:Points {
+	public var blue:Unit {
 		switch components {
 			case let .RGB(_, _, b): return b
 			case let .Gray(x): return x

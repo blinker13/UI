@@ -5,17 +5,17 @@ public struct Size : GeometryType {
 
 	// MARK: -
 
-	public var min:Points
-	public var max:Points
+	public var min:Unit
+	public var max:Unit
 
 	// MARK: -
 
-	public init(min:Points = 0.0, max:Points = .infinity) {
+	public init(min:Unit = 0.0, max:Unit = .infinity) {
 		precondition(min <= max, "Size can not be negative")
 		(self.min, self.max) = (min, max)
 	}
 	
-	public init(floatLiteral value:Points) {
+	public init(floatLiteral value:Unit) {
 		self.init(min:value, max:value)
 	}
 
@@ -32,6 +32,6 @@ public func == (left:Size, right:Size) -> Bool {
 	return (left.min == right.min && left.max == right.max)
 }
 
-public func ... (start:Points, end:Points) -> Size {
+public func ... (start:Unit, end:Unit) -> Size {
 	return Size(min:start, max:end)
 }

@@ -22,13 +22,13 @@ public struct Font : CustomStringConvertible, Hashable {
 	// MARK: -
 
 	public let name:String
-	public let size:Points
+	public let size:Unit
 	public let style:Style
 	public let weight:Weight
 
 	// MARK: -
 
-	public init(name:String, size:Points, style:Style = .Normal, weight:Weight = .Regular) {
+	public init(name:String, size:Unit, style:Style = .Normal, weight:Weight = .Regular) {
 		(self.name, self.size, self.style, self.weight) = (name, size, style, weight)
 	}
 

@@ -5,14 +5,14 @@ public struct Shadow {
 
 	// MARK: -
 
-	public var alpha:Points
+	public var alpha:Unit
 	public var color:Color
 	public var offset:Offset
-	public var radius:Points
+	public var radius:Unit
 
 	// MARK: -
 
-	public init(alpha:Points = 0.0, color:Color = color, offset:Offset = .zero, radius:Points = 3.0) {
+	public init(alpha:Unit = 0.0, color:Color = color, offset:Offset = .zero, radius:Unit = 3.0) {
 		(self.alpha, self.color, self.offset, self.radius) = (alpha, color, offset, radius)
 	}
 }

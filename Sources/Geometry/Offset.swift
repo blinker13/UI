@@ -5,16 +5,16 @@ public struct Offset : GeometryType {
 
 	// MARK: -
 
-	public var horizontal:Points
-	public var vertical:Points
+	public var horizontal:Unit
+	public var vertical:Unit
 
 	// MARK: -
 
-	public init(horizontal:Points = 0.0, vertical:Points = 0.0) {
+	public init(horizontal:Unit = 0.0, vertical:Unit = 0.0) {
 		(self.horizontal, self.vertical) = (horizontal, vertical)
 	}
 
-	public init(floatLiteral value:Points) {
+	public init(floatLiteral value:Unit) {
 		self.init(horizontal:value, vertical:value)
 	}
 

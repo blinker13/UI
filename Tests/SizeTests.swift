@@ -7,7 +7,7 @@ class SizeTests: XCTestCase {
 	func test_init() {
 		let subject = Size()
 		XCTAssertEqual(subject.min, 0.0)
-		XCTAssertEqual(subject.max, Points.infinity)
+		XCTAssertEqual(subject.max, Unit.infinity)
 	}
 
 	func test_init_all() {
@@ -19,7 +19,7 @@ class SizeTests: XCTestCase {
 	func test_init_min() {
 		let subject = Size(min:1.0)
 		XCTAssertEqual(subject.min, 1.0)
-		XCTAssertEqual(subject.max, Points.infinity)
+		XCTAssertEqual(subject.max, Unit.infinity)
 	}
 
 	func test_init_max() {
