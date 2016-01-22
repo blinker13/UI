@@ -29,6 +29,7 @@
 		BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2591C505D05005F95D3 /* TextType.swift */; };
 		BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25B1C505E8C005F95D3 /* Glyph.swift */; };
 		BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */; };
+		BD3B37681C52ADAD007F64A4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37671C52ADAD007F64A4 /* View.swift */; };
 		BDC67E071C51508400EB1200 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E061C51508400EB1200 /* Font.swift */; };
 		BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0A1C51593100EB1200 /* GlyphTests.swift */; };
 		BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0C1C515DB800EB1200 /* FontTests.swift */; };
@@ -68,6 +69,7 @@
 		BD1FE2591C505D05005F95D3 /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
 		BD1FE25B1C505E8C005F95D3 /* Glyph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glyph.swift; sourceTree = "<group>"; };
 		BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
+		BD3B37671C52ADAD007F64A4 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BDC67E061C51508400EB1200 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BDC67E0A1C51593100EB1200 /* GlyphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
 		BDC67E0C1C515DB800EB1200 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
@@ -193,6 +195,14 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
+		BD3B37661C52AD9E007F64A4 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				BD3B37671C52ADAD007F64A4 /* View.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		BDC67E0E1C5195EA00EB1200 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 				BDC67E111C5197BA00EB1200 /* ContainerType.swift */,
 				BDC67E131C51990900EB1200 /* TextualType.swift */,
 				BDC67E151C51A41400EB1200 /* VisualType.swift */,
+				BD3B37661C52AD9E007F64A4 /* Container */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -322,6 +333,7 @@
 				BD1FE2331C500FA8005F95D3 /* Unit.swift in Sources */,
 				BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */,
 				BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */,
+				BD3B37681C52ADAD007F64A4 /* View.swift in Sources */,
 				BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */,
 				BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */,
 				BD1FE2551C505910005F95D3 /* Distribution.swift in Sources */,
