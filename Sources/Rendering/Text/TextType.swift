@@ -1,6 +1,13 @@
 
-public protocol TextType {
+public protocol TextType : CustomStringConvertible {
 	subscript(index:String.Index) -> Glyph { get }
 	var content:String { get }
-	init(content:String)
+}
+
+// MARK: -
+
+extension TextType {
+	public var description:String {
+		return content
+	}
 }

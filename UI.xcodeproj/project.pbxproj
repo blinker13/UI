@@ -31,6 +31,7 @@
 		BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */; };
 		BD3B37681C52ADAD007F64A4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37671C52ADAD007F64A4 /* View.swift */; };
 		BD3B376A1C52AED1007F64A4 /* CompositionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37691C52AED1007F64A4 /* CompositionType.swift */; };
+		BD3B376C1C52B126007F64A4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B376B1C52B126007F64A4 /* Text.swift */; };
 		BDC67E071C51508400EB1200 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E061C51508400EB1200 /* Font.swift */; };
 		BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0A1C51593100EB1200 /* GlyphTests.swift */; };
 		BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0C1C515DB800EB1200 /* FontTests.swift */; };
@@ -72,6 +73,7 @@
 		BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
 		BD3B37671C52ADAD007F64A4 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BD3B37691C52AED1007F64A4 /* CompositionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionType.swift; sourceTree = "<group>"; };
+		BD3B376B1C52B126007F64A4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		BDC67E061C51508400EB1200 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BDC67E0A1C51593100EB1200 /* GlyphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
 		BDC67E0C1C515DB800EB1200 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				BDC67E061C51508400EB1200 /* Font.swift */,
 				BD1FE25B1C505E8C005F95D3 /* Glyph.swift */,
 				BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */,
+				BD3B376B1C52B126007F64A4 /* Text.swift */,
 				BD1FE2591C505D05005F95D3 /* TextType.swift */,
 			);
 			path = Text;
@@ -344,6 +347,7 @@
 				BDC67E161C51A41400EB1200 /* VisualType.swift in Sources */,
 				BD1FE24A1C505348005F95D3 /* Offset.swift in Sources */,
 				BD1FE2561C505927005F95D3 /* Arrangement.swift in Sources */,
+				BD3B376C1C52B126007F64A4 /* Text.swift in Sources */,
 				BD1FE2311C500FA8005F95D3 /* GeometryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
