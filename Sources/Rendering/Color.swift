@@ -65,7 +65,7 @@ extension Color {
 	}
 }
 
-// MARK: - Operators
+// MARK: -
 
 public func == (left:Color, right:Color) -> Bool {
 	return (left.alpha == right.alpha && left.components == right.components)
