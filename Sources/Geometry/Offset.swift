@@ -1,5 +1,5 @@
 
-public struct Offset : GeometryType {
+public struct Offset : Geometry {
 
 	public static let zero:Offset = 0.0
 

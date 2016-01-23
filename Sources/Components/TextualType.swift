@@ -1,5 +1,5 @@
 
-public protocol TextualType : ComponentType {
+public protocol TextualType : Component {
 	var lineBreak:LineBreak { get }
 	var textAlignment:Alignment { get }
 	var text:TextType { get }

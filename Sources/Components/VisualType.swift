@@ -1,5 +1,5 @@
 
-public protocol VisualType : ComponentType {
+public protocol VisualType : Component {
 	var border:Border { get }
 	var color:Color { get }
 	var shadow:Shadow { get }

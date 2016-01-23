@@ -1,5 +1,5 @@
 
-public struct Space : GeometryType {
+public struct Space : Geometry {
 
 	public static let zero:Space = 0.0
 

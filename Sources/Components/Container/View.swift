@@ -1,5 +1,5 @@
 
-public struct View : ContainerType {
+public struct View : Container {
 
 	public var alignment = Alignment.Leading
 	public var margin = Offset.zero
@@ -12,21 +12,21 @@ public struct View : ContainerType {
 	public var distribution = Distribution.Equal
 	public var padding = Offset.zero
 
-	private let constructor:() -> [ComponentType]
+	private let constructor:() -> [Component]
 
 	// MARK: -
 
-	public init(constructor:() -> [ComponentType]) {
+	public init(constructor:() -> [Component]) {
 		self.constructor = constructor
 	}
 
-	public init(@autoclosure(escaping) components:() -> [ComponentType]) {
+	public init(@autoclosure(escaping) components:() -> [Component]) {
 		self.init(constructor:components)
 	}
 
 	// MARK: -
 
-	public func construct() -> [ComponentType] {
+	public func construct() -> [Component] {
 		return constructor()
 	}
 }

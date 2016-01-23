@@ -1,5 +1,5 @@
 
-public protocol ComponentType {
+public protocol Component {
 	var alignment:Alignment { get }
 	var margin:Space { get }
 	var height:Size { get }
@@ -9,7 +9,7 @@ public protocol ComponentType {
 
 // MARK: -
 
-extension ComponentType {
+extension Component {
 	public var alignment:Alignment { return .Leading }
 	public var margin:Space { return Space.zero }
 	public var height:Size { return Size() }

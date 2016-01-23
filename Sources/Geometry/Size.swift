@@ -1,5 +1,5 @@
 
-public struct Size : GeometryType {
+public struct Size : Geometry {
 
 	public static let zero:Size = 0.0
 
