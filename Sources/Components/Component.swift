@@ -4,7 +4,6 @@ public protocol Component {
 	var margin:Space { get }
 	var height:Size { get }
 	var width:Size { get }
-	var isHidden:Bool { get }
 }
 
 // MARK: -
@@ -14,5 +13,4 @@ extension Component {
 	public var margin:Space { return Space.zero }
 	public var height:Size { return Size() }
 	public var width:Size { return Size() }
-	public var isHidden:Bool { return false }
 }

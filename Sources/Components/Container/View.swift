@@ -5,7 +5,6 @@ public struct View : Container {
 	public var margin = Offset.zero
 	public var width = Size()
 	public var height = Size()
-	public var isHidden = false
 
 	public var arrangement = Arrangement.Vertical
 	public var contentAlignment = Alignment.Leading
