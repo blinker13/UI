@@ -1,14 +1,18 @@
 
-public struct Text : CollectionType, Equatable, StringLiteralConvertible, TextType {
+public struct Text : CustomStringConvertible, Equatable, StringLiteralConvertible {
 
-	public let content:String
-
-	public var color:Color
-	public var font:Font
+	public static let color = Color.black
+	public static let font = Font(name:"Arial", size:13.0)
 
 	// MARK: -
 
-	public init(content:String, color:Color = .black, font:Font = Font(name:"Arial", size:13.0)) {
+	public let content:String
+	public let color:Color
+	public let font:Font
+
+	// MARK: -
+
+	public init(content:String, color:Color = Text.color, font:Font = Text.font) {
 		(self.content, self.color, self.font) = (content, color, font)
 	}
 
@@ -26,23 +30,8 @@ public struct Text : CollectionType, Equatable, StringLiteralConvertible, TextTy
 
 	// MARK: -
 
-	public subscript (index:String.Index) -> Glyph {
-		let character = content[index]
-		return Glyph(character:character, color:color, font:font)
-	}
-
-	// MARK: -
-
 	public var description:String {
-		return "Text(\"\(content)\")"
-	}
-
-	public var startIndex:String.Index {
-		return content.startIndex
-	}
-
-	public var endIndex:String.Index {
-		return content.endIndex
+		return content
 	}
 }
 

@@ -23,21 +23,19 @@
 		BD1FE2551C505910005F95D3 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2541C505910005F95D3 /* Distribution.swift */; };
 		BD1FE2561C505927005F95D3 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2521C5058DA005F95D3 /* Arrangement.swift */; };
 		BD1FE2571C50592A005F95D3 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2501C505892005F95D3 /* Alignment.swift */; };
-		BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2591C505D05005F95D3 /* TextType.swift */; };
-		BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25B1C505E8C005F95D3 /* Glyph.swift */; };
-		BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */; };
 		BD3B37681C52ADAD007F64A4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37671C52ADAD007F64A4 /* View.swift */; };
 		BD3B376A1C52AED1007F64A4 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37691C52AED1007F64A4 /* Composer.swift */; };
 		BD3B376C1C52B126007F64A4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B376B1C52B126007F64A4 /* Text.swift */; };
 		BD3B378B1C569BDD007F64A4 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37881C569BDD007F64A4 /* Border.swift */; };
 		BD3B378D1C569BDD007F64A4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B378A1C569BDD007F64A4 /* Shadow.swift */; };
 		BD3B37901C569CD6007F64A4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B378F1C569CD6007F64A4 /* Color.swift */; };
+		BD3B37941C56AB23007F64A4 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37931C56AB23007F64A4 /* LineBreak.swift */; };
 		BDC67E071C51508400EB1200 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E061C51508400EB1200 /* Font.swift */; };
 		BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0A1C51593100EB1200 /* GlyphTests.swift */; };
 		BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0C1C515DB800EB1200 /* FontTests.swift */; };
 		BDC67E101C51960000EB1200 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0F1C51960000EB1200 /* Component.swift */; };
 		BDC67E121C5197BA00EB1200 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E111C5197BA00EB1200 /* Container.swift */; };
-		BDC67E141C51990900EB1200 /* TextualType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E131C51990900EB1200 /* TextualType.swift */; };
+		BDC67E141C51990900EB1200 /* TextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E131C51990900EB1200 /* TextComponent.swift */; };
 		BDC67E161C51A41400EB1200 /* VisualType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E151C51A41400EB1200 /* VisualType.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,21 +63,19 @@
 		BD1FE2501C505892005F95D3 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		BD1FE2521C5058DA005F95D3 /* Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		BD1FE2541C505910005F95D3 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
-		BD1FE2591C505D05005F95D3 /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
-		BD1FE25B1C505E8C005F95D3 /* Glyph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glyph.swift; sourceTree = "<group>"; };
-		BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
 		BD3B37671C52ADAD007F64A4 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BD3B37691C52AED1007F64A4 /* Composer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
 		BD3B376B1C52B126007F64A4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		BD3B37881C569BDD007F64A4 /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		BD3B378A1C569BDD007F64A4 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		BD3B378F1C569CD6007F64A4 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BD3B37931C56AB23007F64A4 /* LineBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
 		BDC67E061C51508400EB1200 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BDC67E0A1C51593100EB1200 /* GlyphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
 		BDC67E0C1C515DB800EB1200 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
 		BDC67E0F1C51960000EB1200 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		BDC67E111C5197BA00EB1200 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
-		BDC67E131C51990900EB1200 /* TextualType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextualType.swift; sourceTree = "<group>"; };
+		BDC67E131C51990900EB1200 /* TextComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextComponent.swift; sourceTree = "<group>"; };
 		BDC67E151C51A41400EB1200 /* VisualType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +178,7 @@
 				BD1FE2501C505892005F95D3 /* Alignment.swift */,
 				BD1FE2521C5058DA005F95D3 /* Arrangement.swift */,
 				BD1FE2541C505910005F95D3 /* Distribution.swift */,
+				BD3B37931C56AB23007F64A4 /* LineBreak.swift */,
 			);
 			path = Layouting;
 			sourceTree = "<group>";
@@ -191,10 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BDC67E061C51508400EB1200 /* Font.swift */,
-				BD1FE25B1C505E8C005F95D3 /* Glyph.swift */,
-				BD1FE25D1C5061A2005F95D3 /* LineBreak.swift */,
 				BD3B376B1C52B126007F64A4 /* Text.swift */,
-				BD1FE2591C505D05005F95D3 /* TextType.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -230,7 +224,7 @@
 				BDC67E0F1C51960000EB1200 /* Component.swift */,
 				BD3B37691C52AED1007F64A4 /* Composer.swift */,
 				BDC67E111C5197BA00EB1200 /* Container.swift */,
-				BDC67E131C51990900EB1200 /* TextualType.swift */,
+				BDC67E131C51990900EB1200 /* TextComponent.swift */,
 				BDC67E151C51A41400EB1200 /* VisualType.swift */,
 				BD3B37661C52AD9E007F64A4 /* Container */,
 			);
@@ -346,16 +340,14 @@
 				BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */,
 				BD3B378B1C569BDD007F64A4 /* Border.swift in Sources */,
 				BDC67E071C51508400EB1200 /* Font.swift in Sources */,
+				BD3B37941C56AB23007F64A4 /* LineBreak.swift in Sources */,
 				BDC67E121C5197BA00EB1200 /* Container.swift in Sources */,
 				BDC67E101C51960000EB1200 /* Component.swift in Sources */,
 				BD1FE2571C50592A005F95D3 /* Alignment.swift in Sources */,
 				BD1FE2321C500FA8005F95D3 /* Space.swift in Sources */,
-				BDC67E141C51990900EB1200 /* TextualType.swift in Sources */,
+				BDC67E141C51990900EB1200 /* TextComponent.swift in Sources */,
 				BD3B378D1C569BDD007F64A4 /* Shadow.swift in Sources */,
-				BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */,
 				BD1FE2331C500FA8005F95D3 /* Unit.swift in Sources */,
-				BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */,
-				BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */,
 				BD3B37901C569CD6007F64A4 /* Color.swift in Sources */,
 				BD3B37681C52ADAD007F64A4 /* View.swift in Sources */,
 				BD3B376A1C52AED1007F64A4 /* Composer.swift in Sources */,

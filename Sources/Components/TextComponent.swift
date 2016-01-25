@@ -1,13 +1,13 @@
 
-public protocol TextualType : Component {
+public protocol TextComponent : Component {
 	var lineBreak:LineBreak { get }
 	var textAlignment:Alignment { get }
-	var text:TextType { get }
+	var text:Text { get }
 }
 
-// MARK: - Defaults
+// MARK: -
 
-extension TextualType {
+extension TextComponent {
 	public var lineBreak:LineBreak { return .TruncateTail }
 	public var textAlignment:Alignment { return .Leading }
 }
