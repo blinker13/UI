@@ -15,11 +15,8 @@
 		BD1FE2321C500FA8005F95D3 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22E1C500FA8005F95D3 /* Space.swift */; };
 		BD1FE2331C500FA8005F95D3 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE22F1C500FA8005F95D3 /* Unit.swift */; };
 		BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2301C500FA8005F95D3 /* Size.swift */; };
-		BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2361C501ABB005F95D3 /* Color.swift */; };
 		BD1FE2391C501AE1005F95D3 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2381C501AE1005F95D3 /* ColorTests.swift */; };
-		BD1FE2421C504365005F95D3 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2411C504365005F95D3 /* Border.swift */; };
 		BD1FE2441C504387005F95D3 /* BorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2431C504387005F95D3 /* BorderTests.swift */; };
-		BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2451C5047E3005F95D3 /* Shadow.swift */; };
 		BD1FE2481C504CA8005F95D3 /* ShadowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */; };
 		BD1FE24A1C505348005F95D3 /* Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE2491C505348005F95D3 /* Offset.swift */; };
 		BD1FE24C1C5054DE005F95D3 /* OffsetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */; };
@@ -32,6 +29,9 @@
 		BD3B37681C52ADAD007F64A4 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37671C52ADAD007F64A4 /* View.swift */; };
 		BD3B376A1C52AED1007F64A4 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37691C52AED1007F64A4 /* Composer.swift */; };
 		BD3B376C1C52B126007F64A4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B376B1C52B126007F64A4 /* Text.swift */; };
+		BD3B378B1C569BDD007F64A4 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37881C569BDD007F64A4 /* Border.swift */; };
+		BD3B378C1C569BDD007F64A4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B37891C569BDD007F64A4 /* Color.swift */; };
+		BD3B378D1C569BDD007F64A4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B378A1C569BDD007F64A4 /* Shadow.swift */; };
 		BDC67E071C51508400EB1200 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E061C51508400EB1200 /* Font.swift */; };
 		BDC67E0B1C51593100EB1200 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0A1C51593100EB1200 /* GlyphTests.swift */; };
 		BDC67E0D1C515DB800EB1200 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC67E0C1C515DB800EB1200 /* FontTests.swift */; };
@@ -57,11 +57,8 @@
 		BD1FE22E1C500FA8005F95D3 /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		BD1FE22F1C500FA8005F95D3 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		BD1FE2301C500FA8005F95D3 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
-		BD1FE2361C501ABB005F95D3 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BD1FE2381C501AE1005F95D3 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
-		BD1FE2411C504365005F95D3 /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		BD1FE2431C504387005F95D3 /* BorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTests.swift; sourceTree = "<group>"; };
-		BD1FE2451C5047E3005F95D3 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		BD1FE2471C504CA8005F95D3 /* ShadowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowTests.swift; sourceTree = "<group>"; };
 		BD1FE2491C505348005F95D3 /* Offset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offset.swift; sourceTree = "<group>"; };
 		BD1FE24B1C5054DE005F95D3 /* OffsetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetTests.swift; sourceTree = "<group>"; };
@@ -74,6 +71,9 @@
 		BD3B37671C52ADAD007F64A4 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BD3B37691C52AED1007F64A4 /* Composer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
 		BD3B376B1C52B126007F64A4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		BD3B37881C569BDD007F64A4 /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
+		BD3B37891C569BDD007F64A4 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BD3B378A1C569BDD007F64A4 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		BDC67E061C51508400EB1200 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BDC67E0A1C51593100EB1200 /* GlyphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
 		BDC67E0C1C515DB800EB1200 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
@@ -169,9 +169,8 @@
 		BD1FE2351C501ABB005F95D3 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				BD1FE2411C504365005F95D3 /* Border.swift */,
-				BD1FE2361C501ABB005F95D3 /* Color.swift */,
-				BD1FE2451C5047E3005F95D3 /* Shadow.swift */,
+				BD3B37891C569BDD007F64A4 /* Color.swift */,
+				BD3B37871C569BDD007F64A4 /* Decorations */,
 				BD1FE2581C505CF0005F95D3 /* Text */,
 			);
 			path = Rendering;
@@ -206,6 +205,15 @@
 				BD3B37671C52ADAD007F64A4 /* View.swift */,
 			);
 			path = Container;
+			sourceTree = "<group>";
+		};
+		BD3B37871C569BDD007F64A4 /* Decorations */ = {
+			isa = PBXGroup;
+			children = (
+				BD3B37881C569BDD007F64A4 /* Border.swift */,
+				BD3B378A1C569BDD007F64A4 /* Shadow.swift */,
+			);
+			path = Decorations;
 			sourceTree = "<group>";
 		};
 		BDC67E0E1C5195EA00EB1200 /* Components */ = {
@@ -328,20 +336,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1FE2341C500FA8005F95D3 /* Size.swift in Sources */,
-				BD1FE2421C504365005F95D3 /* Border.swift in Sources */,
+				BD3B378B1C569BDD007F64A4 /* Border.swift in Sources */,
+				BD3B378C1C569BDD007F64A4 /* Color.swift in Sources */,
 				BDC67E071C51508400EB1200 /* Font.swift in Sources */,
 				BDC67E121C5197BA00EB1200 /* Container.swift in Sources */,
 				BDC67E101C51960000EB1200 /* Component.swift in Sources */,
 				BD1FE2571C50592A005F95D3 /* Alignment.swift in Sources */,
 				BD1FE2321C500FA8005F95D3 /* Space.swift in Sources */,
 				BDC67E141C51990900EB1200 /* TextualType.swift in Sources */,
+				BD3B378D1C569BDD007F64A4 /* Shadow.swift in Sources */,
 				BD1FE25A1C505D05005F95D3 /* TextType.swift in Sources */,
 				BD1FE2331C500FA8005F95D3 /* Unit.swift in Sources */,
 				BD1FE25C1C505E8C005F95D3 /* Glyph.swift in Sources */,
 				BD1FE25E1C5061A2005F95D3 /* LineBreak.swift in Sources */,
 				BD3B37681C52ADAD007F64A4 /* View.swift in Sources */,
-				BD1FE2371C501ABB005F95D3 /* Color.swift in Sources */,
-				BD1FE2461C5047E3005F95D3 /* Shadow.swift in Sources */,
 				BD3B376A1C52AED1007F64A4 /* Composer.swift in Sources */,
 				BD1FE2551C505910005F95D3 /* Distribution.swift in Sources */,
 				BDC67E161C51A41400EB1200 /* VisualType.swift in Sources */,
