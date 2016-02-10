@@ -1,4 +1,6 @@
 
+import Canvas
+
 public protocol Component {
 	var alignment:Alignment { get }
 	var margin:Space { get }

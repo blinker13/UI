@@ -1,4 +1,6 @@
 
+import Canvas
+
 public protocol Container : Component {
 
 	var arrangement:Arrangement { get }

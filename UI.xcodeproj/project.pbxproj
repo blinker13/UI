@@ -16,6 +16,7 @@
 		BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D61C68A8EA002B3E01 /* Distribution.swift */; };
 		BD3997E11C68A8EA002B3E01 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D71C68A8EA002B3E01 /* LineBreak.swift */; };
 		BD3997E31C68A8EA002B3E01 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D91C68A8EA002B3E01 /* View.swift */; };
+		BDF20C0F1C6BC43900B392D3 /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF20C0E1C6BC43900B392D3 /* Canvas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		BD3997D61C68A8EA002B3E01 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		BD3997D71C68A8EA002B3E01 /* LineBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
 		BD3997D91C68A8EA002B3E01 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		BDF20C0E1C6BC43900B392D3 /* Canvas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canvas.framework; path = ../Debug/Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF20C0F1C6BC43900B392D3 /* Canvas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +67,7 @@
 				BD1FE2021C4FF1A4005F95D3 /* Info.plist */,
 				BD1FE2031C4FF1A4005F95D3 /* package.swift */,
 				BD1FE2091C4FF290005F95D3 /* universal.xcconfig */,
+				BDF20C0D1C6BC42900B392D3 /* Frameworks */,
 				BD1FE1F31C4FF00E005F95D3 /* Products */,
 				BD1FE1FF1C4FF1A4005F95D3 /* Sources */,
 				BD1FE2001C4FF1A4005F95D3 /* Tests */,
@@ -125,6 +129,14 @@
 				BD3997E61C68A915002B3E01 /* Containers */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		BDF20C0D1C6BC42900B392D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDF20C0E1C6BC43900B392D3 /* Canvas.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

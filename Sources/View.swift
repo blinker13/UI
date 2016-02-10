@@ -1,15 +1,17 @@
 
+import Canvas
+
 public struct View : Container {
 
 	public var alignment = Alignment.Leading
-	public var margin = Offset.zero
+	public var margin = Space.zero
 	public var width = Size()
 	public var height = Size()
 
 	public var arrangement = Arrangement.Vertical
 	public var contentAlignment = Alignment.Leading
 	public var distribution = Distribution.Equal
-	public var padding = Offset.zero
+	public var padding = Space.zero
 
 	private let constructor:() -> [Component]
 
