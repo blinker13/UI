@@ -3,13 +3,13 @@ import Canvas
 
 public struct View : Container {
 
-	public var alignment = Alignment.Leading
+	public var align = Alignment.Leading
 	public var margin = Space.zero
 	public var width = Size()
 	public var height = Size()
 
+	public var alignment = Alignment.Leading
 	public var arrangement = Arrangement.Vertical
-	public var contentAlignment = Alignment.Leading
 	public var distribution = Distribution.Equal
 	public var padding = Space.zero
 

@@ -3,8 +3,8 @@ import Canvas
 
 public protocol Container : Component {
 
+	var alignment:Alignment { get }
 	var arrangement:Arrangement { get }
-	var contentAlignment:Alignment { get }
 	var distribution:Distribution { get }
 	var padding:Space { get }
 
