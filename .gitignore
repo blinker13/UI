@@ -2,4 +2,6 @@
 .DS_Store
 xcuserdata
 *.xccheckout
+
+/Packages
 /.build
