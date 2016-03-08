@@ -1,6 +1,4 @@
 
-import Canvas
-
 public protocol Container : Component {
 
 	var alignment:Alignment { get }

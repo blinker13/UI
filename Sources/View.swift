@@ -1,12 +1,10 @@
 
-import Canvas
-
 public struct View : Container {
 
 	public var align = Alignment.Leading
 	public var margin = Space.zero
-	public var width = Size()
-	public var height = Size()
+	public var width = Dimension()
+	public var height = Dimension()
 
 	public var alignment = Alignment.Leading
 	public var arrangement = Arrangement.Vertical
