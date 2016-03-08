@@ -18,7 +18,7 @@ public struct Dimension : Equatable, FloatLiteralConvertible, Geometry {
 	// MARK: -
 
 	public func transformed(transform:Transform) -> Dimension {
-		return Dimension()
+		return self // TODO: implementation
 	}
 }
 

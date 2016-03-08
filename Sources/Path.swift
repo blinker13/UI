@@ -30,16 +30,16 @@ public struct Path : Equatable, Shape {
 	// MARK: -
 
 	public func contains(point:Point) -> Bool {
-		return false
+		return false // TODO: implementation
 	}
 
 	public func transformed(transform:Transform) -> Path {
-		return self
+		return self // TODO: implementation
 	}
 }
 
 // MARK: -
 
 public func == (left:Path, right:Path) -> Bool {
-	return false
+	return false // TODO: implementation
 }

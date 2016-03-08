@@ -21,7 +21,7 @@ public struct Line : Equatable, Shape {
 	// MARK: -
 
 	public func contains(point:Point) -> Bool {
-		return false
+		return false // TODO: implementation
 	}
 
 	public func transformed(transform:Transform) -> Line {
