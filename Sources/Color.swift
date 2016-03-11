@@ -3,15 +3,13 @@ import CoreGraphics
 
 public struct Color : Equatable {
 
+	public enum Components : Equatable {
+		case RGB(Unit, Unit, Unit)
+		case Gray(Unit)
+	}
+
 	public let alpha:Unit
 	public let components:Components
-
-	public var red:Unit { return self.components.red }
-	public var green:Unit { return self.components.green }
-	public var blue:Unit { return self.components.blue }
-
-	// TODO: complement
-	public var inverted:Color { return Color(components.inverted, alpha:alpha) }
 
 	// MARK: -
 
@@ -29,25 +27,16 @@ public struct Color : Equatable {
 	}
 }
 
-// MARK: -
-
-extension Color {
-	public static let clear = Color(white:0.0, alpha:0.0)
-
-	public static let black		= Color(white:0.0)
-	public static let darkGray	= Color(white:0.333)
-	public static let gray		= Color(white:0.5)
-	public static let lightGray	= Color(white:0.667)
-	public static let white		= Color(white:1.0)
-
-	public static let red	= Color(red:1.0, green:0.0, blue:0.0)
-	public static let green	= Color(red:0.0, green:1.0, blue:0.0)
-	public static let blue	= Color(red:0.0, green:0.0, blue:1.0)
-
-	// TODO: add more default colors
-}
-
 // MARK: - CustomStringConvertible
+
+extension Color.Components : CustomStringConvertible {
+	public var description:String {
+		switch self {
+			case let .RGB(r, g, b): return "red:\(r), green:\(g), blue:\(b)"
+			case let .Gray(x): return "gray:\(x)"
+		}
+	}
+}
 
 extension Color : CustomStringConvertible {
 	public var description:String {
@@ -56,6 +45,10 @@ extension Color : CustomStringConvertible {
 }
 
 // MARK: - Equatable
+
+public func == (left:Color.Components, right:Color.Components) -> Bool {
+	return left.red == right.red && left.green == right.green && left.blue == right.blue
+}
 
 public func == (left:Color, right:Color) -> Bool {
 	return left.alpha == right.alpha && left.components == right.components
