@@ -1,8 +1,8 @@
 
 public struct Rectangle : Equatable, FloatLiteralConvertible, Shape {
 
-	public let origin:Point
-	public let size:Size
+	public var origin:Point
+	public var size:Size
 
 	public var boundingBox:Rectangle {
 		let opposite = Point(origin.x + size.width, origin.y + size.height)

@@ -1,8 +1,8 @@
 
 public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 
-	public let width:Unit
-	public let height:Unit
+	public var width:Unit
+	public var height:Unit
 
 	public var isEmpty:Bool { return width.isZero || height.isZero }
 

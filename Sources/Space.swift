@@ -1,10 +1,10 @@
 
 public struct Space : Equatable, FloatLiteralConvertible, Geometry {
 	
-	public let top:Unit
-	public let left:Unit
-	public let bottom:Unit
-	public let right:Unit
+	public var top:Unit
+	public var left:Unit
+	public var bottom:Unit
+	public var right:Unit
 
 	// MARK: -
 

@@ -1,8 +1,8 @@
 
 public struct Dimension : Equatable, FloatLiteralConvertible, Geometry {
 
-	public let min:Unit
-	public let max:Unit
+	public var min:Unit
+	public var max:Unit
 
 	// MARK: -
 

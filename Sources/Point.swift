@@ -1,8 +1,8 @@
 
 public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 
-	public let x:Unit
-	public let y:Unit
+	public var x:Unit
+	public var y:Unit
 
 	// MARK: -
 

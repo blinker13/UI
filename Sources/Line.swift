@@ -1,8 +1,8 @@
 
 public struct Line : Equatable, Shape {
 
-	public let start:Point
-	public let end:Point
+	public var start:Point
+	public var end:Point
 
 	public var boundingBox:Rectangle {
 		return Rectangle(points:[start, end])
