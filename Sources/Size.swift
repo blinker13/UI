@@ -26,9 +26,14 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 
 	// MARK: -
 
-
 	public func transformed(transform:Transform) -> Size {
 		return self
+	}
+
+	public func inset(space:Space) -> Size {
+		let w = width - space.right - space.left
+		let h = height - space.top - space.bottom
+		return Size(w, h)
 	}
 }
 

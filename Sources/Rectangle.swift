@@ -33,6 +33,10 @@ public struct Rectangle : Equatable, FloatLiteralConvertible, Shape {
 		self.init(origin:Point(x, y), size:Size(w, h))
 	}
 
+	public init(_ x:Unit, _ y:Unit, _ size:Size) {
+		self.init(origin:Point(x, y), size:size)
+	}
+
 	public init(center:Point, radius:Unit) {
 		let x = center.x - radius, y = center.y - radius
 		let w = center.x + radius, h = center.y + radius
@@ -82,9 +86,8 @@ public struct Rectangle : Equatable, FloatLiteralConvertible, Shape {
 	public func inset(space:Space) -> Rectangle {
 		let x = origin.x + space.right
 		let y = origin.y + space.top
-		let w = size.width - space.right - space.left
-		let h = size.height - space.top - space.bottom
-		return Rectangle(x, y, w, h)
+		let s = size.inset(space)
+		return Rectangle(x, y, s)
 	}
 }
 
