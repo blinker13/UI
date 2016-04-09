@@ -1,15 +1,16 @@
 
 public struct View : Container {
 
-	public var align = Alignment.Leading
-	public var margin = Space.zero
+	public var align:Alignment = .Leading
+	public var margin:Space = .zero
+
 	public var width = Dimension()
 	public var height = Dimension()
 
-	public var alignment = Alignment.Leading
-	public var arrangement = Arrangement.Vertical
-	public var distribution = Distribution.Equal
-	public var padding = Space.zero
+	public var alignment:Alignment = .Leading
+	public var arrangement:Arrangement = .Vertical
+	public var distribution:Distribution = .Equal
+	public var padding:Space = .zero
 
 	private let constructor:() -> [Component]
 
