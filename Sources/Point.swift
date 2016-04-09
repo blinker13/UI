@@ -33,7 +33,7 @@ public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 
 // MARK: -
 
-extension Point : ArrangementConvertible {
+extension Point : ArrangementRepresentable {
 	public var horizontal:Unit { return x }
 	public var vertical:Unit { return y }
 }

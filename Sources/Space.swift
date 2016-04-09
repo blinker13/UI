@@ -37,7 +37,7 @@ public struct Space : Equatable, FloatLiteralConvertible, Geometry {
 
 // MARK: -
 
-extension Space : ArrangementConvertible {
+extension Space : ArrangementRepresentable {
 	public var horizontal:Unit { return left + right }
 	public var vertical:Unit { return top + bottom }
 }

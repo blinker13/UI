@@ -39,7 +39,7 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 
 // MARK: -
 
-extension Size : ArrangementConvertible {
+extension Size : ArrangementRepresentable {
 	public var horizontal:Unit { return width }
 	public var vertical:Unit { return height }
 }

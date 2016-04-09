@@ -18,6 +18,7 @@ extension Arrangement {
 // MARK: -
 
 public protocol ArrangementConvertible {
+public protocol ArrangementRepresentable {
 	associatedtype Value
 	var horizontal:Value { get }
 	var vertical:Value { get }
@@ -25,7 +26,7 @@ public protocol ArrangementConvertible {
 
 // MARK: -
 
-extension ArrangementConvertible {
+extension ArrangementRepresentable {
 	public subscript (arrangement:Arrangement) -> Self.Value {
 		switch arrangement {
 			case .Horizontal: return horizontal
