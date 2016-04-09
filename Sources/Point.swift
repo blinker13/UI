@@ -33,6 +33,15 @@ public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 
 // MARK: -
 
+extension Point : ArrangementCreatable {
+	public init(values:[Arrangement:Unit]) {
+		self.x = values[.Horizontal] ?? 0
+		self.y = values[.Vertical] ?? 0
+	}
+}
+
+// MARK: -
+
 extension Point : ArrangementRepresentable {
 	public var horizontal:Unit { return x }
 	public var vertical:Unit { return y }

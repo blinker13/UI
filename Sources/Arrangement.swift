@@ -17,7 +17,13 @@ extension Arrangement {
 
 // MARK: -
 
-public protocol ArrangementConvertible {
+public protocol ArrangementCreatable {
+	associatedtype Value
+	init(values:[Arrangement:Value])
+}
+
+// MARK: -
+
 public protocol ArrangementRepresentable {
 	associatedtype Value
 	var horizontal:Value { get }

@@ -39,6 +39,15 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 
 // MARK: -
 
+extension Size : ArrangementCreatable {
+	public init(values:[Arrangement:Unit]) {
+		self.width = values[.Horizontal] ?? 0
+		self.height = values[.Vertical] ?? 0
+	}
+}
+
+// MARK: -
+
 extension Size : ArrangementRepresentable {
 	public var horizontal:Unit { return width }
 	public var vertical:Unit { return height }
