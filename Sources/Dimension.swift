@@ -6,7 +6,7 @@ public struct Dimension : Equatable, FloatLiteralConvertible, Geometry {
 
 	// MARK: -
 
-	public init(min:Unit = 0.0, max:Unit = .infinity) {
+	public init(min:Unit = 0, max:Unit = .infinity) {
 		precondition(min <= max, "Dimension can not be negative")
 		(self.min, self.max) = (min, max)
 	}

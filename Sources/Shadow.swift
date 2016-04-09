@@ -1,7 +1,7 @@
 
 public struct Shadow : Equatable {
 
-	public static let color = Color(white:0.0, alpha:0.6)
+	public static let color = Color(white:0, alpha:0.6)
 
 	// MARK: -
 
@@ -12,7 +12,7 @@ public struct Shadow : Equatable {
 
 	// MARK: -
 
-	public init(color:Color = color, offset:Point = .zero, opacity:Unit = 0.0, radius:Unit = 3.0) {
+	public init(color:Color = color, offset:Point = .zero, opacity:Unit = 0, radius:Unit = 3) {
 		(self.color, self.offset, self.opacity, self.radius) = (color, offset, opacity, radius)
 	}
 }

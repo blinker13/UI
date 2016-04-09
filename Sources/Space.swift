@@ -6,9 +6,12 @@ public struct Space : Equatable, FloatLiteralConvertible, Geometry {
 	public var bottom:Unit
 	public var right:Unit
 
+	public var horizontal:Unit { return left + right }
+	public var vertical:Unit { return top + bottom }
+
 	// MARK: -
 
-	public init(top:Unit = 0.0, left:Unit = 0.0, bottom:Unit = 0.0, right:Unit = 0.0) {
+	public init(top:Unit = 0, left:Unit = 0, bottom:Unit = 0, right:Unit = 0) {
 		(self.top, self.left, self.bottom, self.right) = (top, left, bottom, right)
 	}
 

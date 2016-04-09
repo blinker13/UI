@@ -11,11 +11,11 @@ public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 	}
 
 	public init(x:Unit) {
-		self.init(x, 0.0)
+		self.init(x, 0)
 	}
 
 	public init(y:Unit) {
-		self.init(0.0, y)
+		self.init(0, y)
 	}
 
 	public init(floatLiteral value:Unit) {

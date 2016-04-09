@@ -13,11 +13,11 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 	}
 
 	public init(width:Unit) {
-		self.init(width, 0.0)
+		self.init(width, 0)
 	}
 
 	public init(height:Unit) {
-		self.init(0.0, height)
+		self.init(0, height)
 	}
 
 	public init(floatLiteral value:Unit) {

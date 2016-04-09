@@ -18,11 +18,11 @@ public struct Color : Equatable {
 		self.components = components
 	}
 
-	public init(red:Unit, green:Unit, blue:Unit, alpha:Unit = 1.0) {
+	public init(red:Unit = 0, green:Unit = 0, blue:Unit = 0, alpha:Unit = 1) {
 		self.init(.RGB(red.percent, green.percent, blue.percent), alpha:alpha)
 	}
 
-	public init(white:Unit, alpha:Unit = 1.0) {
+	public init(white:Unit, alpha:Unit = 1) {
 		self.init(.Gray(white.percent), alpha:alpha)
 	}
 }
