@@ -37,7 +37,14 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 	}
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
+
+extension Size : ArrangementConvertible {
+	public var horizontal:Unit { return width }
+	public var vertical:Unit { return height }
+}
+
+// MARK: -
 
 extension Size : CustomStringConvertible {
 	public var description:String {

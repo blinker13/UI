@@ -31,7 +31,14 @@ public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 	}
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
+
+extension Point : ArrangementConvertible {
+	public var horizontal:Unit { return x }
+	public var vertical:Unit { return y }
+}
+
+// MARK: -
 
 extension Point : CustomStringConvertible {
 	public var description:String {
