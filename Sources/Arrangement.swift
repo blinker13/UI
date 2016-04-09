@@ -6,6 +6,17 @@ public enum Arrangement {
 
 // MARK: -
 
+extension Arrangement {
+	public var crossed:Arrangement {
+		switch self {
+			case .Horizontal: return .Vertical
+			case .Vertical: return .Horizontal
+		}
+	}
+}
+
+// MARK: -
+
 public protocol ArrangementConvertible {
 	associatedtype Value
 	var horizontal:Value { get }
