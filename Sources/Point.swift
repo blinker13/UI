@@ -1,5 +1,5 @@
 
-public struct Point : Equatable, FloatLiteralConvertible, Geometry {
+public struct Point : Geometry {
 
 	public var x:Unit
 	public var y:Unit
@@ -17,13 +17,11 @@ public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 	public init(y:Unit) {
 		self.init(0, y)
 	}
+}
 
-	public init(floatLiteral value:Unit) {
-		self.init(value, value)
-	}
+// MARK: -
 
-	// MARK: -
-
+extension Point {
 	public func transformed(transform:Transform) -> Point {
 		let newX = transform.a * x + transform.c * y + transform.x
 		let newY = transform.b * x + transform.d * y + transform.y
@@ -31,7 +29,7 @@ public struct Point : Equatable, FloatLiteralConvertible, Geometry {
 	}
 }
 
-// MARK: -
+// MARK: - ArrangementCreatable
 
 extension Point : ArrangementCreatable {
 	public init(values:[Arrangement:Unit]) {
@@ -40,18 +38,26 @@ extension Point : ArrangementCreatable {
 	}
 }
 
-// MARK: -
+// MARK: - ArrangementRepresentable
 
 extension Point : ArrangementRepresentable {
 	public var horizontal:Unit { return x }
 	public var vertical:Unit { return y }
 }
 
-// MARK: -
+// MARK: - CustomStringConvertible
 
 extension Point : CustomStringConvertible {
 	public var description:String {
 		return "(x:\(x), y:\(y))"
+	}
+}
+
+// MARK: - FloatLiteralConvertible
+
+extension Point : FloatLiteralConvertible {
+	public init(floatLiteral value:Unit) {
+		self.init(value, value)
 	}
 }
 

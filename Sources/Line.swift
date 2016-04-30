@@ -1,8 +1,19 @@
 
-public struct Line : Equatable, Shape {
+public struct Line : Shape {
 
 	public var start:Point
 	public var end:Point
+
+	// MARK: -
+
+	public init(start:Point = .zero, end:Point = .zero) {
+		(self.start, self.end) = (start, end)
+	}
+}
+
+// MARK: -
+
+extension Line {
 
 	public var boundingBox:Rectangle {
 		return Rectangle(points:[start, end])
@@ -11,14 +22,6 @@ public struct Line : Equatable, Shape {
 	public var elements:[Path.Element] {
 		return [ .MoveTo(start), .LineTo(end) ]
 	}
-
-	// MARK: -
-
-	public init(start:Point = .zero, end:Point = .zero) {
-		(self.start, self.end) = (start, end)
-	}
-
-	// MARK: -
 
 	public func contains(point:Point) -> Bool {
 		return false // TODO: implementation

@@ -1,5 +1,5 @@
 
-public struct Transform : Equatable, Geometry {
+public struct Transform : Geometry {
 
 	public static let identity = Transform()
 
@@ -11,21 +11,6 @@ public struct Transform : Equatable, Geometry {
 	public let d:Unit
 	public let x:Unit
 	public let y:Unit
-
-	public var isIdentity:Bool {
-		return self == .identity
-	}
-
-	public var inverted:Transform {
-		let determinant = 1 / (a * d - b * c)
-		let newA = determinant * d
-		let newB = determinant * -b
-		let newC = determinant * -c
-		let newD = determinant * a
-		let newX = determinant * (c * y - d * x)
-		let newY = determinant * (b * x - a * y)
-		return Transform(newA, newB, newC, newD, newX, newY)
-	}
 
 	// MARK: -
 
@@ -53,8 +38,26 @@ public struct Transform : Equatable, Geometry {
 	public init(translated x:Unit, _ y:Unit) {
 		self.init(1, 0, 0, 1, x, y)
 	}
+}
 
-	// MARK: -
+// MARK: -
+
+extension Transform {
+
+	public var isIdentity:Bool {
+		return self == .identity
+	}
+
+	public var inverted:Transform {
+		let determinant = 1 / (a * d - b * c)
+		let newA = determinant * d
+		let newB = determinant * -b
+		let newC = determinant * -c
+		let newD = determinant * a
+		let newX = determinant * (c * y - d * x)
+		let newY = determinant * (b * x - a * y)
+		return Transform(newA, newB, newC, newD, newX, newY)
+	}
 
 	public func transformed(transform:Transform) -> Transform {
 		let newA = transform.a * a + transform.b * c

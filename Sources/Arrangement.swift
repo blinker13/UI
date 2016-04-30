@@ -18,22 +18,22 @@ extension Arrangement {
 // MARK: -
 
 public protocol ArrangementCreatable {
-	associatedtype Value
-	init(values:[Arrangement:Value])
+	associatedtype ArrangementValue
+	init(values:[Arrangement:ArrangementValue])
 }
 
 // MARK: -
 
 public protocol ArrangementRepresentable {
-	associatedtype Value
-	var horizontal:Value { get }
-	var vertical:Value { get }
+	associatedtype ArrangementValue
+	var horizontal:ArrangementValue { get }
+	var vertical:ArrangementValue { get }
 }
 
 // MARK: -
 
 extension ArrangementRepresentable {
-	public subscript (arrangement:Arrangement) -> Self.Value {
+	public subscript (arrangement:Arrangement) -> Self.ArrangementValue {
 		switch arrangement {
 			case .Horizontal: return horizontal
 			case .Vertical: return vertical

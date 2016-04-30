@@ -1,40 +1,25 @@
 
-public struct Rectangle : Equatable, FloatLiteralConvertible, Shape {
+public struct Rectangle : Shape {
 
 	public var origin:Point
 	public var size:Size
 
-	public var boundingBox:Rectangle {
-		let opposite = Point(origin.x + size.width, origin.y + size.height)
-		return Rectangle(origin, opposite)
-	}
-
-	public var elements:[Path.Element] {
-		return [
-			.MoveTo(Point(right, top)),
-			.LineTo(Point(left, top)),
-			.LineTo(Point(left, bottom)),
-			.LineTo(Point(right, bottom)),
-			.Close
-		]
-	}
-
 	// MARK: -
 
-	public init(origin:Point = .zero, size:Size) {
+	public init(origin:Point = .zero, _ size:Size) {
 		(self.origin, self.size) = (origin, size)
 	}
 
 	public init(origin:Point = .zero, width:Unit, height:Unit) {
-		self.init(origin:origin, size:Size(width, height))
+		self.init(origin:origin, Size(width, height))
 	}
 
 	public init(_ x:Unit, _ y:Unit, _ w:Unit, _ h:Unit) {
-		self.init(origin:Point(x, y), size:Size(w, h))
+		self.init(origin:Point(x, y), Size(w, h))
 	}
 
 	public init(_ x:Unit, _ y:Unit, _ size:Size) {
-		self.init(origin:Point(x, y), size:size)
+		self.init(origin:Point(x, y), size)
 	}
 
 	public init(center:Point, radius:Unit) {
@@ -65,12 +50,37 @@ public struct Rectangle : Equatable, FloatLiteralConvertible, Shape {
 	public init(_ points:Point ...) {
 		self.init(points:points)
 	}
+}
 
-	public init(floatLiteral value:Unit) {
-		self.init(origin:.zero, width:value, height:value)
+// MARK: -
+
+extension Rectangle {
+	public func inset(space:Space) -> Rectangle {
+		let x = origin.x + space.right
+		let y = origin.y + space.top
+		let s = size.inset(space)
+		return Rectangle(x, y, s)
+	}
+}
+
+// MARK: -
+
+extension Rectangle {
+
+	public var boundingBox:Rectangle {
+		let opposite = Point(origin.x + size.width, origin.y + size.height)
+		return Rectangle(origin, opposite)
 	}
 
-	// MARK: -
+	public var elements:[Path.Element] {
+		return [
+			.MoveTo(Point(right, top)),
+			.LineTo(Point(left, top)),
+			.LineTo(Point(left, bottom)),
+			.LineTo(Point(right, bottom)),
+			.Close
+		]
+	}
 
 	public func contains(point:Point) -> Bool {
 		return point.x >= left && point.x <= right && point.y >= top && point.y <= bottom
@@ -82,12 +92,13 @@ public struct Rectangle : Equatable, FloatLiteralConvertible, Shape {
 		let h = transform.b * size.width + transform.d * size.height
 		return Rectangle(origin:point, width:w, height:h)
 	}
+}
 
-	public func inset(space:Space) -> Rectangle {
-		let x = origin.x + space.right
-		let y = origin.y + space.top
-		let s = size.inset(space)
-		return Rectangle(x, y, s)
+// MARK: - FloatLiteralConvertible
+
+extension Rectangle : FloatLiteralConvertible {
+	public init(floatLiteral value:Unit) {
+		self.init(origin:.zero, width:value, height:value)
 	}
 }
 

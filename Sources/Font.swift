@@ -1,5 +1,5 @@
 
-public struct Font : CustomStringConvertible, Hashable {
+public struct Font {
 
 	public enum Style {
 		case Normal
@@ -31,13 +31,19 @@ public struct Font : CustomStringConvertible, Hashable {
 	public init(name:String, size:Unit, style:Style = .Normal, weight:Weight = .Regular) {
 		(self.name, self.size, self.style, self.weight) = (name, size, style, weight)
 	}
+}
 
-	// MARK: -
+// MARK: - CustomStringConvertible
 
+extension Font : CustomStringConvertible {
 	public var description:String {
 		return "Font(\"\(name)-\(style)-\(weight)\" \(size))"
 	}
+}
 
+// MARK: - Hashable
+
+extension Font : Hashable {
 	public var hashValue:Int {
 		return description.hashValue
 	}

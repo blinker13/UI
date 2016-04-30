@@ -1,5 +1,5 @@
 
-public struct Text : CustomStringConvertible, Equatable, StringLiteralConvertible {
+public struct Text : Equatable {
 
 	public static let color = Color.black
 	public static let font = Font(name:"Arial", size:13.0)
@@ -15,21 +15,19 @@ public struct Text : CustomStringConvertible, Equatable, StringLiteralConvertibl
 	public init(content:String, color:Color = Text.color, font:Font = Text.font) {
 		(self.content, self.color, self.font) = (content, color, font)
 	}
+}
 
-	public init(unicodeScalarLiteral value:StringLiteralType) {
-		self.init(stringLiteral:"\(value)")
-	}
+// MARK: - StringLiteralConvertible
 
-	public init(extendedGraphemeClusterLiteral value:String) {
-		self.init(stringLiteral:value)
-	}
+extension Text : StringLiteralConvertible {
+	public init(unicodeScalarLiteral value:StringLiteralType) { self.init(stringLiteral:"\(value)") }
+	public init(extendedGraphemeClusterLiteral value:String) { self.init(stringLiteral:value) }
+	public init(stringLiteral value:String) { self.init(content:value) }
+}
 
-	public init(stringLiteral value:String) {
-		self.init(content:value)
-	}
+// MARK: - CustomStringConvertible
 
-	// MARK: -
-
+extension Text : CustomStringConvertible {
 	public var description:String {
 		return content
 	}

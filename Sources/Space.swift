@@ -1,5 +1,5 @@
 
-public struct Space : Equatable, FloatLiteralConvertible, Geometry {
+public struct Space : Geometry {
 	
 	public var top:Unit
 	public var left:Unit
@@ -23,30 +23,44 @@ public struct Space : Equatable, FloatLiteralConvertible, Geometry {
 	public init(vertical:Unit) {
 		self.init(top:vertical, bottom:vertical)
 	}
+}
 
-	public init(floatLiteral value:Unit) {
-		self.init(top:value, left:value, bottom:value, right:value)
-	}
+// MARK: -
 
-	// MARK: -
-
+extension Space {
 	public func transformed(transform:Transform) -> Space {
 		return Space()
 	}
 }
 
-// MARK: -
+// MARK: - AlignmentRepresentable
 
-extension Space : ArrangementRepresentable {
-	public var horizontal:Unit { return left + right }
-	public var vertical:Unit { return top + bottom }
+extension Space : AlignmentRepresentable {
+	public var leading:Point { return Point(left, top) }
+	public var center:Point { return Point(left + right, top + bottom) }
+	public var trailing:Point { return Point(right, bottom) }
 }
 
-// MARK: -
+// MARK: - ArrangementRepresentable
+
+extension Space : ArrangementRepresentable {
+	public var horizontal:Edges { return Edges(left, right) }
+	public var vertical:Edges { return Edges(top, bottom) }
+}
+
+// MARK: - CustomStringConvertible
 
 extension Space : CustomStringConvertible {
 	public var description:String {
 		return "Space(top:\(top), left:\(left), bottom:\(bottom), right:\(right))"
+	}
+}
+
+// MARK: - FloatLiteralConvertible
+
+extension Space : FloatLiteralConvertible {
+	public init(floatLiteral value:Unit) {
+		self.init(top:value, left:value, bottom:value, right:value)
 	}
 }
 

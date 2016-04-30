@@ -1,5 +1,5 @@
 
-public protocol Geometry {
+public protocol Geometry : Equatable {
 	func transformed(transform:Transform) -> Self
 }
 

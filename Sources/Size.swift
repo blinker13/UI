@@ -1,10 +1,8 @@
 
-public struct Size : Equatable, FloatLiteralConvertible, Geometry {
+public struct Size : Geometry {
 
 	public var width:Unit
 	public var height:Unit
-
-	public var isEmpty:Bool { return width.isZero || height.isZero }
 
 	// MARK: -
 
@@ -19,12 +17,13 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 	public init(height:Unit) {
 		self.init(0, height)
 	}
+}
 
-	public init(floatLiteral value:Unit) {
-		self.init(value, value)
-	}
+// MARK: -
 
-	// MARK: -
+extension Size {
+
+	public var isEmpty:Bool { return width.isZero || height.isZero }
 
 	public func transformed(transform:Transform) -> Size {
 		return self
@@ -37,7 +36,7 @@ public struct Size : Equatable, FloatLiteralConvertible, Geometry {
 	}
 }
 
-// MARK: -
+// MARK: - ArrangementCreatable
 
 extension Size : ArrangementCreatable {
 	public init(values:[Arrangement:Unit]) {
@@ -46,18 +45,26 @@ extension Size : ArrangementCreatable {
 	}
 }
 
-// MARK: -
+// MARK: - ArrangementRepresentable
 
 extension Size : ArrangementRepresentable {
 	public var horizontal:Unit { return width }
 	public var vertical:Unit { return height }
 }
 
-// MARK: -
+// MARK: - CustomStringConvertible
 
 extension Size : CustomStringConvertible {
 	public var description:String {
 		return "(width:\(width), height:\(height))"
+	}
+}
+
+// MARK: - FloatLiteralConvertible
+
+extension Size : FloatLiteralConvertible {
+	public init(floatLiteral value:Unit) {
+		self.init(value, value)
 	}
 }
 

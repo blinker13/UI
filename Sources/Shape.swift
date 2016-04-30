@@ -1,7 +1,6 @@
 
-public protocol Shape : Geometry {
+public protocol Shape : Geometry, PathConvertible {
 	var boundingBox:Rectangle { get }
-	var elements:[Path.Element] { get }
 	func contains(point:Point) -> Bool
 }
 

@@ -1,5 +1,9 @@
 
-public struct Path : Equatable, Shape {
+public protocol PathConvertible {
+	var elements:[Path.Element] { get }
+}
+
+public struct Path : Shape {
 
     public enum Element {
 		case MoveTo(Point)
@@ -9,10 +13,6 @@ public struct Path : Equatable, Shape {
 		case Close
     }
 
-	public var boundingBox:Rectangle {
-		return Rectangle.zero
-	}
-
 	public let elements:[Element]
 
     // MARK: -
@@ -21,13 +21,20 @@ public struct Path : Equatable, Shape {
         self.elements = elements
     }
 
-	public init(shapes:[Shape]) {
+	public init(shapes:[PathConvertible]) {
 		self.init(elements:shapes.flatMap {
 			$0.elements
 		})
 	}
+}
 
-	// MARK: -
+// MARK: -
+
+extension Path {
+
+	public var boundingBox:Rectangle {
+		return Rectangle.zero
+	}
 
 	public func contains(point:Point) -> Bool {
 		return false // TODO: implementation
