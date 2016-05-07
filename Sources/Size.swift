@@ -9,6 +9,11 @@ public struct Size : Geometry {
 	public init(_ w:Unit, _ h:Unit) {
 		(self.width, self.height) = (w, h)
 	}
+}
+
+// MARK: -
+
+extension Size {
 
 	public init(width:Unit) {
 		self.init(width, 0)
@@ -17,19 +22,14 @@ public struct Size : Geometry {
 	public init(height:Unit) {
 		self.init(0, height)
 	}
-}
-
-// MARK: -
-
-extension Size {
-
+	
 	public var isEmpty:Bool { return width.isZero || height.isZero }
 
-	public func transformed(transform:Transform) -> Size {
+	public func transformed(_ transform:Transform) -> Size {
 		return self
 	}
 
-	public func inset(space:Space) -> Size {
+	public func inset(_ space:Space) -> Size {
 		let w = width - space.right - space.left
 		let h = height - space.top - space.bottom
 		return Size(w, h)

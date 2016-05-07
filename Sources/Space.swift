@@ -11,6 +11,11 @@ public struct Space : Geometry {
 	public init(top:Unit = 0, left:Unit = 0, bottom:Unit = 0, right:Unit = 0) {
 		(self.top, self.left, self.bottom, self.right) = (top, left, bottom, right)
 	}
+}
+
+// MARK: -
+
+extension Space {
 
 	public init(horizontal:Unit, vertical:Unit) {
 		self.init(top:vertical, left:horizontal, bottom:vertical, right:horizontal)
@@ -23,12 +28,8 @@ public struct Space : Geometry {
 	public init(vertical:Unit) {
 		self.init(top:vertical, bottom:vertical)
 	}
-}
 
-// MARK: -
-
-extension Space {
-	public func transformed(transform:Transform) -> Space {
+	public func transformed(_ transform:Transform) -> Space {
 		return Space()
 	}
 }

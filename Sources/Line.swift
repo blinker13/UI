@@ -27,7 +27,7 @@ extension Line {
 		return false // TODO: implementation
 	}
 
-	public func transformed(transform:Transform) -> Line {
+	public func transformed(_ transform:Transform) -> Line {
 		let newStart = start.transformed(transform)
 		let newEnd = end.transformed(transform)
 		return Line(start:newStart, end:newEnd)

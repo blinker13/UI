@@ -3,6 +3,8 @@ public protocol PathConvertible {
 	var elements:[Path.Element] { get }
 }
 
+// MARK: -
+
 public struct Path : Shape {
 
     public enum Element {
@@ -20,17 +22,17 @@ public struct Path : Shape {
     public init(elements:[Element]) {
         self.elements = elements
     }
+}
+
+// MARK: -
+
+extension Path {
 
 	public init(shapes:[PathConvertible]) {
 		self.init(elements:shapes.flatMap {
 			$0.elements
 		})
 	}
-}
-
-// MARK: -
-
-extension Path {
 
 	public var boundingBox:Rectangle {
 		return Rectangle.zero
@@ -40,7 +42,7 @@ extension Path {
 		return false // TODO: implementation
 	}
 
-	public func transformed(transform:Transform) -> Path {
+	public func transformed(_ transform:Transform) -> Path {
 		return self // TODO: implementation
 	}
 }

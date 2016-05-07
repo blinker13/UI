@@ -6,20 +6,29 @@ public struct Rectangle : Shape {
 
 	// MARK: -
 
-	public init(origin:Point = .zero, _ size:Size) {
+	public init(_ origin:Point = .zero, _ size:Size) {
 		(self.origin, self.size) = (origin, size)
 	}
+}
+
+// MARK: -
+
+extension Rectangle {
 
 	public init(origin:Point = .zero, width:Unit, height:Unit) {
-		self.init(origin:origin, Size(width, height))
+		let size = Size(width, height)
+		self.init(origin, size)
 	}
 
 	public init(_ x:Unit, _ y:Unit, _ w:Unit, _ h:Unit) {
-		self.init(origin:Point(x, y), Size(w, h))
+		let point = Point(x, y)
+		let size = Size(w, h)
+		self.init(point, size)
 	}
 
 	public init(_ x:Unit, _ y:Unit, _ size:Size) {
-		self.init(origin:Point(x, y), size)
+		let point = Point(x, y)
+		self.init(point, size)
 	}
 
 	public init(center:Point, radius:Unit) {
@@ -50,11 +59,7 @@ public struct Rectangle : Shape {
 	public init(_ points:Point ...) {
 		self.init(points:points)
 	}
-}
-
-// MARK: -
-
-extension Rectangle {
+	
 	public func inset(space:Space) -> Rectangle {
 		let x = origin.x + space.right
 		let y = origin.y + space.top
@@ -86,7 +91,7 @@ extension Rectangle {
 		return point.x >= left && point.x <= right && point.y >= top && point.y <= bottom
 	}
 
-	public func transformed(transform:Transform) -> Rectangle {
+	public func transformed(_ transform:Transform) -> Rectangle {
 		let point = origin.transformed(transform)
 		let w = transform.a * size.width + transform.c * size.height
 		let h = transform.b * size.width + transform.d * size.height

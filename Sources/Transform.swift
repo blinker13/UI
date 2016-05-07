@@ -17,6 +17,11 @@ public struct Transform : Geometry {
 	public init(_ a:Unit = 1, _ b:Unit = 0, _ c:Unit = 0, _ d:Unit = 1, _ x:Unit = 0, _ y:Unit = 0) {
 		(self.a, self.b, self.c, self.d, self.x, self.y) = (a, b, c, d, x, y)
 	}
+}
+
+// MARK: -
+
+extension Transform {
 
 	public init(rotated a:Unit) {
 		// TODO: calculate transformation values
@@ -38,11 +43,6 @@ public struct Transform : Geometry {
 	public init(translated x:Unit, _ y:Unit) {
 		self.init(1, 0, 0, 1, x, y)
 	}
-}
-
-// MARK: -
-
-extension Transform {
 
 	public var isIdentity:Bool {
 		return self == .identity
@@ -59,7 +59,7 @@ extension Transform {
 		return Transform(newA, newB, newC, newD, newX, newY)
 	}
 
-	public func transformed(transform:Transform) -> Transform {
+	public func transformed(_ transform:Transform) -> Transform {
 		let newA = transform.a * a + transform.b * c
 		let newB = transform.a * b + transform.b * d
 		let newC = transform.c * a + transform.d * c

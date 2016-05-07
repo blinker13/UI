@@ -19,7 +19,7 @@ extension Dimension {
 	public var difference:Unit { return max - min }
 	public var isFlexible:Bool { return min < max }
 
-	public func transformed(transform:Transform) -> Dimension {
+	public func transformed(_ transform:Transform) -> Dimension {
 		return self // TODO: implementation
 	}
 }

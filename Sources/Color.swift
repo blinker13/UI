@@ -17,7 +17,12 @@ public struct Color : Equatable {
 		self.alpha = alpha.percent
 		self.components = components
 	}
+}
 
+// MARK: -
+
+extension Color {
+	
 	public init(red:Unit = 0, green:Unit = 0, blue:Unit = 0, alpha:Unit = 1) {
 		self.init(.RGB(red.percent, green.percent, blue.percent), alpha:alpha)
 	}

@@ -9,6 +9,11 @@ public struct Point : Geometry {
 	public init(_ x:Unit, _ y:Unit) {
 		(self.x, self.y) = (x, y)
 	}
+}
+
+// MARK: -
+
+extension Point {
 
 	public init(x:Unit) {
 		self.init(x, 0)
@@ -17,12 +22,8 @@ public struct Point : Geometry {
 	public init(y:Unit) {
 		self.init(0, y)
 	}
-}
-
-// MARK: -
-
-extension Point {
-	public func transformed(transform:Transform) -> Point {
+	
+	public func transformed(_ transform:Transform) -> Point {
 		let newX = transform.a * x + transform.c * y + transform.x
 		let newY = transform.b * x + transform.d * y + transform.y
 		return Point(newX, newY)
