@@ -1,6 +1,6 @@
 
 public protocol Geometry : Equatable {
-	func transformed(_ transform:Transform) -> Self
+	func transformed(transform:Transform) -> Self
 }
 
 // MARK: -

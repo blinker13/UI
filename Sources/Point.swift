@@ -23,7 +23,7 @@ extension Point {
 		self.init(0, y)
 	}
 	
-	public func transformed(_ transform:Transform) -> Point {
+	public func transformed(transform:Transform) -> Point {
 		let newX = transform.a * x + transform.c * y + transform.x
 		let newY = transform.b * x + transform.d * y + transform.y
 		return Point(newX, newY)

@@ -29,7 +29,7 @@ extension Space {
 		self.init(top:vertical, bottom:vertical)
 	}
 
-	public func transformed(_ transform:Transform) -> Space {
+	public func transformed(transform:Transform) -> Space {
 		return Space()
 	}
 }

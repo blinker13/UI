@@ -42,7 +42,7 @@ extension Path {
 		return false // TODO: implementation
 	}
 
-	public func transformed(_ transform:Transform) -> Path {
+	public func transformed(transform:Transform) -> Path {
 		return self // TODO: implementation
 	}
 }

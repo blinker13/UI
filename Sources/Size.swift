@@ -25,11 +25,11 @@ extension Size {
 	
 	public var isEmpty:Bool { return width.isZero || height.isZero }
 
-	public func transformed(_ transform:Transform) -> Size {
+	public func transformed(transform:Transform) -> Size {
 		return self
 	}
 
-	public func inset(_ space:Space) -> Size {
+	public func inset(space:Space) -> Size {
 		let w = width - space.right - space.left
 		let h = height - space.top - space.bottom
 		return Size(w, h)

@@ -59,7 +59,7 @@ extension Transform {
 		return Transform(newA, newB, newC, newD, newX, newY)
 	}
 
-	public func transformed(_ transform:Transform) -> Transform {
+	public func transformed(transform:Transform) -> Transform {
 		let newA = transform.a * a + transform.b * c
 		let newB = transform.a * b + transform.b * d
 		let newC = transform.c * a + transform.d * c

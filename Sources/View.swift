@@ -19,12 +19,19 @@ public struct View : Container {
 	public init(constructor:() -> [Component]) {
 		self.constructor = constructor
 	}
+}
+
+// MARK: -
+
+extension View {
 
 	public init(@autoclosure(escaping) components:() -> [Component]) {
 		self.init(constructor:components)
 	}
 
-	// MARK: -
+	public init(components:Component ...) {
+		self.init { return components }
+	}
 
 	public func construct() -> [Component] {
 		return constructor()

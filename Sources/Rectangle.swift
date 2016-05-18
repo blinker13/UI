@@ -91,7 +91,7 @@ extension Rectangle {
 		return point.x >= left && point.x <= right && point.y >= top && point.y <= bottom
 	}
 
-	public func transformed(_ transform:Transform) -> Rectangle {
+	public func transformed(transform:Transform) -> Rectangle {
 		let point = origin.transformed(transform)
 		let w = transform.a * size.width + transform.c * size.height
 		let h = transform.b * size.width + transform.d * size.height
