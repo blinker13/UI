@@ -9,12 +9,16 @@ public protocol Component {
 // MARK: -
 
 extension Component {
-	public final var minBoxWidth:Unit { return width.min + margin.right + margin.left }
-	public final var maxBoxWidth:Unit { return width.max + margin.right + margin.left }
+	public subscript (arrangement:Arrangement) -> Dimension {
+		switch arrangement {
+			case .Horizontal: return width
+			case .Vertical: return height
+		}
+	}
+}
 
-	public final var minBoxHeight:Unit { return height.min + margin.top + margin.bottom }
-	public final var maxBoxHeight:Unit { return height.max + margin.top + margin.bottom }
+// MARK: -
 
-	public final var minBoxSize:Size { return Size(minBoxWidth, minBoxHeight) }
-	public final var maxBoxSize:Size { return Size(maxBoxWidth, maxBoxHeight) }
+public func == <Element:Component>(left:Element, right:Element) -> Bool {
+	return left.dynamicType == right.dynamicType
 }
