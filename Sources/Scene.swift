@@ -75,54 +75,6 @@ extension Scene {
 				}
 			}
 		}
-
-//		for index in calculator.count ..< node.children.count {
-//			let child = node.children.remove(at:index)
-//			renderer.remove(child)
-//		}
-
-//		manager.layout(node)
-
-//		guard let container = node.component as? Container else { return }
-//		let components = container.construct()
-//
-//		let count = min(components.count, node.children.count)
-//
-//		for index in 0 ..< count {
-//			let oldNode = node.children[index]
-//			let newComponent = components[index]
-//
-//			if newComponent.dynamicType != oldNode.component.dynamicType {
-//				let newNode = Node(newComponent)
-//				node.children[index] = newNode
-//				print("replace [\(index)]")
-//			}
-//
-//			oldNode.component = newComponent
-//			print("update [\(index)]")
-//
-////				// get frame inside bounds
-////				var newBounds = newComponent.minBounds
-////				new
-//		}
-//
-//		if components.count > node.children.count {
-//			for index in count ..< components.count {
-//				let newComponent = components[index]
-//				let newNode = Node(newComponent)
-//				newNode.parent = node
-//				node.children.append(newNode)
-//				renderer.insert(newNode, at:index)
-//			}
-//		}
-//
-//		if node.children.count > components.count {
-//			node.children.removeRange(count ..< node.children.count)
-//
-//			for index in count ..< node.children.count {
-//				print("remove [\(index)]")
-//			}
-//		}
 	}
 
 	private func nextNode() -> Node? {

@@ -2,7 +2,6 @@
 internal struct LayoutCalculator {
 
 	private let container:ContainerLayout
-
 	private var layouts:SizeCalculator
 	private var offset:Unit
 

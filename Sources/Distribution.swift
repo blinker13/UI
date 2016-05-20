@@ -18,8 +18,8 @@ extension Distribution {
 	}
 
 	private func calcutateEqual(layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
-		var results = [Int:Unit]()
 		var fullfilled = Set<Int>()
+		var results = [Int:Unit]()
 		var remains = remainder
 
 		while layouts.count > fullfilled.count && remains > 0 {
@@ -54,7 +54,6 @@ extension Distribution {
 			let flex = min(remains, layout.main.difference)
 			body(index, flex)
 			remains -= flex
-			print("Order")
 		}
 
 		return remains
