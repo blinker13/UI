@@ -27,8 +27,8 @@ internal struct ContainerLayout {
 
 	internal init(_ container:Container, _ constraint:Size) {
 		let size = constraint.inset(container.padding)
-		self.cross = Axis(container.arrangement.crossed, size, container.padding)
-		self.main = Axis(container.arrangement, size, container.padding)
+		self.cross = Axis(container.content.arrangement.crossed, size, container.padding)
+		self.main = Axis(container.content.arrangement, size, container.padding)
 		self.container = container
 	}
 }
@@ -36,8 +36,8 @@ internal struct ContainerLayout {
 // MARK: -
 
 extension ContainerLayout {
-	internal var alignment:Alignment { return container.contentAlignment }
+	internal var alignment:Alignment { return container.content.alignment }
 	internal var components:EnumerateSequence<[Component]> { return container.construct().enumerate() }
-	internal var distribution:Distribution { return container.distribution }
+	internal var distribution:Distribution { return container.content.distribution }
 	internal var isReversed:Bool { return container.alignment == .Trailing }
 }
