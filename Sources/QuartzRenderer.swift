@@ -22,25 +22,44 @@ internal final class QuartzRenderer : Renderer {
 
 		if let parentNode = node.parent {
 			let parentLayer = content[parentNode]!
-			layer.backgroundColor = NSColor(calibratedRed:1.0, green:0.0, blue:0.0, alpha:1.0).CGColor
 			parentLayer.insertSublayer(layer, atIndex:UInt32(index))
 			print("insert node at [\(index)]")
 		} else {
-			layer.backgroundColor = NSColor.whiteColor().CGColor
 			view.wantsLayer = true
 			view.layer = layer
 			layer.geometryFlipped = true
 			print("insert root node")
 		}
 
+		update(layer, with:node)
 		content[node] = layer
 	}
 
 	internal func update(node:Node) {
+		let layer = content[node]!
+		update(layer, with:node)
 		print("update node")
 	}
 
 	internal func remove(node:Node) {
 		print("remove node")
+	}
+}
+
+// MARK: -
+
+extension QuartzRenderer {
+	private func update(layer:CALayer, with node:Node) {
+		guard let visual = node.component as? Visual else { return }
+		layer.backgroundColor = visual.background?.quartz
+
+		layer.cornerRadius = CGFloat(visual.border?.radius ?? 0)
+		layer.borderWidth = CGFloat(visual.border?.width ?? 0)
+		layer.borderColor = visual.border?.color.quartz
+
+		layer.shadowColor = visual.shadow?.color.quartz
+		layer.shadowOffset = CGSize(width:visual.shadow?.offset.x ?? 0, height:-(visual.shadow?.offset.y ?? 0))
+		layer.shadowRadius = CGFloat(visual.shadow?.radius ?? 3)
+		layer.shadowOpacity = Float(visual.shadow?.opacity ?? 0)
 	}
 }

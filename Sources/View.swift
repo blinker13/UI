@@ -1,36 +1,25 @@
 
-public struct View : Container {
+public struct View : Container, Visual {
 
-	public var alignment:Alignment = .Leading
-	public var margin:Space = .zero
-
-	public var width = Dimension()
-	public var height = Dimension()
-
-	public var arrangement:Arrangement = .Vertical
-	public var contentAlignment:Alignment = .Leading
-	public var distribution:Distribution = .Equal
-	public var padding:Space = .zero
-
-	private let constructor:() -> [Component]
+	public let constructor:() -> [Component]
+	public let style:Style
 
 	// MARK: -
 
-	public init(constructor:() -> [Component]) {
-		self.constructor = constructor
+	public init(style:Style, constructor:() -> [Component]) {
+		(self.constructor, self.style) = (constructor, style)
 	}
 }
 
 // MARK: -
 
 extension View {
-
-	public init(@autoclosure(escaping) components:() -> [Component]) {
-		self.init(constructor:components)
+	public init(style:Style, @autoclosure(escaping) components:() -> [Component]) {
+		self.init(style:style, constructor:components)
 	}
 
-	public init(components:Component ...) {
-		self.init { return components }
+	public init(style:Style, components:Component ...) {
+		self.init(style:style) { return components }
 	}
 
 	public func construct() -> [Component] {

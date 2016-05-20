@@ -1,9 +1,15 @@
 
-public protocol Component {
-	var alignment:Alignment { get }
-	var height:Dimension { get }
-	var width:Dimension { get }
-	var margin:Space { get }
+public protocol Component : Layout {
+	var style:Style { get }
+}
+
+// MARK: -
+
+extension Component {
+	public var alignment:Alignment { return style["alignment"] as? Alignment ?? .Leading }
+	public var height:Dimension { return style["height"] as? Dimension ?? Dimension() }
+	public var width:Dimension { return style["width"] as? Dimension ?? Dimension() }
+	public var margin:Space { return style["margin"] as? Space ?? Space() }
 }
 
 // MARK: -

@@ -21,6 +21,7 @@
 		BD3B9B161CD2BB0500E90639 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B9B151CD2BB0500E90639 /* Edges.swift */; };
 		BD526D231C97510F0075684E /* QuartzRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526D221C97510F0075684E /* QuartzRenderer.swift */; };
 		BD526D251C9759530075684E /* QuartzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526D241C9759530075684E /* QuartzViewController.swift */; };
+		BD7ACBD41CEE6C2C0067C6FC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7ACBD31CEE6C2C0067C6FC /* Style.swift */; };
 		BD8226571C91B31A00D807A3 /* Color+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8226561C91B31A00D807A3 /* Color+Component.swift */; };
 		BD8226591C91B43B00D807A3 /* Color+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8226581C91B43B00D807A3 /* Color+Defaults.swift */; };
 		BD8226621C931B3500D807A3 /* Color+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8226611C931B3500D807A3 /* Color+Conversion.swift */; };
@@ -60,6 +61,9 @@
 		BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */; };
 		BD8EB9051CB86A59001ACCA6 /* LayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */; };
 		BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */; };
+		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
+		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
+		BD96A5B01CF0E57D00231DA8 /* Quartz+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */; };
 		BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,7 @@
 		BD3B9B151CD2BB0500E90639 /* Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edges.swift; sourceTree = "<group>"; };
 		BD526D221C97510F0075684E /* QuartzRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzRenderer.swift; sourceTree = "<group>"; };
 		BD526D241C9759530075684E /* QuartzViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzViewController.swift; sourceTree = "<group>"; };
+		BD7ACBD31CEE6C2C0067C6FC /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		BD8226561C91B31A00D807A3 /* Color+Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Component.swift"; sourceTree = "<group>"; };
 		BD8226581C91B43B00D807A3 /* Color+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Defaults.swift"; sourceTree = "<group>"; };
 		BD8226611C931B3500D807A3 /* Color+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Conversion.swift"; sourceTree = "<group>"; };
@@ -124,6 +129,9 @@
 		BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleLayoutIterator.swift; sourceTree = "<group>"; };
 		BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = LayoutCalculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentLayout.swift; sourceTree = "<group>"; };
+		BD9648131CEFB2D100D3F478 /* Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
+		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quartz+Drawing.swift"; sourceTree = "<group>"; };
 		BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeIterator.swift; sourceTree = "<group>"; };
 		BDE8A79A1C95D56700EAF68D /* Node.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Node.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +183,7 @@
 		BD1FE1FF1C4FF1A4005F95D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BD7ACBD21CEE6BE90067C6FC /* Appearance */,
 				BD3997E71C68A939002B3E01 /* Components */,
 				BD8B338F1C8F4B7C000677D1 /* Drawing */,
 				BD8B33771C8F4B07000677D1 /* Geometry */,
@@ -215,10 +224,8 @@
 		BD3997E51C68A8F8002B3E01 /* Layouting */ = {
 			isa = PBXGroup;
 			children = (
-				BD3997D11C68A8EA002B3E01 /* Alignment.swift */,
-				BD3997D21C68A8EA002B3E01 /* Arrangement.swift */,
-				BD3997D61C68A8EA002B3E01 /* Distribution.swift */,
-				BD3997D71C68A8EA002B3E01 /* LineBreak.swift */,
+				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
+				BD96A5AE1CF0ABBA00231DA8 /* Attributes */,
 				BD294AC31CDD47E600A8716A /* Calculators */,
 				BD8EB9031CB869D6001ACCA6 /* Entities */,
 				BD8C94D21CD7FCBA006C009E /* Utilities */,
@@ -250,8 +257,18 @@
 			children = (
 				BD526D221C97510F0075684E /* QuartzRenderer.swift */,
 				BD526D241C9759530075684E /* QuartzViewController.swift */,
+				BD96A5B11CF0EF5200231DA8 /* Extensions */,
 			);
 			name = Quartz;
+			sourceTree = "<group>";
+		};
+		BD7ACBD21CEE6BE90067C6FC /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				BD7ACBD31CEE6C2C0067C6FC /* Style.swift */,
+				BD9648131CEFB2D100D3F478 /* Visual.swift */,
+			);
+			name = Appearance;
 			sourceTree = "<group>";
 		};
 		BD8226631C936DBA00D807A3 /* Hierachy */ = {
@@ -358,6 +375,25 @@
 				BD294AC11CDD429900A8716A /* ContainerLayout.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		BD96A5AE1CF0ABBA00231DA8 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				BD3997D11C68A8EA002B3E01 /* Alignment.swift */,
+				BD3997D21C68A8EA002B3E01 /* Arrangement.swift */,
+				BD3997D61C68A8EA002B3E01 /* Distribution.swift */,
+				BD3997D71C68A8EA002B3E01 /* LineBreak.swift */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
+		BD96A5B11CF0EF5200231DA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		BDDA24411CA4BCDF00E89901 /* Utility */ = {
@@ -502,11 +538,13 @@
 				BD3997E31C68A8EA002B3E01 /* View.swift in Sources */,
 				BD3997DD1C68A8EA002B3E01 /* Component.swift in Sources */,
 				BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */,
+				BD96A5B01CF0E57D00231DA8 /* Quartz+Drawing.swift in Sources */,
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
 				BD8B339E1C8F4B96000677D1 /* Gradient.swift in Sources */,
 				BD8B339A1C8F4B96000677D1 /* Canvas.swift in Sources */,
 				BD8B33891C8F4B3F000677D1 /* Shape.swift in Sources */,
 				BD8226671C936DD700D807A3 /* Scene.swift in Sources */,
+				BD7ACBD41CEE6C2C0067C6FC /* Style.swift in Sources */,
 				BD8C94D41CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift in Sources */,
 				BD8B33A01C8F4B96000677D1 /* Shadow.swift in Sources */,
 				BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */,
@@ -514,6 +552,7 @@
 				BD8B339F1C8F4B96000677D1 /* Image.swift in Sources */,
 				BD8B33861C8F4B3F000677D1 /* Path.swift in Sources */,
 				BD8226661C936DD700D807A3 /* Node.swift in Sources */,
+				BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */,
 				BD8226591C91B43B00D807A3 /* Color+Defaults.swift in Sources */,
 				BD3B9B161CD2BB0500E90639 /* Edges.swift in Sources */,
 				BD526D251C9759530075684E /* QuartzViewController.swift in Sources */,
@@ -523,6 +562,7 @@
 				BD8EB9051CB86A59001ACCA6 /* LayoutCalculator.swift in Sources */,
 				BD8B338C1C8F4B3F000677D1 /* Transform.swift in Sources */,
 				BD526D231C97510F0075684E /* QuartzRenderer.swift in Sources */,
+				BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */,
 				BD8B33881C8F4B3F000677D1 /* Rectangle.swift in Sources */,
 				BD8226571C91B31A00D807A3 /* Color+Component.swift in Sources */,
 			);

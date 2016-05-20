@@ -23,7 +23,8 @@ internal struct SizeCalculator {
 		}
 
 		if !flexIndexes.isEmpty && remainder > 0 {
-			let sequence = FlexibleLayoutEnumerator(flexIndexes, layouts, reversed:container.isReversed)
+			let isReversed = container.alignment == .Trailing
+			let sequence = FlexibleLayoutEnumerator(flexIndexes, layouts, reversed:isReversed)
 			remainder = container.distribution.calculation(sequence, remainder) { index, flex in
 				layouts[index].main.length += flex
 			}

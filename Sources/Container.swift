@@ -1,26 +1,13 @@
 
-public struct Content {
-
-	public let alignment:Alignment
-	public let arrangement:Arrangement
-	public let distribution:Distribution
-
-	// MARK: -
-
-	public init(alignment:Alignment = .Leading, arrangement:Arrangement = .Vertical, distribution:Distribution = .Equal) {
-		(self.alignment, self.arrangement, self.distribution) = (alignment, arrangement, distribution)
-	}
-}
-
-// MARK: -
-
-public protocol Containment : Component {
-	var content:Content { get }
-	var padding:Space { get }
-}
-
-// MARK: -
-
-public protocol Container : Containment {
+public protocol Container : Component, Containment {
 	func construct() -> [Component]
+}
+
+// MARK: -
+
+extension Container {
+	public var arrangement:Arrangement { return style["arrangement"] as? Arrangement ?? .Vertical }
+	public var distribution:Distribution { return style["distribution"] as? Distribution ?? .Equal }
+	public var justify:Alignment { return style["justify"] as? Alignment ?? .Leading }
+	public var padding:Space { return style["padding"] as? Space ?? Space() }
 }
