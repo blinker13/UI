@@ -58,6 +58,7 @@ extension Scene {
 				let newChild = Node(component, parent:node, frame:rectangle)
 				renderer.insert(newChild, at:index)
 				node.children.append(newChild)
+				markedNodes.insert(newChild)
 
 			} else {
 				let child = node.children[index]
@@ -66,12 +67,14 @@ extension Scene {
 					child.component = component
 					child.frame = rectangle
 					renderer.update(child)
+					markedNodes.insert(child)
 
 				} else {
 					let newChild = Node(component, parent:node, frame:rectangle)
 					node.children[index] = newChild
 					renderer.remove(child)
 					renderer.insert(newChild, at:index)
+					markedNodes.insert(newChild)
 				}
 			}
 		}

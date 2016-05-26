@@ -5,7 +5,7 @@ import XCPlayground
 
 
 let s0 = Style(
-	height:Dimension(min:40),
+	height:Dimension(min:70),
 	background:.red,
 	width:40.0
 )
@@ -16,7 +16,7 @@ let s1 = Style(
 	height:Dimension(min:10, max:50),
 	border:Border(radius:5, width:2),
 	background:.yellow,
-	margin:10.0
+	margin:5.0
 )
 
 let s2 = Style(
@@ -36,11 +36,11 @@ let cs = Style(
 	height:130.0
 )
 
-let v0 = View(style:s0, components:[])
-let v1 = View(style:s1, components:[])
-let v2 = View(style:s2, components:[])
-
-let container = View(style:cs, components:[v0, v1, v2])
+let container = View(style:cs,
+	View(style:s0),
+	View(style:s1),
+	View(style:s2)
+)
 
 let vc = QuartzViewController(component:container)
 vc.viewWillLayout()

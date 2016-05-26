@@ -14,11 +14,7 @@ public struct View : Container, Visual {
 // MARK: -
 
 extension View {
-	public init(style:Style, @autoclosure(escaping) components:() -> [Component]) {
-		self.init(style:style, constructor:components)
-	}
-
-	public init(style:Style, components:Component ...) {
+	public init(style:Style, _ components:Component ...) {
 		self.init(style:style) { return components }
 	}
 
