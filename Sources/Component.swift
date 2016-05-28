@@ -5,11 +5,15 @@ public protocol Component : Layout {
 
 // MARK: -
 
-extension Component {
+extension Layout where Self : Component {
 	public var alignment:Alignment { return style["alignment"] as? Alignment ?? .Leading }
 	public var height:Dimension { return style["height"] as? Dimension ?? Dimension() }
 	public var width:Dimension { return style["width"] as? Dimension ?? Dimension() }
 	public var margin:Space { return style["margin"] as? Space ?? Space() }
+}
+
+extension Enclosure where Self : Component {
+	public var overflow:Overflow { return style["overflow"] as? Overflow ?? .Hidden }
 }
 
 // MARK: -

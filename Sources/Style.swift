@@ -9,33 +9,35 @@ public struct Style {
 extension Style {
 	public init(
 		alignment:Alignment? = nil,
-		height:Dimension? = nil,
-		width:Dimension? = nil,
-		margin:Space? = nil,
 		arrangement:Arrangement? = nil,
-		distribution:Distribution? = nil,
-		justify:Alignment? = nil,
-		padding:Space? = nil,
 		background:Color? = nil,
-		color:Color? = nil,
-		opacity:Unit? = nil,
 		border:Border? = nil,
-		shadow:Shadow? = nil
+		color:Color? = nil,
+		distribution:Distribution? = nil,
+		height:Dimension? = nil,
+		justify:Alignment? = nil,
+		margin:Space? = nil,
+		opacity:Unit? = nil,
+		overflow:Overflow? = nil,
+		padding:Space? = nil,
+		shadow:Shadow? = nil,
+		width:Dimension? = nil
 	) {
 		self.init(attributes:[
 			"alignment":alignment,
-			"height":height,
-			"width":width,
-			"margin":margin,
 			"arrangement":arrangement,
-			"distribution":distribution,
-			"justify":justify,
-			"padding":padding,
 			"background":background,
-			"color":color,
-			"opacity":opacity,
 			"border":border,
-			"shadow":shadow
+			"color":color,
+			"distribution":distribution,
+			"height":height,
+			"justify":justify,
+			"margin":margin,
+			"opacity":opacity,
+			"overflow":overflow,
+			"padding":padding,
+			"shadow":shadow,
+			"width":width
 		], styles:[])
 	}
 }

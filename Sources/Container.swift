@@ -5,7 +5,7 @@ public protocol Container : Component, Containment {
 
 // MARK: -
 
-extension Container {
+extension Containment where Self : Container {
 	public var arrangement:Arrangement { return style["arrangement"] as? Arrangement ?? .Vertical }
 	public var distribution:Distribution { return style["distribution"] as? Distribution ?? .Equal }
 	public var justify:Alignment { return style["justify"] as? Alignment ?? .Leading }

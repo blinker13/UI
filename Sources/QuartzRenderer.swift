@@ -61,5 +61,7 @@ extension QuartzRenderer {
 		layer.shadowOffset = CGSize(width:visual.shadow?.offset.x ?? 0, height:-(visual.shadow?.offset.y ?? 0))
 		layer.shadowRadius = CGFloat(visual.shadow?.radius ?? 3)
 		layer.shadowOpacity = Float(visual.shadow?.opacity ?? 0)
+
+		layer.masksToBounds = visual.overflow.isHidden
 	}
 }
