@@ -24,7 +24,7 @@ extension Distribution {
 
 		while layouts.count > fullfilled.count && remains > 0 {
 			let count = layouts.count - fullfilled.count
-			let portion = remains / Double(count)
+			let portion = remains / Unit(count)
 
 			for (index, layout) in layouts {
 				if fullfilled.contains(index) { continue }

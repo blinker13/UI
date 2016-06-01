@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BD1FE21B1C500434005F95D3 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1FE1F21C4FF00E005F95D3 /* UI.framework */; };
+		BD21421F1CFCFBD800D3CD58 /* QuartzViewController.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */; };
+		BD2142211CFCFF6000D3CD58 /* QuartzViewController.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */; };
+		BD2142231CFCFFF900D3CD58 /* QuartzRenderer.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2142221CFCFFF900D3CD58 /* QuartzRenderer.mac.swift */; };
+		BD2142251CFD00AE00D3CD58 /* QuartzRenderer.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2142241CFD00AE00D3CD58 /* QuartzRenderer.ios.swift */; };
 		BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294ABF1CDD421900A8716A /* SizeCalculator.swift */; };
 		BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294AC11CDD429900A8716A /* ContainerLayout.swift */; };
 		BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D11C68A8EA002B3E01 /* Alignment.swift */; };
@@ -77,6 +81,11 @@
 		BD1FE2031C4FF1A4005F95D3 /* package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = package.swift; sourceTree = "<group>"; };
 		BD1FE2091C4FF290005F95D3 /* universal.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = universal.xcconfig; sourceTree = "<group>"; };
 		BD1FE20F1C4FF402005F95D3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzViewController.mac.swift; sourceTree = "<group>"; };
+		BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzViewController.ios.swift; sourceTree = "<group>"; };
+		BD2142221CFCFFF900D3CD58 /* QuartzRenderer.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzRenderer.mac.swift; sourceTree = "<group>"; };
+		BD2142241CFD00AE00D3CD58 /* QuartzRenderer.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzRenderer.ios.swift; sourceTree = "<group>"; };
+		BD2142281CFD079D00D3CD58 /* ios.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ios.playground; sourceTree = "<group>"; };
 		BD294ABF1CDD421900A8716A /* SizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCalculator.swift; sourceTree = "<group>"; };
 		BD294AC11CDD429900A8716A /* ContainerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerLayout.swift; sourceTree = "<group>"; };
 		BD3997D11C68A8EA002B3E01 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
@@ -134,7 +143,7 @@
 		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quartz+Drawing.swift"; sourceTree = "<group>"; };
 		BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeIterator.swift; sourceTree = "<group>"; };
-		BDE8A79A1C95D56700EAF68D /* Node.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Node.playground; sourceTree = "<group>"; };
+		BDE8A79A1C95D56700EAF68D /* mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mac.playground; sourceTree = "<group>"; };
 		BDF256D71CF91FA60020F864 /* Overflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overflow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +223,26 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		BD2142261CFD00E700D3CD58 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				BD2142241CFD00AE00D3CD58 /* QuartzRenderer.ios.swift */,
+				BD2142221CFCFFF900D3CD58 /* QuartzRenderer.mac.swift */,
+				BD526D221C97510F0075684E /* QuartzRenderer.swift */,
+			);
+			name = Renderer;
+			sourceTree = "<group>";
+		};
+		BD2142271CFD00F100D3CD58 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */,
+				BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */,
+				BD526D241C9759530075684E /* QuartzViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		BD294AC31CDD47E600A8716A /* Calculators */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,9 +286,9 @@
 		BD526D211C9750D70075684E /* Quartz */ = {
 			isa = PBXGroup;
 			children = (
-				BD526D221C97510F0075684E /* QuartzRenderer.swift */,
-				BD526D241C9759530075684E /* QuartzViewController.swift */,
 				BD96A5B11CF0EF5200231DA8 /* Extensions */,
+				BD2142261CFD00E700D3CD58 /* Renderer */,
+				BD2142271CFD00F100D3CD58 /* ViewController */,
 			);
 			name = Quartz;
 			sourceTree = "<group>";
@@ -410,7 +439,8 @@
 		BDE8A7991C95D52F00EAF68D /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				BDE8A79A1C95D56700EAF68D /* Node.playground */,
+				BDE8A79A1C95D56700EAF68D /* mac.playground */,
+				BD2142281CFD079D00D3CD58 /* ios.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -543,6 +573,7 @@
 				BD3997DD1C68A8EA002B3E01 /* Component.swift in Sources */,
 				BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */,
 				BD96A5B01CF0E57D00231DA8 /* Quartz+Drawing.swift in Sources */,
+				BD2142231CFCFFF900D3CD58 /* QuartzRenderer.mac.swift in Sources */,
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
 				BD8B339E1C8F4B96000677D1 /* Gradient.swift in Sources */,
 				BD8B339A1C8F4B96000677D1 /* Canvas.swift in Sources */,
@@ -558,17 +589,20 @@
 				BD8226661C936DD700D807A3 /* Node.swift in Sources */,
 				BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */,
 				BD8226591C91B43B00D807A3 /* Color+Defaults.swift in Sources */,
+				BD2142251CFD00AE00D3CD58 /* QuartzRenderer.ios.swift in Sources */,
 				BD3B9B161CD2BB0500E90639 /* Edges.swift in Sources */,
 				BD526D251C9759530075684E /* QuartzViewController.swift in Sources */,
 				BD8B33841C8F4B3F000677D1 /* Geometry.swift in Sources */,
 				BD8B339D1C8F4B96000677D1 /* Font.swift in Sources */,
 				BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */,
+				BD2142211CFCFF6000D3CD58 /* QuartzViewController.ios.swift in Sources */,
 				BD8EB9051CB86A59001ACCA6 /* LayoutCalculator.swift in Sources */,
 				BD8B338C1C8F4B3F000677D1 /* Transform.swift in Sources */,
 				BD526D231C97510F0075684E /* QuartzRenderer.swift in Sources */,
 				BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */,
 				BD8B33881C8F4B3F000677D1 /* Rectangle.swift in Sources */,
 				BD8226571C91B31A00D807A3 /* Color+Component.swift in Sources */,
+				BD21421F1CFCFBD800D3CD58 /* QuartzViewController.mac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,55 +1,51 @@
 
 internal final class Scene {
 
-	private let component:Component
 	private let renderer:Renderer
+	private let rootNode:Node
 
 	private var markedNodes = Set<Node>()
 
-	private lazy var rootNode:Node = {
-		let node = Node(self.component)
-		self.renderer.insert(node)
-		return node
-	}()
 
 	// MARK: -
 
 	internal init(_ component:Component, _ renderer:Renderer) {
-		self.component = component
+		self.rootNode = Node(component)
 		self.renderer = renderer
 	}
 }
 
 // MARK: -
 
-extension Scene {
+internal extension Scene {
 
-	internal func update(size:Size) {
+	func update(size:Size) {
 		updateRootNode(size)
 		updateHierarchy()
 	}
 
-	internal func update() {
+	func update() {
 		update(rootNode.frame.size)
 	}
+}
 
-	// TODO: calculate size that fits
+// MARK: -
 
-	// MARK: -
+private extension Scene {
 
-	private func updateRootNode(size:Size) {
-		guard rootNode.frame.size != size else { return }
+	func updateRootNode(size:Size) {
+		if rootNode.frame.size == size { return }
 		rootNode.frame.size = size
 		markedNodes.insert(rootNode)
 		renderer.update(rootNode)
 	}
 
-	private func updateHierarchy() {
+	func updateHierarchy() {
 		let nodes = AnyGenerator(body:nextNode)
 		nodes.forEach(update)
 	}
 
-	private func update(node:Node) {
+	func update(node:Node) {
 		guard let calculator = LayoutCalculator(node) else { return }
 
 		for (index, component, rectangle) in calculator {
@@ -80,7 +76,7 @@ extension Scene {
 		}
 	}
 
-	private func nextNode() -> Node? {
+	func nextNode() -> Node? {
 		guard let node = markedNodes.first else { return nil }
 		let parentIterator = ParentNodeIterator(node)
 		let next = parentIterator.filter(markedNodes.contains).last ?? node

@@ -7,7 +7,11 @@ VALID_ARCHS[sdk=macosx*]                = i386 x86_64
 LD_RUNPATH_SEARCH_PATHS[sdk=iphone*]    = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]    = $(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks
 
+CODE_SIGN_IDENTITY[sdk=iphoneos*]       = iPhone Developer
+
 IPHONEOS_DEPLOYMENT_TARGET[sdk=iphone*] = 8.0
 TARGETED_DEVICE_FAMILY[sdk=iphone*]     = 1,2
 
 COMBINE_HIDPI_IMAGES[sdk=macosx*]       = YES
+
+

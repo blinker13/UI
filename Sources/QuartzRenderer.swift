@@ -1,55 +1,44 @@
 
-import AppKit
 import QuartzCore
 
-internal final class QuartzRenderer : Renderer {
+extension QuartzRenderer : Renderer {
 
-	private var content = [Node:CALayer]()
-	private let view:NSView
+	func insert(node:Node, at index:Int) {
 
-	// MARK: -
+		let x = CGFloat(node.frame.origin.x)
+		let y = CGFloat(node.frame.origin.y)
+		let w = CGFloat(node.frame.size.width)
+		let h = CGFloat(node.frame.size.height)
 
-	internal init(_ view:NSView) {
-		self.view = view
-	}
+		let layer = createLayer(for:node)
+		layer.frame = CGRect(x:x, y:y, width:w, height:h)
 
-	// MARK: - Renderer
-
-	internal func insert(node:Node, at index:Int) {
-
-		let layer = CALayer()
-		layer.frame = CGRect(x:node.frame.origin.x, y:node.frame.origin.y, width:node.frame.size.width, height:node.frame.size.height)
-
-		if let parentNode = node.parent {
-			let parentLayer = content[parentNode]!
-			parentLayer.insertSublayer(layer, atIndex:UInt32(index))
-			print("insert node at [\(index)]")
-		} else {
-			view.wantsLayer = true
-			view.layer = layer
-			layer.geometryFlipped = true
-			print("insert root node")
-		}
-
+		insert(layer, with:node, at:index)
 		update(layer, with:node)
 		content[node] = layer
 	}
 
-	internal func update(node:Node) {
-		let layer = content[node]!
+	func update(node:Node) {
+		let layer = fetchLayer(for:node)
 		update(layer, with:node)
-		print("update node")
 	}
 
-	internal func remove(node:Node) {
-		print("remove node")
+	func remove(node:Node) {
+		let layer = content.removeValueForKey(node)
+		layer?.removeFromSuperlayer()
 	}
 }
 
 // MARK: -
 
-extension QuartzRenderer {
-	private func update(layer:CALayer, with node:Node) {
+private extension QuartzRenderer {
+
+	func insert(layer:CALayer, with node:Node, at index:Int) {
+		let parentLayer = fetchLayer(for:node.parent!)
+		parentLayer.insertSublayer(layer, atIndex:UInt32(index))
+	}
+
+	func update(layer:CALayer, with node:Node) {
 		guard let visual = node.component as? Visual else { return }
 		layer.backgroundColor = visual.background?.quartz
 
@@ -58,7 +47,7 @@ extension QuartzRenderer {
 		layer.borderColor = visual.border?.color.quartz
 
 		layer.shadowColor = visual.shadow?.color.quartz
-		layer.shadowOffset = CGSize(width:visual.shadow?.offset.x ?? 0, height:-(visual.shadow?.offset.y ?? 0))
+		layer.shadowOffset = CGSize(width:CGFloat(visual.shadow?.offset.x ?? 0), height:CGFloat(-(visual.shadow?.offset.y ?? 0)))
 		layer.shadowRadius = CGFloat(visual.shadow?.radius ?? 3)
 		layer.shadowOpacity = Float(visual.shadow?.opacity ?? 0)
 
