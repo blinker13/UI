@@ -10,8 +10,6 @@ internal struct ComponentLayout {
 
 		internal var length:Unit
 
-		// MARK: -
-
 		private init(_ component:Component, _ arrangement:Arrangement) {
 			let dimension = component[arrangement]
 
@@ -23,14 +21,10 @@ internal struct ComponentLayout {
 		}
 	}
 
-	// MARK: -
-
 	internal let component:Component
 
 	internal var cross:Axis
 	internal var main:Axis
-
-	// MARK: -
 
 	internal init(_ component:Component, _ arrangement:Arrangement) {
 		self.cross = Axis(component, arrangement.crossed)
@@ -41,8 +35,9 @@ internal struct ComponentLayout {
 
 // MARK: -
 
-extension ComponentLayout {
-	internal var size:Size {
+internal extension ComponentLayout {
+
+	var size:Size {
 		let sizes = Dictionary(dictionaryLiteral:main.value, cross.value)
 		return Size(values:sizes)
 	}
@@ -50,22 +45,22 @@ extension ComponentLayout {
 
 // MARK: -
 
-extension ComponentLayout.Axis {
+internal extension ComponentLayout.Axis {
 
-	internal var difference:Unit { return dimension.max - dimension.min }
-	internal var isFlexible:Bool { return dimension.isFlexible }
-	internal var total:Unit { return length + edges.total }
+	var difference:Unit { return dimension.max - dimension.min }
+	var isFlexible:Bool { return dimension.isFlexible }
+	var total:Unit { return length + edges.total }
 
-	private var value:(Arrangement, Unit) {
-		return (arrangement, length)
-	}
-
-	internal mutating func calculateLength(with constrain:Unit) {
+	mutating func calculateLength(with constrain:Unit) {
 		let interim = min(dimension.max, constrain - edges.total)
 		length = max(dimension.min, interim)
 	}
 
-	internal func calculatePosition(with remainder:Unit) -> Unit {
+	func calculatePosition(with remainder:Unit) -> Unit {
 		return edges.leading + alignment.calculateOffset(with:remainder)
 	}
+}
+
+private extension ComponentLayout.Axis {
+	var value:(Arrangement, Unit) { return (arrangement, length) }
 }

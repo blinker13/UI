@@ -14,7 +14,7 @@ class UnitTests: XCTestCase {
 	}
 
 	func test_clampWithMin() {
-		XCTAssertEqualWithAccuracy(Unit(-3.999).clamp(min:3.5), 3.5, accuracy:UnitTests.accuracy)
+		XCTAssertEqualWithAccuracy(Unit(-3.999).clamp(3.5), 3.5, accuracy:UnitTests.accuracy)
 	}
 
 	func test_clampWithMax() {

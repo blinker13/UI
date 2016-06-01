@@ -7,8 +7,6 @@ internal struct SizeCalculator {
 
 	private var iterator:StrideToGenerator<Int>
 
-	// MARK: -
-
 	internal init(_ container:ContainerLayout) {
 
 		var flexIndexes = [Int]()
@@ -41,13 +39,13 @@ internal struct SizeCalculator {
 
 // MARK: -
 
-extension SizeCalculator {
-	internal var count:Int { return layouts.count }
-	internal var offset:Unit { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
+internal extension SizeCalculator {
+	var count:Int { return layouts.count }
+	var offset:Unit { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
 }
 
 
-// MARK: - Iterator
+// MARK: -
 
 extension SizeCalculator : GeneratorType {
 	internal mutating func next() -> (Int, ComponentLayout)? {

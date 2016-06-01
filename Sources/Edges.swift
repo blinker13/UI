@@ -1,28 +1,16 @@
 
 public struct Edges : Geometry {
-
 	public var leading:Unit
 	public var trailing:Unit
-
-	// MARK: -
-
-	public init(_ leading:Unit = 0, _ trailing:Unit = 0) {
-		(self.leading, self.trailing) = (leading, trailing)
-	}
 }
 
 // MARK: -
 
-extension Edges {
-
-	public var total:Unit { return leading + trailing }
-
-	public func transformed(transform:Transform) -> Edges {
-		return self // TODO: implementation
-	}
+public extension Edges {
+	var total:Unit { return leading + trailing }
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
 
 extension Edges : CustomStringConvertible {
 	public var description:String {
@@ -30,11 +18,20 @@ extension Edges : CustomStringConvertible {
 	}
 }
 
-// MARK: - FloatLiteralConvertible
+// MARK: -
 
 extension Edges : FloatLiteralConvertible {
 	public init(floatLiteral value:Unit) {
-		self.init(value, value)
+		(self.leading, self.trailing) = (value, value)
+	}
+}
+
+// MARK: -
+
+extension Edges : Transformable {
+	public func transformed(transform:Transform) -> Edges {
+		// TODO: implementation
+		return self
 	}
 }
 

@@ -19,21 +19,17 @@ public struct Font {
 		case Black
 	}
 
-	// MARK: -
-
 	public let name:String
 	public let size:Unit
 	public let style:Style
 	public let weight:Weight
-
-	// MARK: -
 
 	public init(name:String, size:Unit, style:Style = .Normal, weight:Weight = .Regular) {
 		(self.name, self.size, self.style, self.weight) = (name, size, style, weight)
 	}
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
 
 extension Font : CustomStringConvertible {
 	public var description:String {
@@ -41,7 +37,7 @@ extension Font : CustomStringConvertible {
 	}
 }
 
-// MARK: - Hashable
+// MARK: -
 
 extension Font : Hashable {
 	public var hashValue:Int {

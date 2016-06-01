@@ -5,8 +5,6 @@ internal struct FlexibleLayoutEnumerator {
 	private let layouts:[ComponentLayout]
 	private let strideTo:StrideTo<Int>
 
-	// MARK: -
-
 	internal init(_ indexes:[Int], _ layouts:[ComponentLayout], reversed:Bool) {
 		let start = reversed ? indexes.endIndex - 1 : indexes.startIndex
 		let end = reversed ? indexes.startIndex - 1 : indexes.endIndex
@@ -19,13 +17,11 @@ internal struct FlexibleLayoutEnumerator {
 
 // MARK: -
 
-extension FlexibleLayoutEnumerator {
-	internal var count:Int {
-		return layouts.count
-	}
+internal extension FlexibleLayoutEnumerator {
+	var count:Int { return layouts.count }
 }
 
-// MARK: - Sequence
+// MARK: -
 
 extension FlexibleLayoutEnumerator : SequenceType {
 	internal func generate() -> FlexibleLayoutIterator {

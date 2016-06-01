@@ -4,8 +4,6 @@ public struct Size : Geometry {
 	public var width:Unit
 	public var height:Unit
 
-	// MARK: -
-
 	public init(_ w:Unit, _ h:Unit) {
 		(self.width, self.height) = (w, h)
 	}
@@ -13,30 +11,21 @@ public struct Size : Geometry {
 
 // MARK: -
 
-extension Size {
+public extension Size {
 
-	public init(width:Unit) {
-		self.init(width, 0)
-	}
+	var isEmpty:Bool { return width.isZero || height.isZero }
 
-	public init(height:Unit) {
-		self.init(0, height)
-	}
-	
-	public var isEmpty:Bool { return width.isZero || height.isZero }
+	init(width:Unit) { self.init(width, 0) }
+	init(height:Unit) { self.init(0, height) }
 
-	public func transformed(transform:Transform) -> Size {
-		return self
-	}
-
-	public func inset(space:Space) -> Size {
+	func inset(space:Space) -> Size {
 		let w = width - space.right - space.left
 		let h = height - space.top - space.bottom
 		return Size(w, h)
 	}
 }
 
-// MARK: - ArrangementCreatable
+// MARK: -
 
 extension Size : ArrangementCreatable {
 	public init(values:[Arrangement:Unit]) {
@@ -45,14 +34,14 @@ extension Size : ArrangementCreatable {
 	}
 }
 
-// MARK: - ArrangementRepresentable
+// MARK: -
 
 extension Size : ArrangementRepresentable {
 	public var horizontal:Unit { return width }
 	public var vertical:Unit { return height }
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
 
 extension Size : CustomStringConvertible {
 	public var description:String {
@@ -60,11 +49,21 @@ extension Size : CustomStringConvertible {
 	}
 }
 
-// MARK: - FloatLiteralConvertible
+// MARK: -
 
 extension Size : FloatLiteralConvertible {
 	public init(floatLiteral value:Unit) {
 		self.init(value, value)
+	}
+}
+
+// MARK: -
+
+extension Size : Transformable {
+	public func transformed(transform:Transform) -> Size {
+		let w = transform.a * width + transform.c * height
+		let h = transform.b * width + transform.d * height
+		return Size(w, h)
 	}
 }
 

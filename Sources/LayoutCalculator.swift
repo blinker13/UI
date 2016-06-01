@@ -5,8 +5,6 @@ internal struct LayoutCalculator {
 	private var layouts:SizeCalculator
 	private var offset:Unit
 
-	// MARK: -
-
 	internal init(_ container:ContainerLayout) {
 		let layouts = SizeCalculator(container)
 		self.offset = layouts.offset
@@ -17,18 +15,18 @@ internal struct LayoutCalculator {
 
 // MARK: -
 
-extension LayoutCalculator {
+internal extension LayoutCalculator {
 
-	internal var count:Int { return layouts.count }
+	var count:Int { return layouts.count }
 
-	internal init?(_ node:Node) {
+	init?(_ node:Node) {
 		guard let container = node.component as? Container else { return nil }
 		let layout = ContainerLayout(container, node.frame.size)
 		self.init(layout)
 	}
 }
 
-// MARK: - LayoutCalculator
+// MARK: -
 
 extension LayoutCalculator : GeneratorType, SequenceType {
 	internal mutating func next() -> (Int, Component, Rectangle)? {
@@ -39,7 +37,7 @@ extension LayoutCalculator : GeneratorType, SequenceType {
 		let crossRemainder = container.cross.constraint - layout.cross.edges.total - layout.cross.length
 		let crossPosition = container.cross.edges.leading + layout.cross.calculatePosition(with:crossRemainder)
 		let position = Point(values:[container.main.arrangement:offset, container.cross.arrangement:crossPosition])
-		let rect = Rectangle(position, layout.size)
+		let rect = Rectangle(origin:position, size:layout.size)
 
 		return (index, layout.component, rect)
 	}

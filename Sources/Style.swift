@@ -52,8 +52,8 @@ extension Style : ArrayLiteralConvertible {
 
 // MARK: -
 
-extension Style {
-	public subscript (key:String) -> Any? {
+public extension Style {
+	subscript (key:String) -> Any? {
 		if let value = attributes[key] {
 			return value
 		}

@@ -7,8 +7,6 @@ internal struct ContainerLayout {
 		internal let constraint:Unit
 		internal let edges:Edges
 
-		// MARK: -
-
 		private init(_ arrangement:Arrangement, _ constraint:Size, _ padding:Space) {
 			self.constraint = constraint[arrangement]
 			self.edges = padding[arrangement]
@@ -16,14 +14,10 @@ internal struct ContainerLayout {
 		}
 	}
 
-	// MARK: -
-
 	internal let cross:Axis
 	internal let main:Axis
 
 	private let container:Container
-
-	// MARK: -
 
 	internal init(_ container:Container, _ constraint:Size) {
 		let size = constraint.inset(container.padding)
@@ -35,8 +29,8 @@ internal struct ContainerLayout {
 
 // MARK: -
 
-extension ContainerLayout {
-	internal var alignment:Alignment { return container.justify }
-	internal var components:EnumerateSequence<[Component]> { return container.construct().enumerate() }
-	internal var distribution:Distribution { return container.distribution }
+internal extension ContainerLayout {
+	var alignment:Alignment { return container.justify }
+	var components:EnumerateSequence<[Component]> { return container.construct().enumerate() }
+	var distribution:Distribution { return container.distribution }
 }

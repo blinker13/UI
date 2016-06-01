@@ -6,9 +6,6 @@ internal final class Scene {
 
 	private var markedNodes = Set<Node>()
 
-
-	// MARK: -
-
 	internal init(_ component:Component, _ renderer:Renderer) {
 		self.rootNode = Node(component)
 		self.renderer = renderer

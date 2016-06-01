@@ -5,26 +5,28 @@ public protocol Component : Layout {
 
 // MARK: -
 
-extension Layout where Self : Component {
-	public var alignment:Alignment { return style["alignment"] as? Alignment ?? .Leading }
-	public var height:Dimension { return style["height"] as? Dimension ?? Dimension() }
-	public var width:Dimension { return style["width"] as? Dimension ?? Dimension() }
-	public var margin:Space { return style["margin"] as? Space ?? Space() }
-}
-
-extension Enclosure where Self : Component {
-	public var overflow:Overflow { return style["overflow"] as? Overflow ?? .Hidden }
-}
-
-// MARK: -
-
-extension Component {
-	public subscript (arrangement:Arrangement) -> Dimension {
+public extension Component {
+	subscript (arrangement:Arrangement) -> Dimension {
 		switch arrangement {
 			case .Horizontal: return width
 			case .Vertical: return height
 		}
 	}
+}
+
+// MARK: -
+
+public extension Component where Self : Layout {
+	var alignment:Alignment { return style["alignment"] as? Alignment ?? .Leading }
+	var height:Dimension { return style["height"] as? Dimension ?? Dimension() }
+	var width:Dimension { return style["width"] as? Dimension ?? Dimension() }
+	var margin:Space { return style["margin"] as? Space ?? Space() }
+}
+
+// MARK: -
+
+public extension Component where Self : Enclosure {
+	var overflow:Overflow { return style["overflow"] as? Overflow ?? .Hidden }
 }
 
 // MARK: -

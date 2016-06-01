@@ -3,8 +3,6 @@ internal struct ParentNodeIterator {
 
 	private var node:Node
 
-	// MARK: -
-
 	internal init(_ node:Node) {
 		self.node = node
 	}

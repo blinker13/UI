@@ -2,7 +2,6 @@
 import CoreGraphics
 
 internal extension Color {
-
 	var quartz:CGColorRef {
 		let values = self.components.cgColorComponents + [CGFloat(alpha)]
 		return CGColorCreate(self.components.cgColorSpace, values)!

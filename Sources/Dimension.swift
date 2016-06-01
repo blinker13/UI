@@ -4,8 +4,6 @@ public struct Dimension : Geometry {
 	public var min:Unit
 	public var max:Unit
 
-	// MARK: -
-
 	public init(min:Unit = 0, max:Unit = .infinity) {
 		precondition(min <= max, "Dimension can not be negative")
 		(self.min, self.max) = (min, max)
@@ -14,17 +12,12 @@ public struct Dimension : Geometry {
 
 // MARK: -
 
-extension Dimension {
-
-	public var difference:Unit { return max - min }
-	public var isFlexible:Bool { return min < max }
-
-	public func transformed(transform:Transform) -> Dimension {
-		return self // TODO: implementation
-	}
+public extension Dimension {
+	var difference:Unit { return max - min }
+	var isFlexible:Bool { return min < max }
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
 
 extension Dimension : CustomStringConvertible {
 	public var description:String {
@@ -32,11 +25,20 @@ extension Dimension : CustomStringConvertible {
 	}
 }
 
-// MARK: - FloatLiteralConvertible
+// MARK: -
 
 extension Dimension : FloatLiteralConvertible {
 	public init(floatLiteral value:Unit) {
 		self.init(min:value, max:value)
+	}
+}
+
+// MARK: -
+
+extension Dimension : Transformable {
+	public func transformed(transform:Transform) -> Dimension {
+		// TODO: implementation
+		return self
 	}
 }
 

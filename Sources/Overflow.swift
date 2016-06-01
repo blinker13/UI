@@ -6,8 +6,6 @@ public enum Overflow {
 
 // MARK: -
 
-extension Overflow {
-	public var isHidden:Bool {
-		return self == .Hidden
-	}
+public extension Overflow {
+	var isHidden:Bool { return self == .Hidden }
 }

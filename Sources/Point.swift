@@ -4,8 +4,6 @@ public struct Point : Geometry {
 	public var x:Unit
 	public var y:Unit
 
-	// MARK: -
-
 	public init(_ x:Unit, _ y:Unit) {
 		(self.x, self.y) = (x, y)
 	}
@@ -13,24 +11,12 @@ public struct Point : Geometry {
 
 // MARK: -
 
-extension Point {
-
-	public init(x:Unit) {
-		self.init(x, 0)
-	}
-
-	public init(y:Unit) {
-		self.init(0, y)
-	}
-	
-	public func transformed(transform:Transform) -> Point {
-		let newX = transform.a * x + transform.c * y + transform.x
-		let newY = transform.b * x + transform.d * y + transform.y
-		return Point(newX, newY)
-	}
+public extension Point {
+	init(x:Unit) { self.init(x, 0) }
+	init(y:Unit) { self.init(0, y) }
 }
 
-// MARK: - ArrangementCreatable
+// MARK: -
 
 extension Point : ArrangementCreatable {
 	public init(values:[Arrangement:Unit]) {
@@ -39,14 +25,14 @@ extension Point : ArrangementCreatable {
 	}
 }
 
-// MARK: - ArrangementRepresentable
+// MARK: -
 
 extension Point : ArrangementRepresentable {
 	public var horizontal:Unit { return x }
 	public var vertical:Unit { return y }
 }
 
-// MARK: - CustomStringConvertible
+// MARK: -
 
 extension Point : CustomStringConvertible {
 	public var description:String {
@@ -54,11 +40,21 @@ extension Point : CustomStringConvertible {
 	}
 }
 
-// MARK: - FloatLiteralConvertible
+// MARK: -
 
 extension Point : FloatLiteralConvertible {
 	public init(floatLiteral value:Unit) {
 		self.init(value, value)
+	}
+}
+
+// MARK: -
+
+extension Point : Transformable {
+	public func transformed(transform:Transform) -> Point {
+		let newX = transform.a * x + transform.c * y + transform.x
+		let newY = transform.b * x + transform.d * y + transform.y
+		return Point(newX, newY)
 	}
 }
 

@@ -1,11 +1,5 @@
 
-public protocol PathConvertible {
-	var elements:[Path.Element] { get }
-}
-
-// MARK: -
-
-public struct Path : Shape {
+public struct Path : Equatable, Shape {
 
     public enum Element {
 		case MoveTo(Point)
@@ -16,39 +10,38 @@ public struct Path : Shape {
     }
 
 	public let elements:[Element]
-
-    // MARK: -
-
-    public init(elements:[Element]) {
-        self.elements = elements
-    }
 }
 
 // MARK: -
 
-extension Path {
+public extension Path {
 
-	public init(shapes:[PathConvertible]) {
-		self.init(elements:shapes.flatMap {
-			$0.elements
-		})
-	}
-
-	public var boundingBox:Rectangle {
+	var boundingBox:Rectangle {
 		return Rectangle.zero
 	}
 
-	public func contains(point:Point) -> Bool {
-		return false // TODO: implementation
+	func contains(point:Point) -> Bool {
+		// TODO: implementation
+		return false
 	}
 
+	public init(_ elements:Element ...) {
+		self.init(elements:elements)
+	}
+}
+
+// MARK: -
+
+extension Path : Transformable {
 	public func transformed(transform:Transform) -> Path {
-		return self // TODO: implementation
+		// TODO: implementation
+		return self
 	}
 }
 
 // MARK: -
 
 public func == (left:Path, right:Path) -> Bool {
-	return false // TODO: implementation
+	// TODO: implementation
+	return false
 }

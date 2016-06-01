@@ -12,8 +12,6 @@ internal final class Node : Hashable {
 		return identifier.hashValue
 	}()
 
-	// MARK: -
-
 	internal init(_ component:Component, parent:Node? = nil, frame:Rectangle = .zero) {
 		self.component = component
 		self.children = []

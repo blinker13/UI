@@ -8,8 +8,8 @@ public enum Alignment {
 
 // MARK: -
 
-extension Alignment {
-	internal func calculateOffset(with remainder:Unit) -> Unit {
+internal extension Alignment {
+	func calculateOffset(with remainder:Unit) -> Unit {
 		switch self {
 			case .Leading: return 0
 			case .Center: return remainder / 2
@@ -29,8 +29,8 @@ public protocol AlignmentRepresentable {
 
 // MARK: -
 
-extension AlignmentRepresentable {
-	public subscript (alignment:Alignment) -> Self.AlignmentValue {
+public extension AlignmentRepresentable {
+	subscript (alignment:Alignment) -> Self.AlignmentValue {
 		switch alignment {
 			case .Leading: return leading
 			case .Center: return center
