@@ -15,13 +15,9 @@ internal struct FlexibleLayoutEnumerator {
 	}
 }
 
-// MARK: -
-
 internal extension FlexibleLayoutEnumerator {
 	var count:Int { return layouts.count }
 }
-
-// MARK: -
 
 extension FlexibleLayoutEnumerator : Sequence {
 	internal func makeIterator() -> FlexibleLayoutIterator {

@@ -29,8 +29,6 @@ internal struct ContainerLayout {
 	}
 }
 
-// MARK: -
-
 internal extension ContainerLayout {
 	var alignment:Alignment { return container.justify }
 	var components:EnumeratedSequence<[Component]> { return container.construct().enumerated() }

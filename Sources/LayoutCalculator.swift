@@ -15,8 +15,6 @@ internal struct LayoutCalculator {
 	}
 }
 
-// MARK: -
-
 internal extension LayoutCalculator {
 
 	var count:Int { return layouts.count }
@@ -27,8 +25,6 @@ internal extension LayoutCalculator {
 		self.init(layout)
 	}
 }
-
-// MARK: -
 
 extension LayoutCalculator : IteratorProtocol, Sequence {
 	internal mutating func next() -> (Int, Component, Rectangle)? {

@@ -7,8 +7,6 @@ public enum Distribution {
 	case proportion
 }
 
-// MARK: -
-
 internal extension Distribution {
 
 	var calculation:(FlexibleLayoutEnumerator, Real, (Int, Real) -> Void) -> Real {
@@ -19,8 +17,6 @@ internal extension Distribution {
 		}
 	}
 }
-
-// MARK: -
 
 private extension Distribution {
 

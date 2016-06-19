@@ -6,8 +6,6 @@ public struct Style {
 	private let styles:[Style]
 }
 
-// MARK: -
-
 extension Style {
 	public init(
 		alignment:Alignment? = nil,
@@ -44,15 +42,11 @@ extension Style {
 	}
 }
 
-// MARK: -
-
 extension Style : ArrayLiteralConvertible {
 	public init(arrayLiteral elements:Style ...) {
 		self.init(attributes:[:], styles:elements)
 	}
 }
-
-// MARK: -
 
 public extension Style {
 	subscript (key:String) -> Any? {

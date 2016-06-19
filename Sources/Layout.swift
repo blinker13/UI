@@ -8,13 +8,9 @@ public protocol Layout {
 	var margin:Space { get }
 }
 
-// MARK: -
-
 public protocol Enclosure : Layout {
 	var overflow:Overflow { get }
 }
-
-// MARK: -
 
 public protocol Containment : Enclosure {
 	var arrangement:Arrangement { get }

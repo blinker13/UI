@@ -22,8 +22,6 @@ internal final class Node : Hashable {
 	}
 }
 
-// MARK: -
-
 internal func == (left:Node, right:Node) -> Bool {
 	return left.hashValue == right.hashValue
 }

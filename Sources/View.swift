@@ -9,8 +9,6 @@ public struct View : Container, Visual {
 	}
 }
 
-// MARK: -
-
 public extension View {
 
 	init(style:Style, _ components:Component ...) {

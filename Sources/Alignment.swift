@@ -5,10 +5,7 @@ public enum Alignment {
 	case leading
 	case center
 	case trailing
-//	case Natural
 }
-
-// MARK: -
 
 internal extension Alignment {
 	func calculateOffset(with remainder:Real) -> Real {
@@ -20,16 +17,12 @@ internal extension Alignment {
 	}
 }
 
-// MARK: -
-
 public protocol AlignmentRepresentable {
 	associatedtype AlignmentValue
 	var leading:AlignmentValue { get }
 	var center:AlignmentValue { get }
 	var trailing:AlignmentValue { get }
 }
-
-// MARK: -
 
 public extension AlignmentRepresentable {
 	subscript (alignment:Alignment) -> Self.AlignmentValue {

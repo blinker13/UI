@@ -13,8 +13,6 @@ internal struct FlexibleLayoutIterator {
 	}
 }
 
-// MARK: -
-
 extension FlexibleLayoutIterator : IteratorProtocol {
 	internal mutating func next() -> (Int, ComponentLayout)? {
 		guard let strideIndex = stride.next() else { return nil }

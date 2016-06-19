@@ -39,15 +39,10 @@ internal struct SizeCalculator {
 	}
 }
 
-// MARK: -
-
 internal extension SizeCalculator {
 	var count:Int { return layouts.count }
 	var offset:Real { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
 }
-
-
-// MARK: -
 
 extension SizeCalculator : IteratorProtocol {
 	internal mutating func next() -> (Int, ComponentLayout)? {

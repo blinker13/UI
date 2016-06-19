@@ -29,8 +29,6 @@ extension QuartzRenderer : Renderer {
 	}
 }
 
-// MARK: -
-
 private extension QuartzRenderer {
 
 	func insert(_ layer:CALayer, with node:Node, at index:Int) {

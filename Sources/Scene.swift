@@ -14,8 +14,6 @@ internal final class Scene {
 	}
 }
 
-// MARK: -
-
 internal extension Scene {
 
 	func update(_ size:Size) {
@@ -27,8 +25,6 @@ internal extension Scene {
 		update(rootNode.frame.size)
 	}
 }
-
-// MARK: -
 
 private extension Scene {
 

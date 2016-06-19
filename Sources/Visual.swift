@@ -9,8 +9,6 @@ public protocol Visual : Enclosure {
 	var shadow:Shadow? { get }
 }
 
-// MARK: -
-
 public extension Component where Self : Visual {
 	var background:Color? { return style["background"] as? Color }
 	var border:Border? { return style["border"] as? Border }

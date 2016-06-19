@@ -35,8 +35,6 @@ internal struct ComponentLayout {
 	}
 }
 
-// MARK: -
-
 internal extension ComponentLayout {
 
 	var size:Size {
@@ -44,8 +42,6 @@ internal extension ComponentLayout {
 		return Size(values:sizes)
 	}
 }
-
-// MARK: -
 
 internal extension ComponentLayout.Axis {
 
