@@ -1,8 +1,10 @@
 
+import Canvas
+
 public protocol Layout {
 	var alignment:Alignment { get }
-	var height:Dimension { get }
-	var width:Dimension { get }
+	var height:Length { get }
+	var width:Length { get }
 	var margin:Space { get }
 }
 

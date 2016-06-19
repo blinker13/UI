@@ -1,4 +1,6 @@
 
+import Canvas
+
 public struct Style {
 	private let attributes:[String:Any?]
 	private let styles:[Style]
@@ -14,14 +16,14 @@ extension Style {
 		border:Border? = nil,
 		color:Color? = nil,
 		distribution:Distribution? = nil,
-		height:Dimension? = nil,
+		height:Length? = nil,
 		justify:Alignment? = nil,
 		margin:Space? = nil,
-		opacity:Unit? = nil,
+		opacity:Real? = nil,
 		overflow:Overflow? = nil,
 		padding:Space? = nil,
 		shadow:Shadow? = nil,
-		width:Dimension? = nil
+		width:Length? = nil
 	) {
 		self.init(attributes:[
 			"alignment":alignment,

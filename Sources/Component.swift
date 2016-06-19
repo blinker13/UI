@@ -1,4 +1,6 @@
 
+import Canvas
+
 public protocol Component : Layout {
 	var style:Style { get }
 }
@@ -6,7 +8,7 @@ public protocol Component : Layout {
 // MARK: -
 
 public extension Component {
-	subscript (arrangement:Arrangement) -> Dimension {
+	subscript (arrangement:Arrangement) -> Length {
 		switch arrangement {
 			case .horizontal: return width
 			case .vertical: return height
@@ -18,8 +20,8 @@ public extension Component {
 
 public extension Component where Self : Layout {
 	var alignment:Alignment { return style["alignment"] as? Alignment ?? .leading }
-	var height:Dimension { return style["height"] as? Dimension ?? Dimension() }
-	var width:Dimension { return style["width"] as? Dimension ?? Dimension() }
+	var height:Length { return style["height"] as? Length ?? Length() }
+	var width:Length { return style["width"] as? Length ?? Length() }
 	var margin:Space { return style["margin"] as? Space ?? Space() }
 }
 

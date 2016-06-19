@@ -1,11 +1,14 @@
 
-SUPPORTED_PLATFORMS						= macosx iphonesimulator iphoneos
+SUPPORTED_PLATFORMS						= iphoneos iphonesimulator macosx
 
 VALID_ARCHS[sdk=iphone*]				= arm64 armv7 armv7s
 VALID_ARCHS[sdk=macosx*]				= i386 x86_64
 
 LD_RUNPATH_SEARCH_PATHS[sdk=iphone*]	= $(inherited) @executable_path/Frameworks @loader_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]	= $(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks
+
+CODE_SIGN_IDENTITY[sdk=iphone*]			= iPhone Developer
+CODE_SIGN_IDENTITY[sdk=macosx*]			= Mac Developer
 
 MACOSX_DEPLOYMENT_TARGET				= 10.12
 IPHONEOS_DEPLOYMENT_TARGET				= 10.0

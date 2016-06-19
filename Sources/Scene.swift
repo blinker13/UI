@@ -1,4 +1,6 @@
 
+import Canvas
+
 internal final class Scene {
 
 	private let renderer:Renderer

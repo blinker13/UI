@@ -1,9 +1,11 @@
 
+import Canvas
+
 internal struct SizeCalculator {
 
 	private let container:ContainerLayout
 	private let layouts:[ComponentLayout]
-	private let remainder:Unit
+	private let remainder:Real
 
 	private var iterator:StrideToIterator<Int>
 
@@ -41,7 +43,7 @@ internal struct SizeCalculator {
 
 internal extension SizeCalculator {
 	var count:Int { return layouts.count }
-	var offset:Unit { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
+	var offset:Real { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
 }
 
 

@@ -1,4 +1,6 @@
 
+import Canvas
+
 internal final class Node : Hashable {
 
 	internal var component:Component

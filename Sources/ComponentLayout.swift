@@ -1,14 +1,16 @@
 
+import Canvas
+
 internal struct ComponentLayout {
 
 	internal struct Axis {
 
 		internal let alignment:Alignment
 		internal let arrangement:Arrangement
-		internal let dimension:Dimension
+		internal let dimension:Length
 		internal let edges:Edges
 
-		internal var length:Unit
+		internal var length:Real
 
 		private init(_ component:Component, _ arrangement:Arrangement) {
 			let dimension = component[arrangement]
@@ -47,20 +49,20 @@ internal extension ComponentLayout {
 
 internal extension ComponentLayout.Axis {
 
-	var difference:Unit { return dimension.max - dimension.min }
+	var difference:Real { return dimension.max - dimension.min }
 	var isFlexible:Bool { return dimension.isFlexible }
-	var total:Unit { return length + edges.total }
+	var total:Real { return length + edges.total }
 
-	mutating func calculateLength(with constrain:Unit) {
+	mutating func calculateLength(with constrain:Real) {
 		let interim = min(dimension.max, constrain - edges.total)
 		length = max(dimension.min, interim)
 	}
 
-	func calculatePosition(with remainder:Unit) -> Unit {
+	func calculatePosition(with remainder:Real) -> Real {
 		return edges.leading + alignment.calculateOffset(with:remainder)
 	}
 }
 
 private extension ComponentLayout.Axis {
-	var value:(Arrangement, Unit) { return (arrangement, length) }
+	var value:(Arrangement, Real) { return (arrangement, length) }
 }

@@ -1,10 +1,12 @@
 
+import Canvas
+
 internal struct ContainerLayout {
 
 	internal struct Axis {
 
 		internal let arrangement:Arrangement
-		internal let constraint:Unit
+		internal let constraint:Real
 		internal let edges:Edges
 
 		private init(_ arrangement:Arrangement, _ constraint:Size, _ padding:Space) {

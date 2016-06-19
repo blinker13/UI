@@ -1,9 +1,11 @@
 
+import Canvas
+
 internal struct LayoutCalculator {
 
 	private let container:ContainerLayout
 	private var layouts:SizeCalculator
-	private var offset:Unit
+	private var offset:Real
 
 	internal init(_ container:ContainerLayout) {
 		let layouts = SizeCalculator(container)

@@ -1,4 +1,6 @@
 
+import Canvas
+
 public enum Alignment {
 	case leading
 	case center
@@ -9,7 +11,7 @@ public enum Alignment {
 // MARK: -
 
 internal extension Alignment {
-	func calculateOffset(with remainder:Unit) -> Unit {
+	func calculateOffset(with remainder:Real) -> Real {
 		switch self {
 			case .leading: return 0
 			case .center: return remainder / 2
