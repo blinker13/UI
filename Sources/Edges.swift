@@ -29,7 +29,7 @@ extension Edges : FloatLiteralConvertible {
 // MARK: -
 
 extension Edges : Transformable {
-	public func transformed(transform:Transform) -> Edges {
+	public func transformed(_ transform:Transform) -> Edges {
 		// TODO: implementation
 		return self
 	}

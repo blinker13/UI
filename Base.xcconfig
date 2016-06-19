@@ -1,0 +1,19 @@
+
+SUPPORTED_PLATFORMS						= macosx iphonesimulator iphoneos
+
+VALID_ARCHS[sdk=iphone*]				= arm64 armv7 armv7s
+VALID_ARCHS[sdk=macosx*]				= i386 x86_64
+
+LD_RUNPATH_SEARCH_PATHS[sdk=iphone*]	= $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]	= $(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks
+
+MACOSX_DEPLOYMENT_TARGET				= 10.12
+IPHONEOS_DEPLOYMENT_TARGET				= 10.0
+TVOS_DEPLOYMENT_TARGET					= 10.0
+WATCHOS_DEPLOYMENT_TARGET				=  3.0
+
+TARGETED_DEVICE_FAMILY[sdk=iphone*]		= 1,2
+TARGETED_DEVICE_FAMILY[sdk=appletv*]	= 3
+TARGETED_DEVICE_FAMILY[sdk=watch*]		= 4
+
+ONLY_ACTIVE_ARCH[config=Debug]			= YES

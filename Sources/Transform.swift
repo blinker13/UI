@@ -67,7 +67,7 @@ extension Transform : CustomStringConvertible {
 // MARK: -
 
 extension Transform : Transformable {
-	public func transformed(transform:Transform) -> Transform {
+	public func transformed(_ transform:Transform) -> Transform {
 		let newA = transform.a * a + transform.b * c
 		let newB = transform.a * b + transform.b * d
 		let newC = transform.c * a + transform.d * c

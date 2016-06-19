@@ -2,7 +2,7 @@
 public protocol Shape {
 	var boundingBox:Rectangle { get }
 	var elements:[Path.Element] { get }
-	func contains(point:Point) -> Bool
+	func contains(_ point:Point) -> Bool
 }
 
 // MARK: -

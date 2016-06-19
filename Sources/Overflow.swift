@@ -1,11 +1,11 @@
 
 public enum Overflow {
-	case Hidden
-	case Visible
+	case hidden
+	case visible
 }
 
 // MARK: -
 
 public extension Overflow {
-	var isHidden:Bool { return self == .Hidden }
+	var isHidden:Bool { return self == .hidden }
 }

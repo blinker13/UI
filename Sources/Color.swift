@@ -4,8 +4,8 @@ import CoreGraphics
 public struct Color : Equatable {
 
 	public enum Components : Equatable {
-		case RGB(Unit, Unit, Unit)
-		case Gray(Unit)
+		case rgb(Unit, Unit, Unit)
+		case gray(Unit)
 	}
 
 	public let alpha:Unit
@@ -48,11 +48,11 @@ public extension Color {
 	var blue:Unit { return self.components.blue }
 
 	init(red:Unit = 0, green:Unit = 0, blue:Unit = 0, alpha:Unit = 1) {
-		self.init(.RGB(red.percent, green.percent, blue.percent), alpha:alpha)
+		self.init(.rgb(red.percent, green.percent, blue.percent), alpha:alpha)
 	}
 
 	init(white:Unit, alpha:Unit = 1) {
-		self.init(.Gray(white.percent), alpha:alpha)
+		self.init(.gray(white.percent), alpha:alpha)
 	}
 }
 

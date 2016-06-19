@@ -11,7 +11,7 @@ public extension Unit {
 		return clamp()
 	}
 
-	func clamp(min:Unit = 0, max:Unit = 1) -> Unit {
+	func clamp(_ min:Unit = 0, max:Unit = 1) -> Unit {
 		if self < min { return min }
 		if self > max { return max }
 		return self

@@ -18,7 +18,7 @@ public extension Size {
 	init(width:Unit) { self.init(width, 0) }
 	init(height:Unit) { self.init(0, height) }
 
-	func inset(space:Space) -> Size {
+	func inset(_ space:Space) -> Size {
 		let w = width - space.right - space.left
 		let h = height - space.top - space.bottom
 		return Size(w, h)
@@ -29,8 +29,8 @@ public extension Size {
 
 extension Size : ArrangementCreatable {
 	public init(values:[Arrangement:Unit]) {
-		self.width = values[.Horizontal] ?? 0
-		self.height = values[.Vertical] ?? 0
+		self.width = values[.horizontal] ?? 0
+		self.height = values[.vertical] ?? 0
 	}
 }
 
@@ -60,7 +60,7 @@ extension Size : FloatLiteralConvertible {
 // MARK: -
 
 extension Size : Transformable {
-	public func transformed(transform:Transform) -> Size {
+	public func transformed(_ transform:Transform) -> Size {
 		let w = transform.a * width + transform.c * height
 		let h = transform.b * width + transform.d * height
 		return Size(w, h)

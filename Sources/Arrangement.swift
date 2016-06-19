@@ -1,7 +1,7 @@
 
 public enum Arrangement {
-	case Horizontal
-	case Vertical
+	case horizontal
+	case vertical
 }
 
 // MARK: -
@@ -10,8 +10,8 @@ public extension Arrangement {
 
 	var crossed:Arrangement {
 		switch self {
-			case .Horizontal: return .Vertical
-			case .Vertical: return .Horizontal
+			case .horizontal: return .vertical
+			case .vertical: return .horizontal
 		}
 	}
 }
@@ -36,8 +36,8 @@ public protocol ArrangementRepresentable {
 public extension ArrangementRepresentable {
 	subscript (arrangement:Arrangement) -> Self.ArrangementValue {
 		switch arrangement {
-			case .Horizontal: return horizontal
-			case .Vertical: return vertical
+			case .horizontal: return horizontal
+			case .vertical: return vertical
 		}
 	}
 }

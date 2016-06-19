@@ -15,11 +15,11 @@ public extension Rectangle {
 
 	var elements:[Path.Element] {
 		return [
-			.MoveTo(Point(right, top)),
-			.LineTo(Point(left, top)),
-			.LineTo(Point(left, bottom)),
-			.LineTo(Point(right, bottom)),
-			.Close
+			.moveTo(Point(right, top)),
+			.lineTo(Point(left, top)),
+			.lineTo(Point(left, bottom)),
+			.lineTo(Point(right, bottom)),
+			.close
 		]
 	}
 
@@ -70,14 +70,14 @@ public extension Rectangle {
 		self.init(points:points)
 	}
 	
-	func inset(space:Space) -> Rectangle {
+	func inset(_ space:Space) -> Rectangle {
 		let x = origin.x + space.right
 		let y = origin.y + space.top
 		let s = size.inset(space)
 		return Rectangle(x, y, s)
 	}
 
-	func contains(point:Point) -> Bool {
+	func contains(_ point:Point) -> Bool {
 		return point.x >= left && point.x <= right && point.y >= top && point.y <= bottom
 	}
 }
@@ -101,7 +101,7 @@ extension Rectangle : FloatLiteralConvertible {
 // MARK: -
 
 extension Rectangle : Transformable {
-	public func transformed(transform:Transform) -> Rectangle {
+	public func transformed(_ transform:Transform) -> Rectangle {
 		let newOrigin = origin.transformed(transform)
 		let newSize = size.transformed(transform)
 		return Rectangle(origin:newOrigin, size:newSize)

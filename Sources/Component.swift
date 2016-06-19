@@ -8,8 +8,8 @@ public protocol Component : Layout {
 public extension Component {
 	subscript (arrangement:Arrangement) -> Dimension {
 		switch arrangement {
-			case .Horizontal: return width
-			case .Vertical: return height
+			case .horizontal: return width
+			case .vertical: return height
 		}
 	}
 }
@@ -17,7 +17,7 @@ public extension Component {
 // MARK: -
 
 public extension Component where Self : Layout {
-	var alignment:Alignment { return style["alignment"] as? Alignment ?? .Leading }
+	var alignment:Alignment { return style["alignment"] as? Alignment ?? .leading }
 	var height:Dimension { return style["height"] as? Dimension ?? Dimension() }
 	var width:Dimension { return style["width"] as? Dimension ?? Dimension() }
 	var margin:Space { return style["margin"] as? Space ?? Space() }
@@ -26,7 +26,7 @@ public extension Component where Self : Layout {
 // MARK: -
 
 public extension Component where Self : Enclosure {
-	var overflow:Overflow { return style["overflow"] as? Overflow ?? .Hidden }
+	var overflow:Overflow { return style["overflow"] as? Overflow ?? .hidden }
 }
 
 // MARK: -

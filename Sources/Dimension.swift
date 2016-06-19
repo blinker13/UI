@@ -36,7 +36,7 @@ extension Dimension : FloatLiteralConvertible {
 // MARK: -
 
 extension Dimension : Transformable {
-	public func transformed(transform:Transform) -> Dimension {
+	public func transformed(_ transform:Transform) -> Dimension {
 		// TODO: implementation
 		return self
 	}

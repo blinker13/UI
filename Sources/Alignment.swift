@@ -1,8 +1,8 @@
 
 public enum Alignment {
-	case Leading
-	case Center
-	case Trailing
+	case leading
+	case center
+	case trailing
 //	case Natural
 }
 
@@ -11,9 +11,9 @@ public enum Alignment {
 internal extension Alignment {
 	func calculateOffset(with remainder:Unit) -> Unit {
 		switch self {
-			case .Leading: return 0
-			case .Center: return remainder / 2
-			case .Trailing: return remainder
+			case .leading: return 0
+			case .center: return remainder / 2
+			case .trailing: return remainder
 		}
 	}
 }
@@ -32,9 +32,9 @@ public protocol AlignmentRepresentable {
 public extension AlignmentRepresentable {
 	subscript (alignment:Alignment) -> Self.AlignmentValue {
 		switch alignment {
-			case .Leading: return leading
-			case .Center: return center
-			case .Trailing: return trailing
+			case .leading: return leading
+			case .center: return center
+			case .trailing: return trailing
 		}
 	}
 }

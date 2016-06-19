@@ -2,11 +2,11 @@
 public struct Path : Equatable, Shape {
 
     public enum Element {
-		case MoveTo(Point)
-		case LineTo(Point)
-		case CubicCurveTo(Point, Point, Point)
-		case QuadCurveTo(Point, Point)
-		case Close
+		case moveTo(Point)
+		case lineTo(Point)
+		case cubicCurveTo(Point, Point, Point)
+		case quadCurveTo(Point, Point)
+		case close
     }
 
 	public let elements:[Element]
@@ -20,7 +20,7 @@ public extension Path {
 		return Rectangle.zero
 	}
 
-	func contains(point:Point) -> Bool {
+	func contains(_ point:Point) -> Bool {
 		// TODO: implementation
 		return false
 	}
@@ -33,7 +33,7 @@ public extension Path {
 // MARK: -
 
 extension Path : Transformable {
-	public func transformed(transform:Transform) -> Path {
+	public func transformed(_ transform:Transform) -> Path {
 		// TODO: implementation
 		return self
 	}

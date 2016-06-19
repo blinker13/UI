@@ -1,6 +1,6 @@
 
 internal protocol Renderer {
-	func insert(node:Node, at index:Int)
-	func update(node:Node)
-	func remove(node:Node)
+	func insert(_ node:Node, at index:Int)
+	func update(_ node:Node)
+	func remove(_ node:Node)
 }

@@ -31,6 +31,6 @@ internal struct ContainerLayout {
 
 internal extension ContainerLayout {
 	var alignment:Alignment { return container.justify }
-	var components:EnumerateSequence<[Component]> { return container.construct().enumerate() }
+	var components:EnumeratedSequence<[Component]> { return container.construct().enumerated() }
 	var distribution:Distribution { return container.distribution }
 }

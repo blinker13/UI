@@ -2,21 +2,21 @@
 public struct Font {
 
 	public enum Style {
-		case Normal
-		case Italic
-		case Oblique
+		case normal
+		case italic
+		case oblique
 	}
 
 	public enum Weight {
-		case UltraLight
-		case Thin
-		case Light
-		case Regular
-		case Medium
-		case Semibold
-		case Bold
-		case Heavy
-		case Black
+		case ultraLight
+		case thin
+		case light
+		case regular
+		case medium
+		case semibold
+		case bold
+		case heavy
+		case black
 	}
 
 	public let name:String
@@ -24,7 +24,7 @@ public struct Font {
 	public let style:Style
 	public let weight:Weight
 
-	public init(name:String, size:Unit, style:Style = .Normal, weight:Weight = .Regular) {
+	public init(name:String, size:Unit, style:Style = .normal, weight:Weight = .regular) {
 		(self.name, self.size, self.style, self.weight) = (name, size, style, weight)
 	}
 }

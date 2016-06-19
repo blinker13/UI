@@ -14,12 +14,12 @@ public extension Line {
 
 	var elements:[Path.Element] {
 		return [
-			.MoveTo(start),
-			.LineTo(end)
+			.moveTo(start),
+			.lineTo(end)
 		]
 	}
 
-	func contains(point:Point) -> Bool {
+	func contains(_ point:Point) -> Bool {
 		// TODO: implementation
 		return false
 	}
@@ -28,7 +28,7 @@ public extension Line {
 // MARK: -
 
 extension Line : Transformable {
-	public func transformed(transform:Transform) -> Line {
+	public func transformed(_ transform:Transform) -> Line {
 		let newStart = start.transformed(transform)
 		let newEnd = end.transformed(transform)
 		return Line(start:newStart, end:newEnd)

@@ -1,6 +1,6 @@
 
 public protocol Canvas {
-	func draw(image:Image)
-	func draw(path:Path)
-	func draw(text:Text)
+	func draw(_ image:Image)
+	func draw(_ path:Path)
+	func draw(_ text:Text)
 }

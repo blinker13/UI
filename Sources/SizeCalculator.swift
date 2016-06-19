@@ -5,7 +5,7 @@ internal struct SizeCalculator {
 	private let layouts:[ComponentLayout]
 	private let remainder:Unit
 
-	private var iterator:StrideToGenerator<Int>
+	private var iterator:StrideToIterator<Int>
 
 	internal init(_ container:ContainerLayout) {
 
@@ -21,16 +21,16 @@ internal struct SizeCalculator {
 		}
 
 		if !flexIndexes.isEmpty && remainder > 0 {
-			let isReversed = container.alignment == .Trailing
+			let isReversed = container.alignment == .trailing
 			let sequence = FlexibleLayoutEnumerator(flexIndexes, layouts, reversed:isReversed)
 			remainder = container.distribution.calculation(sequence, remainder) { index, flex in
 				layouts[index].main.length += flex
 			}
 		}
 
-		let strideTo = layouts.startIndex.stride(to:layouts.endIndex, by:1)
+		let strideTo = stride(from:layouts.startIndex, to:layouts.endIndex, by:1)
 
-		self.iterator = strideTo.generate()
+		self.iterator = strideTo.makeIterator()
 		self.container = container
 		self.remainder = remainder
 		self.layouts = layouts
@@ -47,7 +47,7 @@ internal extension SizeCalculator {
 
 // MARK: -
 
-extension SizeCalculator : GeneratorType {
+extension SizeCalculator : IteratorProtocol {
 	internal mutating func next() -> (Int, ComponentLayout)? {
 		guard let index = iterator.next() else { return nil }
 		let layout = layouts[index]

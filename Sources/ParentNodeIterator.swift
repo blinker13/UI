@@ -10,7 +10,7 @@ internal struct ParentNodeIterator {
 
 // MARK: -
 
-extension ParentNodeIterator : GeneratorType, SequenceType {
+extension ParentNodeIterator : IteratorProtocol, Sequence {
 
 	internal mutating func next() -> Node? {
 		guard let next = node.parent else { return nil }

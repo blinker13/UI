@@ -16,7 +16,7 @@ internal final class Scene {
 
 internal extension Scene {
 
-	func update(size:Size) {
+	func update(_ size:Size) {
 		updateRootNode(size)
 		updateHierarchy()
 	}
@@ -30,7 +30,7 @@ internal extension Scene {
 
 private extension Scene {
 
-	func updateRootNode(size:Size) {
+	func updateRootNode(_ size:Size) {
 		if rootNode.frame.size == size { return }
 		rootNode.frame.size = size
 		markedNodes.insert(rootNode)
@@ -38,11 +38,11 @@ private extension Scene {
 	}
 
 	func updateHierarchy() {
-		let nodes = AnyGenerator(body:nextNode)
+		let nodes = AnyIterator(nextNode)
 		nodes.forEach(update)
 	}
 
-	func update(node:Node) {
+	func update(_ node:Node) {
 		guard let calculator = LayoutCalculator(node) else { return }
 
 		for (index, component, rectangle) in calculator {

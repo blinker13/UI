@@ -3,7 +3,7 @@ import QuartzCore
 
 extension QuartzRenderer : Renderer {
 
-	func insert(node:Node, at index:Int) {
+	func insert(_ node:Node, at index:Int) {
 
 		let x = CGFloat(node.frame.origin.x)
 		let y = CGFloat(node.frame.origin.y)
@@ -18,13 +18,13 @@ extension QuartzRenderer : Renderer {
 		content[node] = layer
 	}
 
-	func update(node:Node) {
+	func update(_ node:Node) {
 		let layer = fetchLayer(for:node)
 		update(layer, with:node)
 	}
 
-	func remove(node:Node) {
-		let layer = content.removeValueForKey(node)
+	func remove(_ node:Node) {
+		let layer = content.removeValue(forKey: node)
 		layer?.removeFromSuperlayer()
 	}
 }
@@ -33,12 +33,12 @@ extension QuartzRenderer : Renderer {
 
 private extension QuartzRenderer {
 
-	func insert(layer:CALayer, with node:Node, at index:Int) {
+	func insert(_ layer:CALayer, with node:Node, at index:Int) {
 		let parentLayer = fetchLayer(for:node.parent!)
-		parentLayer.insertSublayer(layer, atIndex:UInt32(index))
+		parentLayer.insertSublayer(layer, at:UInt32(index))
 	}
 
-	func update(layer:CALayer, with node:Node) {
+	func update(_ layer:CALayer, with node:Node) {
 		guard let visual = node.component as? Visual else { return }
 		layer.backgroundColor = visual.background?.quartz
 

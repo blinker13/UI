@@ -9,7 +9,7 @@ internal struct FlexibleLayoutEnumerator {
 		let start = reversed ? indexes.endIndex - 1 : indexes.startIndex
 		let end = reversed ? indexes.startIndex - 1 : indexes.endIndex
 		let distance = reversed ? -1 : 1
-		self.strideTo = start.stride(to:end, by:distance)
+		self.strideTo = stride(from:start, to:end, by:distance)
 		self.layouts = layouts
 		self.indexes = indexes
 	}
@@ -23,8 +23,8 @@ internal extension FlexibleLayoutEnumerator {
 
 // MARK: -
 
-extension FlexibleLayoutEnumerator : SequenceType {
-	internal func generate() -> FlexibleLayoutIterator {
+extension FlexibleLayoutEnumerator : Sequence {
+	internal func makeIterator() -> FlexibleLayoutIterator {
 		return FlexibleLayoutIterator(indexes, layouts, strideTo)
 	}
 }

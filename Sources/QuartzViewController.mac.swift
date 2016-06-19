@@ -39,7 +39,7 @@
 			let view = NSView(frame:rect)
 			view.wantsLayer = true
 			view.layer = CALayer()
-			view.layer!.geometryFlipped = true
+			view.layer!.isGeometryFlipped = true
 			self.view = view
 		}
 

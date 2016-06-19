@@ -20,8 +20,8 @@ public extension Point {
 
 extension Point : ArrangementCreatable {
 	public init(values:[Arrangement:Unit]) {
-		self.x = values[.Horizontal] ?? 0
-		self.y = values[.Vertical] ?? 0
+		self.x = values[.horizontal] ?? 0
+		self.y = values[.vertical] ?? 0
 	}
 }
 
@@ -51,7 +51,7 @@ extension Point : FloatLiteralConvertible {
 // MARK: -
 
 extension Point : Transformable {
-	public func transformed(transform:Transform) -> Point {
+	public func transformed(_ transform:Transform) -> Point {
 		let newX = transform.a * x + transform.c * y + transform.x
 		let newY = transform.b * x + transform.d * y + transform.y
 		return Point(newX, newY)

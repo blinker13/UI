@@ -1,8 +1,8 @@
 
 public enum Distribution {
-	case Equal
-	case Order
-	case Proportion
+	case equal
+	case order
+	case proportion
 }
 
 // MARK: -
@@ -11,9 +11,9 @@ internal extension Distribution {
 
 	var calculation:(FlexibleLayoutEnumerator, Unit, (Int, Unit) -> Void) -> Unit {
 		switch self {
-			case .Equal: return calcutateEqual
-			case .Order: return calcutateOrder
-			case .Proportion: return calcutateProportion
+			case .equal: return calcutateEqual
+			case .order: return calcutateOrder
+			case .proportion: return calcutateProportion
 		}
 	}
 }
@@ -22,7 +22,7 @@ internal extension Distribution {
 
 private extension Distribution {
 
-	func calcutateEqual(layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
+	func calcutateEqual(_ layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
 		var fullfilled = Set<Int>()
 		var results = [Int:Unit]()
 		var remains = remainder
@@ -51,7 +51,7 @@ private extension Distribution {
 		return remains
 	}
 
-	func calcutateOrder(layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
+	func calcutateOrder(_ layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
 		var remains = remainder
 
 		for (index, layout) in layouts {
@@ -64,7 +64,7 @@ private extension Distribution {
 		return remains
 	}
 
-	func calcutateProportion(layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
+	func calcutateProportion(_ layouts:FlexibleLayoutEnumerator, remainder:Unit, body:(Int, Unit) -> Void) -> Unit {
 		var remains = remainder
 		remains += 1
 		return remains

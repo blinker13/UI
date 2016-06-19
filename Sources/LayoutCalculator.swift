@@ -28,7 +28,7 @@ internal extension LayoutCalculator {
 
 // MARK: -
 
-extension LayoutCalculator : GeneratorType, SequenceType {
+extension LayoutCalculator : IteratorProtocol, Sequence {
 	internal mutating func next() -> (Int, Component, Rectangle)? {
 		guard let (index, layout) = layouts.next() else { return nil }
 		defer { offset += layout.main.length + layout.main.edges.trailing }
