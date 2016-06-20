@@ -26,6 +26,7 @@ public final class QuartzViewController : UIViewController {
 }
 
 public extension QuartzViewController {
+
 	override func loadView() {
 		let w = CGFloat(component.width.min)
 		let h = CGFloat(component.height.min)
