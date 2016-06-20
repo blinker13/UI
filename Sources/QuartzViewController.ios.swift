@@ -8,7 +8,7 @@ public final class QuartzViewController : UIViewController {
 	private let component:Component
 
 	private lazy var renderer:Renderer = {
-		return QuartzRenderer(view:self.view)
+		return QuartzRenderer(root:self.view.layer)
 	}()
 
 	internal lazy var scene:Scene = {

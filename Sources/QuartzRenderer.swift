@@ -1,6 +1,16 @@
 
 import QuartzCore
 
+internal final class QuartzRenderer {
+
+	internal var content = [Node:CALayer]()
+	internal let rootLayer:CALayer
+
+	internal init(root:CALayer) {
+		self.rootLayer = root
+	}
+}
+
 extension QuartzRenderer : Renderer {
 
 	func insert(_ node:Node, at index:Int) {

@@ -3,24 +3,14 @@
 
 import UIKit
 
-internal final class QuartzRenderer {
-
-	internal var content = [Node:CALayer]()
-	internal let view:UIView
-
-	internal init(view:UIView) {
-		self.view = view
-	}
-}
-
 internal extension QuartzRenderer {
 
 	func createLayer(`for` node:Node) -> CALayer {
-		return node.parent == nil ? view.layer : CALayer()
+		return node.parent == nil ? rootLayer : CALayer()
 	}
 
 	func fetchLayer(`for` node:Node) -> CALayer {
-		return node.parent == nil ? view.layer : content[node]!
+		return node.parent == nil ? rootLayer : content[node]!
 	}
 }
 

@@ -3,16 +3,6 @@
 
 import AppKit
 
-internal final class QuartzRenderer {
-
-	internal var content = [Node:CALayer]()
-	internal let view:NSView
-
-	internal init(view:NSView) {
-		self.view = view
-	}
-}
-
 internal extension QuartzRenderer {
 
 	func createLayer(for node:Node) -> CALayer {
