@@ -58,6 +58,7 @@
 				BDF791131D17E57B003887E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		BDF790FB1D17DF5C003887E7 /* Products */ = {
 			isa = PBXGroup;
@@ -275,6 +276,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -287,6 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
