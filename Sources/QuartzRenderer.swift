@@ -33,6 +33,14 @@ extension QuartzRenderer : Renderer {
 
 private extension QuartzRenderer {
 
+	func createLayer(for node:Node) -> CALayer {
+		return node.parent == nil ? rootLayer : CALayer()
+	}
+
+	func fetchLayer(for node:Node) -> CALayer {
+		return node.parent == nil ? rootLayer : content[node]!
+	}
+
 	func insert(_ layer:CALayer, with node:Node, at index:Int) {
 		let parentLayer = fetchLayer(for:node.parent!)
 		parentLayer.insertSublayer(layer, at:UInt32(index))
