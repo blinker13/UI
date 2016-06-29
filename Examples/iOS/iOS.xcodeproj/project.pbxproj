@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BDEBFA741D1D3A9000C4DE8B /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791141D17E57B003887E7 /* UI.framework */; };
+		BDEBFA751D1D3A9000C4DE8B /* UI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791141D17E57B003887E7 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDEBFA761D1D3A9500C4DE8B /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791181D17E5A3003887E7 /* Canvas.framework */; };
+		BDEBFA771D1D3A9500C4DE8B /* Canvas.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791181D17E5A3003887E7 /* Canvas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF790FE1D17DF5C003887E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790FD1D17DF5C003887E7 /* AppDelegate.swift */; };
 		BDF791051D17DF5C003887E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF791041D17DF5C003887E7 /* Assets.xcassets */; };
 		BDF791081D17DF5C003887E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF791061D17DF5C003887E7 /* LaunchScreen.storyboard */; };
-		BDF791201D17E604003887E7 /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791181D17E5A3003887E7 /* Canvas.framework */; };
-		BDF791231D17E60B003887E7 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791141D17E57B003887E7 /* UI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +23,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BDEBFA771D1D3A9500C4DE8B /* Canvas.framework in Copy Frameworks */,
+				BDEBFA751D1D3A9000C4DE8B /* UI.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,8 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF791201D17E604003887E7 /* Canvas.framework in Frameworks */,
-				BDF791231D17E60B003887E7 /* UI.framework in Frameworks */,
+				BDEBFA761D1D3A9500C4DE8B /* Canvas.framework in Frameworks */,
+				BDEBFA741D1D3A9000C4DE8B /* UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +276,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
