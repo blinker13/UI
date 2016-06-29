@@ -209,7 +209,6 @@
 				BD3997D31C68A8EA002B3E01 /* Component.swift */,
 				BD3997D41C68A8EA002B3E01 /* Composer.swift */,
 				BD3997D51C68A8EA002B3E01 /* Container.swift */,
-				BD9648131CEFB2D100D3F478 /* Visual.swift */,
 				BD3997E61C68A915002B3E01 /* Containers */,
 			);
 			name = Components;
@@ -237,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7ACBD31CEE6C2C0067C6FC /* Style.swift */,
+				BD9648131CEFB2D100D3F478 /* Visual.swift */,
 			);
 			name = Appearance;
 			sourceTree = "<group>";
