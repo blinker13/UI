@@ -1,8 +1,6 @@
 
 public enum LineBreak {
-	case truncateHead
-	case truncateMiddle
-	case truncateTail
+	case truncate(Alignment)
 	case wrapCharacter
 	case wrapWord
 	case clip
