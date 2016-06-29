@@ -14,14 +14,14 @@ extension Style {
 		border:Border? = nil,
 		color:Color? = nil,
 		distribution:Distribution? = nil,
-		height:Length? = nil,
+		height:Dimensions? = nil,
 		justify:Alignment? = nil,
 		margin:Space? = nil,
 		opacity:Real? = nil,
 		overflow:Overflow? = nil,
 		padding:Space? = nil,
 		shadow:Shadow? = nil,
-		width:Length? = nil
+		width:Dimensions? = nil
 	) {
 		self.init(attributes:[
 			"alignment":alignment,

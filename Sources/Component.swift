@@ -6,7 +6,7 @@ public protocol Component : Layout {
 }
 
 public extension Component {
-	subscript (arrangement:Arrangement) -> Length {
+	subscript (arrangement:Arrangement) -> Dimensions {
 		switch arrangement {
 			case .horizontal: return width
 			case .vertical: return height
@@ -16,8 +16,8 @@ public extension Component {
 
 public extension Component {
 	var alignment:Alignment { return style["alignment"] as? Alignment ?? .leading }
-	var height:Length { return style["height"] as? Length ?? Length() }
-	var width:Length { return style["width"] as? Length ?? Length() }
+	var height:Dimensions { return style["height"] as? Dimensions ?? Dimensions() }
+	var width:Dimensions { return style["width"] as? Dimensions ?? Dimensions() }
 	var margin:Space { return style["margin"] as? Space ?? Space() }
 }
 

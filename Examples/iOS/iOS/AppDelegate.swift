@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		let s1 = Style(
 			alignment:.center,
-			width:Length(min:80),
+			width:Dimensions(min:80),
 			border:Border(radius:5, width:2),
 			background:.yellow,
 			margin:20.0

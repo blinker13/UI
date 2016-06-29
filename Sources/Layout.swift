@@ -3,8 +3,8 @@ import Canvas
 
 public protocol Layout {
 	var alignment:Alignment { get }
-	var height:Length { get }
-	var width:Length { get }
+	var height:Dimensions { get }
+	var width:Dimensions { get }
 	var margin:Space { get }
 }
 
