@@ -16,10 +16,10 @@ extension Style {
 		distribution:Distribution? = nil,
 		height:Dimensions? = nil,
 		justify:Alignment? = nil,
-		margin:Space? = nil,
-		opacity:Real? = nil,
+		margin:Margin? = nil,
+		opacity:Opacity? = nil,
 		overflow:Overflow? = nil,
-		padding:Space? = nil,
+		padding:Padding? = nil,
 		shadow:Shadow? = nil,
 		width:Dimensions? = nil
 	) {
