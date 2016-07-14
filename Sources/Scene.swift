@@ -4,35 +4,40 @@ import Canvas
 internal final class Scene {
 
 	private let renderer:Renderer
-	private let rootNode:Node
+	private let root:Node
 
 	private var markedNodes = Set<Node>()
 
-	internal init(_ component:Component, _ renderer:Renderer) {
-		self.rootNode = Node(component)
+	internal init(_ root:Node, _ renderer:Renderer) {
 		self.renderer = renderer
+		self.root = root
 	}
 }
 
 internal extension Scene {
 
-	func update(_ size:Size) {
-		updateRootNode(size)
+	internal convenience init(_ component:Component, _ renderer:Renderer) {
+		let root = Node(component)
+		self.init(root, renderer)
+	}
+
+	func update(with size:Size) {
+		updateRoot(with:size)
 		updateHierarchy()
 	}
 
 	func update() {
-		update(rootNode.frame.size)
+		update(with:root.frame.size)
 	}
 }
 
 private extension Scene {
 
-	func updateRootNode(_ size:Size) {
-		if rootNode.frame.size == size { return }
-		rootNode.frame.size = size
-		markedNodes.insert(rootNode)
-		renderer.update(rootNode)
+	func updateRoot(with size:Size) {
+		if root.frame.size == size { return }
+		root.frame.size = size
+		markedNodes.insert(root)
+		renderer.update(root)
 	}
 
 	func updateHierarchy() {

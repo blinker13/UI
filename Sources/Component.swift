@@ -6,19 +6,18 @@ public protocol Component : Layout {
 }
 
 public extension Component {
+
+	var alignment:Alignment { return style["alignment"] as? Alignment ?? .leading }
+	var height:Dimensions { return style["height"] as? Dimensions ?? Dimensions() }
+	var width:Dimensions { return style["width"] as? Dimensions ?? Dimensions() }
+	var margin:Space { return style["margin"] as? Space ?? Space() }
+
 	subscript (arrangement:Arrangement) -> Dimensions {
 		switch arrangement {
 			case .horizontal: return width
 			case .vertical: return height
 		}
 	}
-}
-
-public extension Component {
-	var alignment:Alignment { return style["alignment"] as? Alignment ?? .leading }
-	var height:Dimensions { return style["height"] as? Dimensions ?? Dimensions() }
-	var width:Dimensions { return style["width"] as? Dimensions ?? Dimensions() }
-	var margin:Space { return style["margin"] as? Space ?? Space() }
 }
 
 public extension Component where Self : Enclosure {

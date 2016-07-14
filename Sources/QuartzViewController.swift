@@ -4,9 +4,7 @@ import Canvas
 internal extension QuartzViewController {
 	
 	func updateScene() {
-		let w = Real(view.bounds.size.width)
-		let h = Real(view.bounds.size.height)
-		let size = Size(w, h)
-		scene.update(size)
+		let size = Size(quartz:view.bounds.size)
+		scene.update(with:size)
 	}
 }

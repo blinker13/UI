@@ -32,7 +32,6 @@
 		BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */; };
 		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
 		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
-		BD96A5B01CF0E57D00231DA8 /* Quartz+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */; };
 		BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */; };
 		BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF256D71CF91FA60020F864 /* Overflow.swift */; };
 		BDF790E71D173BC6003887E7 /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF790E61D173BC6003887E7 /* Canvas.framework */; };
@@ -86,7 +85,6 @@
 		BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentLayout.swift; sourceTree = "<group>"; };
 		BD9648131CEFB2D100D3F478 /* Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
 		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quartz+Drawing.swift"; sourceTree = "<group>"; };
 		BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeIterator.swift; sourceTree = "<group>"; };
 		BDE8A79A1C95D56700EAF68D /* mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mac.playground; sourceTree = "<group>"; };
 		BDF256D71CF91FA60020F864 /* Overflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overflow.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				BD526D221C97510F0075684E /* QuartzRenderer.swift */,
-				BD96A5B11CF0EF5200231DA8 /* Extensions */,
 				BD2142271CFD00F100D3CD58 /* ViewController */,
 			);
 			name = Quartz;
@@ -288,14 +285,6 @@
 				BDF256D71CF91FA60020F864 /* Overflow.swift */,
 			);
 			name = Attributes;
-			sourceTree = "<group>";
-		};
-		BD96A5B11CF0EF5200231DA8 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				BD96A5AF1CF0E57D00231DA8 /* Quartz+Drawing.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		BDDA24411CA4BCDF00E89901 /* Utility */ = {
@@ -423,7 +412,6 @@
 				BD3997E31C68A8EA002B3E01 /* View.swift in Sources */,
 				BD3997DD1C68A8EA002B3E01 /* Component.swift in Sources */,
 				BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */,
-				BD96A5B01CF0E57D00231DA8 /* Quartz+Drawing.swift in Sources */,
 				BDF790F01D17426C003887E7 /* Point+Arrangement.swift in Sources */,
 				BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */,
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
