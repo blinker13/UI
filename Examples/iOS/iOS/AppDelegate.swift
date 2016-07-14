@@ -36,9 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var content:Component {
 		return View(style:root,
-			View(style:[navigation, bar]),
+			View(style:[bar, navigation]),
 			View(style:contentStyle),
-			View(style:[tool, bar])
+			View(style:[bar, tool])
 		)
 	}
 
@@ -46,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		let screen = UIScreen.main()
 		let aWindow = UIWindow(frame:screen.bounds)
-		aWindow.rootViewController = QuartzViewController(component:content)
+//		aWindow.rootViewController = QuartzViewController(component:content)
+		aWindow.rootViewController = UIKitViewController(component:content)
 		aWindow.makeKeyAndVisible()
 		window = aWindow
 
