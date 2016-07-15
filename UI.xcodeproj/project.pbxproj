@@ -153,7 +153,6 @@
 				BD7ACBD21CEE6BE90067C6FC /* Appearance */,
 				BD3997E71C68A939002B3E01 /* Components */,
 				BDF790E81D17409D003887E7 /* Geometry */,
-				BD8226631C936DBA00D807A3 /* Hierachy */,
 				BD3997E51C68A8F8002B3E01 /* Layouting */,
 				BD8226681C936DE900D807A3 /* Rendering */,
 			);
@@ -204,6 +203,7 @@
 				BD96A5AE1CF0ABBA00231DA8 /* Attributes */,
 				BD294AC31CDD47E600A8716A /* Calculators */,
 				BD8EB9031CB869D6001ACCA6 /* Entities */,
+				BD8226631C936DBA00D807A3 /* Hierachy */,
 				BD8C94D21CD7FCBA006C009E /* Utilities */,
 			);
 			name = Layouting;
@@ -267,7 +267,6 @@
 			children = (
 				BD8226641C936DD700D807A3 /* Node.swift */,
 				BD8226651C936DD700D807A3 /* Scene.swift */,
-				BDDA24411CA4BCDF00E89901 /* Utility */,
 			);
 			name = Hierachy;
 			sourceTree = "<group>";
@@ -287,6 +286,7 @@
 			children = (
 				BD8C94D31CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift */,
 				BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */,
+				BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -310,14 +310,6 @@
 				BDF256D71CF91FA60020F864 /* Overflow.swift */,
 			);
 			name = Attributes;
-			sourceTree = "<group>";
-		};
-		BDDA24411CA4BCDF00E89901 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */,
-			);
-			name = Utility;
 			sourceTree = "<group>";
 		};
 		BDE8A7991C95D52F00EAF68D /* Playgrounds */ = {
