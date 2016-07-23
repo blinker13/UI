@@ -12,16 +12,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		height:44.0
 	)
 
+	let label = Style(
+		background:Color(white:0.9),
+		textAlignment:.center,
+		textColor:.red
+	)
+
 	let navigation = Style(
 		background:.red
 	)
 
 	let contentStyle = Style(
 		alignment:.center,
-		width:Dimensions(min:80),
-		border:Border(radius:5, width:2),
 		background:.yellow,
-		margin:20.0
+		border:Border(radius:5, width:2),
+		margin:20.0,
+		width:Dimensions(min:80)
 	)
 
 	let tool = Style(
@@ -29,14 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	)
 
 	let root = Style(
-		padding:Space(top:20.0),
+		background:.white,
 		distribution:.order,
-		background:.white
+		padding:Space(top:20.0)
 	)
 
 	var content:Component {
 		return View(style:root,
 			View(style:[bar, navigation]),
+			Label(style:[bar, label], text:"Hello World"),
 			View(style:contentStyle),
 			View(style:[bar, tool])
 		)

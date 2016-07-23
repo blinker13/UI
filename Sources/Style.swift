@@ -2,7 +2,8 @@
 import Canvas
 
 public struct Style {
-	private let attributes:[String:Any?]
+	public typealias Attribute = String
+	private let attributes:[Attribute:Any?]
 	private let styles:[Style]
 }
 
@@ -22,6 +23,11 @@ public extension Style {
 		overflow:Overflow? = nil,
 		padding:Padding? = nil,
 		shadow:Shadow? = nil,
+		textAlignment:Text.Alignment? = nil,
+		textColor:Color? = nil,
+		textFont:Font? = nil,
+		textLineBreak:LineBreak? = nil,
+		textShadow:Shadow? = nil,
 		width:Dimensions? = nil
 	) {
 		self.init(attributes:[
@@ -38,11 +44,16 @@ public extension Style {
 			"overflow":overflow,
 			"padding":padding,
 			"shadow":shadow,
+			"text.alignment":textAlignment,
+			"text.color":textColor,
+			"text.font":textFont,
+			"text.lineBreak":textLineBreak,
+			"text.shadow":textShadow,
 			"width":width
 		], styles:[])
 	}
 
-	subscript (key:String) -> Any? {
+	subscript (key:Attribute) -> Any? {
 		if let value = attributes[key] {
 			return value
 		}
@@ -62,3 +73,10 @@ extension Style : ArrayLiteralConvertible {
 		self.init(attributes:[:], styles:elements)
 	}
 }
+
+//extension Style : DictionaryLiteralConvertible {
+//	init(dictionaryLiteral elements:(Attribute, Any?) ...) {
+//		let attributes = Dictionary(elements)
+//		self.init(attributes:attributes, styles:[])
+//	}
+//}
