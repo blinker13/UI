@@ -12,7 +12,7 @@ internal struct ComponentLayout {
 
 		internal var length:Real
 
-		private init(_ component:Component, _ arrangement:Arrangement) {
+		fileprivate init(_ component:Component, _ arrangement:Arrangement) {
 			let dimensions = component[arrangement]
 
 			self.edges = component.margin[arrangement]

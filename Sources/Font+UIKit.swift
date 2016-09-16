@@ -6,22 +6,22 @@ internal extension Font {
 	var uiFont:UIFont { return UIFont(descriptor:uiFontDescriptor, size:CGFloat(size)) }
 }
 
-private extension Font {
+fileprivate extension Font {
 	var uiFontDescriptor:UIFontDescriptor {
 		return UIFontDescriptor(fontAttributes:uiFontAttributes)
 	}
 
 	var uiFontAttributes:[String:AnyObject] {
 		var fontAttributes = [String:AnyObject]()
-		fontAttributes[UIFontDescriptorFamilyAttribute] = name
-		fontAttributes[UIFontDescriptorFaceAttribute] = String(style)
-		fontAttributes[UIFontDescriptorTraitsAttribute] = uiFontTraits
+		fontAttributes[UIFontDescriptorFamilyAttribute] = name as AnyObject?
+		fontAttributes[UIFontDescriptorFaceAttribute] = style.rawValue as AnyObject?
+		fontAttributes[UIFontDescriptorTraitsAttribute] = uiFontTraits as AnyObject?
 		return fontAttributes
 	}
 
 	var uiFontTraits:[String:AnyObject] {
 		var fontAttributes = [String:AnyObject]()
-		fontAttributes[UIFontWeightTrait] = uiFontWeight
+		fontAttributes[UIFontWeightTrait] = uiFontWeight as AnyObject?
 		return fontAttributes
 	}
 

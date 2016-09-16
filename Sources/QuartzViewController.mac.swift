@@ -5,9 +5,9 @@ import AppKit
 
 public final class QuartzViewController : NSViewController {
 
-	private let component:Component
+	fileprivate let component:Component
 
-	private lazy var renderer:Renderer = {
+	fileprivate lazy var renderer:Renderer = {
 		return QuartzRenderer(root:self.view.layer!)
 	}()
 

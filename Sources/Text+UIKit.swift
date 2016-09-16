@@ -3,7 +3,7 @@ import Canvas
 import UIKit
 
 public extension Text {
-	var quartz:AttributedString {
+	var quartz:NSAttributedString {
 		let quartz = NSMutableAttributedString(string:string)
 
 		print("")
@@ -11,7 +11,7 @@ public extension Text {
 		print(quartz)
 		print("")
 
-		return quartz.copy() as! AttributedString
+		return quartz.copy() as! NSAttributedString
 	}
 }
 
@@ -43,11 +43,11 @@ private extension ParagraphStyle {
 private extension Text.Alignment {
 	var nsTextAlignment:NSTextAlignment {
 		switch self {
-			case left: return NSTextAlignment.left
-			case center: return NSTextAlignment.center
-			case right: return NSTextAlignment.right
-			case justified: return NSTextAlignment.justified
-			case natural: return NSTextAlignment.natural
+			case .left: return NSTextAlignment.left
+			case .center: return NSTextAlignment.center
+			case .right: return NSTextAlignment.right
+			case .justified: return NSTextAlignment.justified
+			case .natural: return NSTextAlignment.natural
 		}
 	}
 }

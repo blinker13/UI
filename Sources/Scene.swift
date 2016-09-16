@@ -3,10 +3,10 @@ import Canvas
 
 internal final class Scene {
 
-	private let renderer:Renderer
-	private let root:Node
+	fileprivate let renderer:Renderer
+	fileprivate let root:Node
 
-	private var markedNodes = Set<Node>()
+	fileprivate var markedNodes = Set<Node>()
 
 	internal init(_ root:Node, _ renderer:Renderer) {
 		self.renderer = renderer
@@ -59,7 +59,7 @@ private extension Scene {
 			} else {
 				let child = node.children[index]
 
-				if component.dynamicType == child.component.dynamicType {
+				if type(of:component) == type(of:child.component) {
 					child.component = component
 					child.frame = rectangle
 					renderer.update(child)

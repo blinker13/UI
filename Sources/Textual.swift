@@ -23,10 +23,10 @@ private extension Style {
 
 	var textAttributes:Text.Attributes {
 		var attributes = Text.Attributes()
-		attributes[Text.font] = self["text.font"] as? Font ?? .default
-		attributes[Text.forground] = self["text.color"] as? Color ?? .black
-		attributes[Text.shadow] = self["text.shadow"] as? Shadow
-		attributes[Text.paragraphStyle] = textParagraphStyle
+		attributes[Text.font!] = self["text.font"] as? Font ?? .default
+		attributes[Text.forground!] = self["text.color"] as? Color ?? .black
+		attributes[Text.shadow!] = self["text.shadow"] as? Shadow
+		attributes[Text.paragraphStyle!] = textParagraphStyle
 		return attributes
 	}
 

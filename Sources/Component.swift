@@ -25,5 +25,5 @@ public extension Component where Self : Enclosure {
 }
 
 public func == <Element:Component>(left:Element, right:Element) -> Bool {
-	return left.dynamicType == right.dynamicType
+	return type(of:left) == type(of:right)
 }

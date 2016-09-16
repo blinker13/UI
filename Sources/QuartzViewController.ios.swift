@@ -5,7 +5,7 @@ import UIKit
 
 public final class QuartzViewController : UIViewController {
 
-	private let component:Component
+	fileprivate let component:Component
 
 	private lazy var renderer:Renderer = {
 		return QuartzRenderer(root:self.view.layer)

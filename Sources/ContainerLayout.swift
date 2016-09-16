@@ -9,7 +9,7 @@ internal struct ContainerLayout {
 		internal let constraint:Real
 		internal let edges:Edges
 
-		private init(_ arrangement:Arrangement, _ constraint:Size, _ padding:Space) {
+		fileprivate init(_ arrangement:Arrangement, _ constraint:Size, _ padding:Space) {
 			self.constraint = constraint[arrangement]
 			self.edges = padding[arrangement]
 			self.arrangement = arrangement
@@ -19,7 +19,7 @@ internal struct ContainerLayout {
 	internal let cross:Axis
 	internal let main:Axis
 
-	private let container:Container
+	fileprivate let container:Container
 
 	internal init(_ container:Container, _ constraint:Size) {
 		let size = constraint.inset(container.padding)

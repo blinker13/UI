@@ -6,9 +6,9 @@ import UIKit
 
 public final class UIKitViewController : UIViewController {
 
-	private let component:Component
+	fileprivate let component:Component
 
-	private lazy var renderer:Renderer = {
+	fileprivate lazy var renderer:Renderer = {
 		return UIKitRenderer(root:self.view)
 	}()
 

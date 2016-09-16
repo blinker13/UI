@@ -1,10 +1,10 @@
 
 internal struct FlexibleLayoutIterator {
 
-	private let indexes:[Int]
-	private let layouts:[ComponentLayout]
+	fileprivate let indexes:[Int]
+	fileprivate let layouts:[ComponentLayout]
 
-	private var stride:StrideToIterator<Int>
+	fileprivate var stride:StrideToIterator<Int>
 
 	internal init(_ indexes:[Int], _ layouts:[ComponentLayout], _ stride:StrideTo<Int>) {
 		self.stride = stride.makeIterator()
