@@ -1,8 +1,10 @@
 
 import UIKit
 import XCPlayground
+
+@testable import Geometry
+@testable import Canvas
 @testable import UI
-import Canvas
 
 
 let s0 = Style(

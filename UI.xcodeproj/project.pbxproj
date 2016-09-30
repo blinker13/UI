@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD0A2B641D9EBAAD00F26C1F /* Geometry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0A2B631D9EBAAD00F26C1F /* Geometry.framework */; };
-		BD0A2B681D9EBFD700F26C1F /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0A2B671D9EBFD700F26C1F /* Canvas.framework */; };
+		BD0A2B6A1D9EC0D800F26C1F /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0A2B691D9EC0D800F26C1F /* Canvas.framework */; };
 		BD1FE21B1C500434005F95D3 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1FE1F21C4FF00E005F95D3 /* UI.framework */; };
 		BD2704271D37BDA40052901E /* UIKitRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2704261D37BDA40052901E /* UIKitRenderer.swift */; };
 		BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294ABF1CDD421900A8716A /* SizeCalculator.swift */; };
@@ -60,7 +60,7 @@
 
 /* Begin PBXFileReference section */
 		BD0A2B631D9EBAAD00F26C1F /* Geometry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Geometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD0A2B671D9EBFD700F26C1F /* Canvas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canvas.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD0A2B691D9EC0D800F26C1F /* Canvas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1FE1F21C4FF00E005F95D3 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1FE1FD1C4FF1A4005F95D3 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BD1FE1FE1C4FF1A4005F95D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -122,8 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD0A2B681D9EBFD700F26C1F /* Canvas.framework in Frameworks */,
 				BD0A2B641D9EBAAD00F26C1F /* Geometry.framework in Frameworks */,
+				BD0A2B6A1D9EC0D800F26C1F /* Canvas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +259,7 @@
 		BD51E2861D172CD1002221F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD0A2B671D9EBFD700F26C1F /* Canvas.framework */,
+				BD0A2B691D9EC0D800F26C1F /* Canvas.framework */,
 				BD0A2B631D9EBAAD00F26C1F /* Geometry.framework */,
 			);
 			name = Frameworks;
