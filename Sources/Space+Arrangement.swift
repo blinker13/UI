@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 extension Space : ArrangementRepresentable {
 	public var horizontal:Edges { return Edges(leading:left, trailing:right) }

@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 internal struct ContainerLayout {
 
@@ -22,7 +22,7 @@ internal struct ContainerLayout {
 	fileprivate let container:Container
 
 	internal init(_ container:Container, _ constraint:Size) {
-		let size = constraint.inset(container.padding)
+		let size = constraint.inseted(by:container.padding)
 		self.cross = Axis(container.arrangement.crossed, size, container.padding)
 		self.main = Axis(container.arrangement, size, container.padding)
 		self.container = container

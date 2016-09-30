@@ -1,10 +1,11 @@
 
+import Geometry
 import Canvas
 
 public struct Style {
 	public typealias Attribute = String
-	private let attributes:[Attribute:Any?]
-	private let styles:[Style]
+	fileprivate let attributes:[Attribute:Any?]
+	fileprivate let styles:[Style]
 }
 
 public extension Style {
@@ -68,7 +69,7 @@ public extension Style {
 	}
 }
 
-extension Style : ArrayLiteralConvertible {
+extension Style : ExpressibleByArrayLiteral {
 	public init(arrayLiteral elements:Style ...) {
 		self.init(attributes:[:], styles:elements)
 	}

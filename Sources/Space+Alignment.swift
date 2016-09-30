@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 extension Space : AlignmentRepresentable {
 	public var leading:Point { return Point(left, top) }

@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 public enum Distribution {
 	case equal

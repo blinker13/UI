@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 public protocol Component : Layout {
 	var style:Style { get }

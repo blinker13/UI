@@ -1,13 +1,13 @@
 
-import Canvas
+import Geometry
 
 internal struct SizeCalculator {
 
-	private let container:ContainerLayout
-	private let layouts:[ComponentLayout]
-	private let remainder:Real
+	fileprivate let container:ContainerLayout
+	fileprivate let layouts:[ComponentLayout]
+	fileprivate let remainder:Real
 
-	private var iterator:StrideToIterator<Int>
+	fileprivate var iterator:StrideToIterator<Int>
 
 	internal init(_ container:ContainerLayout) {
 

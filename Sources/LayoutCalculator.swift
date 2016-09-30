@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 internal struct LayoutCalculator {
 
@@ -27,7 +27,7 @@ internal extension LayoutCalculator {
 }
 
 extension LayoutCalculator : IteratorProtocol, Sequence {
-	internal mutating func next() -> (Int, Component, Rectangle)? {
+	internal mutating func next() -> (Int, Component, Rect)? {
 		guard let (index, layout) = layouts.next() else { return nil }
 		defer { offset += layout.main.length + layout.main.edges.trailing }
 		offset += layout.main.edges.leading
@@ -35,7 +35,7 @@ extension LayoutCalculator : IteratorProtocol, Sequence {
 		let crossRemainder = container.cross.constraint - layout.cross.edges.total - layout.cross.length
 		let crossPosition = container.cross.edges.leading + layout.cross.calculatePosition(with:crossRemainder)
 		let position = Point(values:[container.main.arrangement:offset, container.cross.arrangement:crossPosition])
-		let rect = Rectangle(origin:position, size:layout.size)
+		let rect = Rect(origin:position, size:layout.size)
 
 		return (index, layout.component, rect)
 	}

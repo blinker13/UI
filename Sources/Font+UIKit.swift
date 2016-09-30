@@ -1,4 +1,6 @@
 
+#if os(iOS)
+
 import Canvas
 import UIKit
 
@@ -39,3 +41,5 @@ fileprivate extension Font {
 		}
 	}
 }
+
+#endif

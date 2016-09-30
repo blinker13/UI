@@ -1,4 +1,5 @@
 
+import Geometry
 import Canvas
 
 public typealias Opacity = Real

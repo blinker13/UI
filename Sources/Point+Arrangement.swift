@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 extension Point : ArrangementCreatable {
 	public init(values:[Arrangement:Real]) {

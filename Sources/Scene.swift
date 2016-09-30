@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 internal final class Scene {
 

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7A1B616D00EB2A49125B29380EFDD3E2BDDFACF5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CC3624585111EF8E3BAB9B00BCD1E328AA896544" : 9223372036854775807,
+    "7A1B616D00EB2A49125B29380EFDD3E2BDDFACF5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0ED761B3-226B-4554-9592-DA452B142698",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CC3624585111EF8E3BAB9B00BCD1E328AA896544" : "UI\/Packages\/Geometry-1.0.0\/",
+    "7A1B616D00EB2A49125B29380EFDD3E2BDDFACF5" : "UI\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UI.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/blinker13\/UI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7A1B616D00EB2A49125B29380EFDD3E2BDDFACF5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/blinker13\/Geometry.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CC3624585111EF8E3BAB9B00BCD1E328AA896544"
+    }
+  ]
+}

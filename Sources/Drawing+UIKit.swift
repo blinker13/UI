@@ -1,4 +1,6 @@
 
+#if os(iOS)
+
 import Canvas
 import UIKit
 
@@ -7,3 +9,5 @@ internal extension Color {
 		return UIColor(cgColor:quartz)
 	}
 }
+
+#endif

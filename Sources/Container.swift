@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 public protocol Container : Component, Containment {
 	func construct() -> [Component]

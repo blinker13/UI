@@ -1,4 +1,6 @@
 
+#if os(iOS)
+
 import Canvas
 import UIKit
 
@@ -51,3 +53,5 @@ private extension Text.Alignment {
 		}
 	}
 }
+
+#endif

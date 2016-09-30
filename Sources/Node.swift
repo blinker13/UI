@@ -1,5 +1,5 @@
 
-import Canvas
+import Geometry
 
 internal final class Node : Hashable {
 
@@ -7,14 +7,14 @@ internal final class Node : Hashable {
 
 	internal weak var parent:Node?
 	internal var children:[Node]
-	internal var frame:Rectangle
+	internal var frame:Rect
 
 	internal lazy var hashValue:Int = {
 		let identifier = ObjectIdentifier(self)
 		return identifier.hashValue
 	}()
 
-	internal init(_ component:Component, parent:Node? = nil, frame:Rectangle = .zero) {
+	internal init(_ component:Component, parent:Node? = nil, frame:Rect = .zero) {
 		self.component = component
 		self.children = []
 		self.frame = frame
