@@ -30,7 +30,7 @@ public extension QuartzViewController {
 	override func loadView() {
 		let w = CGFloat(component.width.min)
 		let h = CGFloat(component.height.min)
-		let rect = CGRect(x:0.0, y:0.0, width:w, height:h)
+		let rect = CGRect(x:0, y:0, width:w, height:h)
 		self.view = UIView(frame:rect)
 	}
 	

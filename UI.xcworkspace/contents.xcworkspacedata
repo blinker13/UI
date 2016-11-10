@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Packages/Geometry-1.0.1/Geometry.xcodeproj">
+      location = "group:Packages/Geometry/Geometry.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Packages/Canvas-0.1.0/Canvas.xcodeproj">
+      location = "group:Packages/Canvas/Canvas.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:UI.xcodeproj">
