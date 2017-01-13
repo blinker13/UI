@@ -5,7 +5,7 @@ internal struct FlexibleLayoutEnumerator {
 	fileprivate let layouts:[ComponentLayout]
 	fileprivate let strideTo:StrideTo<Int>
 
-	internal init(_ indexes:[Int], _ layouts:[ComponentLayout], reversed:Bool) {
+	internal init (_ indexes:[Int], _ layouts:[ComponentLayout], reversed:Bool) {
 		let start = reversed ? indexes.endIndex - 1 : indexes.startIndex
 		let end = reversed ? indexes.startIndex - 1 : indexes.endIndex
 		let distance = reversed ? -1 : 1

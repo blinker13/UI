@@ -6,7 +6,7 @@ internal final class QuartzRenderer {
 	internal var content = [Node:CALayer]()
 	internal let rootLayer:CALayer
 
-	internal init(root:CALayer) {
+	internal init (root:CALayer) {
 		self.rootLayer = root
 	}
 }
@@ -54,9 +54,7 @@ private extension QuartzRenderer {
 		let h = CGFloat(node.frame.size.height)
 		layer.frame = CGRect(x:x, y:y, width:w, height:h)
 
-		if let enclosure = node.component as? Enclosure {
-			layer.masksToBounds = enclosure.overflow.isHidden
-		}
+		layer.masksToBounds = node.component.overflow.isHidden
 
 		if let visual = node.component as? Visual {
 			layer.backgroundColor = visual.background?.quartz

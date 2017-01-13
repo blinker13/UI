@@ -6,7 +6,7 @@ internal struct FlexibleLayoutIterator {
 
 	fileprivate var stride:StrideToIterator<Int>
 
-	internal init(_ indexes:[Int], _ layouts:[ComponentLayout], _ stride:StrideTo<Int>) {
+	internal init (_ indexes:[Int], _ layouts:[ComponentLayout], _ stride:StrideTo<Int>) {
 		self.stride = stride.makeIterator()
 		self.layouts = layouts
 		self.indexes = indexes

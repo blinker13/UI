@@ -2,7 +2,7 @@
 import Geometry
 import Canvas
 
-public typealias Opacity = Real
+public typealias Opacity = Float
 
 public protocol Visual {
 	var background:Color? { get }
@@ -18,13 +18,5 @@ public extension Style {
 	var color:Color { return self["color"] as? Color ?? Color.black }
 	var opacity:Opacity { return self["opacity"] as? Opacity ?? 1.0 }
 	var shadow:Shadow? { return self["shadow"] as? Shadow }
-}
-
-public extension Component where Self : Visual {
-	var background:Color? { return style.background }
-	var border:Border? { return style.border }
-	var color:Color { return style.color }
-	var opacity:Opacity { return style.opacity }
-	var shadow:Shadow? { return style.shadow }
 }
 

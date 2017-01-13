@@ -5,11 +5,11 @@ internal struct SizeCalculator {
 
 	fileprivate let container:ContainerLayout
 	fileprivate let layouts:[ComponentLayout]
-	fileprivate let remainder:Real
+	fileprivate let remainder:Float
 
 	fileprivate var iterator:StrideToIterator<Int>
 
-	internal init(_ container:ContainerLayout) {
+	internal init (_ container:ContainerLayout) {
 
 		var flexIndexes = [Int]()
 		var remainder = container.main.constraint
@@ -41,7 +41,7 @@ internal struct SizeCalculator {
 
 internal extension SizeCalculator {
 	var count:Int { return layouts.count }
-	var offset:Real { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
+	var offset:Float { return container.main.edges.leading - container.alignment.calculateOffset(with:remainder) }
 }
 
 extension SizeCalculator : IteratorProtocol {

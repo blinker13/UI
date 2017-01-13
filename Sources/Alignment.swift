@@ -8,7 +8,7 @@ public enum Alignment {
 }
 
 internal extension Alignment {
-	func calculateOffset(with remainder:Real) -> Real {
+	func calculateOffset(with remainder:Float) -> Float {
 		switch self {
 			case .leading: return 0
 			case .center: return remainder / 2

@@ -7,29 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BDEBFA741D1D3A9000C4DE8B /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791141D17E57B003887E7 /* UI.framework */; };
-		BDEBFA751D1D3A9000C4DE8B /* UI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791141D17E57B003887E7 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BDEBFA761D1D3A9500C4DE8B /* Canvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791181D17E5A3003887E7 /* Canvas.framework */; };
-		BDEBFA771D1D3A9500C4DE8B /* Canvas.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BDF791181D17E5A3003887E7 /* Canvas.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF790FE1D17DF5C003887E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790FD1D17DF5C003887E7 /* AppDelegate.swift */; };
 		BDF791051D17DF5C003887E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF791041D17DF5C003887E7 /* Assets.xcassets */; };
 		BDF791081D17DF5C003887E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF791061D17DF5C003887E7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		BDF791251D17E62D003887E7 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BDEBFA771D1D3A9500C4DE8B /* Canvas.framework in Copy Frameworks */,
-				BDEBFA751D1D3A9000C4DE8B /* UI.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BDF790FA1D17DF5C003887E7 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,8 +27,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDEBFA761D1D3A9500C4DE8B /* Canvas.framework in Frameworks */,
-				BDEBFA741D1D3A9000C4DE8B /* UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +81,6 @@
 				BDF790F61D17DF5C003887E7 /* Sources */,
 				BDF790F71D17DF5C003887E7 /* Frameworks */,
 				BDF790F81D17DF5C003887E7 /* Resources */,
-				BDF791251D17E62D003887E7 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);

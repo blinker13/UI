@@ -1,16 +1,20 @@
 
 import Geometry
 
-public protocol Component : Layout {
-	var style:Style { get }
+public protocol Component {
+	var alignment:Alignment { get }
+	var overflow:Overflow { get }
+	var height:Dimensions { get }
+	var width:Dimensions { get }
+	var margin:Margin { get }
 }
 
 public extension Component {
 
-	var alignment:Alignment { return style["alignment"] as? Alignment ?? .leading }
-	var height:Dimensions { return style["height"] as? Dimensions ?? Dimensions() }
-	var width:Dimensions { return style["width"] as? Dimensions ?? Dimensions() }
-	var margin:Space { return style["margin"] as? Space ?? Space() }
+	var overflow:Overflow { return .visible }
+
+	var minimumSize:Size { return Size(width.min, height.min) }
+	var maximumSize:Size { return Size(width.max, height.max) }
 
 	subscript (arrangement:Arrangement) -> Dimensions {
 		switch arrangement {
@@ -18,10 +22,6 @@ public extension Component {
 			case .vertical: return height
 		}
 	}
-}
-
-public extension Component where Self : Enclosure {
-	var overflow:Overflow { return style["overflow"] as? Overflow ?? .hidden }
 }
 
 public func == <Element:Component>(left:Element, right:Element) -> Bool {

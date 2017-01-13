@@ -3,7 +3,7 @@ internal struct ParentNodeIterator {
 
 	fileprivate var node:Node
 
-	internal init(_ node:Node) {
+	internal init (_ node:Node) {
 		self.node = node
 	}
 }

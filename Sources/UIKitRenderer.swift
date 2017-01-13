@@ -8,7 +8,7 @@ internal final class UIKitRenderer : Renderer {
 	internal var views = [Node:UIView]()
 	internal let root:UIView
 
-	internal init(root:UIView) {
+	internal init (root:UIView) {
 		self.root = root
 	}
 

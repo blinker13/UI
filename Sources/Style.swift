@@ -10,7 +10,7 @@ public struct Style {
 
 public extension Style {
 
-	init(
+	init (
 		alignment:Alignment? = nil,
 		arrangement:Arrangement? = nil,
 		background:Color? = nil,
@@ -70,7 +70,7 @@ public extension Style {
 }
 
 extension Style : ExpressibleByArrayLiteral {
-	public init(arrayLiteral elements:Style ...) {
+	public init (arrayLiteral elements:Style ...) {
 		self.init(attributes:[:], styles:elements)
 	}
 }

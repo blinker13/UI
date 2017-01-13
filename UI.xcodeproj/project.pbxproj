@@ -19,7 +19,6 @@
 		BD3997DE1C68A8EA002B3E01 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D41C68A8EA002B3E01 /* Composer.swift */; };
 		BD3997DF1C68A8EA002B3E01 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D51C68A8EA002B3E01 /* Container.swift */; };
 		BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D61C68A8EA002B3E01 /* Distribution.swift */; };
-		BD3997E31C68A8EA002B3E01 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D91C68A8EA002B3E01 /* View.swift */; };
 		BD4190941D37E14100B90317 /* Drawing+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190931D37E14100B90317 /* Drawing+UIKit.swift */; };
 		BD4190961D37E2EC00B90317 /* UIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190951D37E2EC00B90317 /* UIKitViewController.swift */; };
 		BD4A7F931D43E38500F10277 /* Text+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A7F921D43E38500F10277 /* Text+UIKit.swift */; };
@@ -37,9 +36,9 @@
 		BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */; };
 		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
 		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
+		BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4B6471DFA1054001D78FF /* CGSize.swift */; };
 		BDC1FE201D4405FE00E95CB0 /* Font+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1FE1F1D4405FE00E95CB0 /* Font+UIKit.swift */; };
 		BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */; };
-		BDDABC441D3975F1002228C3 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC431D3975F1002228C3 /* Label.swift */; };
 		BDDABC461D399463002228C3 /* Textual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC451D399463002228C3 /* Textual.swift */; };
 		BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF256D71CF91FA60020F864 /* Overflow.swift */; };
 		BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */; };
@@ -99,6 +98,7 @@
 		BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentLayout.swift; sourceTree = "<group>"; };
 		BD9648131CEFB2D100D3F478 /* Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
 		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		BDB4B6471DFA1054001D78FF /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		BDC1FE1F1D4405FE00E95CB0 /* Font+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+UIKit.swift"; sourceTree = "<group>"; };
 		BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeIterator.swift; sourceTree = "<group>"; };
 		BDDABC431D3975F1002228C3 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -188,16 +188,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		BD2142271CFD00F100D3CD58 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */,
-				BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */,
-				BD526D241C9759530075684E /* QuartzViewController.swift */,
-			);
-			name = ViewController;
-			sourceTree = "<group>";
-		};
 		BD2704251D37BD8C0052901E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +210,6 @@
 		BD3997E51C68A8F8002B3E01 /* Layouting */ = {
 			isa = PBXGroup;
 			children = (
-				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
 				BD96A5AE1CF0ABBA00231DA8 /* Attributes */,
 				BD294AC31CDD47E600A8716A /* Calculators */,
 				BD8EB9031CB869D6001ACCA6 /* Entities */,
@@ -273,9 +262,21 @@
 			isa = PBXGroup;
 			children = (
 				BD526D221C97510F0075684E /* QuartzRenderer.swift */,
-				BD2142271CFD00F100D3CD58 /* ViewController */,
+				BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */,
+				BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */,
+				BD526D241C9759530075684E /* QuartzViewController.swift */,
 			);
 			name = Quartz;
+			sourceTree = "<group>";
+		};
+		BD5A9D3E1DD4CE27006C0D9C /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				BDB4B6461DFA1022001D78FF /* Extensions */,
+				BD526D211C9750D70075684E /* Quartz */,
+				BD2704251D37BD8C0052901E /* UIKit */,
+			);
+			name = Apple;
 			sourceTree = "<group>";
 		};
 		BD7ACBD21CEE6BE90067C6FC /* Appearance */ = {
@@ -301,8 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				BD8226691C936E0300D807A3 /* Renderer.swift */,
-				BD526D211C9750D70075684E /* Quartz */,
-				BD2704251D37BD8C0052901E /* UIKit */,
+				BD5A9D3E1DD4CE27006C0D9C /* Apple */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -329,12 +329,21 @@
 		BD96A5AE1CF0ABBA00231DA8 /* Attributes */ = {
 			isa = PBXGroup;
 			children = (
+				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
 				BD3997D11C68A8EA002B3E01 /* Alignment.swift */,
 				BD3997D21C68A8EA002B3E01 /* Arrangement.swift */,
 				BD3997D61C68A8EA002B3E01 /* Distribution.swift */,
 				BDF256D71CF91FA60020F864 /* Overflow.swift */,
 			);
 			name = Attributes;
+			sourceTree = "<group>";
+		};
+		BDB4B6461DFA1022001D78FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BDB4B6471DFA1054001D78FF /* CGSize.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		BDDABC421D3975E0002228C3 /* Text */ = {
@@ -461,13 +470,12 @@
 				BD3997DF1C68A8EA002B3E01 /* Container.swift in Sources */,
 				BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */,
 				BD6C2FE01D8BDE8F00FE7A91 /* QuartzViewController.swift in Sources */,
-				BD3997E31C68A8EA002B3E01 /* View.swift in Sources */,
 				BD3997DD1C68A8EA002B3E01 /* Component.swift in Sources */,
 				BD6C2FDF1D8BDE8F00FE7A91 /* QuartzViewController.mac.swift in Sources */,
 				BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */,
 				BDF790F01D17426C003887E7 /* Point+Arrangement.swift in Sources */,
-				BDDABC441D3975F1002228C3 /* Label.swift in Sources */,
 				BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */,
+				BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */,
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
 				BD6C2FDE1D8BDE8F00FE7A91 /* QuartzViewController.ios.swift in Sources */,
 				BD8226671C936DD700D807A3 /* Scene.swift in Sources */,

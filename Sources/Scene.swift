@@ -1,43 +1,44 @@
 
+import Dispatch
 import Geometry
 
 internal final class Scene {
 
-	fileprivate let renderer:Renderer
 	fileprivate let root:Node
+	fileprivate var nodes:Set<Node>
 
-	fileprivate var markedNodes = Set<Node>()
-
-	internal init(_ root:Node, _ renderer:Renderer) {
-		self.renderer = renderer
-		self.root = root
+	internal init (with node:Node) {
+		self.nodes = [node]
+		self.root = node
 	}
 }
 
 internal extension Scene {
 
-	internal convenience init(_ component:Component, _ renderer:Renderer) {
-		let root = Node(component)
-		self.init(root, renderer)
+	var minimumSize:Size { return root.component.minimumSize }
+	var maximumSize:Size { return root.component.maximumSize }
+
+	internal convenience init (with component:Component) {
+		let node = Node(component)
+		self.init(with: node)
 	}
 
 	func update(with size:Size) {
-		updateRoot(with:size)
-		updateHierarchy()
+		if size == root.frame.size { return }
+		root.frame.size = size
+		setNeedsDisplay(root)
 	}
 
-	func update() {
-		update(with:root.frame.size)
+	func display(with renderer:Renderer) {
+		let nodes = AnyIterator(nextNode)
+
 	}
 }
 
 private extension Scene {
 
-	func updateRoot(with size:Size) {
-		if root.frame.size == size { return }
-		root.frame.size = size
-		markedNodes.insert(root)
-		renderer.update(root)
+	func setNeedsDisplay(_ node:Node) {
+		nodes.insert(node)
 	}
 
 	func updateHierarchy() {
@@ -52,9 +53,9 @@ private extension Scene {
 
 			if index >= node.children.count {
 				let newChild = Node(component, parent:node, frame:rectangle)
-				renderer.insert(newChild, at:index)
+//				renderer.insert(newChild, at:index)
 				node.children.append(newChild)
-				markedNodes.insert(newChild)
+				nodes.insert(newChild)
 
 			} else {
 				let child = node.children[index]
@@ -62,24 +63,24 @@ private extension Scene {
 				if type(of:component) == type(of:child.component) {
 					child.component = component
 					child.frame = rectangle
-					renderer.update(child)
-					markedNodes.insert(child)
+//					renderer.update(child)
+					nodes.insert(child)
 
 				} else {
 					let newChild = Node(component, parent:node, frame:rectangle)
 					node.children[index] = newChild
-					renderer.remove(child)
-					renderer.insert(newChild, at:index)
-					markedNodes.insert(newChild)
+//					renderer.remove(child)
+//					renderer.insert(newChild, at:index)
+					nodes.insert(newChild)
 				}
 			}
 		}
 	}
 
 	func nextNode() -> Node? {
-		guard let node = markedNodes.first else { return nil }
+		guard let node = nodes.first else { return nil }
 		let parentIterator = ParentNodeIterator(node)
-		let next = parentIterator.filter(markedNodes.contains).last ?? node
-		return markedNodes.remove(next)
+		let next = parentIterator.filter(nodes.contains).last ?? node
+		return nodes.remove(next)
 	}
 }

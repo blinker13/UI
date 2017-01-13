@@ -5,9 +5,9 @@ internal struct LayoutCalculator {
 
 	fileprivate let container:ContainerLayout
 	fileprivate var layouts:SizeCalculator
-	fileprivate var offset:Real
+	fileprivate var offset:Float
 
-	internal init(_ container:ContainerLayout) {
+	internal init (_ container:ContainerLayout) {
 		let layouts = SizeCalculator(container)
 		self.offset = layouts.offset
 		self.container = container

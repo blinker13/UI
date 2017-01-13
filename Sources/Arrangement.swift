@@ -15,7 +15,7 @@ public extension Arrangement {
 
 public protocol ArrangementCreatable {
 	associatedtype ArrangementValue
-	init(values:[Arrangement:ArrangementValue])
+	init (values:[Arrangement:ArrangementValue])
 }
 
 public protocol ArrangementRepresentable {

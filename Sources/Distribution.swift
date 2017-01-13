@@ -9,7 +9,7 @@ public enum Distribution {
 
 internal extension Distribution {
 
-	var calculation:(FlexibleLayoutEnumerator, Real, (Int, Real) -> Void) -> Real {
+	var calculation:(FlexibleLayoutEnumerator, Float, (Int, Float) -> Void) -> Float {
 		switch self {
 			case .equal: return calcutateEqual
 			case .order: return calcutateOrder
@@ -20,14 +20,14 @@ internal extension Distribution {
 
 private extension Distribution {
 
-	func calcutateEqual(_ layouts:FlexibleLayoutEnumerator, remainder:Real, body:(Int, Real) -> Void) -> Real {
+	func calcutateEqual(_ layouts:FlexibleLayoutEnumerator, remainder:Float, body:(Int, Float) -> Void) -> Float {
 		var fullfilled = Set<Int>()
-		var results = [Int:Real]()
+		var results = [Int:Float]()
 		var remains = remainder
 
 		while layouts.count > fullfilled.count && remains > 0 {
 			let count = layouts.count - fullfilled.count
-			let portion = remains / Real(count)
+			let portion = remains / Float(count)
 
 			for (index, layout) in layouts {
 				if fullfilled.contains(index) { continue }
@@ -49,7 +49,7 @@ private extension Distribution {
 		return remains
 	}
 
-	func calcutateOrder(_ layouts:FlexibleLayoutEnumerator, remainder:Real, body:(Int, Real) -> Void) -> Real {
+	func calcutateOrder(_ layouts:FlexibleLayoutEnumerator, remainder:Float, body:(Int, Float) -> Void) -> Float {
 		var remains = remainder
 
 		for (index, layout) in layouts {
@@ -62,7 +62,7 @@ private extension Distribution {
 		return remains
 	}
 
-	func calcutateProportion(_ layouts:FlexibleLayoutEnumerator, remainder:Real, body:(Int, Real) -> Void) -> Real {
+	func calcutateProportion(_ layouts:FlexibleLayoutEnumerator, remainder:Float, body:(Int, Float) -> Void) -> Float {
 		var remains = remainder
 		remains += 1
 		return remains

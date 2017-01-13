@@ -10,9 +10,9 @@ internal struct ComponentLayout {
 		internal let dimensions:Dimensions
 		internal let edges:Edges
 
-		internal var length:Real
+		internal var length:Float
 
-		fileprivate init(_ component:Component, _ arrangement:Arrangement) {
+		fileprivate init (_ component:Component, _ arrangement:Arrangement) {
 			let dimensions = component[arrangement]
 
 			self.edges = component.margin[arrangement]
@@ -28,7 +28,7 @@ internal struct ComponentLayout {
 	internal var cross:Axis
 	internal var main:Axis
 
-	internal init(_ component:Component, _ arrangement:Arrangement) {
+	internal init (_ component:Component, _ arrangement:Arrangement) {
 		self.cross = Axis(component, arrangement.crossed)
 		self.main = Axis(component, arrangement)
 		self.component = component
@@ -45,20 +45,20 @@ internal extension ComponentLayout {
 
 internal extension ComponentLayout.Axis {
 
-	var difference:Real { return dimensions.max - dimensions.min }
+	var difference:Float { return dimensions.max - dimensions.min }
 	var isFlexible:Bool { return dimensions.isFlexible }
-	var total:Real { return length + edges.total }
+	var total:Float { return length + edges.total }
 
-	mutating func calculateLength(with constrain:Real) {
+	mutating func calculateLength(with constrain:Float) {
 		let interim = min(dimensions.max, constrain - edges.total)
 		length = max(dimensions.min, interim)
 	}
 
-	func calculatePosition(with remainder:Real) -> Real {
+	func calculatePosition(with remainder:Float) -> Float {
 		return edges.leading + alignment.calculateOffset(with:remainder)
 	}
 }
 
 private extension ComponentLayout.Axis {
-	var value:(Arrangement, Real) { return (arrangement, length) }
+	var value:(Arrangement, Float) { return (arrangement, length) }
 }

@@ -9,7 +9,7 @@ public extension Overflow {
 }
 
 extension Overflow : ExpressibleByBooleanLiteral {
-	public init(booleanLiteral value:Bool) {
+	public init (booleanLiteral value:Bool) {
 		self = value ? .visible : .hidden
 	}
 }

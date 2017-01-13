@@ -16,7 +16,7 @@ public final class UIKitViewController : UIViewController {
 		return Scene(self.component, self.renderer)
 	}()
 
-	public init(component:Component) {
+	public init (component:Component) {
 		self.component = component
 		super.init(nibName:nil, bundle:nil)
 	}
