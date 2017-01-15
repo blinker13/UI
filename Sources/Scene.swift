@@ -29,8 +29,11 @@ internal extension Scene {
 	}
 
 	func display(with renderer:Renderer) {
-//		let nodes = AnyIterator(nextNode)
+		let nodes = AnyIterator(nextNode)
 
+		for node in nodes {
+			display(node, with:renderer)
+		}
 	}
 }
 
@@ -40,19 +43,14 @@ private extension Scene {
 		nodes.insert(node)
 	}
 
-	func updateHierarchy() {
-		let nodes = AnyIterator(nextNode)
-		nodes.forEach(update)
-	}
-
-	func update(_ node:Node) {
+	func display(_ node:Node, with renderer:Renderer) {
 		guard let calculator = LayoutCalculator(node) else { return }
 
 		for (index, component, rectangle) in calculator {
 
 			if index >= node.children.count {
 				let newChild = Node(component, parent:node, frame:rectangle)
-//				renderer.insert(newChild, at:index)
+				renderer.insert(newChild, at:index)
 				node.children.append(newChild)
 				nodes.insert(newChild)
 
@@ -62,14 +60,14 @@ private extension Scene {
 				if type(of:component) == type(of:child.component) {
 					child.component = component
 					child.frame = rectangle
-//					renderer.update(child)
+					renderer.update(child)
 					nodes.insert(child)
 
 				} else {
 					let newChild = Node(component, parent:node, frame:rectangle)
 					node.children[index] = newChild
-//					renderer.remove(child)
-//					renderer.insert(newChild, at:index)
+					renderer.remove(child)
+					renderer.insert(newChild, at:index)
 					nodes.insert(newChild)
 				}
 			}

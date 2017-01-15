@@ -1,10 +1,17 @@
 
 internal extension QuartzViewController {
 	
-	func updateScene() {
-		let w = Float(view.bounds.size.width)
-		let h = Float(view.bounds.size.height)
-		let size = Size(w, h)
-		scene.update(with:size)
+	func loadScene() {
+		scene.update(with:currentSize)
+		scene.display(with:renderer)
+	}
+}
+
+private extension QuartzViewController {
+
+	var currentSize:Size {
+		let width = Float(view.frame.size.width)
+		let height = Float(view.frame.size.height)
+		return Size(width, height)
 	}
 }

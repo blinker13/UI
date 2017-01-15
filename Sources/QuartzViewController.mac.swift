@@ -35,9 +35,9 @@ public extension QuartzViewController {
 		self.view = view
 	}
 
-	override func viewWillLayout() {
-		super.viewWillLayout()
-		updateScene()
+	override func viewDidLayout() {
+		super.viewDidLayout()
+		loadScene()
 	}
 }
 

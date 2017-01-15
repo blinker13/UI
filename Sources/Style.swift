@@ -1,7 +1,6 @@
 
 public protocol Stylable {
 	var style:Style { get }
-	init (style:Style)
 }
 
 public struct Style {

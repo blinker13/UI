@@ -55,6 +55,11 @@
 		BD3997DE1C68A8EA002B3E01 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D41C68A8EA002B3E01 /* Composer.swift */; };
 		BD3997DF1C68A8EA002B3E01 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D51C68A8EA002B3E01 /* Container.swift */; };
 		BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D61C68A8EA002B3E01 /* Distribution.swift */; };
+		BD40033D1E2C061B00AB2442 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D91C68A8EA002B3E01 /* View.swift */; };
+		BD40033E1E2C061F00AB2442 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC431D3975F1002228C3 /* Label.swift */; };
+		BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003401E2C22BF00AB2442 /* Style+Component.swift */; };
+		BD4003431E2C238100AB2442 /* Style+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003421E2C238100AB2442 /* Style+Container.swift */; };
+		BD4003461E2C274500AB2442 /* Style+Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003451E2C274500AB2442 /* Style+Visual.swift */; };
 		BD4190941D37E14100B90317 /* Drawing+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190931D37E14100B90317 /* Drawing+UIKit.swift */; };
 		BD4190961D37E2EC00B90317 /* UIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190951D37E2EC00B90317 /* UIKitViewController.swift */; };
 		BD4A7F931D43E38500F10277 /* Text+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A7F921D43E38500F10277 /* Text+UIKit.swift */; };
@@ -153,6 +158,9 @@
 		BD3997D51C68A8EA002B3E01 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BD3997D61C68A8EA002B3E01 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		BD3997D91C68A8EA002B3E01 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		BD4003401E2C22BF00AB2442 /* Style+Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Component.swift"; sourceTree = "<group>"; };
+		BD4003421E2C238100AB2442 /* Style+Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Container.swift"; sourceTree = "<group>"; };
+		BD4003451E2C274500AB2442 /* Style+Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Visual.swift"; sourceTree = "<group>"; };
 		BD4190931D37E14100B90317 /* Drawing+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Drawing+UIKit.swift"; sourceTree = "<group>"; };
 		BD4190951D37E2EC00B90317 /* UIKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitViewController.swift; sourceTree = "<group>"; };
 		BD4A7F921D43E38500F10277 /* Text+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+UIKit.swift"; sourceTree = "<group>"; };
@@ -300,15 +308,13 @@
 		BD1185A31E290C1B00B98DD3 /* Text */ = {
 			isa = PBXGroup;
 			children = (
-				BD1185791E290BC100B98DD3 /* Font.swift */,
-				BD11857C1E290BC100B98DD3 /* LineBreak.swift */,
-				BD11857E1E290BC100B98DD3 /* ParagraphStyle.swift */,
 				BD1185831E290BC100B98DD3 /* Text.swift */,
 				BD1185841E290BC100B98DD3 /* Text+Collection.swift */,
 				BD1185851E290BC100B98DD3 /* Text+Description.swift */,
 				BD1185861E290BC100B98DD3 /* Text+Equatable.swift */,
 				BD1185871E290BC100B98DD3 /* Text+Initializer.swift */,
 				BD1185881E290BC100B98DD3 /* Text+Nesting.swift */,
+				BD40033F1E2C0EB500AB2442 /* Attributes */,
 			);
 			name = Text;
 			sourceTree = "<group>";
@@ -407,6 +413,26 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		BD40033F1E2C0EB500AB2442 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				BD1185791E290BC100B98DD3 /* Font.swift */,
+				BD11857C1E290BC100B98DD3 /* LineBreak.swift */,
+				BD11857E1E290BC100B98DD3 /* ParagraphStyle.swift */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
+		BD4003441E2C272600AB2442 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				BD4003401E2C22BF00AB2442 /* Style+Component.swift */,
+				BD4003421E2C238100AB2442 /* Style+Container.swift */,
+				BD4003451E2C274500AB2442 /* Style+Visual.swift */,
+			);
+			name = Styling;
+			sourceTree = "<group>";
+		};
 		BD4190921D37D22800B90317 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +479,7 @@
 				BD7ACBD31CEE6C2C0067C6FC /* Style.swift */,
 				BDDABC451D399463002228C3 /* Textual.swift */,
 				BD9648131CEFB2D100D3F478 /* Visual.swift */,
+				BD4003441E2C272600AB2442 /* Styling */,
 			);
 			name = Appearance;
 			sourceTree = "<group>";
@@ -640,6 +667,7 @@
 				BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */,
 				BD4A7F931D43E38500F10277 /* Text+UIKit.swift in Sources */,
 				BDDABC461D399463002228C3 /* Textual.swift in Sources */,
+				BD40033E1E2C061F00AB2442 /* Label.swift in Sources */,
 				BD1185911E290BC100B98DD3 /* Font.swift in Sources */,
 				BD1185991E290BC100B98DD3 /* Shadow.swift in Sources */,
 				BD3997DE1C68A8EA002B3E01 /* Composer.swift in Sources */,
@@ -662,14 +690,17 @@
 				BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */,
 				BD1185901E290BC100B98DD3 /* Color+RGB.swift in Sources */,
 				BD11859D1E290BC100B98DD3 /* Text+Description.swift in Sources */,
+				BD4003461E2C274500AB2442 /* Style+Visual.swift in Sources */,
 				BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */,
 				BD11859E1E290BC100B98DD3 /* Text+Equatable.swift in Sources */,
 				BD1185941E290BC100B98DD3 /* LineBreak.swift in Sources */,
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
 				BD1185691E28DA1900B98DD3 /* Transform.swift in Sources */,
 				BD6C2FDE1D8BDE8F00FE7A91 /* QuartzViewController.ios.swift in Sources */,
+				BD4003431E2C238100AB2442 /* Style+Container.swift in Sources */,
 				BD1185631E28DA1900B98DD3 /* Path.swift in Sources */,
 				BD8226671C936DD700D807A3 /* Scene.swift in Sources */,
+				BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */,
 				BDC1FE201D4405FE00E95CB0 /* Font+UIKit.swift in Sources */,
 				BD7ACBD41CEE6C2C0067C6FC /* Style.swift in Sources */,
 				BD1185921E290BC100B98DD3 /* Gradient.swift in Sources */,
@@ -678,6 +709,7 @@
 				BD4190941D37E14100B90317 /* Drawing+UIKit.swift in Sources */,
 				BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */,
 				BD1185671E28DA1900B98DD3 /* Size.swift in Sources */,
+				BD40033D1E2C061B00AB2442 /* View.swift in Sources */,
 				BD1185951E290BC100B98DD3 /* Paint.swift in Sources */,
 				BD1185971E290BC100B98DD3 /* Point+Quartz.swift in Sources */,
 				BD8226661C936DD700D807A3 /* Node.swift in Sources */,

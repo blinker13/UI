@@ -1,10 +1,11 @@
 
-public struct Label : Component, Textual, Visual {
+public struct Label : Stylable, Textual {
 
 	public let style:Style
 	public let text:Text
 
 	public init (style:Style, text:Text) {
-		(self.style, self.text) = (style, text)
+		self.style = style
+		self.text = text
 	}
 }
