@@ -1,6 +1,4 @@
 
-import Canvas
-
 public struct Label : Component, Textual, Visual {
 
 	public let style:Style

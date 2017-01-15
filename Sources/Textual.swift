@@ -1,22 +1,28 @@
 
-import Canvas
-
-public protocol Textual : Component {
-	init (style:Style, text:Text)
+public protocol Textual : Visual {
 	var text:Text { get }
 }
 
-public extension Textual {
+public extension Textual where Self : Stylable {
+
+	var text:Text { return style.get("text")! }
 
 //	init (style:Style, text:String) {
 //		let text = Text(text, attributes:style.textAttributes)
 //		self.init(style:style, text:text)
 //	}
-
+//
 //	init (style:Style, separator:String = " ", _ texts:Text ...) {
 //		let text = Text(attributes:style.textAttributes, texts)
 //		self.init(style:style, text:text)
 //	}
+}
+
+public extension Style {
+	static func text(_ text:Text) -> Style { return Style(key:"text", value:text) }
+	static func textFont(_ font:Font) -> Style { return Style(key:"text.font", value:font) }
+	static func textShadow(_ shadow:Shadow) -> Style { return Style(key:"text.shadow", value:shadow) }
+	static func textParagraphStyle(_ style:ParagraphStyle) -> Style { return Style(key:"text.paragraphStyle", value:style) }
 }
 
 //private extension Style {

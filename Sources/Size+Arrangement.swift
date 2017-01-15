@@ -1,6 +1,4 @@
 
-import Geometry
-
 extension Size : ArrangementCreatable {
 	public init (values:[Arrangement:Float]) {
 		self.width = values[.horizontal] ?? 0

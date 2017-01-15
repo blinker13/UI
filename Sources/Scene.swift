@@ -1,6 +1,5 @@
 
 import Dispatch
-import Geometry
 
 internal final class Scene {
 
@@ -30,7 +29,7 @@ internal extension Scene {
 	}
 
 	func display(with renderer:Renderer) {
-		let nodes = AnyIterator(nextNode)
+//		let nodes = AnyIterator(nextNode)
 
 	}
 }

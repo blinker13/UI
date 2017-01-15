@@ -1,6 +1,4 @@
 
-import Geometry
-
 internal struct ComponentLayout {
 
 	internal struct Axis {

@@ -2,7 +2,6 @@
 import Cocoa
 import XCPlayground
 
-@testable import Geometry
 @testable import Canvas
 @testable import UI
 

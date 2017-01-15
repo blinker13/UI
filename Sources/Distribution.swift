@@ -1,6 +1,4 @@
 
-import Geometry
-
 public enum Distribution {
 	case equal
 	case order

@@ -1,83 +1,60 @@
 
-import Geometry
-import Canvas
+public protocol Stylable {
+	var style:Style { get }
+	init (style:Style)
+}
 
 public struct Style {
-	public typealias Attribute = String
-	fileprivate let attributes:[Attribute:Any?]
-	fileprivate let styles:[Style]
+
+	public struct Attribute {
+		public let key: String
+		public let value: Any
+	}
+
+	fileprivate let attributes: Set<Attribute>
+
+	internal init (attributes: Set<Attribute>) {
+		self.attributes = attributes
+	}
 }
 
 public extension Style {
 
-	init (
-		alignment:Alignment? = nil,
-		arrangement:Arrangement? = nil,
-		background:Color? = nil,
-		border:Border? = nil,
-		color:Color? = nil,
-		distribution:Distribution? = nil,
-		height:Dimensions? = nil,
-		justify:Alignment? = nil,
-		margin:Margin? = nil,
-		opacity:Opacity? = nil,
-		overflow:Overflow? = nil,
-		padding:Padding? = nil,
-		shadow:Shadow? = nil,
-		textAlignment:Text.Alignment? = nil,
-		textColor:Color? = nil,
-		textFont:Font? = nil,
-		textLineBreak:LineBreak? = nil,
-		textShadow:Shadow? = nil,
-		width:Dimensions? = nil
-	) {
-		self.init(attributes:[
-			"alignment":alignment,
-			"arrangement":arrangement,
-			"background":background,
-			"border":border,
-			"color":color,
-			"distribution":distribution,
-			"height":height,
-			"justify":justify,
-			"margin":margin,
-			"opacity":opacity,
-			"overflow":overflow,
-			"padding":padding,
-			"shadow":shadow,
-			"text.alignment":textAlignment,
-			"text.color":textColor,
-			"text.font":textFont,
-			"text.lineBreak":textLineBreak,
-			"text.shadow":textShadow,
-			"width":width
-		], styles:[])
+	init (with styles:[Style]) {
+		let reverse = styles.reversed()
+		self.attributes = reverse.reduce(Set<Attribute>()) {
+			return $0.union($1.attributes)
+		}
 	}
 
-	subscript (key:Attribute) -> Any? {
-		if let value = attributes[key] {
-			return value
-		}
+	init (_ styles: Style ...) {
+		self.init(with:styles)
+	}
 
-		for style in styles {
-			if let value = style[key] {
-				return value
-			}
-		}
+	init (key:String, value:Any) {
+		let attribute = Attribute(key:key, value:value)
+		self.attributes = [attribute]
+	}
 
-		return nil
+	func get<Value>(_ key:String) -> Value? {
+		let attribute = attributes.first { $0.key == key }
+		return attribute?.value as? Value
 	}
 }
 
 extension Style : ExpressibleByArrayLiteral {
 	public init (arrayLiteral elements:Style ...) {
-		self.init(attributes:[:], styles:elements)
+		self.init(with:elements)
 	}
 }
 
-//extension Style : DictionaryLiteralConvertible {
-//	init(dictionaryLiteral elements:(Attribute, Any?) ...) {
-//		let attributes = Dictionary(elements)
-//		self.init(attributes:attributes, styles:[])
-//	}
-//}
+extension Style.Attribute : Hashable {
+
+	public static func == (left:Style.Attribute, right:Style.Attribute) -> Bool {
+		return left.key == right.key
+	}
+
+	public var hashValue:Int {
+		return key.hashValue
+	}
+}

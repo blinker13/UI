@@ -1,6 +1,5 @@
 
 import CoreGraphics
-import Geometry
 
 internal extension CGSize {
 

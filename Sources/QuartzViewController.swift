@@ -1,6 +1,4 @@
 
-import Geometry
-
 internal extension QuartzViewController {
 	
 	func updateScene() {

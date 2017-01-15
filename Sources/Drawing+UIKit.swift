@@ -1,7 +1,6 @@
 
 #if os(iOS)
 
-import Canvas
 import UIKit
 
 internal extension Color {

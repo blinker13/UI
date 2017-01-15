@@ -1,6 +1,4 @@
 
-import Geometry
-
 public enum Alignment {
 	case leading
 	case center

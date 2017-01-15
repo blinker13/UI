@@ -1,6 +1,4 @@
 
-import Geometry
-
 internal struct ContainerLayout {
 
 	internal struct Axis {

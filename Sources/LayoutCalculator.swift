@@ -1,6 +1,4 @@
 
-import Geometry
-
 internal struct LayoutCalculator {
 
 	fileprivate let container:ContainerLayout
