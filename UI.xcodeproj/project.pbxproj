@@ -75,6 +75,18 @@
 		BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */; };
 		BD8EB9051CB86A59001ACCA6 /* LayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */; };
 		BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */; };
+		BD9103D81E2CD658009BFD4F /* BorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CC1E2CD658009BFD4F /* BorderTests.swift */; };
+		BD9103D91E2CD658009BFD4F /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CD1E2CD658009BFD4F /* ColorTests.swift */; };
+		BD9103DA1E2CD658009BFD4F /* DimensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CE1E2CD658009BFD4F /* DimensionsTests.swift */; };
+		BD9103DB1E2CD658009BFD4F /* EdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CF1E2CD658009BFD4F /* EdgesTests.swift */; };
+		BD9103DC1E2CD658009BFD4F /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D01E2CD658009BFD4F /* FontTests.swift */; };
+		BD9103DD1E2CD658009BFD4F /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D11E2CD658009BFD4F /* PointTests.swift */; };
+		BD9103DE1E2CD658009BFD4F /* RealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D21E2CD658009BFD4F /* RealTests.swift */; };
+		BD9103DF1E2CD658009BFD4F /* RectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D31E2CD658009BFD4F /* RectTests.swift */; };
+		BD9103E01E2CD658009BFD4F /* ShadowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D41E2CD658009BFD4F /* ShadowTests.swift */; };
+		BD9103E11E2CD658009BFD4F /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D51E2CD658009BFD4F /* SizeTests.swift */; };
+		BD9103E21E2CD658009BFD4F /* SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D61E2CD658009BFD4F /* SpaceTests.swift */; };
+		BD9103E31E2CD658009BFD4F /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D71E2CD658009BFD4F /* TransformTests.swift */; };
 		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
 		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
 		BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4B6471DFA1054001D78FF /* CGSize.swift */; };
@@ -142,8 +154,6 @@
 		BD1FE1F21C4FF00E005F95D3 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1FE1FD1C4FF1A4005F95D3 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BD1FE1FE1C4FF1A4005F95D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BD1FE2011C4FF1A4005F95D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD1FE2021C4FF1A4005F95D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD1FE20F1C4FF402005F95D3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzViewController.mac.swift; sourceTree = "<group>"; };
 		BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzViewController.ios.swift; sourceTree = "<group>"; };
@@ -178,6 +188,20 @@
 		BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleLayoutIterator.swift; sourceTree = "<group>"; };
 		BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = LayoutCalculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentLayout.swift; sourceTree = "<group>"; };
+		BD9103CC1E2CD658009BFD4F /* BorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTests.swift; sourceTree = "<group>"; };
+		BD9103CD1E2CD658009BFD4F /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		BD9103CE1E2CD658009BFD4F /* DimensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionsTests.swift; sourceTree = "<group>"; };
+		BD9103CF1E2CD658009BFD4F /* EdgesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgesTests.swift; sourceTree = "<group>"; };
+		BD9103D01E2CD658009BFD4F /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
+		BD9103D11E2CD658009BFD4F /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
+		BD9103D21E2CD658009BFD4F /* RealTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTests.swift; sourceTree = "<group>"; };
+		BD9103D31E2CD658009BFD4F /* RectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectTests.swift; sourceTree = "<group>"; };
+		BD9103D41E2CD658009BFD4F /* ShadowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowTests.swift; sourceTree = "<group>"; };
+		BD9103D51E2CD658009BFD4F /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
+		BD9103D61E2CD658009BFD4F /* SpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceTests.swift; sourceTree = "<group>"; };
+		BD9103D71E2CD658009BFD4F /* TransformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
+		BD9103E41E2CD6F0009BFD4F /* Package.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Package.plist; sourceTree = "<group>"; };
+		BD9103E51E2CD6F0009BFD4F /* Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		BD9648131CEFB2D100D3F478 /* Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
 		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		BDB4B6471DFA1054001D78FF /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
@@ -217,7 +241,8 @@
 			children = (
 				BD1FE1FD1C4FF1A4005F95D3 /* LICENSE.md */,
 				BD1FE1FE1C4FF1A4005F95D3 /* README.md */,
-				BD1FE2021C4FF1A4005F95D3 /* Info.plist */,
+				BD9103E41E2CD6F0009BFD4F /* Package.plist */,
+				BD9103E51E2CD6F0009BFD4F /* Tests.plist */,
 				BD51E2831D172618002221F2 /* Package.swift */,
 				BD51E2821D172618002221F2 /* Base.xcconfig */,
 				BD5A9D391DD3EE95006C0D9C /* Debug.xcconfig */,
@@ -357,7 +382,18 @@
 		BD1FE2001C4FF1A4005F95D3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BD1FE2011C4FF1A4005F95D3 /* Info.plist */,
+				BD9103CC1E2CD658009BFD4F /* BorderTests.swift */,
+				BD9103CD1E2CD658009BFD4F /* ColorTests.swift */,
+				BD9103CE1E2CD658009BFD4F /* DimensionsTests.swift */,
+				BD9103CF1E2CD658009BFD4F /* EdgesTests.swift */,
+				BD9103D01E2CD658009BFD4F /* FontTests.swift */,
+				BD9103D11E2CD658009BFD4F /* PointTests.swift */,
+				BD9103D21E2CD658009BFD4F /* RealTests.swift */,
+				BD9103D31E2CD658009BFD4F /* RectTests.swift */,
+				BD9103D41E2CD658009BFD4F /* ShadowTests.swift */,
+				BD9103D51E2CD658009BFD4F /* SizeTests.swift */,
+				BD9103D61E2CD658009BFD4F /* SpaceTests.swift */,
+				BD9103D71E2CD658009BFD4F /* TransformTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -632,6 +668,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = MMDS6BCK8S;
 						DevelopmentTeamName = "Felix Gabel";
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -744,6 +781,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9103DD1E2CD658009BFD4F /* PointTests.swift in Sources */,
+				BD9103D81E2CD658009BFD4F /* BorderTests.swift in Sources */,
+				BD9103E01E2CD658009BFD4F /* ShadowTests.swift in Sources */,
+				BD9103D91E2CD658009BFD4F /* ColorTests.swift in Sources */,
+				BD9103DF1E2CD658009BFD4F /* RectTests.swift in Sources */,
+				BD9103DB1E2CD658009BFD4F /* EdgesTests.swift in Sources */,
+				BD9103E31E2CD658009BFD4F /* TransformTests.swift in Sources */,
+				BD9103DE1E2CD658009BFD4F /* RealTests.swift in Sources */,
+				BD9103E21E2CD658009BFD4F /* SpaceTests.swift in Sources */,
+				BD9103DA1E2CD658009BFD4F /* DimensionsTests.swift in Sources */,
+				BD9103E11E2CD658009BFD4F /* SizeTests.swift in Sources */,
+				BD9103DC1E2CD658009BFD4F /* FontTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,7 +893,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Package.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.UI;
@@ -862,7 +911,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Package.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.UI;
@@ -877,13 +926,14 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -892,12 +942,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
