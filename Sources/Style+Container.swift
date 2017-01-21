@@ -1,7 +1,7 @@
 
 public extension Style {
 
-	static func arrangement(_ alignment:Arrangement) -> Style {
+	static func arrangement(_ arrangement:Arrangement) -> Style {
 		return Style(key:"arrangement", value:arrangement)
 	}
 
