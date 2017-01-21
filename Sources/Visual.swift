@@ -1,7 +1,7 @@
 
 public typealias Opacity = Float
 
-public protocol Visual : Component {
+public protocol Visual {
 	var background:Color? { get }
 	var border:Border? { get }
 	var color:Color { get }
