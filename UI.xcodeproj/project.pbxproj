@@ -52,8 +52,6 @@
 		BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D11C68A8EA002B3E01 /* Alignment.swift */; };
 		BD3997DC1C68A8EA002B3E01 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D21C68A8EA002B3E01 /* Arrangement.swift */; };
 		BD3997DD1C68A8EA002B3E01 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D31C68A8EA002B3E01 /* Component.swift */; };
-		BD3997DE1C68A8EA002B3E01 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D41C68A8EA002B3E01 /* Composer.swift */; };
-		BD3997DF1C68A8EA002B3E01 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D51C68A8EA002B3E01 /* Container.swift */; };
 		BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D61C68A8EA002B3E01 /* Distribution.swift */; };
 		BD40033D1E2C061B00AB2442 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D91C68A8EA002B3E01 /* View.swift */; };
 		BD40033E1E2C061F00AB2442 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC431D3975F1002228C3 /* Label.swift */; };
@@ -93,6 +91,8 @@
 		BDC1FE201D4405FE00E95CB0 /* Font+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1FE1F1D4405FE00E95CB0 /* Font+UIKit.swift */; };
 		BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */; };
 		BDDABC461D399463002228C3 /* Textual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC451D399463002228C3 /* Textual.swift */; };
+		BDE17C701E32B33D006D80C7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6D1E32B33D006D80C7 /* Context.swift */; };
+		BDE17C711E32B33D006D80C7 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6E1E32B33D006D80C7 /* Page.swift */; };
 		BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF256D71CF91FA60020F864 /* Overflow.swift */; };
 		BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */; };
 		BDF790EC1D174131003887E7 /* Space+Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790EB1D174131003887E7 /* Space+Arrangement.swift */; };
@@ -164,8 +164,6 @@
 		BD3997D11C68A8EA002B3E01 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		BD3997D21C68A8EA002B3E01 /* Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		BD3997D31C68A8EA002B3E01 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
-		BD3997D41C68A8EA002B3E01 /* Composer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
-		BD3997D51C68A8EA002B3E01 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BD3997D61C68A8EA002B3E01 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		BD3997D91C68A8EA002B3E01 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BD4003401E2C22BF00AB2442 /* Style+Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Component.swift"; sourceTree = "<group>"; };
@@ -209,6 +207,8 @@
 		BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeIterator.swift; sourceTree = "<group>"; };
 		BDDABC431D3975F1002228C3 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		BDDABC451D399463002228C3 /* Textual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textual.swift; sourceTree = "<group>"; };
+		BDE17C6D1E32B33D006D80C7 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		BDE17C6E1E32B33D006D80C7 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		BDE8A79A1C95D56700EAF68D /* mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mac.playground; sourceTree = "<group>"; };
 		BDF256D71CF91FA60020F864 /* Overflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overflow.swift; sourceTree = "<group>"; };
 		BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Size+Arrangement.swift"; sourceTree = "<group>"; };
@@ -420,10 +420,11 @@
 		BD3997E51C68A8F8002B3E01 /* Layouting */ = {
 			isa = PBXGroup;
 			children = (
+				BDE17C6D1E32B33D006D80C7 /* Context.swift */,
+				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
 				BD96A5AE1CF0ABBA00231DA8 /* Attributes */,
 				BD294AC31CDD47E600A8716A /* Calculators */,
 				BD8EB9031CB869D6001ACCA6 /* Entities */,
-				BD8226631C936DBA00D807A3 /* Hierachy */,
 				BD8C94D21CD7FCBA006C009E /* Utilities */,
 			);
 			name = Layouting;
@@ -432,6 +433,8 @@
 		BD3997E61C68A915002B3E01 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
+				BD8226641C936DD700D807A3 /* Node.swift */,
+				BD8226651C936DD700D807A3 /* Scene.swift */,
 				BD3997D91C68A8EA002B3E01 /* View.swift */,
 			);
 			name = Containers;
@@ -441,8 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				BD3997D31C68A8EA002B3E01 /* Component.swift */,
-				BD3997D41C68A8EA002B3E01 /* Composer.swift */,
-				BD3997D51C68A8EA002B3E01 /* Container.swift */,
+				BDE17C6E1E32B33D006D80C7 /* Page.swift */,
 				BD3997E61C68A915002B3E01 /* Containers */,
 				BDDABC421D3975E0002228C3 /* Text */,
 			);
@@ -520,15 +522,6 @@
 			name = Appearance;
 			sourceTree = "<group>";
 		};
-		BD8226631C936DBA00D807A3 /* Hierachy */ = {
-			isa = PBXGroup;
-			children = (
-				BD8226641C936DD700D807A3 /* Node.swift */,
-				BD8226651C936DD700D807A3 /* Scene.swift */,
-			);
-			name = Hierachy;
-			sourceTree = "<group>";
-		};
 		BD8226681C936DE900D807A3 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,7 +553,6 @@
 		BD96A5AE1CF0ABBA00231DA8 /* Attributes */ = {
 			isa = PBXGroup;
 			children = (
-				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
 				BD3997D11C68A8EA002B3E01 /* Alignment.swift */,
 				BD3997D21C68A8EA002B3E01 /* Arrangement.swift */,
 				BD3997D61C68A8EA002B3E01 /* Distribution.swift */,
@@ -698,6 +690,7 @@
 			files = (
 				BD1185621E28DA1900B98DD3 /* Line.swift in Sources */,
 				BD1185641E28DA1900B98DD3 /* Point.swift in Sources */,
+				BDE17C701E32B33D006D80C7 /* Context.swift in Sources */,
 				BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */,
 				BD82266A1C936E0300D807A3 /* Renderer.swift in Sources */,
 				BD3997DC1C68A8EA002B3E01 /* Arrangement.swift in Sources */,
@@ -707,12 +700,10 @@
 				BD40033E1E2C061F00AB2442 /* Label.swift in Sources */,
 				BD1185911E290BC100B98DD3 /* Font.swift in Sources */,
 				BD1185991E290BC100B98DD3 /* Shadow.swift in Sources */,
-				BD3997DE1C68A8EA002B3E01 /* Composer.swift in Sources */,
 				BDF790EE1D17422E003887E7 /* Space+Alignment.swift in Sources */,
 				BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */,
 				BD11855D1E28DA1900B98DD3 /* Arithmetic.swift in Sources */,
 				BD11858C1E290BC100B98DD3 /* Color+Components.swift in Sources */,
-				BD3997DF1C68A8EA002B3E01 /* Container.swift in Sources */,
 				BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */,
 				BD11859A1E290BC100B98DD3 /* Size+Quartz.swift in Sources */,
 				BD6C2FE01D8BDE8F00FE7A91 /* QuartzViewController.swift in Sources */,
@@ -729,6 +720,7 @@
 				BD11859D1E290BC100B98DD3 /* Text+Description.swift in Sources */,
 				BD4003461E2C274500AB2442 /* Style+Visual.swift in Sources */,
 				BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */,
+				BDE17C711E32B33D006D80C7 /* Page.swift in Sources */,
 				BD11859E1E290BC100B98DD3 /* Text+Equatable.swift in Sources */,
 				BD1185941E290BC100B98DD3 /* LineBreak.swift in Sources */,
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,

@@ -1,7 +1,5 @@
 
-import Dispatch
-
-internal final class Scene {
+public final class Scene {
 
 	fileprivate let root:Node
 	fileprivate var nodes:Set<Node>
@@ -12,15 +10,30 @@ internal final class Scene {
 	}
 }
 
-internal extension Scene {
+extension Scene : Page {
 
-	var minimumSize:Size { return root.component.minimumSize }
-	var maximumSize:Size { return root.component.maximumSize }
+	public var height:Dimensions { return root.height }
+	public var width:Dimensions { return root.width }
 
-	internal convenience init (with component:Component) {
-		let node = Node(component)
+	public func compose(with context: Context) -> Component {
+		return root
+	}
+
+	public func onStart() { page?.onStart() }
+	public func onResume() { page?.onResume() }
+	public func onPause() { page?.onPause() }
+	public func onStop() { page?.onStop() }
+}
+
+public extension Scene {
+
+	convenience init (with component:Component) {
+		let node = Node(with:component)
 		self.init(with: node)
 	}
+}
+
+internal extension Scene {
 
 	func update(with size:Size) {
 		if size == root.frame.size { return }
@@ -39,6 +52,10 @@ internal extension Scene {
 
 private extension Scene {
 
+	var page:Page? {
+		return root.component as? Page
+	}
+
 	func setNeedsDisplay(_ node:Node) {
 		nodes.insert(node)
 	}
@@ -49,7 +66,9 @@ private extension Scene {
 		for (index, component, rectangle) in calculator {
 
 			if index >= node.children.count {
-				let newChild = Node(component, parent:node, frame:rectangle)
+				let newChild = Node(with:component)
+				newChild.frame = rectangle
+				newChild.parent = node
 				renderer.insert(newChild, at:index)
 				node.children.append(newChild)
 				nodes.insert(newChild)
@@ -64,7 +83,9 @@ private extension Scene {
 					nodes.insert(child)
 
 				} else {
-					let newChild = Node(component, parent:node, frame:rectangle)
+					let newChild = Node(with:component)
+					newChild.frame = rectangle
+					newChild.parent = node
 					node.children[index] = newChild
 					renderer.remove(child)
 					renderer.insert(newChild, at:index)

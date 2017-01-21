@@ -18,8 +18,7 @@ internal extension LayoutCalculator {
 	var count:Int { return layouts.count }
 
 	init?(_ node:Node) {
-		guard let container = node.component as? Container else { return nil }
-		let layout = ContainerLayout(container, node.frame.size)
+		let layout = ContainerLayout(node.component, node.frame.size)
 		self.init(layout)
 	}
 }

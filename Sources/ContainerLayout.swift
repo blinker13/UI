@@ -17,9 +17,9 @@ internal struct ContainerLayout {
 	internal let cross:Axis
 	internal let main:Axis
 
-	fileprivate let container:Container
+	fileprivate let container:Component
 
-	internal init (_ container:Container, _ constraint:Size) {
+	internal init (_ container:Component, _ constraint:Size) {
 		let size = constraint.inseted(by:container.padding)
 		self.cross = Axis(container.arrangement.crossed, size, container.padding)
 		self.main = Axis(container.arrangement, size, container.padding)

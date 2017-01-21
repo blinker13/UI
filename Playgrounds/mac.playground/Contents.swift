@@ -6,34 +6,34 @@ import XCPlayground
 
 let s0 = Style(
 	.background(.red),
-	.height(min:70.0),
-	.width(40.0)
+	.height(70.0),
+	.width(50.0)
 )
 
 let s1 = Style(
-	.alignment(.center),
+	.alignment(.trailing),
 	.background(.yellow),
 	.border(radius:5, width:2),
-	.height(min:10, max:50),
+	.height(min:10, max:40),
 	.width(min:80),
 	.margin(5.0)
 )
 
 let s2 = Style(
-	.alignment(.trailing),
+	.alignment(.center),
 	.background(.green),
-	.shadow(offset:3.0),
+//	.shadow(offset:3.0),
 	.width(max:150),
-	.height(40.0)
+	.height(30.0)
 )
 
 let cs = Style(
 	.padding(5.0),
 	.arrangement(.horizontal),
-	.distribution(.order),
+	.distribution(.equal),
 	.background(.white),
-	.height(130.0),
-	.width(400.0)
+	.height(100.0),
+	.width(300.0)
 )
 
 let container = View(style:cs,
