@@ -56,7 +56,6 @@
 		BD40033D1E2C061B00AB2442 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D91C68A8EA002B3E01 /* View.swift */; };
 		BD40033E1E2C061F00AB2442 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC431D3975F1002228C3 /* Label.swift */; };
 		BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003401E2C22BF00AB2442 /* Style+Component.swift */; };
-		BD4003431E2C238100AB2442 /* Style+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003421E2C238100AB2442 /* Style+Container.swift */; };
 		BD4003461E2C274500AB2442 /* Style+Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003451E2C274500AB2442 /* Style+Visual.swift */; };
 		BD4190941D37E14100B90317 /* Drawing+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190931D37E14100B90317 /* Drawing+UIKit.swift */; };
 		BD4190961D37E2EC00B90317 /* UIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190951D37E2EC00B90317 /* UIKitViewController.swift */; };
@@ -168,7 +167,6 @@
 		BD3997D61C68A8EA002B3E01 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		BD3997D91C68A8EA002B3E01 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BD4003401E2C22BF00AB2442 /* Style+Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Component.swift"; sourceTree = "<group>"; };
-		BD4003421E2C238100AB2442 /* Style+Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Container.swift"; sourceTree = "<group>"; };
 		BD4003451E2C274500AB2442 /* Style+Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+Visual.swift"; sourceTree = "<group>"; };
 		BD4190931D37E14100B90317 /* Drawing+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Drawing+UIKit.swift"; sourceTree = "<group>"; };
 		BD4190951D37E2EC00B90317 /* UIKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitViewController.swift; sourceTree = "<group>"; };
@@ -468,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				BD4003401E2C22BF00AB2442 /* Style+Component.swift */,
-				BD4003421E2C238100AB2442 /* Style+Container.swift */,
 				BD4003451E2C274500AB2442 /* Style+Visual.swift */,
 			);
 			name = Styling;
@@ -737,7 +734,6 @@
 				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
 				BD1185691E28DA1900B98DD3 /* Transform.swift in Sources */,
 				BD6C2FDE1D8BDE8F00FE7A91 /* QuartzViewController.ios.swift in Sources */,
-				BD4003431E2C238100AB2442 /* Style+Container.swift in Sources */,
 				BD1185631E28DA1900B98DD3 /* Path.swift in Sources */,
 				BD8226671C936DD700D807A3 /* Scene.swift in Sources */,
 				BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */,
