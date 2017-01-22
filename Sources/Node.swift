@@ -23,8 +23,11 @@ extension Node : Component {
 	var padding:Padding { return component.padding }
 	var margin:Margin { return component.margin }
 
-	func construct(with context: Context) -> [Component] {
-		return component.construct(with:context)
+//	func construct(with context: Context) -> [Component] {
+//		return component.construct(with:context)
+//	}
+	func construct() -> [Component] {
+		return component.construct()
 	}
 }
 

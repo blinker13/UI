@@ -11,7 +11,8 @@ public protocol Component {
 	var padding:Padding { get }
 	var margin:Margin { get }
 
-	func construct(with context:Context) -> [Component]
+//	func construct(with context:Context) -> [Component]
+	func construct() -> [Component]
 }
 
 public extension Component {
@@ -39,6 +40,7 @@ public extension Component {
 	var padding:Padding { return .zero }
 	var margin:Margin { return .zero }
 
+//	func construct(with context:Context) -> [Component] {
 	func construct() -> [Component] {
 		return []
 	}

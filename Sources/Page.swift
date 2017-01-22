@@ -3,7 +3,8 @@ public protocol Page : Component {
 
 	var title:String { get }
 
-	func compose(with context:Context) -> Component
+//	func compose(with context:Context) -> Component
+	func compose() -> Component
 
 	func onStart()
 	func onResume()
@@ -18,8 +19,10 @@ public extension Page {
 		return String(describing:kind)
 	}
 
-	func construct(with context:Context) -> [Component] {
-		let composition = compose(with:context)
+//	func construct(with context:Context) -> [Component] {
+//		let composition = compose(with:context)
+	func construct() -> [Component] {
+		let composition = compose()
 		return [composition]
 	}
 

@@ -12,10 +12,11 @@ public final class Scene {
 
 extension Scene : Page {
 
-	public var height:Dimensions { return root.height }
 	public var width:Dimensions { return root.width }
+	public var height:Dimensions { return root.height }
 
-	public func compose(with context: Context) -> Component {
+//	public func compose(with context: Context) -> Component {
+	public func compose() -> Component {
 		return root
 	}
 
@@ -35,7 +36,7 @@ public extension Scene {
 
 internal extension Scene {
 
-	func update(with size:Size) {
+	func update(_ size:Size) {
 		if size == root.frame.size { return }
 		root.frame.size = size
 		setNeedsDisplay(root)
@@ -64,6 +65,8 @@ private extension Scene {
 		guard let calculator = LayoutCalculator(node) else { return }
 
 		for (index, component, rectangle) in calculator {
+
+			print(index, "-->", rectangle)
 
 			if index >= node.children.count {
 				let newChild = Node(with:component)
