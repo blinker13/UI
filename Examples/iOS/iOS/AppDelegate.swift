@@ -1,5 +1,4 @@
 
-import Canvas
 import UIKit
 import UI
 
@@ -9,52 +8,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window:UIWindow?
 
 	let bar = Style(
-		height:44.0
-	)
-
-	let label = Style(
-		background:Color(white:0.9),
-		textAlignment:.center,
-		textColor:.red
+		.height(44.0)
 	)
 
 	let navigation = Style(
-		background:.red
+		.background(.red)
 	)
 
 	let contentStyle = Style(
-		alignment:.center,
-		background:.yellow,
-		border:Border(radius:5, width:2),
-		margin:20.0,
-		width:Dimensions(min:80)
+		.alignment(.center),
+		.background(.yellow),
+		.width(min:80),
+		.margin(20.0)
 	)
 
 	let tool = Style(
-		background:.green
+		.background(.green)
 	)
 
 	let root = Style(
-		background:.white,
-		distribution:.order,
-		padding:Space(top:20.0)
+		.background(.white),
+		.distribution(.order)
 	)
 
 	var content:Component {
 		return View(style:root,
 			View(style:[bar, navigation]),
-			Label(style:[bar, label], text:"Hello World"),
 			View(style:contentStyle),
 			View(style:[bar, tool])
 		)
 	}
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
-		let screen = UIScreen.main()
-		let aWindow = UIWindow(frame:screen.bounds)
-//		aWindow.rootViewController = QuartzViewController(component:content)
-		aWindow.rootViewController = UIKitViewController(component:content)
+		let aWindow = UIWindow(frame:UIScreen.main.bounds)
+		aWindow.rootViewController = QuartzViewController(with:content)
 		aWindow.makeKeyAndVisible()
 		window = aWindow
 

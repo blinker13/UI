@@ -5,18 +5,14 @@ import UIKit
 
 public final class QuartzViewController : UIViewController {
 
-	fileprivate let component:Component
+	internal let scene:Scene
 
-	private lazy var renderer:Renderer = {
+	internal lazy var renderer:Renderer = {
 		return QuartzRenderer(root:self.view.layer)
 	}()
 
-	internal lazy var scene:Scene = {
-		return Scene(self.component, self.renderer)
-	}()
-
-	public init (component:Component) {
-		self.component = component
+	internal init (with scene:Scene) {
+		self.scene = scene
 		super.init(nibName:nil, bundle:nil)
 	}
 
@@ -28,15 +24,37 @@ public final class QuartzViewController : UIViewController {
 public extension QuartzViewController {
 
 	override func loadView() {
-		let w = CGFloat(component.width.min)
-		let h = CGFloat(component.height.min)
-		let rect = CGRect(x:0, y:0, width:w, height:h)
-		self.view = UIView(frame:rect)
+		self.view = UIView(frame:.zero)
 	}
-	
+
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
-		updateScene()
+		scene.update(currentSize)
+	}
+
+	public override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		scene.display(with:renderer)
+	}
+
+	override func viewWillAppear(_ animated:Bool) {
+		super.viewWillAppear(animated)
+		scene.onStart()
+	}
+
+	override func viewDidAppear(_ animated:Bool) {
+		super.viewDidAppear(animated)
+		scene.onResume()
+	}
+
+	override func viewWillDisappear(_ animated:Bool) {
+		super.viewWillDisappear(animated)
+		scene.onPause()
+	}
+
+	override func viewDidDisappear(_ animated:Bool) {
+		super.viewDidDisappear(animated)
+		scene.onStop()
 	}
 }
 

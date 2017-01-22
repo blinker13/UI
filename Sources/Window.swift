@@ -9,6 +9,11 @@ public struct Window : Stylable {
 	}
 }
 
+extension Window : Component {
+	public var height:Dimensions { return style.height ?? calculatedHeight }
+	public var width:Dimensions { return style.width ?? calculatedWidth }
+}
+
 extension Window : Page {
 
 //	public func compose(with context: Context) -> Component {
@@ -22,6 +27,24 @@ extension Window : Page {
 	public func onStop() { page?.onStop() }
 }
 
+internal extension Window {
+	static func wrap(_ component:Component) -> Window {
+		if let window = component as? Window { return window }
+		else { return Window(with:component) }
+	}
+}
+
 private extension Window {
-	var page:Page? { return root as? Page }
+
+	var page:Page? {
+		return root as? Page
+	}
+
+	var calculatedHeight: Dimensions {
+		return root.height //TODO: add vertical margin
+	}
+
+	var calculatedWidth: Dimensions {
+		return root.width //TODO: add horizontal margin
+	}
 }

@@ -11,21 +11,9 @@ public final class QuartzViewController : NSViewController {
 		return QuartzRenderer(root:self.view.layer!)
 	}()
 
-	// MARK: -
-
 	internal init (with scene:Scene) {
 		self.scene = scene
 		super.init(nibName:nil, bundle:nil)!
-	}
-
-	public convenience init (with window:Window) {
-		let scene = Scene(with:window)
-		self.init(with:scene)
-	}
-
-	public convenience init (with component:Component) {
-		let window = Window(with:component)
-		self.init(with:window)
 	}
 
 	public required init?(coder:NSCoder) {

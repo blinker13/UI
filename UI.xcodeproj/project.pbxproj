@@ -46,7 +46,6 @@
 		BD11859F1E290BC100B98DD3 /* Text+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185871E290BC100B98DD3 /* Text+Initializer.swift */; };
 		BD1185A01E290BC100B98DD3 /* Text+Nesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185881E290BC100B98DD3 /* Text+Nesting.swift */; };
 		BD1FE21B1C500434005F95D3 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1FE1F21C4FF00E005F95D3 /* UI.framework */; };
-		BD2704271D37BDA40052901E /* UIKitRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2704261D37BDA40052901E /* UIKitRenderer.swift */; };
 		BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294ABF1CDD421900A8716A /* SizeCalculator.swift */; };
 		BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294AC11CDD429900A8716A /* ContainerLayout.swift */; };
 		BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D11C68A8EA002B3E01 /* Alignment.swift */; };
@@ -57,9 +56,6 @@
 		BD40033E1E2C061F00AB2442 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC431D3975F1002228C3 /* Label.swift */; };
 		BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003401E2C22BF00AB2442 /* Style+Component.swift */; };
 		BD4003461E2C274500AB2442 /* Style+Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4003451E2C274500AB2442 /* Style+Visual.swift */; };
-		BD4190941D37E14100B90317 /* Drawing+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190931D37E14100B90317 /* Drawing+UIKit.swift */; };
-		BD4190961D37E2EC00B90317 /* UIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4190951D37E2EC00B90317 /* UIKitViewController.swift */; };
-		BD4A7F931D43E38500F10277 /* Text+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A7F921D43E38500F10277 /* Text+UIKit.swift */; };
 		BD526D231C97510F0075684E /* QuartzRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526D221C97510F0075684E /* QuartzRenderer.swift */; };
 		BD6C2FDE1D8BDE8F00FE7A91 /* QuartzViewController.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2142201CFCFF6000D3CD58 /* QuartzViewController.ios.swift */; };
 		BD6C2FDF1D8BDE8F00FE7A91 /* QuartzViewController.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD21421E1CFCFBD800D3CD58 /* QuartzViewController.mac.swift */; };
@@ -87,7 +83,6 @@
 		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
 		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
 		BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4B6471DFA1054001D78FF /* CGSize.swift */; };
-		BDC1FE201D4405FE00E95CB0 /* Font+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC1FE1F1D4405FE00E95CB0 /* Font+UIKit.swift */; };
 		BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */; };
 		BDDABC461D399463002228C3 /* Textual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC451D399463002228C3 /* Textual.swift */; };
 		BDE17C701E32B33D006D80C7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6D1E32B33D006D80C7 /* Context.swift */; };
@@ -703,7 +698,6 @@
 				BD82266A1C936E0300D807A3 /* Renderer.swift in Sources */,
 				BD3997DC1C68A8EA002B3E01 /* Arrangement.swift in Sources */,
 				BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */,
-				BD4A7F931D43E38500F10277 /* Text+UIKit.swift in Sources */,
 				BDDABC461D399463002228C3 /* Textual.swift in Sources */,
 				BD40033E1E2C061F00AB2442 /* Label.swift in Sources */,
 				BD1185911E290BC100B98DD3 /* Font.swift in Sources */,
@@ -737,19 +731,16 @@
 				BD1185631E28DA1900B98DD3 /* Path.swift in Sources */,
 				BD8226671C936DD700D807A3 /* Scene.swift in Sources */,
 				BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */,
-				BDC1FE201D4405FE00E95CB0 /* Font+UIKit.swift in Sources */,
 				BD7ACBD41CEE6C2C0067C6FC /* Style.swift in Sources */,
 				BD1185921E290BC100B98DD3 /* Gradient.swift in Sources */,
 				BD1185681E28DA1900B98DD3 /* Space.swift in Sources */,
 				BD8C94D41CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift in Sources */,
-				BD4190941D37E14100B90317 /* Drawing+UIKit.swift in Sources */,
 				BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */,
 				BD1185671E28DA1900B98DD3 /* Size.swift in Sources */,
 				BD40033D1E2C061B00AB2442 /* View.swift in Sources */,
 				BD1185951E290BC100B98DD3 /* Paint.swift in Sources */,
 				BD1185971E290BC100B98DD3 /* Point+Quartz.swift in Sources */,
 				BD8226661C936DD700D807A3 /* Node.swift in Sources */,
-				BD2704271D37BDA40052901E /* UIKitRenderer.swift in Sources */,
 				BD1185611E28DA1900B98DD3 /* Geometry.swift in Sources */,
 				BD11858D1E290BC100B98DD3 /* Color+Gray.swift in Sources */,
 				BD1185891E290BC100B98DD3 /* Blending.swift in Sources */,
@@ -760,7 +751,6 @@
 				BD1185651E28DA1900B98DD3 /* Rect.swift in Sources */,
 				BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */,
 				BD1185A01E290BC100B98DD3 /* Text+Nesting.swift in Sources */,
-				BD4190961D37E2EC00B90317 /* UIKitViewController.swift in Sources */,
 				BD1185931E290BC100B98DD3 /* Image.swift in Sources */,
 				BD11858F1E290BC100B98DD3 /* Color+Quartz.swift in Sources */,
 				BDF790EC1D174131003887E7 /* Space+Arrangement.swift in Sources */,

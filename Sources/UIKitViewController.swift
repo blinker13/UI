@@ -1,7 +1,6 @@
 
 #if os(iOS)
 
-import Canvas
 import UIKit
 
 public final class UIKitViewController : UIViewController {
