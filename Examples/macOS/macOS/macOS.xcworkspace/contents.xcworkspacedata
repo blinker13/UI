@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:iOS.xcodeproj">
+      location = "container:../macOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../../UI.xcodeproj">
+      location = "group:../../../UI.xcodeproj">
    </FileRef>
 </Workspace>

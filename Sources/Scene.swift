@@ -30,7 +30,7 @@ public extension Scene {
 
 	convenience init (with component:Component) {
 		let node = Node(with:component)
-		self.init(with: node)
+		self.init(with:node)
 	}
 }
 
@@ -65,8 +65,6 @@ private extension Scene {
 		guard let calculator = LayoutCalculator(node) else { return }
 
 		for (index, component, rectangle) in calculator {
-
-			print(index, "-->", rectangle)
 
 			if index >= node.children.count {
 				let newChild = Node(with:component)

@@ -6,8 +6,8 @@ public protocol Stylable {
 public struct Style {
 
 	public struct Attribute {
-		public let key: String
-		public let value: Any
+		public let key:String
+		public let value:Any
 	}
 
 	fileprivate let attributes: Set<Attribute>
@@ -26,7 +26,7 @@ public extension Style {
 		}
 	}
 
-	init (_ styles: Style ...) {
+	init (_ styles:Style ...) {
 		self.init(with:styles)
 	}
 

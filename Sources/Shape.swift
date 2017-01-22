@@ -25,5 +25,5 @@ public extension Shape {
 	var isFinite:Bool { return bounds.size.isFinite }
 	var isInfinite:Bool { return bounds.size.isInfinite }
 
-	var path: Path { return Path(with:elements) }
+	var path:Path { return Path(with:elements) }
 }

@@ -30,9 +30,8 @@ public extension QuartzViewController {
 	override func loadView() {
 		let rect = NSRect(origin:.zero, size:preferredMinimumSize)
 		let view = NSView(frame:rect)
+		view.layer = QuartzLayer()
 		view.wantsLayer = true
-		view.layer = CALayer()
-		view.layer!.isGeometryFlipped = true
 		self.view = view
 	}
 
@@ -42,12 +41,15 @@ public extension QuartzViewController {
 	}
 
 	override func viewDidLayout() {
-		view.layer!.isGeometryFlipped = true
+		CATransaction.setDisableActions(true)
+		
 		scene.display(with:renderer)
+		CATransaction.setDisableActions(false)
 		super.viewDidLayout()
 	}
 
 	override func viewWillAppear() {
+		view.layer!.isGeometryFlipped = true
 		super.viewWillAppear()
 		scene.onStart()
 	}
