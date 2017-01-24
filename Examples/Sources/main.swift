@@ -1,8 +1,10 @@
 
-import Cocoa
 import UI
 
-// MARK: -
+
+#if os(OSX)
+
+import Cocoa
 
 let menubar = NSMenu()
 let appMenuItem = NSMenuItem()
@@ -15,6 +17,8 @@ appMenuItem.submenu = appMenu
 
 let app = NSApplication.shared()
 app.mainMenu = menubar
+
+#endif
 
 
 // MARK: - Implementation
@@ -36,19 +40,20 @@ let tool = Style(
 )
 
 let root = Style(
+	.width(min:300.0),
+	.height(min:300.0),
 	.background(.white),
-	.distribution(.order),
-	.height(min:200.0),
-	.width(min:300.0, max:500.0)
+	.distribution(.order)
 )
 
 Application.run(
 	View(style:root,
-		View(style:bar),
-		View(style:contentStyle),
-		View(style:[bar, tool])
+	     View(style:bar),
+	     View(style:contentStyle),
+	     View(style:[bar, tool])
 	)
 )
+
 
 
 
