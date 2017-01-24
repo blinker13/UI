@@ -3,23 +3,15 @@
 
 import AppKit
 
-public final class Application {
-
-	public static let shared = Application()
-
-	fileprivate let app = NSApplication.shared()
-
-	private init () {
-
-	}
-}
-
 internal extension Application {
 
-	func run(with component:Component) {
-		let window = QuartzWindow(with:component)
+	func main() {
+		let window = QuartzWindow(with:content!)
+		window.titlebarAppearsTransparent = true
+		window.titleVisibility = .hidden
 		window.makeKeyAndOrderFront(nil)
-		app.run()
+		NSApplication.shared()
+		NSApp.run()
 	}
 }
 

@@ -88,6 +88,8 @@
 		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
 		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
 		BDB4B6481DFA1054001D78FF /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4B6471DFA1054001D78FF /* CGSize.swift */; };
+		BDCE67C71E37E36D00FA45B6 /* ApplicationDelegate.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE67C61E37E36D00FA45B6 /* ApplicationDelegate.ios.swift */; };
+		BDCE67C91E37E5D400FA45B6 /* ApplicationDelegate.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE67C81E37E5D400FA45B6 /* ApplicationDelegate.mac.swift */; };
 		BDDA243E1CA4ADA800E89901 /* ParentNodeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */; };
 		BDDABC461D399463002228C3 /* Textual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC451D399463002228C3 /* Textual.swift */; };
 		BDE17C701E32B33D006D80C7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6D1E32B33D006D80C7 /* Context.swift */; };
@@ -210,6 +212,8 @@
 		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		BDB4B6471DFA1054001D78FF /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		BDC1FE1F1D4405FE00E95CB0 /* Font+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+UIKit.swift"; sourceTree = "<group>"; };
+		BDCE67C61E37E36D00FA45B6 /* ApplicationDelegate.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.ios.swift; sourceTree = "<group>"; };
+		BDCE67C81E37E5D400FA45B6 /* ApplicationDelegate.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.mac.swift; sourceTree = "<group>"; };
 		BDDA243D1CA4ADA800E89901 /* ParentNodeIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeIterator.swift; sourceTree = "<group>"; };
 		BDDABC431D3975F1002228C3 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		BDDABC451D399463002228C3 /* Textual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textual.swift; sourceTree = "<group>"; };
@@ -583,6 +587,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		BDCE67C51E37E2FF00FA45B6 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BDCE67C61E37E36D00FA45B6 /* ApplicationDelegate.ios.swift */,
+				BDCE67C81E37E5D400FA45B6 /* ApplicationDelegate.mac.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		BDDABC421D3975E0002228C3 /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +618,7 @@
 				BD01133A1E34FFA700214A33 /* Application.ios.swift */,
 				BDE17C7D1E34BB0B006D80C7 /* Application.mac.swift */,
 				BDE17C7F1E34BB33006D80C7 /* Application.swift */,
+				BDCE67C51E37E2FF00FA45B6 /* Delegate */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -735,6 +749,7 @@
 				BDF790EE1D17422E003887E7 /* Space+Alignment.swift in Sources */,
 				BD01133B1E34FFA700214A33 /* Application.ios.swift in Sources */,
 				BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */,
+				BDCE67C91E37E5D400FA45B6 /* ApplicationDelegate.mac.swift in Sources */,
 				BD0113701E354C1300214A33 /* QuartzWindow.mac.swift in Sources */,
 				BD11855D1E28DA1900B98DD3 /* Arithmetic.swift in Sources */,
 				BD11858C1E290BC100B98DD3 /* Color+Components.swift in Sources */,
@@ -781,6 +796,7 @@
 				BD11859F1E290BC100B98DD3 /* Text+Initializer.swift in Sources */,
 				BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */,
 				BD11855E1E28DA1900B98DD3 /* Dimensions.swift in Sources */,
+				BDCE67C71E37E36D00FA45B6 /* ApplicationDelegate.ios.swift in Sources */,
 				BDE17C791E33FD37006D80C7 /* Window.swift in Sources */,
 				BDE17C801E34BB33006D80C7 /* Application.swift in Sources */,
 				BD1185651E28DA1900B98DD3 /* Rect.swift in Sources */,
