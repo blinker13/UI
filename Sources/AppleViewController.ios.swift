@@ -3,12 +3,12 @@
 
 import UIKit
 
-public final class QuartzViewController : UIViewController {
+public final class AppleViewController : UIViewController {
 
 	internal let scene:Scene
 
 	internal lazy var renderer:Renderer = {
-		return QuartzRenderer(root:self.view.layer)
+		return AppleRenderer(root:self.view.layer)
 	}()
 
 	internal init (with scene:Scene) {
@@ -21,7 +21,7 @@ public final class QuartzViewController : UIViewController {
 	}
 }
 
-public extension QuartzViewController {
+public extension AppleViewController {
 
 	override func loadView() {
 		self.view = UIView(frame:.zero)

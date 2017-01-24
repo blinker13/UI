@@ -3,12 +3,12 @@
 
 import AppKit
 
-public final class QuartzViewController : NSViewController {
+public final class AppleViewController : NSViewController {
 
 	internal let scene:Scene
 
 	internal lazy var renderer:Renderer = {
-		return QuartzRenderer(root:self.view.layer!)
+		return AppleRenderer(root:self.view.layer!)
 	}()
 
 	internal init (with scene:Scene) {
@@ -22,7 +22,7 @@ public final class QuartzViewController : NSViewController {
 }
 
 
-public extension QuartzViewController {
+public extension AppleViewController {
 
 	override var preferredMinimumSize:NSSize { return CGSize(with:scene.minimumSize) }
 	override var preferredMaximumSize:NSSize { return CGSize(with:scene.maximumSize) }
@@ -30,7 +30,7 @@ public extension QuartzViewController {
 	override func loadView() {
 		let rect = NSRect(origin:.zero, size:preferredMinimumSize)
 		let view = NSView(frame:rect)
-		view.layer = QuartzLayer()
+		view.layer = AppleLayer()
 		view.wantsLayer = true
 		self.view = view
 	}

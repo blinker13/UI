@@ -10,8 +10,7 @@ internal extension Application {
 		let destination = UnsafeMutablePointer<Int8>.self
 		let rawUnsafeArgv = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
 		let argv = rawUnsafeArgv.bindMemory(to:destination, capacity:count)
-		let delegateName = NSStringFromClass(ApplicationDelegate.self)
-		UIApplicationMain(CommandLine.argc, argv, nil, delegateName)
+		UIApplicationMain(CommandLine.argc, argv, nil, Apple.name)
 	}
 }
 

@@ -43,5 +43,5 @@ let container = View(style:cs,
 	View(style:s2)
 )
 
-let vc = QuartzViewController(component:container)
+let vc = AppleViewController(component:container)
 XCPlaygroundPage.currentPage.liveView = vc.view

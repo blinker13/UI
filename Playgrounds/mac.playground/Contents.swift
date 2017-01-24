@@ -35,7 +35,7 @@ let container = View(style:cs,
 	View(style:s2)
 )
 
-let vc = QuartzViewController(with:container)
+let vc = AppleViewController(with:container)
 vc.view.frame = CGRect(x:0, y:0, width:320, height:480)
 vc.viewWillLayout()
 vc.viewDidLayout()

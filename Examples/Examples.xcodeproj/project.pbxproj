@@ -14,7 +14,6 @@
 		BDF81AE31E380EC300AF2E98 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD4588A1E380E7B00B95919 /* UI.framework */; };
 		BDF81AE41E380EC300AF2E98 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDD4588A1E380E7B00B95919 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF81AEC1E380EFB00AF2E98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD458611E380BB800B95919 /* main.swift */; };
-		BDF81AED1E380F0C00AF2E98 /* macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDF81AE61E380EDF00AF2E98 /* macOS.plist */; };
 		BDF81AEE1E380F0F00AF2E98 /* macOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF81AE71E380EDF00AF2E98 /* macOS.xcassets */; };
 		BDF81AF71E38129A00AF2E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF81AF51E38129A00AF2E98 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -231,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF81AED1E380F0C00AF2E98 /* macOS.plist in Resources */,
 				BDF81AEE1E380F0F00AF2E98 /* macOS.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

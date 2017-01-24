@@ -6,7 +6,7 @@ import AppKit
 internal extension Application {
 
 	func main() {
-		let window = QuartzWindow(with:content!)
+		let window = AppleWindow(with:Application.shared.window!)
 		window.titlebarAppearsTransparent = true
 		window.titleVisibility = .hidden
 		window.makeKeyAndOrderFront(nil)

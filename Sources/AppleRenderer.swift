@@ -1,7 +1,7 @@
 
 import QuartzCore
 
-internal final class QuartzRenderer {
+internal final class AppleRenderer {
 
 	internal var content = [Node:CALayer]()
 	internal let rootLayer:CALayer
@@ -11,7 +11,7 @@ internal final class QuartzRenderer {
 	}
 }
 
-extension QuartzRenderer : Renderer {
+extension AppleRenderer : Renderer {
 
 	func insert(_ node:Node, at index:Int) {
 		let layer = createLayer(for:node)
@@ -31,7 +31,7 @@ extension QuartzRenderer : Renderer {
 	}
 }
 
-private extension QuartzRenderer {
+private extension AppleRenderer {
 
 	func createLayer(for node:Node) -> CALayer {
 		return node.parent == nil ? rootLayer : CALayer()
@@ -48,13 +48,8 @@ private extension QuartzRenderer {
 
 	func update(_ layer:CALayer, with node:Node) {
 
-		let x = CGFloat(node.frame.origin.x)
-		let y = CGFloat(node.frame.origin.y)
-		let w = CGFloat(node.frame.size.width)
-		let h = CGFloat(node.frame.size.height)
-		layer.frame = CGRect(x:x, y:y, width:w, height:h)
-
 		layer.masksToBounds = node.component.overflow.isHidden
+		layer.frame = CGRect(with:node.frame)
 
 		if let visual = node.component as? Visual {
 			layer.backgroundColor = visual.background?.quartz

@@ -3,9 +3,9 @@
 
 import AppKit
 
-internal final class ApplicationDelegate : NSResponder {}
+internal final class Apple : NSResponder {}
 
-extension ApplicationDelegate : NSApplicationDelegate {
+extension Apple : NSApplicationDelegate {
 
 //	func application(_ app:UIApplication, willFinishLaunchingWithOptions options:[UIApplicationLaunchOptionsKey:Any]?) -> Bool {
 //

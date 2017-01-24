@@ -1,5 +1,5 @@
 
-public extension QuartzViewController {
+public extension AppleViewController {
 
 	public convenience init (with window:Window) {
 		let scene = Scene(with:window)
@@ -12,7 +12,7 @@ public extension QuartzViewController {
 	}
 }
 
-internal extension QuartzViewController {
+internal extension AppleViewController {
 
 	var currentSize:Size {
 		let width = Float(view.frame.size.width)

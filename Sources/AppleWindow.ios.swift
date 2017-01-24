@@ -3,11 +3,11 @@
 
 import UIKit
 
-internal final class QuartzWindow : UIWindow {
+internal final class AppleWindow : UIWindow {
 
 	internal init (with window:Window) {
 		super.init(frame:UIScreen.main.bounds)
-		let viewController = QuartzViewController(with:window)
+		let viewController = AppleViewController(with:window)
 		rootViewController = viewController
 	}
 
