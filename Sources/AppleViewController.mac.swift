@@ -28,7 +28,7 @@ public extension AppleViewController {
 	override var preferredMaximumSize:NSSize { return CGSize(with:scene.maximumSize) }
 
 	override func loadView() {
-		let rect = NSRect(origin:.zero, size:preferredMinimumSize)
+		let rect = NSRect(origin:.zero, size:AppleWindow.bounds.size)
 		let view = NSView(frame:rect)
 		view.layer = AppleLayer()
 		view.wantsLayer = true

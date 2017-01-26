@@ -53,18 +53,3 @@ Application.run(
 	     View(style:[bar, tool])
 	)
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
