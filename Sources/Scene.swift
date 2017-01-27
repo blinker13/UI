@@ -12,12 +12,12 @@ public final class Scene {
 
 extension Scene : Page {
 
-	public var width:Dimensions { return root.width }
-	public var height:Dimensions { return root.height }
+	public var width:Dimensions { return root.component.width }
+	public var height:Dimensions { return root.component.height }
 
 //	public func compose(with context: Context) -> Component {
 	public func compose() -> Component {
-		return root
+		return root.component
 	}
 
 	public func onStart() { page?.onStart() }
@@ -58,7 +58,8 @@ private extension Scene {
 	}
 
 	func setNeedsDisplay(_ node:Node) {
-		nodes.insert(node)
+		let parent = node.parent ?? node
+		nodes.insert(parent)
 	}
 
 	func display(_ node:Node, with renderer:Renderer) {
