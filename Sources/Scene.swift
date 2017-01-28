@@ -20,7 +20,7 @@ extension Scene : Page {
 	public func onPause() { page?.onPause() }
 	public func onStop() { page?.onStop() }
 
-	public func construct() -> [Component] {
+	public func render() -> [Component] {
 		return [root.component]
 	}
 }

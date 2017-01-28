@@ -11,8 +11,8 @@ public protocol Component {
 	var padding:Padding { get }
 	var margin:Margin { get }
 
-//	func construct(with context:Context) -> [Component]
-	func construct() -> [Component]
+//	func render(with context:Context) -> [Component]
+	func render() -> [Component]
 }
 
 public extension Component {

@@ -29,6 +29,6 @@ internal struct ContainerLayout {
 
 internal extension ContainerLayout {
 	var alignment:Alignment { return container.justify }
-	var components:EnumeratedSequence<[Component]> { return container.construct().enumerated() }
+	var components:EnumeratedSequence<[Component]> { return container.render().enumerated() }
 	var distribution:Distribution { return container.distribution }
 }
