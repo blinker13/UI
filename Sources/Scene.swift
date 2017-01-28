@@ -99,8 +99,8 @@ private extension Scene {
 
 	func nextNode() -> Node? {
 		guard let node = nodes.first else { return nil }
-		let parentIterator = ParentNodeIterator(node)
-		let next = parentIterator.filter(nodes.contains).last ?? node
+		let filteredAncestors = node.ancestors.filter(nodes.contains)
+		let next = filteredAncestors.last ?? node
 		return nodes.remove(next)
 	}
 }

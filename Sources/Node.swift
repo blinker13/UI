@@ -23,3 +23,9 @@ extension Node : Hashable {
 	}
 }
 
+internal extension Node {
+
+	var ancestors:Ancestors {
+		return Ancestors(with:self)
+	}
+}
