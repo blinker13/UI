@@ -15,19 +15,17 @@ extension Scene : Page {
 	public var width:Dimensions { return root.component.width }
 	public var height:Dimensions { return root.component.height }
 
-//	public func compose(with context: Context) -> Component {
-	public func compose() -> Component {
-		return root.component
-	}
-
 	public func onStart() { page?.onStart() }
 	public func onResume() { page?.onResume() }
 	public func onPause() { page?.onPause() }
 	public func onStop() { page?.onStop() }
+
+	public func construct() -> [Component] {
+		return [root.component]
+	}
 }
 
 public extension Scene {
-
 	convenience init (with component:Component) {
 		let node = Node(with:component)
 		self.init(with:node)

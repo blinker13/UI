@@ -29,7 +29,6 @@ public extension Component {
 }
 
 public extension Component {
-
 	var alignment:Alignment { return .leading }
 	var arrangement:Arrangement { return .vertical }
 	var distribution:Distribution { return .equal }
@@ -39,11 +38,6 @@ public extension Component {
 	var width:Dimensions { return .infinity }
 	var padding:Padding { return .zero }
 	var margin:Margin { return .zero }
-
-//	func construct(with context:Context) -> [Component] {
-	func construct() -> [Component] {
-		return []
-	}
 }
 
 public extension Component where Self : Stylable {
