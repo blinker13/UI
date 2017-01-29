@@ -12,6 +12,11 @@
 		BD01136E1E354C0600214A33 /* AppleWindow.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01136D1E354C0600214A33 /* AppleWindow.ios.swift */; };
 		BD0113701E354C1300214A33 /* AppleWindow.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01136F1E354C1300214A33 /* AppleWindow.mac.swift */; };
 		BD052C641E3CC7BE00F40B1A /* Node.Ancestors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C631E3CC7BE00F40B1A /* Node.Ancestors.swift */; };
+		BD052C691E3D0D3B00F40B1A /* Flex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C681E3D0D3B00F40B1A /* Flex.swift */; };
+		BD052C6B1E3D108A00F40B1A /* Flex.Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */; };
+		BD052C6D1E3D10BF00F40B1A /* Flex.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6C1E3D10BF00F40B1A /* Flex.Item.swift */; };
+		BD052C6F1E3D320000F40B1A /* Flex.Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6E1E3D320000F40B1A /* Flex.Size.swift */; };
+		BD052C751E3D6FCC00F40B1A /* Node.Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C741E3D6FCC00F40B1A /* Node.Context.swift */; };
 		BD11855D1E28DA1900B98DD3 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD11854F1E28DA1900B98DD3 /* Arithmetic.swift */; };
 		BD11855E1E28DA1900B98DD3 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185501E28DA1900B98DD3 /* Dimensions.swift */; };
 		BD11855F1E28DA1900B98DD3 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185511E28DA1900B98DD3 /* Edges.swift */; };
@@ -49,8 +54,6 @@
 		BD11859F1E290BC100B98DD3 /* Text+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185871E290BC100B98DD3 /* Text+Initializer.swift */; };
 		BD1185A01E290BC100B98DD3 /* Text+Nesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185881E290BC100B98DD3 /* Text+Nesting.swift */; };
 		BD1FE21B1C500434005F95D3 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1FE1F21C4FF00E005F95D3 /* UI.framework */; };
-		BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294ABF1CDD421900A8716A /* SizeCalculator.swift */; };
-		BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294AC11CDD429900A8716A /* ContainerLayout.swift */; };
 		BD3997DB1C68A8EA002B3E01 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D11C68A8EA002B3E01 /* Alignment.swift */; };
 		BD3997DC1C68A8EA002B3E01 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D21C68A8EA002B3E01 /* Arrangement.swift */; };
 		BD3997DD1C68A8EA002B3E01 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D31C68A8EA002B3E01 /* Component.swift */; };
@@ -69,7 +72,6 @@
 		BD82266A1C936E0300D807A3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8226691C936E0300D807A3 /* Renderer.swift */; };
 		BD8C94D41CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C94D31CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift */; };
 		BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */; };
-		BD8EB9051CB86A59001ACCA6 /* LayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */; };
 		BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */; };
 		BD9103D81E2CD658009BFD4F /* BorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CC1E2CD658009BFD4F /* BorderTests.swift */; };
 		BD9103D91E2CD658009BFD4F /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CD1E2CD658009BFD4F /* ColorTests.swift */; };
@@ -116,6 +118,11 @@
 		BD01136D1E354C0600214A33 /* AppleWindow.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleWindow.ios.swift; sourceTree = "<group>"; };
 		BD01136F1E354C1300214A33 /* AppleWindow.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleWindow.mac.swift; sourceTree = "<group>"; };
 		BD052C631E3CC7BE00F40B1A /* Node.Ancestors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.Ancestors.swift; sourceTree = "<group>"; };
+		BD052C681E3D0D3B00F40B1A /* Flex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.swift; sourceTree = "<group>"; };
+		BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Container.swift; sourceTree = "<group>"; };
+		BD052C6C1E3D10BF00F40B1A /* Flex.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Item.swift; sourceTree = "<group>"; };
+		BD052C6E1E3D320000F40B1A /* Flex.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Size.swift; sourceTree = "<group>"; };
+		BD052C741E3D6FCC00F40B1A /* Node.Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.Context.swift; sourceTree = "<group>"; };
 		BD0A2B631D9EBAAD00F26C1F /* Geometry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Geometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0A2B691D9EC0D800F26C1F /* Canvas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD11854F1E28DA1900B98DD3 /* Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
@@ -161,8 +168,6 @@
 		BD21421E1CFCFBD800D3CD58 /* AppleViewController.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleViewController.mac.swift; sourceTree = "<group>"; };
 		BD2142201CFCFF6000D3CD58 /* AppleViewController.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleViewController.ios.swift; sourceTree = "<group>"; };
 		BD2142281CFD079D00D3CD58 /* ios.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ios.playground; sourceTree = "<group>"; };
-		BD294ABF1CDD421900A8716A /* SizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCalculator.swift; sourceTree = "<group>"; };
-		BD294AC11CDD429900A8716A /* ContainerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerLayout.swift; sourceTree = "<group>"; };
 		BD3997D11C68A8EA002B3E01 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		BD3997D21C68A8EA002B3E01 /* Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		BD3997D31C68A8EA002B3E01 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
@@ -182,7 +187,6 @@
 		BD8226691C936E0300D807A3 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		BD8C94D31CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleLayoutEnumerator.swift; sourceTree = "<group>"; };
 		BD8C94D51CD7FD12006C009E /* FlexibleLayoutIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleLayoutIterator.swift; sourceTree = "<group>"; };
-		BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = LayoutCalculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentLayout.swift; sourceTree = "<group>"; };
 		BD9103CC1E2CD658009BFD4F /* BorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTests.swift; sourceTree = "<group>"; };
 		BD9103CD1E2CD658009BFD4F /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
@@ -240,9 +244,21 @@
 			isa = PBXGroup;
 			children = (
 				BD052C631E3CC7BE00F40B1A /* Node.Ancestors.swift */,
+				BD052C741E3D6FCC00F40B1A /* Node.Context.swift */,
 				BD8226641C936DD700D807A3 /* Node.swift */,
 			);
 			name = Node;
+			sourceTree = "<group>";
+		};
+		BD052C671E3D0D1000F40B1A /* Flexbox */ = {
+			isa = PBXGroup;
+			children = (
+				BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */,
+				BD052C6C1E3D10BF00F40B1A /* Flex.Item.swift */,
+				BD052C6E1E3D320000F40B1A /* Flex.Size.swift */,
+				BD052C681E3D0D3B00F40B1A /* Flex.swift */,
+			);
+			name = Flexbox;
 			sourceTree = "<group>";
 		};
 		BD0A2B601D9EB88700F26C1F /* Resources */ = {
@@ -440,23 +456,14 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		BD294AC31CDD47E600A8716A /* Calculators */ = {
-			isa = PBXGroup;
-			children = (
-				BD8EB9041CB86A59001ACCA6 /* LayoutCalculator.swift */,
-				BD294ABF1CDD421900A8716A /* SizeCalculator.swift */,
-			);
-			name = Calculators;
-			sourceTree = "<group>";
-		};
 		BD3997E51C68A8F8002B3E01 /* Layouting */ = {
 			isa = PBXGroup;
 			children = (
 				BDE17C6D1E32B33D006D80C7 /* Context.swift */,
 				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
 				BD96A5AE1CF0ABBA00231DA8 /* Attributes */,
-				BD294AC31CDD47E600A8716A /* Calculators */,
 				BD8EB9031CB869D6001ACCA6 /* Entities */,
+				BD052C671E3D0D1000F40B1A /* Flexbox */,
 				BD052C621E3CC7AD00F40B1A /* Node */,
 				BD8C94D21CD7FCBA006C009E /* Utilities */,
 			);
@@ -557,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				BD8EB90B1CB920C0001ACCA6 /* ComponentLayout.swift */,
-				BD294AC11CDD429900A8716A /* ContainerLayout.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -721,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1185621E28DA1900B98DD3 /* Line.swift in Sources */,
+				BD052C6F1E3D320000F40B1A /* Flex.Size.swift in Sources */,
 				BD1185641E28DA1900B98DD3 /* Point.swift in Sources */,
 				BDE17C701E32B33D006D80C7 /* Context.swift in Sources */,
 				BDE17C7E1E34BB0B006D80C7 /* Application.mac.swift in Sources */,
@@ -754,7 +761,6 @@
 				BDE17C711E32B33D006D80C7 /* Page.swift in Sources */,
 				BD11859E1E290BC100B98DD3 /* Text+Equatable.swift in Sources */,
 				BD1185941E290BC100B98DD3 /* LineBreak.swift in Sources */,
-				BD294AC21CDD429900A8716A /* ContainerLayout.swift in Sources */,
 				BD1185691E28DA1900B98DD3 /* Transform.swift in Sources */,
 				BD6C2FDE1D8BDE8F00FE7A91 /* AppleViewController.ios.swift in Sources */,
 				BD1185631E28DA1900B98DD3 /* Path.swift in Sources */,
@@ -774,6 +780,7 @@
 				BD1185611E28DA1900B98DD3 /* Geometry.swift in Sources */,
 				BD11858D1E290BC100B98DD3 /* Color+Gray.swift in Sources */,
 				BD052C641E3CC7BE00F40B1A /* Node.Ancestors.swift in Sources */,
+				BD052C691E3D0D3B00F40B1A /* Flex.swift in Sources */,
 				BD1185891E290BC100B98DD3 /* Blending.swift in Sources */,
 				BD11859F1E290BC100B98DD3 /* Text+Initializer.swift in Sources */,
 				BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */,
@@ -782,9 +789,10 @@
 				BDE17C791E33FD37006D80C7 /* Window.swift in Sources */,
 				BDE17C801E34BB33006D80C7 /* Application.swift in Sources */,
 				BD1185651E28DA1900B98DD3 /* Rect.swift in Sources */,
-				BD294AC01CDD421900A8716A /* SizeCalculator.swift in Sources */,
 				BD1185A01E290BC100B98DD3 /* Text+Nesting.swift in Sources */,
 				BD1185931E290BC100B98DD3 /* Image.swift in Sources */,
+				BD052C6D1E3D10BF00F40B1A /* Flex.Item.swift in Sources */,
+				BD052C751E3D6FCC00F40B1A /* Node.Context.swift in Sources */,
 				BD11858F1E290BC100B98DD3 /* Apple+Color.swift in Sources */,
 				BDF790EC1D174131003887E7 /* Space+Arrangement.swift in Sources */,
 				BD11858A1E290BC100B98DD3 /* Border.swift in Sources */,
@@ -793,7 +801,7 @@
 				BD1185601E28DA1900B98DD3 /* Float.swift in Sources */,
 				BD11859B1E290BC100B98DD3 /* Text.swift in Sources */,
 				BD11856A1E28DA1900B98DD3 /* Transformable.swift in Sources */,
-				BD8EB9051CB86A59001ACCA6 /* LayoutCalculator.swift in Sources */,
+				BD052C6B1E3D108A00F40B1A /* Flex.Container.swift in Sources */,
 				BD526D231C97510F0075684E /* AppleRenderer.swift in Sources */,
 				BD1185961E290BC100B98DD3 /* ParagraphStyle.swift in Sources */,
 				BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */,

@@ -16,7 +16,7 @@ public struct Window : Stylable, Page {
 	public func onPause() { page?.onPause() }
 	public func onStop() { page?.onStop() }
 
-	public func render() -> [Component] {
+	public func render(with context: Context) -> [Component] {
 		return [root]
 	}
 }
