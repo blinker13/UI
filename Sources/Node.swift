@@ -2,8 +2,10 @@
 internal final class Node {
 
 	internal weak var parent:Node?
-	internal var children:[Node] = []
 	internal var component:Component
+	internal var children:[Node] = []
+
+	internal var bounds:Rect = .zero
 	internal var frame:Rect = .zero
 
 	internal init (with component:Component) {
@@ -28,4 +30,12 @@ internal extension Node {
 	var ancestors:Ancestors {
 		return Ancestors(with:self)
 	}
+}
+
+private extension Node {
+
+	var page:Page? { return component as? Page }
+	var visual:Visual? { return component as? Visual }
+
+	var isVisible:Bool { return visual?.isVisible ?? false }
 }
