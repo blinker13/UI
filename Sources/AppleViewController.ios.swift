@@ -8,7 +8,7 @@ public final class AppleViewController : UIViewController {
 	internal let scene:Scene
 
 	internal lazy var renderer:Renderer = {
-		return AppleRenderer(root:self.view.layer)
+		return AppleRenderer(root:self.layer)
 	}()
 
 	internal init (with scene:Scene) {
@@ -21,20 +21,15 @@ public final class AppleViewController : UIViewController {
 	}
 }
 
+// MARK: -
+
 public extension AppleViewController {
 
+	// MARK: Lifecyle
+
 	override func loadView() {
-		self.view = UIView(frame:.zero)
-	}
-
-	override func viewWillLayoutSubviews() {
-		super.viewWillLayoutSubviews()
-		scene.update(currentSize)
-	}
-
-	public override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		scene.display(with:renderer)
+		let view = UIView(frame:.zero)
+		self.view = view
 	}
 
 	override func viewWillAppear(_ animated:Bool) {
@@ -56,6 +51,24 @@ public extension AppleViewController {
 		super.viewDidDisappear(animated)
 		scene.onStop()
 	}
+
+	// MARK: Layout
+
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+		scene.update(currentSize)
+	}
+
+	public override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		scene.display(with:renderer)
+	}
+}
+
+// MARK: -
+
+private extension AppleViewController {
+	var layer:CALayer { return view.layer }
 }
 
 #endif

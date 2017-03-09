@@ -9,6 +9,10 @@ public protocol Visual {
 	var shadow:Shadow? { get }
 }
 
+internal extension Visual {
+	var isVisible:Bool { return opacity > 0 }
+}
+
 public extension Visual where Self : Stylable {
 	var background:Color? { return style.get("background") }
 	var border:Border? { return style.get("border") }
