@@ -16,12 +16,6 @@ public protocol Textual : Visual {
 //	}
 //}
 
-public extension Style {
-	static func textFont(_ font:Font) -> Style { return Style(key:"text.font", value:font) }
-	static func textShadow(_ shadow:Shadow) -> Style { return Style(key:"text.shadow", value:shadow) }
-	static func textParagraphStyle(_ style:ParagraphStyle) -> Style { return Style(key:"text.paragraphStyle", value:style) }
-}
-
 //private extension Style {
 //
 //	var textAttributes:Text.Attributes {

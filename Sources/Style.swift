@@ -5,39 +5,39 @@ public protocol Stylable {
 
 public struct Style {
 
-	public struct Attribute {
-		public let key:String
-		public let value:Any
+	internal struct Value {
+		internal let hash:Int
+		internal let raw:Any
 	}
 
-	fileprivate let attributes: Set<Attribute>
+	fileprivate let values:Set<Value>
 
-	internal init (attributes: Set<Attribute>) {
-		self.attributes = attributes
+	internal init (values:Set<Value>) {
+		self.values = values
 	}
 }
 
 public extension Style {
 
-	init (with styles:[Style]) {
-		let reverse = styles.reversed()
-		self.attributes = reverse.reduce(Set<Attribute>()) {
-			return $0.union($1.attributes)
-		}
-	}
-
 	init (_ styles:Style ...) {
 		self.init(with:styles)
 	}
 
-	init (key:String, value:Any) {
-		let attribute = Attribute(key:key, value:value)
-		self.attributes = [attribute]
+	init (with styles:[Style]) {
+		let reverse = styles.reversed()
+		self.values = reverse.reduce(Set<Value>()) {
+			return $0.union($1.values)
+		}
 	}
 
-	func get<Value>(_ key:String) -> Value? {
-		let attribute = attributes.first { $0.key == key }
-		return attribute?.value as? Value
+	init <Kind>(key:Attribute<Kind>, value:Kind) {
+		let item = Value(hash:key.hashValue, raw:value)
+		self.values = [item]
+	}
+
+	func get<Kind>(_ key:Attribute<Kind>) -> Kind? {
+		let value = values.first { $0.hash == key.hashValue }
+		return value?.raw as? Kind
 	}
 }
 
@@ -47,13 +47,24 @@ extension Style : ExpressibleByArrayLiteral {
 	}
 }
 
-extension Style.Attribute : Hashable {
+extension Style : Hashable {
 
-	public static func == (left:Style.Attribute, right:Style.Attribute) -> Bool {
-		return left.key == right.key
+	public static func == (left:Style, right:Style) -> Bool {
+		return left.values == right.values
 	}
 
 	public var hashValue:Int {
-		return key.hashValue
+		return values.hashValue
+	}
+}
+
+extension Style.Value : Hashable {
+
+	static func == (left:Style.Value, right:Style.Value) -> Bool {
+		return left.hash == right.hash
+	}
+
+	var hashValue:Int {
+		return hash
 	}
 }

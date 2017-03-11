@@ -1,8 +1,24 @@
 
 public extension Style {
 
+	static let background = Attribute<Color>("background")
+	static let border = Attribute<Border>("border")
+	static let opacity = Attribute<Opacity>("opacity")
+	static let shadow = Attribute<Shadow>("shadow")
+	static let tint = Attribute<Color>("tint")
+
+	// MARK: -
+
+	var background:Color? { return get(Style.background) }
+	var border:Border? { return get(Style.border) }
+	var opacity:Opacity? { return get(Style.opacity) }
+	var shadow:Shadow? { return get(Style.shadow) }
+	var tint:Color? { return get(Style.tint) }
+
+	// MARK: -
+
 	static func background(_ color:Color) -> Style {
-		return Style(key:"background", value:color)
+		return Style.background.styled(color)
 	}
 
 	static func background(red:Float = 0, green:Float = 0, blue:Float = 0, alpha:Float = 1) -> Style {
@@ -11,7 +27,7 @@ public extension Style {
 	}
 
 	static func border(_ border:Border) -> Style {
-		return Style(key:"border", value:border)
+		return Style.border.styled(border)
 	}
 
 	static func border(color:Color = .black, radius:Float = 0, width:Float = 0) -> Style {
@@ -19,21 +35,21 @@ public extension Style {
 		return border(value)
 	}
 
-	static func color(_ color:Color) -> Style {
-		return Style(key:"color", value:color)
+	static func tint(_ color:Color) -> Style {
+		return Style.tint.styled(color)
 	}
 
-	static func color(red:Float = 0, green:Float = 0, blue:Float = 0, alpha:Float = 1) -> Style {
+	static func tint(red:Float = 0, green:Float = 0, blue:Float = 0, alpha:Float = 1) -> Style {
 		let rgb = Color(red:red, green:green, blue:blue, alpha:alpha)
-		return color(rgb)
+		return tint(rgb)
 	}
 
 	static func opacity(_ opacity:Opacity) -> Style {
-		return Style(key:"opacity", value:opacity)
+		return Style.opacity.styled(opacity)
 	}
 
 	static func shadow(_ shadow:Shadow) -> Style {
-		return Style(key:"shadow", value:shadow)
+		return Style.shadow.styled(shadow)
 	}
 
 	static func shadow(color:Color = .black, offset:Point = .zero, opacity:Float = 0.6, radius:Float = 3) -> Style {
