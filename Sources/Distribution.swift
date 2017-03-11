@@ -1,17 +1,17 @@
 
 public enum Distribution {
+	case proportional
+	case ordered
 	case equal
-	case order
-	case proportion
 }
 
 internal extension Distribution {
 
 	var calculation:(FlexibleLayoutEnumerator, Float, (Int, Float) -> Void) -> Float {
 		switch self {
+			case .proportional: return calcutateProportion
+			case .ordered: return calcutateOrder
 			case .equal: return calcutateEqual
-			case .order: return calcutateOrder
-			case .proportion: return calcutateProportion
 		}
 	}
 }

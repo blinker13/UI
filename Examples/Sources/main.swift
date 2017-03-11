@@ -23,33 +23,27 @@ app.mainMenu = menubar
 
 // MARK: - Implementation
 
+let root = Style(
+	.background(.blue),
+	.distribution(.ordered),
+	.height(min:300.0),
+	.width(min:400.0)
+)
+
 let bar = Style(
-	.background(.black),
+	.background(.white),
 	.height(44.0)
 )
 
 let contentStyle = Style(
-	.alignment(.center),
-	.background(.red),
-	.width(min:80),
+	.background(.orange),
 	.margin(20.0)
-)
-
-let tool = Style(
-	.background(.yellow)
-)
-
-let root = Style(
-	.width(min:300.0),
-	.height(min:300.0),
-	.background(.white),
-	.distribution(.order)
 )
 
 Application.run(
 	View(style:root,
 	     View(style:bar),
 	     View(style:contentStyle),
-	     View(style:[bar, tool])
+	     View(style:bar)
 	)
 )
