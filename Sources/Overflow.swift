@@ -5,10 +5,18 @@ public enum Overflow {
 }
 
 public extension Overflow {
-	var isHidden:Bool { return self == .hidden }
+
+	var isHidden:Bool {
+		return self == .hidden
+	}
+
+	var isVisible:Bool {
+		return self == .visible
+	}
 }
 
 extension Overflow : ExpressibleByBooleanLiteral {
+
 	public init (booleanLiteral value:Bool) {
 		self = value ? .visible : .hidden
 	}
