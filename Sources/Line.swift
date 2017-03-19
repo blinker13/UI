@@ -15,11 +15,11 @@ public extension Line {
 		return Rect(points:[from, to])
 	}
 
-	var elements:[Path.Element] {
-		return [
+	var path:Path {
+		return Path(
 			.move(to:from),
 			.line(to:to)
-		]
+		)
 	}
 
 	var length:Float {

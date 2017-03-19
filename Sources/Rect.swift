@@ -19,14 +19,14 @@ public extension Rect {
 		return Rect(left, top, right - left, bottom - top)
 	}
 
-	var elements:[Path.Element] {
-		return [
-			.move(to:Point(right, top)),
-			.line(to:Point(left, top)),
-			.line(to:Point(left, bottom)),
-			.line(to:Point(right, bottom)),
+	var path:Path {
+		return Path(
+			.moveTo(x:right, y:top),
+			.lineTo(x:left, y:top),
+			.lineTo(x:left, y:bottom),
+			.lineTo(x:right, y:bottom),
 			.close
-		]
+		)
 	}
 
 	var isFinite:Bool { return size.isFinite }

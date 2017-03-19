@@ -22,6 +22,10 @@ public extension Path {
 		return Rect.zero
 	}
 
+	var path:Path {
+		return self
+	}
+
 	public init (_ elements:Element ...) {
 		self.init(with:elements)
 	}
@@ -29,6 +33,17 @@ public extension Path {
 	func contains(_ point:Point) -> Bool {
 		// TODO: implementation
 		return false
+	}
+}
+
+public extension Path.Element {
+
+	static func moveTo(x:Float, y:Float) -> Path.Element {
+		return .move(to:Point(x, y))
+	}
+
+	static func lineTo(x:Float, y:Float) -> Path.Element {
+		return .line(to:Point(x, y))
 	}
 }
 
