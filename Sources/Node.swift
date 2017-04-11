@@ -30,6 +30,10 @@ internal extension Node {
 	var ancestors:Ancestors {
 		return Ancestors(with:self)
 	}
+
+	var isRoot:Bool {
+		return parent == nil
+	}
 }
 
 private extension Node {
