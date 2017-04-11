@@ -1,8 +1,4 @@
 
-public protocol Stylable {
-	var style:Style { get }
-}
-
 public struct Style {
 
 	internal struct Value {
