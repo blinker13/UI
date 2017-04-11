@@ -42,8 +42,8 @@ let contentStyle = Style(
 
 Application.run(
 	View(style:root,
-	     View(style:bar),
-	     View(style:contentStyle),
-	     View(style:bar)
+        View(style:bar),
+	    View(style:contentStyle),
+	    View(style:bar)
 	)
 )
