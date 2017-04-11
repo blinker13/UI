@@ -10,10 +10,6 @@ public struct Path : Shape {
 	}
 
 	public let elements:[Element]
-
-	public init (with elements:[Element]) {
-		self.elements = elements
-	}
 }
 
 public extension Path {
@@ -24,6 +20,10 @@ public extension Path {
 
 	var path:Path {
 		return self
+	}
+
+	public init (with elements:[Element]) {
+		self.elements = elements
 	}
 
 	public init (_ elements:Element ...) {

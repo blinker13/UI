@@ -1,6 +1,13 @@
 
-public protocol Textual : Visual {
+public protocol Textual : Surface, Visual {
 	var text:Text { get }
+}
+
+public extension Textual {
+
+	func draw(in rect:Rect) -> Composition {
+		return .empty
+	}
 }
 
 //public extension Textual where Self : Stylable {

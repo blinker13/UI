@@ -23,3 +23,33 @@ internal extension CGRect {
 		self.size = CGSize(with:rect.size)
 	}
 }
+
+internal extension CGAffineTransform {
+
+	init (with transform:Transform) {
+		self.a = CGFloat(transform.a)
+		self.b = CGFloat(transform.b)
+		self.c = CGFloat(transform.c)
+		self.d = CGFloat(transform.d)
+		self.tx = CGFloat(transform.x)
+		self.ty = CGFloat(transform.y)
+	}
+}
+
+// MARK: -
+
+internal extension Point {
+	var cgPoint:CGPoint { return CGPoint(with:self) }
+}
+
+internal extension Size {
+	var cgSize:CGSize { return CGSize(with:self) }
+}
+
+internal extension Rect {
+	var cgRect:CGRect { return CGRect(with:self) }
+}
+
+internal extension Transform {
+	var cgTransform:CGAffineTransform { return CGAffineTransform(with:self) }
+}

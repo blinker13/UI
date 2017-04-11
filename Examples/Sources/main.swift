@@ -37,13 +37,23 @@ let bar = Style(
 
 let contentStyle = Style(
 	.background(.orange),
+	.tint(.red),
 	.margin(20.0)
 )
 
 Application.run(
 	View(style:root,
         View(style:bar),
-	    View(style:contentStyle),
+        Canvas(style:contentStyle) { rect in
+            let space = Space(top:10, left:20, bottom:30, right:40)
+            let border = rect.inset(space)
+
+            return Composition(
+                .setLineWidth(5),
+                .addShape(border),
+                .stroke
+            )
+        },
 	    View(style:bar)
 	)
 )
