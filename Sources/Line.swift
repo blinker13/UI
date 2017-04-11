@@ -1,6 +1,20 @@
 
 public struct Line : Shape {
 
+	public enum Cap {
+		case butt
+		case round
+		case square
+	}
+
+	public enum Join {
+		case miter
+		case round
+		case bevel
+	}
+
+	public typealias Width = Float
+
 	public var from:Point
 	public var to:Point
 
