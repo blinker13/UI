@@ -1,4 +1,8 @@
 
+public typealias Inset = Space
+public typealias Margin = Space
+public typealias Padding = Space
+
 public struct Space : Geometry {
 
 	public var top:Float
