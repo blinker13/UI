@@ -5,6 +5,10 @@ import UIKit
 
 internal extension Application {
 
+	func open(_ window:Window) {
+		self.window = window
+	}
+
 	func main() {
 		let count = Int(CommandLine.argc)
 		let destination = UnsafeMutablePointer<Int8>.self
