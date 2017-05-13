@@ -12,6 +12,10 @@ internal extension Application {
 		let argv = rawUnsafeArgv.bindMemory(to:destination, capacity:count)
 		UIApplicationMain(CommandLine.argc, argv, nil, Apple.name)
 	}
+
+	func exit() {
+		
+	}
 }
 
 #endif

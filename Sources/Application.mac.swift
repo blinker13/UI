@@ -13,6 +13,10 @@ internal extension Application {
 		NSApplication.shared()
 		NSApp.run()
 	}
+
+	func exit() {
+		NSApp.terminate(nil)
+	}
 }
 
 #endif
