@@ -1,5 +1,5 @@
 
-public struct Canvas : Component, Stylable, Visual {
+public struct Canvas : Surface, View {
 
 	public let compose:(Rect) -> Composition
 	public let style:Style
@@ -8,9 +8,6 @@ public struct Canvas : Component, Stylable, Visual {
 		self.compose = compose
 		self.style = style
 	}
-}
-
-extension Canvas : Surface {
 
 	public func draw(in rect:Rect) -> Composition {
 		return compose(rect)

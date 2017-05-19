@@ -7,13 +7,6 @@ public protocol Surface {
 	func draw(in rect:Rect) -> Composition
 }
 
-public extension Surface where Self : Component {
-
-	func render(with context:Context) -> [Component] {
-		return []
-	}
-}
-
 public extension Surface where Self : Visual {
 
 	var pre:Composition {

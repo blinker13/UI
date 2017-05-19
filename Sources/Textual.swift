@@ -1,5 +1,5 @@
 
-public protocol Textual : Surface, Visual {
+public protocol Textual : Surface {
 	var text:Text { get }
 }
 

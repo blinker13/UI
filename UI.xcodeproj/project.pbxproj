@@ -100,6 +100,7 @@
 		BD9103E31E2CD658009BFD4F /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D71E2CD658009BFD4F /* TransformTests.swift */; };
 		BD9648141CEFB2D100D3F478 /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9648131CEFB2D100D3F478 /* Visual.swift */; };
 		BD96A5AD1CF0AB1700231DA8 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A5AC1CF0AB1700231DA8 /* Layout.swift */; };
+		BD9C7F811EC6F752006F0F1A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C7F801EC6F752006F0F1A /* Container.swift */; };
 		BDCE67C71E37E36D00FA45B6 /* Apple.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE67C61E37E36D00FA45B6 /* Apple.ios.swift */; };
 		BDCE67C91E37E5D400FA45B6 /* Apple.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE67C81E37E5D400FA45B6 /* Apple.mac.swift */; };
 		BDDABC461D399463002228C3 /* Textual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDABC451D399463002228C3 /* Textual.swift */; };
@@ -231,6 +232,7 @@
 		BD9103E51E2CD6F0009BFD4F /* Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		BD9648131CEFB2D100D3F478 /* Visual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
 		BD96A5AC1CF0AB1700231DA8 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		BD9C7F801EC6F752006F0F1A /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BDCE67C61E37E36D00FA45B6 /* Apple.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.ios.swift; sourceTree = "<group>"; };
 		BDCE67C81E37E5D400FA45B6 /* Apple.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.mac.swift; sourceTree = "<group>"; };
 		BDDABC431D3975F1002228C3 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -490,8 +492,8 @@
 		BD3997E61C68A915002B3E01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BD3997D91C68A8EA002B3E01 /* View.swift */,
 				BD807DAC1E9C952F00C03492 /* Canvas.swift */,
+				BD9C7F801EC6F752006F0F1A /* Container.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -501,6 +503,7 @@
 			children = (
 				BD3997D31C68A8EA002B3E01 /* Component.swift */,
 				BDE17C6E1E32B33D006D80C7 /* Page.swift */,
+				BD3997D91C68A8EA002B3E01 /* View.swift */,
 				BDE17C771E33FCF8006D80C7 /* Root */,
 				BDDABC421D3975E0002228C3 /* Text */,
 				BD3997E61C68A915002B3E01 /* Views */,
@@ -805,6 +808,7 @@
 				BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */,
 				BD71815B1E749EB500E801A1 /* Style+Textual.swift in Sources */,
 				BD82266A1C936E0300D807A3 /* Renderer.swift in Sources */,
+				BD9C7F811EC6F752006F0F1A /* Container.swift in Sources */,
 				BD3997DC1C68A8EA002B3E01 /* Arrangement.swift in Sources */,
 				BDDABC461D399463002228C3 /* Textual.swift in Sources */,
 				BD40033E1E2C061F00AB2442 /* Label.swift in Sources */,

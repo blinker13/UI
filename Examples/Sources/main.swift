@@ -35,16 +35,16 @@ let bar = Style(
 	.height(44.0)
 )
 
-let contentStyle = Style(
+let content = Style(
 	.background(.orange),
 	.tint(.red),
 	.margin(20.0)
 )
 
 Application.run(
-	View(style:root,
-        View(style:bar),
-        Canvas(style:contentStyle) { rect in
+	Container(style:root,
+        Container(style:bar),
+        Canvas(style:content) { rect in
             let space = Space(top:10, left:20, bottom:30, right:40)
             let border = rect.inset(space)
 
@@ -54,6 +54,6 @@ Application.run(
                 .stroke
             )
         },
-	    View(style:bar)
+	    Container(style:bar)
 	)
 )

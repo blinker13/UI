@@ -1,5 +1,5 @@
 
-public struct Label : Stylable, Textual {
+public struct Label : Textual, View {
 
 	public let style:Style
 	public let text:Text
