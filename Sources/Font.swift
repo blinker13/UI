@@ -33,12 +33,30 @@ public struct Font {
 }
 
 public extension Font {
+
 	static var `default`:Font {
 		return Font(name:"Helvetica", size:12)
+	}
+
+	func named(_ new:Name) -> Font {
+		return Font(name:new, size:size, style:style, weight:weight)
+	}
+
+	func sized(_ new:Size) -> Font {
+		return Font(name:name, size:size, style:style, weight:weight)
+	}
+
+	func styled(_ new:Style) -> Font {
+		return Font(name:name, size:size, style:new, weight:weight)
+	}
+
+	func weighted(_ new:Weight) -> Font {
+		return Font(name:name, size:size, style:style, weight:new)
 	}
 }
 
 extension Font : CustomStringConvertible {
+
 	public var description:String {
 		return "\(name) \(weight) \(style) - \(size)"
 	}

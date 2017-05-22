@@ -8,7 +8,7 @@ public class Attribute<Kind> {
 	}
 }
 
-public extension Attribute {
+internal extension Attribute {
 	func styled(_ kind:Kind) -> Style {
 		return Style(key:self, value:kind)
 	}
@@ -17,6 +17,13 @@ public extension Attribute {
 internal extension Attribute {
 	func valued(_ kind:Kind) -> Style.Value {
 		return Style.Value(hash:hashValue, raw:kind)
+	}
+}
+
+extension Attribute : CustomStringConvertible {
+
+	public var description:String {
+		return name
 	}
 }
 
