@@ -37,10 +37,10 @@ internal extension Scene {
 	func update(_ size:Size) {
 		if size == root.frame.size { return }
 		root.frame.size = size
-		update(root)
+		mark(root)
 	}
 
-	func update(_ node:Node) {
+	func mark(_ node:Node) {
 		let parent = node.parent ?? node
 		nodes.insert(parent)
 	}

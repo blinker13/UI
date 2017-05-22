@@ -384,14 +384,14 @@
 			name = Text;
 			sourceTree = "<group>";
 		};
-		BD191C641E394DF1003BE2DC /* ViewController */ = {
+		BD191C641E394DF1003BE2DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				BD2142201CFCFF6000D3CD58 /* AppleViewController.ios.swift */,
 				BD21421E1CFCFBD800D3CD58 /* AppleViewController.mac.swift */,
 				BD526D241C9759530075684E /* AppleViewController.swift */,
 			);
-			name = ViewController;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		BD191C661E394E0D003BE2DC /* Window */ = {
@@ -545,9 +545,9 @@
 			children = (
 				BD526D221C97510F0075684E /* AppleRenderer.swift */,
 				BD191C681E39593F003BE2DC /* Application */,
+				BD191C641E394DF1003BE2DC /* Controller */,
 				BDB4B6461DFA1022001D78FF /* Extensions */,
 				BD191C671E394E1E003BE2DC /* Utilities */,
-				BD191C641E394DF1003BE2DC /* ViewController */,
 				BD191C661E394E0D003BE2DC /* Window */,
 			);
 			name = Apple;

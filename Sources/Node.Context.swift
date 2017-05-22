@@ -18,6 +18,6 @@ extension Node.Context : Context {
 	var frame:Rect { return node.frame }
 
 	func update() {
-		scene.update(node)
+		scene.mark(node)
 	}
 }
