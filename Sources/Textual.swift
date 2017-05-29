@@ -6,7 +6,12 @@ public protocol Textual : Surface {
 public extension Textual {
 
 	func draw(in rect:Rect) -> Composition {
-		return .empty
+		return Composition(
+			.setTextMatrix(.identity),
+//			.translate(by:Point(0, 0))//,
+//			.scale()
+			.print(text)
+		)
 	}
 }
 

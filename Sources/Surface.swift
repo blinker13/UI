@@ -7,19 +7,22 @@ public protocol Surface {
 	func draw(in rect:Rect) -> Composition
 }
 
+public extension Surface {
+	var pre:Composition { return .save }
+	var post:Composition { return .restore }
+}
+
 public extension Surface where Self : Visual {
 
 	var pre:Composition {
 		return Composition(
-			.setStrokeColor(tint),
-			.setFillColor(tint),
+			.setStroke(tint),
+			.setFill(tint),
 			.save
 		)
 	}
 
 	var post:Composition {
-		return Composition(
-			.restore
-		)
+		return .restore
 	}
 }

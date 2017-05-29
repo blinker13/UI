@@ -6,7 +6,7 @@ import AppKit
 internal final class AppleWindow : NSWindow {
 
 	static var bounds:NSRect {
-		guard let screen = NSScreen.main() else { return .zero }
+		guard let screen = NSScreen.main else { return .zero }
 
 		let vertical = round(screen.frame.height * 0.15)
 		let horizontal = round(screen.frame.width * 0.2)
@@ -15,7 +15,7 @@ internal final class AppleWindow : NSWindow {
 	}
 
 	internal init (with window:Window) {
-		let mask:NSWindowStyleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
+		let mask:NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
 		super.init(contentRect:AppleWindow.bounds, styleMask:mask, backing:.buffered, defer:false)
 		let viewController = AppleViewController(with:window)
 		contentMinSize = viewController.preferredMinimumSize

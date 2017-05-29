@@ -1,20 +1,16 @@
 
 import CoreGraphics
+import CoreText
 
 internal extension CGContext {
 
 	func draw(_ composition:Composition) {
-		composition.actions.forEach(apply)
-	}
-}
 
-private extension CGContext {
-
-	func apply(_ action:Composition.Action) {
-
-		switch action {
+		switch composition {
 			case .save: saveGState()
 			case .restore: restoreGState()
+
+			case let .compound(compositions): compositions.forEach(draw)
 
 			case let .setFlatness(value): setFlatness(CGFloat(value))
 			case let .setLineCap(value): setLineCap(value.cgLineCap)
@@ -23,23 +19,25 @@ private extension CGContext {
 			case let .setBlending(value): setBlendMode(value.cgBlending)
 
 			case let .setTextMatrix(matrix): textMatrix = matrix.cgTransform
+			case let .print(text): print(text)
 
 			case let .setOpacity(value): setAlpha(CGFloat(value))
-			case let .setFillColor(color): setFillColor(color.cgColor)
-			case let .setStrokeColor(color): setStrokeColor(color.cgColor)
+			case let .setFill(color): setFillColor(color.cgColor)
+			case let .setStroke(color): setStrokeColor(color.cgColor)
 			case let .transform(matrix): concatenate(matrix.cgTransform)
 
-			case let .addShape(shape): add(shape.path)
-
-			case let .clear(rect): clear(rect.cgRect)
-			case let .draw(rule): drawPath(using:rule.cgDrawRule)
-			case let .fill(rule): drawPath(using:rule.cgFillRule)
-			case .stroke: drawPath(using:.stroke)
+			case let .adding(shapes): shapes.forEach(add)
+			case let .clearing(rects): rects.forEach(clear)
+			case let .filling(rule): drawPath(using:rule.cgFillRule)
+			case .stroking: drawPath(using:.stroke)
 		}
 	}
+}
 
-	func add(_ path:Path) {
-		path.elements.forEach(add)
+private extension CGContext {
+
+	func add(_ shape:Shape) {
+		shape.path.elements.forEach(add)
 	}
 
 	func add(_ element:Path.Element) {
@@ -51,5 +49,13 @@ private extension CGContext {
 			case let .cubicCurve(to, cp1, cp2): addCurve(to:to.cgPoint, control1:cp1.cgPoint, control2:cp2.cgPoint)
 			case .close: closePath()
 		}
+	}
+
+	func clear(_ rect:Rect) {
+		clear(rect.cgRect)
+	}
+
+	func print(_ text:Text) {
+//		let framesetter = CTFramesetterCreateWithAttributedString(<#T##string: CFAttributedString##CFAttributedString#>)
 	}
 }

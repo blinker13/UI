@@ -25,15 +25,15 @@ public extension Style {
 
 	// MARK: -
 
-	static func alignment(_ alignment:Alignment) -> Style {
+	static func align(_ alignment:Alignment) -> Style {
 		return Style.alignment.styled(alignment)
 	}
 
-	static func arrangement(_ arrangement:Arrangement) -> Style {
+	static func arrange(_ arrangement:Arrangement) -> Style {
 		return Style.arrangement.styled(arrangement)
 	}
 
-	static func distribution(_ distribution:Distribution) -> Style {
+	static func distribute(_ distribution:Distribution) -> Style {
 		return Style.distribution.styled(distribution)
 	}
 

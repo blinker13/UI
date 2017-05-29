@@ -14,8 +14,7 @@ internal extension Application {
 	}
 
 	func main() {
-		NSApplication.shared()
-		NSApp.run()
+		NSApplication.shared.run()
 	}
 
 	func exit() {

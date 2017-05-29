@@ -62,13 +62,3 @@ extension Text : ExpressibleByStringLiteral {
 	public init (extendedGraphemeClusterLiteral value:String) { self.init(stringLiteral:value) }
 	public init (stringLiteral value:String) { self.init(value) }
 }
-
-// MARK: -
-
-private extension Text {
-
-	init (_ string:String, _ values:Set<Style.Value>) {
-		let style = Style(values:values)
-		self.init(string, style:style)
-	}
-}

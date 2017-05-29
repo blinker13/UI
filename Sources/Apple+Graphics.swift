@@ -39,17 +39,10 @@ internal extension Blending {
 
 internal extension Composition.Rule {
 
-	var cgDrawRule:CGPathDrawingMode {
-		switch self {
-			case .evenOdd: return .eoFillStroke
-			case .nonZero: return .fillStroke
-		}
-	}
-
 	var cgFillRule:CGPathDrawingMode {
 		switch self {
-			case .evenOdd: return .eoFill
-			case .nonZero: return .fill
+			case .evenodd: return .eoFill
+			case .nonzero: return .fill
 		}
 	}
 }

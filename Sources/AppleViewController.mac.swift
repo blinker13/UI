@@ -13,7 +13,7 @@ public final class AppleViewController : NSViewController {
 
 	internal init (with scene:Scene) {
 		self.scene = scene
-		super.init(nibName:nil, bundle:nil)!
+		super.init(nibName:nil, bundle:nil)
 	}
 
 	public required init?(coder:NSCoder) {

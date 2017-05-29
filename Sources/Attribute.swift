@@ -8,15 +8,16 @@ public class Attribute<Kind> {
 	}
 }
 
-internal extension Attribute {
-	func styled(_ kind:Kind) -> Style {
-		return Style(key:self, value:kind)
+public extension Attribute {
+
+	public var key:Style.Key {
+		return ObjectIdentifier(self)
 	}
 }
 
 internal extension Attribute {
-	func valued(_ kind:Kind) -> Style.Value {
-		return Style.Value(hash:hashValue, raw:kind)
+	func styled(_ value:Kind) -> Style {
+		return Style(attribute:self, raw:value)
 	}
 }
 
@@ -34,7 +35,6 @@ extension Attribute : Hashable {
 	}
 
 	public var hashValue:Int {
-		let id = ObjectIdentifier(self)
-		return id.hashValue
+		return key.hashValue
 	}
 }

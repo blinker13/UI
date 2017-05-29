@@ -1,74 +1,53 @@
 
-public struct Composition {
-
-	public enum Action {
-
-		case save
-		case restore
-
-		case setFlatness(Float)
-		case setLineCap(Line.Cap)
-		case setLineJoin(Line.Join)
-		case setLineWidth(Line.Width)
-//		case setMiterLimit(Float)
-//		case setPatternPhase(Size)
-		case setBlending(Blending)
-
-		case setTextMatrix(Transform)
-
-		case setOpacity(Opacity)
-		case setFillColor(Color)
-		case setStrokeColor(Color)
-		case transform(Transform)
-
-		case addShape(Shape)
-
-		case clear(Rect)
-		case draw(Rule)
-		case fill(Rule)
-		case stroke
-	}
+public enum Composition {
 
 	public enum Rule {
-		case nonZero
-		case evenOdd
+		case nonzero
+		case evenodd
 	}
 
-	public let actions:[Action]
+	case save
+	case restore
+
+	case compound([Composition])
+
+	case setFlatness(Float)
+	case setLineCap(Line.Cap)
+	case setLineJoin(Line.Join)
+	case setLineWidth(Line.Width)
+//		case setMiterLimit(Float)
+//		case setPatternPhase(Size)
+	case setBlending(Blending)
+
+	case setTextMatrix(Transform)
+	case print(Text)
+
+	case setOpacity(Opacity)
+	case setFill(Color)
+	case setStroke(Color)
+	case transform(Transform)
+
+	case adding([Shape])
+
+	case clearing([Rect])
+	case filling(Rule)
+	case stroking
 }
 
 public extension Composition {
 
-	init (with actions:[Action]) {
-		self.actions = actions
-	}
-
-	init (_ actions:Action ...) {
-		self.actions = actions
-	}
-
-	init (action:Action) {
-		self.actions = [action]
-	}
-
 	init (with compositions:[Composition]) {
-		self.actions = compositions.flatMap {
-			$0.actions
-		}
+		self = .compound(compositions)
 	}
 
 	init (_ compositions:Composition ...) {
-		self.init(with:compositions)
+		self = .compound(compositions)
 	}
-}
-
-internal extension Composition {
-	static var empty = Composition(actions:[])
 }
 
 extension Composition : ExpressibleByArrayLiteral {
 
-	public init(arrayLiteral elements:Action ...) {
-		self.actions = elements
+	public init(arrayLiteral elements:Composition ...) {
+		self = .compound(elements)
 	}
 }

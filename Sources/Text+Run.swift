@@ -14,6 +14,7 @@ extension Text.Run : Collection {
 }
 
 extension Text.Run : Equatable {
+
 	public static func == (left:Text.Run, right:Text.Run) -> Bool {
 		return left.range == right.range && left.style == right.style
 	}

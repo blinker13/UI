@@ -25,7 +25,7 @@ app.mainMenu = menubar
 
 let root = Style(
 	.background(.blue),
-	.distribution(.ordered),
+	.distribute(.ordered),
 	.height(min:300.0),
 	.width(min:400.0)
 )
@@ -50,7 +50,7 @@ Application.run(
 
             return Composition(
                 .setLineWidth(5),
-                .addShape(border),
+                .add(border),
                 .stroke
             )
         },

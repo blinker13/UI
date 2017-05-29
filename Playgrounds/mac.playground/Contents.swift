@@ -17,7 +17,7 @@ let s1 = Style(
 )
 
 let s2 = Style(
-	.alignment(.center),
+	.align(.center),
 	.background(.green),
 //	.shadow(offset:3.0),
 	.height(44.0)
@@ -25,14 +25,14 @@ let s2 = Style(
 
 let cs = Style(
 //	.padding(5.0),
-	.distribution(.order),
+	.distribute(.ordered),
 	.background(.white)
 )
 
-let container = View(style:cs,
-	View(style:s0),
-	View(style:s1),
-	View(style:s2)
+let container = Container(style:cs,
+	Container(style:s0),
+	Container(style:s1),
+	Container(style:s2)
 )
 
 let vc = AppleViewController(with:container)

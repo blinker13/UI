@@ -75,7 +75,9 @@ private extension Scene {
 		var flexIndexes = [Int]()
 		var remainder = container.main.constraint
 
-		var layouts = components.map { index, component -> ComponentLayout in
+		var layouts = components.map { (arg) -> ComponentLayout in
+
+			let (index, component) = arg
 			var layout = ComponentLayout(component, container.main.arrangement)
 			layout.cross.calculateLength(with:container.cross.constraint)
 			if layout.main.isFlexible { flexIndexes.append(index) }

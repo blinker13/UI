@@ -1,31 +1,55 @@
 
 public extension Composition {
 
-	static func clear(_ rect:Rect) -> Composition {
-		return [ .clear(rect) ]
+	static func clear(_ rects:Rect ...) -> Composition {
+		return .clearing(rects)
 	}
 
-	static func draw(_ rule:Composition.Rule = .nonZero) -> Composition {
-		return [ .fill(rule), .stroke ]
+	// MARK: -
+
+	static func draw(_ rule:Composition.Rule = .nonzero, _ shapes:Shape ...) -> Composition {
+		return [ .adding(shapes), .filling(rule), .stroking ]
 	}
 
-	static func draw(_ shape:Shape, rule:Composition.Rule = .nonZero) -> Composition {
-		return [ .addShape(shape), .draw(rule), .stroke ]
+	static func draw(_ rule:Composition.Rule = .nonzero, _ shapes:[Shape]) -> Composition {
+		return [ .adding(shapes), .filling(rule), .stroking ]
 	}
 
-	static func fill(_ rule:Composition.Rule = .nonZero) -> Composition {
-		return [ .fill(rule) ]
+	static func draw(_ rule:Composition.Rule = .nonzero, _ shape:Shape) -> Composition {
+		return [ .adding([shape]), .filling(rule), .stroking ]
 	}
 
-	static func fill(_ shape:Shape, rule:Composition.Rule = .nonZero) -> Composition {
-		return [ .addShape(shape), .fill(rule) ]
+	static func draw(_ rule:Composition.Rule = .nonzero) -> Composition {
+		return [ .filling(rule), .stroking ]
 	}
 
-	static func stroke() -> Composition {
-		return [ .stroke ]
+	// MARK: -
+
+	static func fill(_ rule:Composition.Rule = .nonzero, _ shapes:Shape ...) -> Composition {
+		return [ .adding(shapes), .filling(rule) ]
 	}
 
-	static func stroke(_ shape:Shape) -> Composition {
-		return [ .addShape(shape), .stroke ]
+	static func fill(_ rule:Composition.Rule = .nonzero, _ shapes:[Shape]) -> Composition {
+		return [ .adding(shapes), .filling(rule) ]
 	}
+
+	static func fill(_ rule:Composition.Rule = .nonzero, _ shape:Shape) -> Composition {
+		return [ .adding([shape]), .filling(rule) ]
+	}
+
+	static func fill(_ rule:Composition.Rule = .nonzero) -> Composition {
+		return .filling(rule)
+	}
+
+	// MARK: -
+
+	static func stroke(_ shapes:Shape ...) -> Composition {
+		return [ .adding(shapes), .stroking ]
+	}
+
+	static func stroke(_ shapes:[Shape]) -> Composition {
+		return [ .adding(shapes), .stroking ]
+	}
+
+	static let stroke:Composition = .stroking
 }

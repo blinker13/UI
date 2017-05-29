@@ -9,75 +9,39 @@ public extension Text {
 		case natural
 	}
 
-	public struct Decoration {
-
-		public enum Style {
-			case single
-			case thick
-			case double
-		}
-
-		public enum Pattern {
-			case solid
-			case dot
-			case dash
-			case dashDot
-			case dashDotDot
-		}
-
-		public let color:Color
-		public let style:Style
-		public let pattern:Pattern
-		public let byWord:Bool
-	}
-
 	public enum Direction {
 		case leftToRight
 		case rightToLeft
 		case natural
 	}
+}
 
-	public struct Stroke {
-		public let color:Color
-		public let width:Float
-	}
-
-	// MARK: -
-
+public extension Text {
 	static let font = Attribute<Font>("text.font")
-	static let tint = Attribute<Color>("text.tint")
-	static let background = Attribute<Color>("text.background")
 	static let paragraphStyle = Attribute<ParagraphStyle>("text.paragraphStyle")
-	static let strikethrough = Attribute<Decoration>("text.strikethrough")
-	static let underline = Attribute<Decoration>("text.underline")
+	static let strikethrough = Attribute<Text.Decoration>("text.strikethrough")
+	static let underline = Attribute<Text.Decoration>("text.underline")
 	static let ligatures = Attribute<Bool>("text.ligatures")
 	static let shadow = Attribute<Shadow>("text.shadow")
-	static let stroke = Attribute<Stroke>("text.stroke")
+	static let stroke = Attribute<Text.Stroke>("text.stroke")
 	static let kern = Attribute<Float>("text.kern")
+}
 
-	// MARK: -
+public extension Style {
 
 	static func font(_ font:Font) -> Style {
-		return self.font.styled(font)
-	}
-
-	static func tint(_ color:Color) -> Style {
-		return Text.tint.styled(color)
-	}
-
-	static func background(_ color:Color) -> Style {
-		return Text.background.styled(color)
+		return Text.font.styled(font)
 	}
 
 	static func paragraphStyle(_ style:ParagraphStyle) -> Style {
 		return Text.paragraphStyle.styled(style)
 	}
 
-	static func strikethrough(_ decoration:Decoration) -> Style {
+	static func strikethrough(_ decoration:Text.Decoration) -> Style {
 		return Text.strikethrough.styled(decoration)
 	}
 
-	static func underline(_ underline:Decoration) -> Style {
+	static func underline(_ underline:Text.Decoration) -> Style {
 		return Text.underline.styled(underline)
 	}
 
@@ -85,11 +49,11 @@ public extension Text {
 		return Text.ligatures.styled(ligatures)
 	}
 
-	static func shadow(_ shadow:Shadow) -> Style {
+	static func textShadow(_ shadow:Shadow) -> Style {
 		return Text.shadow.styled(shadow)
 	}
 
-	static func stroke(_ stroke:Stroke) -> Style {
+	static func stroke(_ stroke:Text.Stroke) -> Style {
 		return Text.stroke.styled(stroke)
 	}
 

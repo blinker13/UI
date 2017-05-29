@@ -43,7 +43,10 @@ private extension Distribution {
 			}
 		}
 
-		results.forEach(body)
+		results.forEach { (arg) in
+			let (key, value) = arg
+			body(key, value)
+		}
 		return remains
 	}
 
