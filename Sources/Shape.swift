@@ -14,9 +14,9 @@ public extension Shape {
 	var isInfinite:Bool { return bounds.size.isInfinite }
 
 	var top:Float { return bounds.origin.y }
-	var left:Float { return bounds.origin.x }
-	var bottom:Float { return top + bounds.size.height }
 	var right:Float { return left + bounds.size.width }
+	var bottom:Float { return top + bounds.size.height }
+	var left:Float { return bounds.origin.x }
 
 	var min:Point { return Point(left, top) }
 	var max:Point { return Point(right, bottom) }

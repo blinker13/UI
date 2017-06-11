@@ -41,11 +41,17 @@ let content = Style(
 	.margin(20.0)
 )
 
+let title = Style(
+	.background(.yellow),
+//	.font(name:"Avenir Next", size:13.0),
+	.tint(.black)
+)
+
 Application.run(
 	Container(style:root,
         Container(style:bar),
         Canvas(style:content) { rect in
-            let space = Space(top:10, left:20, bottom:30, right:40)
+            let space = Space(top:10, right:20, bottom:30, left:40)
             let border = rect.inset(space)
 
             return Composition(
@@ -54,6 +60,8 @@ Application.run(
                 .stroke
             )
         },
-	    Container(style:bar)
+	    Container(style:bar,
+	        Text("Hello World", style:title)
+		)
 	)
 )

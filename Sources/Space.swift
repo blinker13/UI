@@ -6,23 +6,23 @@ public typealias Padding = Space
 public struct Space : Geometry {
 
 	public var top:Float
-	public var left:Float
-	public var bottom:Float
 	public var right:Float
+	public var bottom:Float
+	public var left:Float
 
-	public init (top:Float = 0, left:Float = 0, bottom:Float = 0, right:Float = 0) {
-		(self.top, self.left, self.bottom, self.right) = (top, left, bottom, right)
+	public init (top:Float = 0, right:Float = 0, bottom:Float = 0, left:Float = 0) {
+		(self.top, self.right, self.bottom, self.left) = (top, right, bottom, left)
 	}
 }
 
 public extension Space {
 
 	init (horizontal:Float, vertical:Float) {
-		self.init(top:vertical, left:horizontal, bottom:vertical, right:horizontal)
+		self.init(top:vertical, right:horizontal, bottom:vertical, left:horizontal)
 	}
 
 	init (horizontal:Float) {
-		self.init(left:horizontal, right:horizontal)
+		self.init(right:horizontal, left:horizontal)
 	}
 
 	init (vertical:Float) {
@@ -32,18 +32,18 @@ public extension Space {
 
 extension Space : CustomStringConvertible {
 	public var description:String {
-		return "top:\(top), left:\(left), bottom:\(bottom), right:\(right)"
+		return "top:\(top), right:\(right), bottom:\(bottom), left:\(left)"
 	}
 }
 
 extension Space : Equatable {
 	public static func == (left:Space, right:Space) -> Bool {
-		return left.top == right.top && left.left == right.left && left.bottom == right.bottom && left.right == right.right
+		return left.top == right.top && left.right == right.right && left.bottom == right.bottom && left.left == right.left
 	}
 }
 
 extension Space : ExpressibleByFloatLiteral {
 	public init (floatLiteral value:Float) {
-		self.init(top:value, left:value, bottom:value, right:value)
+		self.init(top:value, right:value, bottom:value, left:value)
 	}
 }

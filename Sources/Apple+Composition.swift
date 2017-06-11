@@ -1,4 +1,5 @@
 
+import Foundation
 import CoreGraphics
 import CoreText
 
@@ -19,7 +20,7 @@ internal extension CGContext {
 			case let .setBlending(value): setBlendMode(value.cgBlending)
 
 			case let .setTextMatrix(matrix): textMatrix = matrix.cgTransform
-			case let .print(text): print(text)
+			case let .print(text): print(text.attributedString)
 
 			case let .setOpacity(value): setAlpha(CGFloat(value))
 			case let .setFill(color): setFillColor(color.cgColor)
@@ -35,6 +36,11 @@ internal extension CGContext {
 }
 
 private extension CGContext {
+
+	var framePath:CGPath {
+		let bounds = CGRect(x:0, y:0, width:width, height:height)
+		return CGPath(rect:bounds, transform:nil)
+	}
 
 	func add(_ shape:Shape) {
 		shape.path.elements.forEach(add)
@@ -55,7 +61,18 @@ private extension CGContext {
 		clear(rect.cgRect)
 	}
 
-	func print(_ text:Text) {
-//		let framesetter = CTFramesetterCreateWithAttributedString(<#T##string: CFAttributedString##CFAttributedString#>)
+	func print(_ text:NSAttributedString) {
+
+		saveGState()
+
+		translateBy(x:0, y:CGFloat(height))
+		scaleBy(x:1, y:-1)
+
+		let range = CFRangeMake(0, text.length)
+		let framesetter = CTFramesetterCreateWithAttributedString(text)
+		let frame = CTFramesetterCreateFrame(framesetter, range, framePath, nil)
+		CTFrameDraw(frame, self)
+
+		restoreGState()
 	}
 }

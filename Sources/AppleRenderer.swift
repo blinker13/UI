@@ -42,9 +42,28 @@ extension AppleRenderer : CALayerDelegate {
 		let rect = Rect(cg:layer.bounds)
 		let composition = surface.draw(in:rect)
 
+		ctx.saveGState()
+
+//		ctx.setAllowsFontSmoothing(true)
+		ctx.setShouldSmoothFonts(false)
+
+		ctx.setAllowsFontSubpixelPositioning(true)
+		ctx.setShouldSubpixelPositionFonts(true)
+
+		ctx.setAllowsFontSubpixelQuantization(true)
+		ctx.setShouldSubpixelQuantizeFonts(true)
+
+		ctx.textMatrix = .identity
+
 		ctx.draw(surface.pre)
 		ctx.draw(composition)
 		ctx.draw(surface.post)
+
+		ctx.restoreGState()
+	}
+
+	public func action(for layer: CALayer, forKey event: String) -> CAAction? {
+		return NSNull()
 	}
 }
 

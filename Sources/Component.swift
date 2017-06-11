@@ -25,6 +25,10 @@ public extension Component {
 			case .vertical: return height
 		}
 	}
+
+	func render(with context:Context) -> [Component] {
+		return []
+	}
 }
 
 public extension Component {

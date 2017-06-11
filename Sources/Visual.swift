@@ -1,4 +1,7 @@
 
+public protocol Box : Component, Stylable {}
+public protocol View : Box, Visual {}
+
 public typealias Opacity = Float
 
 public protocol Visual {

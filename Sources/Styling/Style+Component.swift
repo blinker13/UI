@@ -67,17 +67,17 @@ public extension Style {
 		return Style.padding.styled(padding)
 	}
 
-	static func padding(top:Float = 0, left:Float = 0, bottom:Float = 0, right:Float = 0) -> Style {
-		let space = Space(top:top, left:left, bottom:bottom, right:right)
+	static func padding(top:Float = 0, right:Float = 0, bottom:Float = 0, left:Float = 0) -> Style {
+		let space = Space(top:top, right:right, bottom:bottom, left:left)
 		return padding(space)
 	}
 
 	static func padding(horizontal:Float, vertical:Float) -> Style {
-		return padding(top:vertical, left:horizontal, bottom:vertical, right:horizontal)
+		return padding(top:vertical, right:horizontal, bottom:vertical, left:horizontal)
 	}
 
 	static func padding(horizontal:Float) -> Style {
-		return padding(left:horizontal, right:horizontal)
+		return padding(right:horizontal, left:horizontal)
 	}
 
 	static func padding(vertical:Float) -> Style {

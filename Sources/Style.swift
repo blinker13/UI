@@ -39,7 +39,7 @@ public extension Style {
 }
 
 internal extension Style {
-	func wrap(_ styles:[Style]) -> Style {
+	func wrap(_ styles:Styles) -> Style {
 		if styles.count == 1 { return styles.first! }
 		else { return .compound(styles) }
 	}
@@ -60,8 +60,8 @@ extension Style : Hashable {
 	public var hashValue:Int {
 
 		switch self {
-			case let .value(value): return value.key.hashValue
 			case let .compound(styles): return styles.hashed()
+			case let .value(value): return value.key.hashValue
 		}
 	}
 }
@@ -82,8 +82,8 @@ private extension Style {
 	func get(_ key:Key) -> Value? {
 
 		switch self {
-			case let .value(value) where value.key == key: return value
 			case let .compound(styles): return styles.get(key)
+			case let .value(value) where value.key == key: return value
 			default: return nil
 		}
 	}

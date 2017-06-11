@@ -61,15 +61,13 @@ public extension AppleViewController {
 	// MARK: Layout
 
 	override func viewWillLayout() {
+		layer.contentsScale = view.window?.backingScaleFactor ?? 1
 		scene.update(currentSize)
 		super.viewWillLayout()
 	}
 
 	override func viewDidLayout() {
-		CATransaction.setDisableActions(true)
 		scene.display(with:renderer)
-		CATransaction.setDisableActions(false)
-
 		super.viewDidLayout()
 	}
 }
