@@ -1,5 +1,5 @@
 
-public struct Border {
+public struct Border : Codable {
 
 	public let color:Color
 	public let radius:Float

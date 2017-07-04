@@ -1,10 +1,12 @@
 
 public extension Color.Components {
 
+	public typealias Value = Float
+
 	init (_ hex:Int) {
-		let r = Float(hex >> 16 & 0xFF)
-		let g = Float(hex >> 8 & 0xFF)
-		let b = Float(hex & 0xFF)
+		let r = Value(hex >> 16 & 0xFF)
+		let g = Value(hex >> 8 & 0xFF)
+		let b = Value(hex & 0xFF)
 		self = .rgb(r, g, b)
 	}
 
@@ -14,6 +16,32 @@ public extension Color.Components {
 		switch self {
 			case let .rgb(r, g, b): return .rgb(1.0 - r, 1.0 - g, 1.0 - b)
 			case let .gray(x): return .gray(1.0 - x)
+		}
+	}
+}
+
+extension Color.Components : Codable {
+
+	public enum Keys : String, CodingKey {
+		case rgb
+		case gray
+	}
+
+	public init (from decoder:Decoder) throws {
+		let container = try decoder.container(keyedBy:Keys.self)
+
+		switch container.allKeys.first! {
+			case .rgb: let v = try container.decode([Value].self, forKey:.rgb); self = .rgb(v[0], v[1], v[2])
+			case .gray: let x = try container.decode(Value.self, forKey:.gray); self = .gray(x)
+		}
+	}
+
+	public func encode(to encoder:Encoder) throws {
+		var container = encoder.container(keyedBy:Keys.self)
+
+		switch (self) {
+			case let .rgb(r, g, b): try container.encode([r, g, b], forKey:.rgb)
+			case let .gray(x): try container.encode(x, forKey:.gray)
 		}
 	}
 }
@@ -40,7 +68,7 @@ extension Color.Components : Hashable {
 		}
 	}
 
-	private func hashify(_ r:Float, _ g:Float, _ b:Float) -> Int {
+	private func hashify(_ r:Value, _ g:Value, _ b:Value) -> Int {
 		let x = Int(r * 255) << 16
 		let y = Int(g * 255) << 8
 		let z = Int(b * 255)

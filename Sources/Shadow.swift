@@ -1,5 +1,5 @@
 
-public struct Shadow {
+public struct Shadow : Codable {
 
 	public let color:Color
 	public let offset:Point

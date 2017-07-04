@@ -34,6 +34,32 @@ public extension Text {
 	}
 }
 
+//extension Text : Codable {
+//
+//	public enum Keys : String, CodingKey {
+//		case compound
+//		case run
+//	}
+//
+//	public init (from decoder:Decoder) throws {
+//		let container = try decoder.container(keyedBy:Keys.self)
+//
+//		switch container.allKeys.first! {
+//		case .rgb: let v = try container.decode([Value].self, forKey:.rgb); self = .rgb(v[0], v[1], v[2])
+//		case .gray: let x = try container.decode(Value.self, forKey:.gray); self = .gray(x)
+//		}
+//	}
+//
+//	public func encode(to encoder:Encoder) throws {
+//		var container = encoder.container(keyedBy:Keys.self)
+//
+//		switch (self) {
+//		case let .rgb(r, g, b): try container.encode([r, g, b], forKey:.rgb)
+//		case let .gray(x): try container.encode(x, forKey:.gray)
+//		}
+//	}
+//}
+
 extension Text : CustomStringConvertible {
 
 	public var description:String {

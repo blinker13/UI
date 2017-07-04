@@ -1,5 +1,5 @@
 
-public struct Gradient {
+public struct Gradient : Codable {
 
 	public let components:[Float:Color]
 

@@ -1,7 +1,7 @@
 
 public typealias Alpha = Float
 
-public struct Color {
+public struct Color : Codable {
 
 	public enum Components {
 		case rgb(Float, Float, Float)
