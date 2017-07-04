@@ -1,5 +1,5 @@
 
-public protocol Shape {
+public protocol Shape : Codable {
 
 	var path:Path { get }
 	var bounds:Rect { get }

@@ -1,5 +1,5 @@
 
-public protocol Geometry {
+public protocol Geometry : Codable {
 
 	static var infinity:Self { get }
 	static var zero:Self { get }

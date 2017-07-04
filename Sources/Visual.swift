@@ -1,6 +1,6 @@
 
-public protocol Box : Component, Stylable {}
-public protocol View : Box, Visual {}
+public typealias Box = Component & Stylable
+public typealias View = Box & Visual
 
 public typealias Opacity = Float
 

@@ -53,6 +53,41 @@ extension Path : Equatable {
 	}
 }
 
+extension Path.Element : Codable {
+
+	public enum Keys : String, CodingKey {
+		case move
+		case line
+		case cubicCurve
+		case quadCurve
+		case close
+	}
+
+	public init (from decoder:Decoder) throws {
+		let container = try decoder.container(keyedBy:Keys.self)
+		
+		switch container.allKeys.first! {
+			case .move: let point = try container.decode(Point.self, forKey:.move); self = .move(to:point)
+			case .line: let point = try container.decode(Point.self, forKey:.line); self = .line(to:point)
+			case .cubicCurve: let p = try container.decode([Point].self, forKey:.cubicCurve); self = .cubicCurve(to:p[0], p[1], p[2])
+			case .quadCurve: let p = try container.decode([Point].self, forKey:.quadCurve); self = .quadCurve(to:p[0], p[1])
+			case .close: self = .close
+		}
+	}
+
+	public func encode(to encoder:Encoder) throws {
+		var container = encoder.container(keyedBy:Keys.self)
+
+		switch (self) {
+			case let .move(to:point): try container.encode(point, forKey:.move)
+			case let .line(to:point): try container.encode(point, forKey:.line)
+			case let .cubicCurve(to:p0, p1, p2): try container.encode([p0, p1, p2], forKey:.cubicCurve)
+			case let .quadCurve(p0, p1): try container.encode([p0, p1], forKey:.quadCurve)
+			case .close: try container.encode(true, forKey:.close)
+		}
+	}
+}
+
 extension Path.Element : Equatable {
 	public static func == (left:Path.Element, right:Path.Element) -> Bool {
 		switch (left, right) {
