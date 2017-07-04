@@ -9,7 +9,7 @@ public extension Color {
 
 	// TODO: grayscale
 
-	init (white:Float, alpha:Float = 1) {
+	init (white:Float, alpha:Alpha = 1) {
 		self.components = .gray(white.clamped())
 		self.alpha = alpha.clamped()
 	}

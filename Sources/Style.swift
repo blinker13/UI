@@ -1,9 +1,4 @@
 
-public protocol Styling {
-	var key:Style.Key { get }
-	associatedtype Kind
-}
-
 public enum Style {
 
 	public typealias Key = ObjectIdentifier
