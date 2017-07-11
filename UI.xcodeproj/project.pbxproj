@@ -16,7 +16,6 @@
 		BD052C6B1E3D108A00F40B1A /* Flex.Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */; };
 		BD052C6D1E3D10BF00F40B1A /* Flex.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6C1E3D10BF00F40B1A /* Flex.Item.swift */; };
 		BD052C6F1E3D320000F40B1A /* Flex.Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6E1E3D320000F40B1A /* Flex.Size.swift */; };
-		BD052C751E3D6FCC00F40B1A /* Node.Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C741E3D6FCC00F40B1A /* Node.Context.swift */; };
 		BD11855D1E28DA1900B98DD3 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD11854F1E28DA1900B98DD3 /* Arithmetic.swift */; };
 		BD11855E1E28DA1900B98DD3 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185501E28DA1900B98DD3 /* Dimensions.swift */; };
 		BD11855F1E28DA1900B98DD3 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1185511E28DA1900B98DD3 /* Edges.swift */; };
@@ -59,6 +58,8 @@
 		BD4A6AAD1E7C4E83000E8921 /* Apple+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A6AAC1E7C4E83000E8921 /* Apple+Composition.swift */; };
 		BD526D231C97510F0075684E /* AppleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526D221C97510F0075684E /* AppleRenderer.swift */; };
 		BD5DC7021F0BB22E00D5B9FF /* Scene+Rendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DC7011F0BB22E00D5B9FF /* Scene+Rendering.swift */; };
+		BD5DC70B1F13C5C800D5B9FF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DC70A1F13C5C800D5B9FF /* State.swift */; };
+		BD5DC70D1F13C73300D5B9FF /* Stateful.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DC70C1F13C73300D5B9FF /* Stateful.swift */; };
 		BD6C2FDE1D8BDE8F00FE7A91 /* AppleViewController.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2142201CFCFF6000D3CD58 /* AppleViewController.ios.swift */; };
 		BD6C2FDF1D8BDE8F00FE7A91 /* AppleViewController.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD21421E1CFCFBD800D3CD58 /* AppleViewController.mac.swift */; };
 		BD6C2FE01D8BDE8F00FE7A91 /* AppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526D241C9759530075684E /* AppleViewController.swift */; };
@@ -102,11 +103,12 @@
 		BDDB80CD1EEBE6A0007B6E66 /* Text.Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB80CC1EEBE6A0007B6E66 /* Text.Compound.swift */; };
 		BDDB80D01EEBE74F007B6E66 /* Text.Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB80CF1EEBE74F007B6E66 /* Text.Run.swift */; };
 		BDDB80D21EEC254F007B6E66 /* Text.Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB80D11EEC254F007B6E66 /* Text.Iterator.swift */; };
-		BDE17C701E32B33D006D80C7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6D1E32B33D006D80C7 /* Context.swift */; };
-		BDE17C711E32B33D006D80C7 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6E1E32B33D006D80C7 /* Page.swift */; };
+		BDE17C711E32B33D006D80C7 /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C6E1E32B33D006D80C7 /* Lifecycle.swift */; };
 		BDE17C791E33FD37006D80C7 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C781E33FD37006D80C7 /* Window.swift */; };
 		BDE17C7E1E34BB0B006D80C7 /* Application.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C7D1E34BB0B006D80C7 /* Application.mac.swift */; };
 		BDE17C801E34BB33006D80C7 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C7F1E34BB33006D80C7 /* Application.swift */; };
+		BDF1D4971F2432A70054265C /* Autonomous.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1D4961F2432A70054265C /* Autonomous.swift */; };
+		BDF1D49D1F2437C80054265C /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1D49C1F2437C80054265C /* Scope.swift */; };
 		BDF1EDD11E964A6800AF5E61 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1EDD01E964A6800AF5E61 /* Stylable.swift */; };
 		BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF256D71CF91FA60020F864 /* Overflow.swift */; };
 		BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */; };
@@ -135,7 +137,6 @@
 		BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Container.swift; sourceTree = "<group>"; };
 		BD052C6C1E3D10BF00F40B1A /* Flex.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Item.swift; sourceTree = "<group>"; };
 		BD052C6E1E3D320000F40B1A /* Flex.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Size.swift; sourceTree = "<group>"; };
-		BD052C741E3D6FCC00F40B1A /* Node.Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.Context.swift; sourceTree = "<group>"; };
 		BD0A2B631D9EBAAD00F26C1F /* Geometry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Geometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0A2B691D9EC0D800F26C1F /* Canvas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD11854F1E28DA1900B98DD3 /* Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
@@ -191,6 +192,8 @@
 		BD5A9D391DD3EE95006C0D9C /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		BD5A9D3A1DD3EE95006C0D9C /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		BD5DC7011F0BB22E00D5B9FF /* Scene+Rendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scene+Rendering.swift"; sourceTree = "<group>"; };
+		BD5DC70A1F13C5C800D5B9FF /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		BD5DC70C1F13C73300D5B9FF /* Stateful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stateful.swift; sourceTree = "<group>"; };
 		BD7181561E74944E00E801A1 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		BD71815F1E758C4D00E801A1 /* Surface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
 		BD7181611E75909700E801A1 /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
@@ -233,12 +236,13 @@
 		BDDB80CC1EEBE6A0007B6E66 /* Text.Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.Compound.swift; sourceTree = "<group>"; };
 		BDDB80CF1EEBE74F007B6E66 /* Text.Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.Run.swift; sourceTree = "<group>"; };
 		BDDB80D11EEC254F007B6E66 /* Text.Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.Iterator.swift; sourceTree = "<group>"; };
-		BDE17C6D1E32B33D006D80C7 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		BDE17C6E1E32B33D006D80C7 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		BDE17C6E1E32B33D006D80C7 /* Lifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lifecycle.swift; sourceTree = "<group>"; };
 		BDE17C781E33FD37006D80C7 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		BDE17C7D1E34BB0B006D80C7 /* Application.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.mac.swift; sourceTree = "<group>"; };
 		BDE17C7F1E34BB33006D80C7 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		BDE8A79A1C95D56700EAF68D /* mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mac.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BDF1D4961F2432A70054265C /* Autonomous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autonomous.swift; sourceTree = "<group>"; };
+		BDF1D49C1F2437C80054265C /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 		BDF1EDD01E964A6800AF5E61 /* Stylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 		BDF256D71CF91FA60020F864 /* Overflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overflow.swift; sourceTree = "<group>"; };
 		BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Size+Arrangement.swift"; sourceTree = "<group>"; };
@@ -270,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				BD052C631E3CC7BE00F40B1A /* Node.Ancestors.swift */,
-				BD052C741E3D6FCC00F40B1A /* Node.Context.swift */,
 				BD8226641C936DD700D807A3 /* Node.swift */,
 			);
 			name = Node;
@@ -446,6 +449,7 @@
 				BDF790E81D17409D003887E7 /* Geometry */,
 				BD1185701E290B9000B98DD3 /* Graphics */,
 				BD3997E51C68A8F8002B3E01 /* Layouting */,
+				BD5DC7091F13C5A800D5B9FF /* Mutablity */,
 				BD8226681C936DE900D807A3 /* Platform */,
 			);
 			path = Sources;
@@ -483,7 +487,6 @@
 		BD3997E51C68A8F8002B3E01 /* Layouting */ = {
 			isa = PBXGroup;
 			children = (
-				BDE17C6D1E32B33D006D80C7 /* Context.swift */,
 				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
 				BD96A5AE1CF0ABBA00231DA8 /* Attributes */,
 				BD8EB9031CB869D6001ACCA6 /* Entities */,
@@ -507,7 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				BD3997D31C68A8EA002B3E01 /* Component.swift */,
-				BDE17C6E1E32B33D006D80C7 /* Page.swift */,
+				BDE17C6E1E32B33D006D80C7 /* Lifecycle.swift */,
 				BD71815F1E758C4D00E801A1 /* Surface.swift */,
 				BDDABC451D399463002228C3 /* Textual.swift */,
 				BD9648131CEFB2D100D3F478 /* Visual.swift */,
@@ -547,6 +550,17 @@
 				BDE17C781E33FD37006D80C7 /* Window.swift */,
 			);
 			name = Window;
+			sourceTree = "<group>";
+		};
+		BD5DC7091F13C5A800D5B9FF /* Mutablity */ = {
+			isa = PBXGroup;
+			children = (
+				BDF1D4961F2432A70054265C /* Autonomous.swift */,
+				BDF1D49C1F2437C80054265C /* Scope.swift */,
+				BD5DC70A1F13C5C800D5B9FF /* State.swift */,
+				BD5DC70C1F13C73300D5B9FF /* Stateful.swift */,
+			);
+			path = Mutablity;
 			sourceTree = "<group>";
 		};
 		BD7181661E75B1FF00E801A1 /* Extensions */ = {
@@ -795,13 +809,13 @@
 				BD052C6F1E3D320000F40B1A /* Flex.Size.swift in Sources */,
 				BD1185641E28DA1900B98DD3 /* Point.swift in Sources */,
 				BD7181571E74944E00E801A1 /* Attribute.swift in Sources */,
-				BDE17C701E32B33D006D80C7 /* Context.swift in Sources */,
 				BDE17C7E1E34BB0B006D80C7 /* Application.mac.swift in Sources */,
 				BDF1EDD11E964A6800AF5E61 /* Stylable.swift in Sources */,
 				BD807DAD1E9C952F00C03492 /* Canvas.swift in Sources */,
 				BD8EB90C1CB920C0001ACCA6 /* ComponentLayout.swift in Sources */,
 				BD82266A1C936E0300D807A3 /* Renderer.swift in Sources */,
 				BD9C7F811EC6F752006F0F1A /* Container.swift in Sources */,
+				BD5DC70B1F13C5C800D5B9FF /* State.swift in Sources */,
 				BD3997DC1C68A8EA002B3E01 /* Arrangement.swift in Sources */,
 				BDDABC461D399463002228C3 /* Textual.swift in Sources */,
 				BD1185911E290BC100B98DD3 /* Font.swift in Sources */,
@@ -829,7 +843,7 @@
 				BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */,
 				BD1185901E290BC100B98DD3 /* Color+RGB.swift in Sources */,
 				BD4003461E2C274500AB2442 /* Style+Visual.swift in Sources */,
-				BDE17C711E32B33D006D80C7 /* Page.swift in Sources */,
+				BDE17C711E32B33D006D80C7 /* Lifecycle.swift in Sources */,
 				BD1185941E290BC100B98DD3 /* LineBreak.swift in Sources */,
 				BD1185691E28DA1900B98DD3 /* Transform.swift in Sources */,
 				BD6C2FDE1D8BDE8F00FE7A91 /* AppleViewController.ios.swift in Sources */,
@@ -842,6 +856,7 @@
 				BD01136E1E354C0600214A33 /* AppleWindow.ios.swift in Sources */,
 				BD1185681E28DA1900B98DD3 /* Space.swift in Sources */,
 				BD8C94D41CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift in Sources */,
+				BD5DC70D1F13C73300D5B9FF /* Stateful.swift in Sources */,
 				BD8C94D61CD7FD12006C009E /* FlexibleLayoutIterator.swift in Sources */,
 				BD1185671E28DA1900B98DD3 /* Size.swift in Sources */,
 				BD1185951E290BC100B98DD3 /* Paint.swift in Sources */,
@@ -850,6 +865,8 @@
 				BD479BFF1E804139008742B2 /* Apple+Render.swift in Sources */,
 				BD8226661C936DD700D807A3 /* Node.swift in Sources */,
 				BD1185611E28DA1900B98DD3 /* Geometry.swift in Sources */,
+				BDF1D4971F2432A70054265C /* Autonomous.swift in Sources */,
+				BDF1D49D1F2437C80054265C /* Scope.swift in Sources */,
 				BDDB80D21EEC254F007B6E66 /* Text.Iterator.swift in Sources */,
 				BD7181621E75909700E801A1 /* CoreGraphics.swift in Sources */,
 				BD4A6AAD1E7C4E83000E8921 /* Apple+Composition.swift in Sources */,
@@ -866,7 +883,6 @@
 				BD1185651E28DA1900B98DD3 /* Rect.swift in Sources */,
 				BD1185931E290BC100B98DD3 /* Image.swift in Sources */,
 				BD052C6D1E3D10BF00F40B1A /* Flex.Item.swift in Sources */,
-				BD052C751E3D6FCC00F40B1A /* Node.Context.swift in Sources */,
 				BD11858F1E290BC100B98DD3 /* Apple+Graphics.swift in Sources */,
 				BD71816D1E760DD300E801A1 /* Composition+Convenience.swift in Sources */,
 				BDF790EC1D174131003887E7 /* Space+Arrangement.swift in Sources */,

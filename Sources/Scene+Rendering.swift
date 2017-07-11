@@ -18,8 +18,7 @@ private extension Scene {
 
 	func display(_ node:Node, with renderer:Renderer) {
 
-		let context = Node.Context(with:node, inside:self)
-		let children = node.component.render(with:context)
+		let children = node.scope.render()
 		let container = Flex.Container(with:node)
 		let components = children.enumerated()
 

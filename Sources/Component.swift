@@ -11,10 +11,22 @@ public protocol Component {
 	var padding:Padding { get }
 	var margin:Margin { get }
 
-	func render(with context:Context) -> [Component]
+	func render() -> [Component]
+
+	var scope:Scope { get }
 }
 
 public extension Component {
+
+	var alignment:Alignment { return .leading }
+	var arrangement:Arrangement { return .vertical }
+	var distribution:Distribution { return .equal }
+	var justify:Alignment { return .leading }
+	var overflow:Overflow { return .visible }
+	var height:Dimensions { return .infinity }
+	var width:Dimensions { return .infinity }
+	var padding:Padding { return .zero }
+	var margin:Margin { return .zero }
 
 	var minimumSize:Size { return Size(width.min, height.min) }
 	var maximumSize:Size { return Size(width.max, height.max) }
@@ -26,21 +38,13 @@ public extension Component {
 		}
 	}
 
-	func render(with context:Context) -> [Component] {
+	func render() -> [Component] {
 		return []
 	}
-}
 
-public extension Component {
-	var alignment:Alignment { return .leading }
-	var arrangement:Arrangement { return .vertical }
-	var distribution:Distribution { return .equal }
-	var justify:Alignment { return .leading }
-	var overflow:Overflow { return .visible }
-	var height:Dimensions { return .infinity }
-	var width:Dimensions { return .infinity }
-	var padding:Padding { return .zero }
-	var margin:Margin { return .zero }
+	var scope:Scope {
+		return Scope(render)
+	}
 }
 
 public extension Component where Self : Stylable {

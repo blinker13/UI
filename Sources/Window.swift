@@ -1,5 +1,5 @@
 
-public struct Window : Stylable, Page {
+public struct Window : Stylable, Component {
 
 	public let root:Component
 	public let style:Style
@@ -11,12 +11,7 @@ public struct Window : Stylable, Page {
 		(self.root, self.style) = (root, style)
 	}
 
-	public func onStart() { page?.onStart() }
-	public func onResume() { page?.onResume() }
-	public func onPause() { page?.onPause() }
-	public func onStop() { page?.onStop() }
-
-	public func render(with context: Context) -> [Component] {
+	public func render() -> [Component] {
 		return [root]
 	}
 }
@@ -28,7 +23,6 @@ internal extension Window {
 }
 
 private extension Window {
-	var page:Page? { return root as? Page }
 	var calculatedHeight: Dimensions { return root.height } //TODO: add vertical margin
 	var calculatedWidth: Dimensions { return root.width } //TODO: add horizontal margin
 }

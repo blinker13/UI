@@ -10,17 +10,12 @@ public final class Scene {
 	}
 }
 
-extension Scene : Page {
+extension Scene : Component {
 
 	public var width:Dimensions { return root.component.width }
 	public var height:Dimensions { return root.component.height }
 
-	public func onStart() { page?.onStart() }
-	public func onResume() { page?.onResume() }
-	public func onPause() { page?.onPause() }
-	public func onStop() { page?.onStop() }
-
-	public func render(with context: Context) -> [Component] {
+	public func render() -> [Component] {
 		return [root.component]
 	}
 }
@@ -43,12 +38,5 @@ internal extension Scene {
 	func mark(_ node:Node) {
 		let parent = node.parent ?? node
 		nodes.insert(parent)
-	}
-}
-
-private extension Scene {
-
-	var page:Page? {
-		return root.component as? Page
 	}
 }

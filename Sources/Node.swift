@@ -4,13 +4,19 @@ internal final class Node {
 	internal weak var parent:Node?
 	internal var component:Component
 	internal var children:[Node] = []
-
 	internal var bounds:Rect = .zero
 	internal var frame:Rect = .zero
+	internal var scope:Scope
 
 	internal init (with component:Component) {
+		self.scope = component.scope
 		self.component = component
 	}
+}
+
+internal extension Node {
+	var ancestors:Ancestors { return Ancestors(with:self) }
+	var isRoot:Bool { return parent == nil }
 }
 
 extension Node : Hashable {
@@ -25,21 +31,7 @@ extension Node : Hashable {
 	}
 }
 
-internal extension Node {
-
-	var ancestors:Ancestors {
-		return Ancestors(with:self)
-	}
-
-	var isRoot:Bool {
-		return parent == nil
-	}
-}
-
 private extension Node {
-
-	var page:Page? { return component as? Page }
 	var visual:Visual? { return component as? Visual }
-
 	var isVisible:Bool { return visual?.isVisible ?? false }
 }
