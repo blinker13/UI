@@ -28,9 +28,6 @@ public extension Component {
 	var padding:Padding { return .zero }
 	var margin:Margin { return .zero }
 
-	var minimumSize:Size { return Size(width.min, height.min) }
-	var maximumSize:Size { return Size(width.max, height.max) }
-
 	subscript (arrangement:Arrangement) -> Dimensions {
 		switch arrangement {
 			case .horizontal: return width

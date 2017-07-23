@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BD01133B1E34FFA700214A33 /* Application.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01133A1E34FFA700214A33 /* Application.ios.swift */; };
-		BD01136A1E35248C00214A33 /* AppleLayer.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0113691E35248C00214A33 /* AppleLayer.mac.swift */; };
-		BD01136E1E354C0600214A33 /* AppleWindow.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01136D1E354C0600214A33 /* AppleWindow.ios.swift */; };
-		BD0113701E354C1300214A33 /* AppleWindow.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01136F1E354C1300214A33 /* AppleWindow.mac.swift */; };
+		BD01136E1E354C0600214A33 /* Apple.Window.ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01136D1E354C0600214A33 /* Apple.Window.ios.swift */; };
+		BD0113701E354C1300214A33 /* Apple.Window.mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01136F1E354C1300214A33 /* Apple.Window.mac.swift */; };
 		BD052C641E3CC7BE00F40B1A /* Node.Ancestors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C631E3CC7BE00F40B1A /* Node.Ancestors.swift */; };
 		BD052C691E3D0D3B00F40B1A /* Flex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C681E3D0D3B00F40B1A /* Flex.swift */; };
 		BD052C6B1E3D108A00F40B1A /* Flex.Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */; };
@@ -107,6 +106,7 @@
 		BDE17C801E34BB33006D80C7 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE17C7F1E34BB33006D80C7 /* Application.swift */; };
 		BDF1D4971F2432A70054265C /* Autonomous.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1D4961F2432A70054265C /* Autonomous.swift */; };
 		BDF1D49D1F2437C80054265C /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1D49C1F2437C80054265C /* Scope.swift */; };
+		BDF1D4A21F24EF250054265C /* Apple.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1D4A11F24EF250054265C /* Apple.View.swift */; };
 		BDF1EDD11E964A6800AF5E61 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1EDD01E964A6800AF5E61 /* Stylable.swift */; };
 		BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF256D71CF91FA60020F864 /* Overflow.swift */; };
 		BDF790EA1D1740C2003887E7 /* Size+Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */; };
@@ -127,9 +127,8 @@
 
 /* Begin PBXFileReference section */
 		BD01133A1E34FFA700214A33 /* Application.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.ios.swift; sourceTree = "<group>"; };
-		BD0113691E35248C00214A33 /* AppleLayer.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLayer.mac.swift; sourceTree = "<group>"; };
-		BD01136D1E354C0600214A33 /* AppleWindow.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleWindow.ios.swift; sourceTree = "<group>"; };
-		BD01136F1E354C1300214A33 /* AppleWindow.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleWindow.mac.swift; sourceTree = "<group>"; };
+		BD01136D1E354C0600214A33 /* Apple.Window.ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.Window.ios.swift; sourceTree = "<group>"; };
+		BD01136F1E354C1300214A33 /* Apple.Window.mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.Window.mac.swift; sourceTree = "<group>"; };
 		BD052C631E3CC7BE00F40B1A /* Node.Ancestors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.Ancestors.swift; sourceTree = "<group>"; };
 		BD052C681E3D0D3B00F40B1A /* Flex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.swift; sourceTree = "<group>"; };
 		BD052C6A1E3D108A00F40B1A /* Flex.Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flex.Container.swift; sourceTree = "<group>"; };
@@ -239,6 +238,7 @@
 		BDE8A79A1C95D56700EAF68D /* mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mac.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BDF1D4961F2432A70054265C /* Autonomous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autonomous.swift; sourceTree = "<group>"; };
 		BDF1D49C1F2437C80054265C /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
+		BDF1D4A11F24EF250054265C /* Apple.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.View.swift; sourceTree = "<group>"; };
 		BDF1EDD01E964A6800AF5E61 /* Stylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 		BDF256D71CF91FA60020F864 /* Overflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overflow.swift; sourceTree = "<group>"; };
 		BDF790E91D1740C2003887E7 /* Size+Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Size+Arrangement.swift"; sourceTree = "<group>"; };
@@ -388,19 +388,12 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		BD191C661E394E0D003BE2DC /* Window */ = {
-			isa = PBXGroup;
-			children = (
-				BD01136D1E354C0600214A33 /* AppleWindow.ios.swift */,
-				BD01136F1E354C1300214A33 /* AppleWindow.mac.swift */,
-			);
-			name = Window;
-			sourceTree = "<group>";
-		};
 		BD191C671E394E1E003BE2DC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				BD0113691E35248C00214A33 /* AppleLayer.mac.swift */,
+				BDF1D4A11F24EF250054265C /* Apple.View.swift */,
+				BD01136D1E354C0600214A33 /* Apple.Window.ios.swift */,
+				BD01136F1E354C1300214A33 /* Apple.Window.mac.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -444,7 +437,7 @@
 				BD3997E71C68A939002B3E01 /* Components */,
 				BDF790E81D17409D003887E7 /* Geometry */,
 				BD1185701E290B9000B98DD3 /* Graphics */,
-				BD3997E51C68A8F8002B3E01 /* Layouting */,
+				BD3997E51C68A8F8002B3E01 /* Layout */,
 				BD5DC7091F13C5A800D5B9FF /* Mutablity */,
 				BD8226681C936DE900D807A3 /* Platform */,
 			);
@@ -480,7 +473,7 @@
 			path = Styling;
 			sourceTree = "<group>";
 		};
-		BD3997E51C68A8F8002B3E01 /* Layouting */ = {
+		BD3997E51C68A8F8002B3E01 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
 				BD96A5AC1CF0AB1700231DA8 /* Layout.swift */,
@@ -490,7 +483,7 @@
 				BD052C621E3CC7AD00F40B1A /* Node */,
 				BD8C94D21CD7FCBA006C009E /* Utilities */,
 			);
-			name = Layouting;
+			name = Layout;
 			sourceTree = "<group>";
 		};
 		BD3997E61C68A915002B3E01 /* Views */ = {
@@ -508,10 +501,8 @@
 				BD3997D31C68A8EA002B3E01 /* Component.swift */,
 				BD71815F1E758C4D00E801A1 /* Surface.swift */,
 				BD9648131CEFB2D100D3F478 /* View.swift */,
-				BDE17C771E33FCF8006D80C7 /* Scene */,
 				BDC7347F1EED0CAC00F955E9 /* Text */,
 				BD3997E61C68A915002B3E01 /* Views */,
-				BD5DC7031F0BB76200D5B9FF /* Window */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -533,17 +524,8 @@
 				BD191C641E394DF1003BE2DC /* Controller */,
 				BDB4B6461DFA1022001D78FF /* Extensions */,
 				BD191C671E394E1E003BE2DC /* Utilities */,
-				BD191C661E394E0D003BE2DC /* Window */,
 			);
 			name = Apple;
-			sourceTree = "<group>";
-		};
-		BD5DC7031F0BB76200D5B9FF /* Window */ = {
-			isa = PBXGroup;
-			children = (
-				BDE17C781E33FD37006D80C7 /* Window.swift */,
-			);
-			name = Window;
 			sourceTree = "<group>";
 		};
 		BD5DC7091F13C5A800D5B9FF /* Mutablity */ = {
@@ -685,6 +667,8 @@
 				BD01133A1E34FFA700214A33 /* Application.ios.swift */,
 				BDE17C7D1E34BB0B006D80C7 /* Application.mac.swift */,
 				BDE17C7F1E34BB33006D80C7 /* Application.swift */,
+				BDE17C781E33FD37006D80C7 /* Window.swift */,
+				BDE17C771E33FCF8006D80C7 /* Scene */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -817,10 +801,11 @@
 				BD01133B1E34FFA700214A33 /* Application.ios.swift in Sources */,
 				BDF256D81CF91FA60020F864 /* Overflow.swift in Sources */,
 				BDCE67C91E37E5D400FA45B6 /* Apple.mac.swift in Sources */,
-				BD0113701E354C1300214A33 /* AppleWindow.mac.swift in Sources */,
+				BD0113701E354C1300214A33 /* Apple.Window.mac.swift in Sources */,
 				BDD5E2FC1EDA94CE0005705F /* Apple+Text.swift in Sources */,
 				BD11855D1E28DA1900B98DD3 /* Arithmetic.swift in Sources */,
 				BD11858C1E290BC100B98DD3 /* Color+Components.swift in Sources */,
+				BDF1D4A21F24EF250054265C /* Apple.View.swift in Sources */,
 				BD3997E01C68A8EA002B3E01 /* Distribution.swift in Sources */,
 				BD807DA51E9B8BEF00C03492 /* Composition+Transform.swift in Sources */,
 				BD6C2FE01D8BDE8F00FE7A91 /* AppleViewController.swift in Sources */,
@@ -845,7 +830,7 @@
 				BD4003411E2C22BF00AB2442 /* Style+Component.swift in Sources */,
 				BD7ACBD41CEE6C2C0067C6FC /* Style.swift in Sources */,
 				BD1185921E290BC100B98DD3 /* Gradient.swift in Sources */,
-				BD01136E1E354C0600214A33 /* AppleWindow.ios.swift in Sources */,
+				BD01136E1E354C0600214A33 /* Apple.Window.ios.swift in Sources */,
 				BD1185681E28DA1900B98DD3 /* Space.swift in Sources */,
 				BD8C94D41CD7FCFF006C009E /* FlexibleLayoutEnumerator.swift in Sources */,
 				BD5DC70D1F13C73300D5B9FF /* Stateful.swift in Sources */,
@@ -889,7 +874,6 @@
 				BD29D1901EEBDFFD0086C43E /* Style+Textual.swift in Sources */,
 				BD1185961E290BC100B98DD3 /* ParagraphStyle.swift in Sources */,
 				BD9648141CEFB2D100D3F478 /* View.swift in Sources */,
-				BD01136A1E35248C00214A33 /* AppleLayer.mac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

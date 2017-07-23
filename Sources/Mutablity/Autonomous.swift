@@ -3,7 +3,10 @@ public protocol Autonomous {
 	init ()
 }
 
-extension String : Autonomous {}
+extension Array : Autonomous {}
+extension Dictionary : Autonomous {}
 extension Double : Autonomous {}
 extension Float : Autonomous {}
 extension Int : Autonomous {}
+extension Set : Autonomous {}
+extension String : Autonomous {}

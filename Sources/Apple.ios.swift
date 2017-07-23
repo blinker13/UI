@@ -11,7 +11,7 @@ internal final class Apple : UIResponder {
 extension Apple : UIApplicationDelegate {
 
 	func application(_ app:UIApplication, willFinishLaunchingWithOptions options:[UIApplicationLaunchOptionsKey:Any]?) -> Bool {
-		window = AppleWindow(with:Application.shared.window!)
+		window = Apple.Window(with:Application.shared.window!)
 		window?.makeKeyAndVisible()
 		return true
 	}

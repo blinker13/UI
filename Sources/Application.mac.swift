@@ -6,7 +6,7 @@ import AppKit
 internal extension Application {
 
 	func open(_ window:Window) {
-		let wrapper = AppleWindow(with:window)
+		let wrapper = Apple.Window(with:window)
 		wrapper.titlebarAppearsTransparent = true
 		wrapper.titleVisibility = .hidden
 		wrapper.makeKeyAndOrderFront(nil)

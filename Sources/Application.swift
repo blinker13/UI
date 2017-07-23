@@ -19,7 +19,16 @@ public final class Application {
 public extension Application {
 
 	static func run(_ component:Component) {
-		let window = Window.wrap(component)
+		let scene = Scene(with:component)
+		run(with:scene)
+	}
+
+	static func run(with scene:Scene) {
+		let window = Window(with:scene)
+		run(with:window)
+	}
+
+	static func run(with window:Window) {
 		shared.open(window)
 		shared.main()
 	}

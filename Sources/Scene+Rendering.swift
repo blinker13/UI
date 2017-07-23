@@ -18,6 +18,9 @@ private extension Scene {
 
 	func display(_ node:Node, with renderer:Renderer) {
 
+		// FIXME: this is just a temporary workaround
+		if node.isRoot { renderer.update(node) }
+
 		let children = node.scope.render()
 		let container = Flex.Container(with:node)
 		let components = children.enumerated()

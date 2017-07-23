@@ -1,28 +1,18 @@
 
-public struct Window : Stylable, Component {
-
-	public let root:Component
-	public let style:Style
-
-	public var height:Dimensions { return style.height ?? calculatedHeight }
-	public var width:Dimensions { return style.width ?? calculatedWidth }
-
-	public init (with root:Component, style:Style = Style()) {
-		(self.root, self.style) = (root, style)
-	}
-
-	public func render() -> [Component] {
-		return [root]
-	}
+public struct Window {
+	public let scene:Scene
 }
 
-internal extension Window {
-	static func wrap(_ component:Component) -> Window {
-		return component as? Window ?? Window(with:component)
-	}
-}
+public extension Window {
 
-private extension Window {
-	var calculatedHeight: Dimensions { return root.height } //TODO: add vertical margin
-	var calculatedWidth: Dimensions { return root.width } //TODO: add horizontal margin
+//	var width: Dimensions { return scene.width }
+//	var height: Dimensions { return scene.height }
+
+	public init (with component:Component) {
+		self.scene = Scene(with:component)
+	}
+
+	public init (with scene:Scene) {
+		self.scene = scene
+	}
 }

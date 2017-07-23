@@ -10,17 +10,14 @@ public final class Scene {
 	}
 }
 
-extension Scene : Component {
-
-	public var width:Dimensions { return root.component.width }
-	public var height:Dimensions { return root.component.height }
-
-	public func render() -> [Component] {
-		return [root.component]
-	}
-}
-
 public extension Scene {
+
+	var width:Dimensions { return root.component.width }
+	var height:Dimensions { return root.component.height }
+
+	var minimumSize:Size { return Size(width.min, height.min) }
+	var maximumSize:Size { return Size(width.max, height.max) }
+
 	convenience init (with component:Component) {
 		let node = Node(with:component)
 		self.init(with:node)

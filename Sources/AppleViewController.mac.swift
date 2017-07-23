@@ -16,8 +16,8 @@ public final class AppleViewController : NSViewController {
 		super.init(nibName:nil, bundle:nil)
 	}
 
-	public required init?(coder:NSCoder) {
-		fatalError()
+	public required init? (coder:NSCoder) {
+		fatalError("init(coder:) has not been implemented")
 	}
 }
 
@@ -31,11 +31,8 @@ public extension AppleViewController {
 	// MARK: Lifecyle
 
 	override func loadView() {
-		let rect = NSRect(origin:.zero, size:AppleWindow.bounds.size)
-		let view = NSView(frame:rect)
-		view.layer = AppleLayer()
-		view.wantsLayer = true
-		self.view = view
+		let rect = NSRect(origin:.zero, size:Apple.Window.bounds.size)
+		view = Apple.View(frame:rect)
 	}
 
 //	override func viewWillAppear() {

@@ -1,14 +1,9 @@
 
 public extension AppleViewController {
 
-	public convenience init (with window:Window) {
-		let scene = Scene(with:window)
-		self.init(with:scene)
-	}
-
 	public convenience init (with component:Component) {
-		let window = Window(with:component)
-		self.init(with:window)
+		let scene = Scene(with:component)
+		self.init(with:scene)
 	}
 }
 

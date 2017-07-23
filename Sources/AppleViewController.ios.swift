@@ -32,25 +32,25 @@ public extension AppleViewController {
 		self.view = view
 	}
 
-	override func viewWillAppear(_ animated:Bool) {
-		super.viewWillAppear(animated)
-		scene.onStart()
-	}
-
-	override func viewDidAppear(_ animated:Bool) {
-		super.viewDidAppear(animated)
-		scene.onResume()
-	}
-
-	override func viewWillDisappear(_ animated:Bool) {
-		super.viewWillDisappear(animated)
-		scene.onPause()
-	}
-
-	override func viewDidDisappear(_ animated:Bool) {
-		super.viewDidDisappear(animated)
-		scene.onStop()
-	}
+//	override func viewWillAppear(_ animated:Bool) {
+//		super.viewWillAppear(animated)
+//		scene.onStart()
+//	}
+//
+//	override func viewDidAppear(_ animated:Bool) {
+//		super.viewDidAppear(animated)
+//		scene.onResume()
+//	}
+//
+//	override func viewWillDisappear(_ animated:Bool) {
+//		super.viewWillDisappear(animated)
+//		scene.onPause()
+//	}
+//
+//	override func viewDidDisappear(_ animated:Bool) {
+//		super.viewDidDisappear(animated)
+//		scene.onStop()
+//	}
 
 	// MARK: Layout
 
