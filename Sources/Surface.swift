@@ -1,5 +1,5 @@
 
-public protocol Surface {
+public protocol Surface : View {
 
 	var pre:Composition { get }
 	var post:Composition { get }
@@ -8,11 +8,6 @@ public protocol Surface {
 }
 
 public extension Surface {
-	var pre:Composition { return .save }
-	var post:Composition { return .restore }
-}
-
-public extension Surface where Self : Visual {
 
 	var pre:Composition {
 		return Composition(

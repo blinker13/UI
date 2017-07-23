@@ -1,5 +1,5 @@
 
-extension Text : Box, Textual {
+extension Text : Stylable, Surface {
 
 	public var style: Style {
 		switch self {
@@ -8,7 +8,7 @@ extension Text : Box, Textual {
 		}
 	}
 
-	public var text: Text {
-		return self
+	public func draw(in rect:Rect) -> Composition {
+		return .print(self)
 	}
 }

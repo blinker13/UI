@@ -8,10 +8,10 @@ internal extension CALayer {
 
 		masksToBounds = node.component.overflow.isHidden
 
-		if let visual = node.component as? Visual {
-			update(visual.background)
-			update(visual.border)
-			update(visual.shadow)
+		if let view = node.component as? View {
+			update(view.background)
+			update(view.border)
+			update(view.shadow)
 		}
 
 		if node.component is Surface {

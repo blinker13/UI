@@ -32,6 +32,6 @@ extension Node : Hashable {
 }
 
 private extension Node {
-	var visual:Visual? { return component as? Visual }
-	var isVisible:Bool { return visual?.isVisible ?? false }
+	var isVisible:Bool { return view?.isVisible ?? false }
+	var view:View? { return component as? View }
 }

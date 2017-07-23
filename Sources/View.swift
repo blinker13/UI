@@ -1,10 +1,7 @@
 
-public typealias Box = Component & Stylable
-public typealias View = Box & Visual
-
 public typealias Opacity = Float
 
-public protocol Visual {
+public protocol View : Component {
 	var background:Color? { get }
 	var border:Border? { get }
 	var opacity:Opacity { get }
@@ -12,11 +9,11 @@ public protocol Visual {
 	var tint:Color { get }
 }
 
-internal extension Visual {
+internal extension View {
 	var isVisible:Bool { return opacity > 0 }
 }
 
-public extension Visual where Self : Stylable {
+public extension View where Self : Stylable {
 	var background:Color? { return style.background }
 	var border:Border? { return style.border }
 	var opacity:Opacity { return style.opacity ?? 1.0 }

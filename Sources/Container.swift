@@ -1,5 +1,5 @@
 
-public struct Container : View {
+public struct Container : Stylable, View {
 
 	public let renderer:() -> [Component]
 	public let style:Style

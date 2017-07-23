@@ -1,5 +1,5 @@
 
-public struct Canvas : Surface, View {
+public struct Canvas : Stylable, Surface {
 
 	public let compose:(Rect) -> Composition
 	public let style:Style
