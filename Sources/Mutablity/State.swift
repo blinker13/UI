@@ -2,9 +2,7 @@
 public final class State<Element> {
 
 	public private(set) var current:Element
-
-	internal weak var scene:Scene!
-	internal weak var node:Node!
+	internal var handler:((Scope.Update) -> Void)!
 
 	internal init (with element:Element) {
 		self.current = element
@@ -12,14 +10,7 @@ public final class State<Element> {
 }
 
 public extension State {
-
 	func update(with handle:(Element) -> Element) {
-		print("========================")
-		print("will update", current)
-
-		current = handle(current)
-		scene.mark(node)
-
-		print("->", current)
+		handler { self.current = handle(self.current) }
 	}
 }

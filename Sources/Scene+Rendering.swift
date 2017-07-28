@@ -21,7 +21,11 @@ private extension Scene {
 		// FIXME: this is just a temporary workaround
 		if node.isRoot { renderer.update(node) }
 
-		let children = node.scope.render()
+		let children = node.scope.render { update in
+			self.mark(node)
+			update()
+		}
+
 		let container = Flex.Container(with:node)
 		let components = children.enumerated()
 

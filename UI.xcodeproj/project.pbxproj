@@ -438,7 +438,6 @@
 				BDF790E81D17409D003887E7 /* Geometry */,
 				BD1185701E290B9000B98DD3 /* Graphics */,
 				BD3997E51C68A8F8002B3E01 /* Layout */,
-				BD5DC7091F13C5A800D5B9FF /* Mutablity */,
 				BD8226681C936DE900D807A3 /* Platform */,
 			);
 			path = Sources;
@@ -501,6 +500,7 @@
 				BD3997D31C68A8EA002B3E01 /* Component.swift */,
 				BD71815F1E758C4D00E801A1 /* Surface.swift */,
 				BD9648131CEFB2D100D3F478 /* View.swift */,
+				BD5DC7091F13C5A800D5B9FF /* Mutablity */,
 				BDC7347F1EED0CAC00F955E9 /* Text */,
 				BD3997E61C68A915002B3E01 /* Views */,
 			);

@@ -11,8 +11,9 @@ public extension Stateful {
 	var scope:Scope {
 		let state = initialState
 
-		return Scope() {
-			self.render(with:state)
+		return Scope() { handler in
+			state.handler = handler
+			return self.render(with:state)
 		}
 	}
 }
