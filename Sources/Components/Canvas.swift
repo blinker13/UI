@@ -1,6 +1,7 @@
 
-public struct Canvas : Stylable, Surface {
+public struct Canvas : Stylable, Drawable, Element {
 
+	public var children:[Element] { return [] }
 	public let compose:(Rect) -> Composition
 	public let style:Style
 

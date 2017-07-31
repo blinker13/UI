@@ -1,5 +1,5 @@
 
-public protocol Surface : View {
+public protocol Drawable : Visable {
 
 	var pre:Composition { get }
 	var post:Composition { get }
@@ -7,7 +7,7 @@ public protocol Surface : View {
 	func draw(in rect:Rect) -> Composition
 }
 
-public extension Surface {
+public extension Drawable {
 
 	var pre:Composition {
 		return Composition(

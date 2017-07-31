@@ -6,15 +6,15 @@ internal extension CALayer {
 	func update(with node:Node) {
 		layout(with:node)
 
-		masksToBounds = node.component.overflow.isHidden
+		masksToBounds = node.element.overflow.isHidden
 
-		if let view = node.component as? View {
+		if let view = node.element as? Visable {
 			update(view.background)
 			update(view.border)
 			update(view.shadow)
 		}
 
-		if node.component is Surface {
+		if node.element is Drawable {
 			setNeedsDisplay()
 		}
 	}

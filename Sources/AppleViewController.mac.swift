@@ -67,12 +67,44 @@ public extension AppleViewController {
 		scene.display(with:renderer)
 		super.viewDidLayout()
 	}
+
+	// MARK: Events
+
+	public override func mouseDown(with event:NSEvent) {
+		forwardGesture(event)
+	}
+
+	public override func mouseDragged(with event:NSEvent) {
+		forwardGesture(event)
+	}
+
+	public override func mouseUp(with event:NSEvent) {
+		forwardGesture(event)
+	}
 }
 
 // MARK: -
 
 private extension AppleViewController {
+
 	var layer:CALayer { return view.layer! }
+
+	func forwardGesture(_ event:NSEvent) {
+		let location = convert(event.locationInWindow)
+		let digit = event.digitize(with:location)
+
+		guard let node = scene[digit] else { return }
+
+		let pointers = event.pointers(with:node, in:location)
+		let gesture = Gesture(touches:pointers, timestamp:event.timestamp)
+
+		scene.onEvent(gesture)
+	}
+
+	func convert(_ point:CGPoint) -> Point {
+		let location = view.convert(point, from:nil)
+		return Point(cg:location)
+	}
 }
 
 #endif

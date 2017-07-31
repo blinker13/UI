@@ -82,7 +82,7 @@ public extension Rect {
 		self.init(points:points)
 	}
 	
-	func inset(_ space:Space) -> Rect {
+	func inseted(_ space:Space) -> Rect {
 		let x = origin.x + space.left
 		let y = origin.y + space.top
 		let s = size.inseted(by:space)

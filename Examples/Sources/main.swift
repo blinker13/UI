@@ -38,7 +38,7 @@ let bar = Style(
 let content = Style(
 	.background(.orange),
 	.tint(.red),
-	.margin(20.0)
+	.margin(50.0)
 )
 
 let title = Style(
@@ -48,20 +48,11 @@ let title = Style(
 )
 
 Application.run(
-	Container(style:root,
-        Container(style:bar),
-        Canvas(style:content) { rect in
-            let space = Space(top:10, right:20, bottom:30, left:40)
-            let border = rect.inset(space)
-
-            return Composition(
-                .setLineWidth(5),
-                .add(border),
-                .stroke
-            )
-        },
-	    Container(style:bar,
-	        Text("Hello World", style:title)
+	View(style:root,
+		View(style:bar),
+		Button(style:content) { print("Hello World") },
+		View(style:bar,
+			Text("Hello World", style:title)
 		)
 	)
 )

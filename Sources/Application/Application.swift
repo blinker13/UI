@@ -18,13 +18,8 @@ public final class Application {
 
 public extension Application {
 
-	static func run(_ component:Component) {
-		let scene = Scene(with:component)
-		run(with:scene)
-	}
-
-	static func run(with scene:Scene) {
-		let window = Window(with:scene)
+	static func run(_ element:Element) {
+		let window = Window(with:element)
 		run(with:window)
 	}
 

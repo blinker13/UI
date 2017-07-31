@@ -21,7 +21,7 @@ private extension Scene {
 		// FIXME: this is just a temporary workaround
 		if node.isRoot { renderer.update(node) }
 
-		let children = node.scope.render { update in
+		let children = node.render { update in
 			self.mark(node)
 			update()
 		}
@@ -75,8 +75,8 @@ private extension Scene {
 			} else {
 				let child = node.children[index]
 
-				if type(of:item.component) == type(of:child.component) {
-					child.component = item.component
+				if type(of:item.component) == type(of:child.element) {
+					child.element = item.component
 					child.frame = frame
 					renderer.update(child)
 					nodes.insert(child)

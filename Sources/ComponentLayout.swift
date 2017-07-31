@@ -10,7 +10,7 @@ internal struct ComponentLayout {
 
 		internal var length:Float
 
-		fileprivate init (_ component:Component, _ arrangement:Arrangement) {
+		fileprivate init (_ component:Element, _ arrangement:Arrangement) {
 			let dimensions = component[arrangement]
 
 			self.edges = component.margin[arrangement]
@@ -21,12 +21,12 @@ internal struct ComponentLayout {
 		}
 	}
 
-	internal let component:Component
+	internal let component:Element
 
 	internal var cross:Axis
 	internal var main:Axis
 
-	internal init (_ component:Component, _ arrangement:Arrangement) {
+	internal init (_ component:Element, _ arrangement:Arrangement) {
 		self.cross = Axis(component, arrangement.crossed)
 		self.main = Axis(component, arrangement)
 		self.component = component

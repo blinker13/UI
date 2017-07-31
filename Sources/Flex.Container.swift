@@ -22,11 +22,11 @@ internal extension Flex {
 		internal let justify:Alignment
 
 		internal init (with node:Node) {
-			let size = node.frame.size.inseted(by:node.component.padding)
-			self.cross = Axis(node.component.arrangement.crossed, size, node.component.padding)
-			self.main = Axis(node.component.arrangement, size, node.component.padding)
-			self.distribution = node.component.distribution
-			self.justify = node.component.justify
+			let size = node.frame.size.inseted(by:node.element.padding)
+			self.cross = Axis(node.element.arrangement.crossed, size, node.element.padding)
+			self.main = Axis(node.element.arrangement, size, node.element.padding)
+			self.distribution = node.element.distribution
+			self.justify = node.element.justify
 		}
 	}
 }

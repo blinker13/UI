@@ -37,7 +37,7 @@ extension AppleRenderer : CALayerDelegate {
 
 	func draw(_ layer:CALayer, in ctx:CGContext) {
 		guard let node = nodes[layer] else { return }
-		guard let surface = node.component as? Surface else { return }
+		guard let surface = node.element as? Drawable else { return }
 
 		let rect = Rect(cg:layer.bounds)
 		let composition = surface.draw(in:rect)

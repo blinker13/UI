@@ -1,8 +1,8 @@
 
 public extension AppleViewController {
 
-	public convenience init (with component:Component) {
-		let scene = Scene(with:component)
+	public convenience init (with element:Element) {
+		let scene = Scene(with:element)
 		self.init(with:scene)
 	}
 }

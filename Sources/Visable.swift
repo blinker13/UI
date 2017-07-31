@@ -1,7 +1,7 @@
 
 public typealias Opacity = Float
 
-public protocol View : Component {
+public protocol Visable {
 	var background:Color? { get }
 	var border:Border? { get }
 	var opacity:Opacity { get }
@@ -9,11 +9,11 @@ public protocol View : Component {
 	var tint:Color { get }
 }
 
-internal extension View {
+internal extension Visable {
 	var isVisible:Bool { return opacity > 0 }
 }
 
-public extension View where Self : Stylable {
+public extension Visable where Self : Stylable {
 	var background:Color? { return style.background }
 	var border:Border? { return style.border }
 	var opacity:Opacity { return style.opacity ?? 1.0 }

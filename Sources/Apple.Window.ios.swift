@@ -14,6 +14,16 @@ internal extension Apple {
 		internal required init? (coder aDecoder: NSCoder) {
 			fatalError()
 		}
+
+		override func sendEvent(_ event: UIEvent) {
+			print("send", "->", event)
+			super.sendEvent(event)
+		}
+
+		override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+			print("hit this", event!)
+			return super.hitTest(point, with:event)
+		}
 	}
 }
 
