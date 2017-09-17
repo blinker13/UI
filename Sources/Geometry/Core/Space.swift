@@ -4,29 +4,20 @@ public typealias Margin = Space
 public typealias Padding = Space
 
 public struct Space : Geometry {
-
-	public var top:Float
-	public var right:Float
-	public var bottom:Float
-	public var left:Float
-
-	public init (top:Float = 0, right:Float = 0, bottom:Float = 0, left:Float = 0) {
-		(self.top, self.right, self.bottom, self.left) = (top, right, bottom, left)
-	}
+	public let horizontal:Axis
+	public let vertical:Axis
 }
 
 public extension Space {
 
-	init (horizontal:Float, vertical:Float) {
-		self.init(top:vertical, right:horizontal, bottom:vertical, left:horizontal)
-	}
+	var top:Float { return vertical.start }
+	var right:Float { return horizontal.start }
+	var bottom:Float { return vertical.end }
+	var left:Float { return horizontal.end }
 
-	init (horizontal:Float) {
-		self.init(right:horizontal, left:horizontal)
-	}
-
-	init (vertical:Float) {
-		self.init(top:vertical, bottom:vertical)
+	init (top:Float = 0, right:Float = 0, bottom:Float = 0, left:Float = 0) {
+		self.horizontal = Axis(start:left, end:right)
+		self.vertical = Axis(start:top, end:bottom)
 	}
 }
 

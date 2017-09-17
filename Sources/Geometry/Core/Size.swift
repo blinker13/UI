@@ -1,12 +1,7 @@
 
 public struct Size : Geometry {
-
-	public var width:Float
-	public var height:Float
-
-	public init (_ w:Float, _ h:Float) {
-		(self.width, self.height) = (w, h)
-	}
+	public let height:Float
+	public let width:Float
 }
 
 public extension Size {
@@ -14,6 +9,10 @@ public extension Size {
 	static var infinity = Size(.infinity, .infinity)
 
 	var isEmpty:Bool { return width.isZero || height.isZero }
+
+	init (_ w:Float, _ h:Float) {
+		(self.width, self.height) = (w, h)
+	}
 
 	init (width:Float) { self.init(width, 0) }
 	init (height:Float) { self.init(0, height) }

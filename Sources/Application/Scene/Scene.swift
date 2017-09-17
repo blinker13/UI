@@ -26,7 +26,7 @@ internal extension Scene {
 
 	func update(_ size:Size) {
 		if size == root.frame.size { return }
-		root.frame.size = size
+		root.update(size)
 		mark(root)
 	}
 

@@ -1,20 +1,19 @@
 
 public struct Point : Geometry {
-
-	public var x:Float
-	public var y:Float
-
-	public init (_ x:Float, _ y:Float) {
-		(self.x, self.y) = (x, y)
-	}
+	public let x:Float
+	public let y:Float
 }
 
 public extension Point {
 
-	public var magnitude:Float {
+	var magnitude:Float {
 		let power = multiplied(by:self)
 		let value = power.x + power.y
 		return value.squareRoot()
+	}
+
+	init (_ x:Float, _ y:Float) {
+		(self.x, self.y) = (x, y)
 	}
 
 	init (x:Float) { self.init(x, 0) }

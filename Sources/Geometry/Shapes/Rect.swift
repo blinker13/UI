@@ -1,8 +1,8 @@
 
 public struct Rect : Geometry, Shape {
 
-	public var origin:Point
-	public var size:Size
+	public let origin:Point
+	public let size:Size
 
 	public init (origin:Point, size:Size) {
 		(self.origin, self.size) = (origin, size)

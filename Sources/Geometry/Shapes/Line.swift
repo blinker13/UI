@@ -15,8 +15,8 @@ public struct Line : Shape {
 		case bevel
 	}
 
-	public var from:Point
-	public var to:Point
+	public let from:Point
+	public let to:Point
 
 	public init (from:Point, to:Point) {
 		(self.from, self.to) = (from, to)

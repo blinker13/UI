@@ -32,6 +32,10 @@ internal extension Node {
 		return parent == nil
 	}
 
+	func update(_ size:Size) {
+		self.frame = Rect(origin:frame.origin, size:size)
+	}
+
 	func test(_ hit:Point) -> Node? {
 		guard isVisible else { return nil }
 		guard bounds.contains(hit) else { return nil }
