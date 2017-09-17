@@ -7,7 +7,7 @@ internal extension Flex {
 
 			internal let arrangement:Arrangement
 			internal let constraint:Float
-			internal let edges:Edges
+			internal let edges:UI.Axis
 
 			fileprivate init (_ arrangement:Arrangement, _ constraint:Size, _ padding:Space) {
 				self.constraint = constraint[arrangement]

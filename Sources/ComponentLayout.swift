@@ -5,8 +5,8 @@ internal struct ComponentLayout {
 
 		internal let alignment:Alignment
 		internal let arrangement:Arrangement
-		internal let dimensions:Dimensions
-		internal let edges:Edges
+		internal let dimensions:UI.Axis
+		internal let edges:UI.Axis
 
 		internal var length:Float
 
@@ -16,7 +16,7 @@ internal struct ComponentLayout {
 			self.edges = component.margin[arrangement]
 			self.alignment = component.alignment
 			self.arrangement = arrangement
-			self.length = dimensions.min
+			self.length = dimensions.start
 			self.dimensions = dimensions
 		}
 	}
@@ -43,13 +43,13 @@ internal extension ComponentLayout {
 
 internal extension ComponentLayout.Axis {
 
-	var difference:Float { return dimensions.max - dimensions.min }
+	var difference:Float { return dimensions.start - dimensions.end }
 	var isFlexible:Bool { return dimensions.isFlexible }
 	var total:Float { return length + edges.total }
 
 	mutating func calculateLength(with constrain:Float) {
-		let interim = min(dimensions.max, constrain - edges.total)
-		length = max(dimensions.min, interim)
+		let interim = min(dimensions.end, constrain - edges.total)
+		length = max(dimensions.start, interim)
 	}
 
 	func calculatePosition(with remainder:Float) -> Float {

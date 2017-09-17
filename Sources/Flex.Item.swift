@@ -7,8 +7,8 @@ internal extension Flex {
 
 			internal let alignment:Alignment
 			internal let arrangement:Arrangement
-			internal let dimensions:Dimensions
-			internal let edges:Edges
+			internal let dimensions:UI.Axis
+			internal let edges:UI.Axis
 
 			internal var length:Float
 
@@ -18,7 +18,7 @@ internal extension Flex {
 				self.edges = component.margin[arrangement]
 				self.alignment = component.alignment
 				self.arrangement = arrangement
-				self.length = dimensions.min
+				self.length = dimensions.start
 				self.dimensions = dimensions
 			}
 		}

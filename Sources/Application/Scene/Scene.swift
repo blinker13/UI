@@ -13,8 +13,8 @@ internal final class Scene {
 
 internal extension Scene {
 
-	var width:Dimensions { return root.element.width }
-	var height:Dimensions { return root.element.height }
+	var width:Axis { return root.element.width }
+	var height:Axis { return root.element.height }
 
 	var minimumSize:Size { return Size(width.min, height.min) }
 	var maximumSize:Size { return Size(width.max, height.max) }

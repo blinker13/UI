@@ -6,10 +6,10 @@ public extension Style {
 	static let distribution = Attribute<Distribution>("distribution")
 	static let justify = Attribute<Alignment>("justify")
 	static let overflow = Attribute<Overflow>("overflow")
-	static let height = Attribute<Dimensions>("height")
-	static let width = Attribute<Dimensions>("width")
 	static let padding = Attribute<Padding>("padding")
 	static let margin = Attribute<Margin>("margin")
+	static let height = Attribute<Axis>("height")
+	static let width = Attribute<Axis>("width")
 
 	// MARK: -
 
@@ -18,10 +18,10 @@ public extension Style {
 	var distribution:Distribution? { return get(Style.distribution) }
 	var justify:Alignment? { return get(Style.justify) }
 	var overflow:Overflow? { return get(Style.overflow) }
-	var height:Dimensions? { return get(Style.height) }
-	var width:Dimensions? { return get(Style.width) }
 	var padding:Padding? { return get(Style.padding) }
 	var margin:Margin? { return get(Style.margin) }
+	var height:Axis? { return get(Style.height) }
+	var width:Axis? { return get(Style.width) }
 
 	// MARK: -
 
@@ -45,22 +45,22 @@ public extension Style {
 		return Style.overflow.styled(overflow)
 	}
 
-	static func height(_ height:Dimensions) -> Style {
+	static func height(_ height:Axis) -> Style {
 		return Style.height.styled(height)
 	}
 
 	static func height(min:Float = 0, max:Float = .infinity) -> Style {
-		let dimensions = Dimensions(min:min, max:max)
-		return height(dimensions)
+		let axis = Axis(start:min, end:max)
+		return height(axis)
 	}
 
-	static func width(_ width:Dimensions) -> Style {
+	static func width(_ width:Axis) -> Style {
 		return Style.width.styled(width)
 	}
 
 	static func width(min:Float = 0, max:Float = .infinity) -> Style {
-		let dimensions = Dimensions(min:min, max:max)
-		return width(dimensions)
+		let axis = Axis(start:min, end:max)
+		return width(axis)
 	}
 
 	static func padding(_ padding:Padding) -> Style {

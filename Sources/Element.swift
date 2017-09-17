@@ -11,17 +11,17 @@ public extension Element {
 	var distribution:Distribution { return .equal }
 	var justify:Alignment { return .leading }
 	var overflow:Overflow { return .visible }
-	var height:Dimensions { return .infinity }
-	var width:Dimensions { return .infinity }
 	var padding:Padding { return .zero }
 	var margin:Margin { return .zero }
+	var width:Axis { return .infinity }
+	var height:Axis { return .infinity }
 
 	var scope:Scope { return Scope() }
 
-	subscript (arrangement:Arrangement) -> Dimensions {
+	subscript (arrangement:Arrangement) -> Axis {
 		switch arrangement {
-		case .horizontal: return width
-		case .vertical: return height
+			case .horizontal: return width
+			case .vertical: return height
 		}
 	}
 }
@@ -32,10 +32,10 @@ public extension Element where Self : Stylable {
 	var distribution:Distribution { return style.distribution ?? .equal }
 	var justify:Alignment { return style.justify ?? .leading }
 	var overflow:Overflow { return style.overflow ?? .visible }
-	var height:Dimensions { return style.height ?? .infinity }
-	var width:Dimensions { return style.width ?? .infinity }
 	var padding:Padding { return style.padding ?? .zero }
 	var margin:Margin { return style.margin ?? .zero }
+	var width:Axis { return style.width ?? .infinity }
+	var height:Axis { return style.height ?? .infinity }
 }
 
 
