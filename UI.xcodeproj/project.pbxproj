@@ -340,44 +340,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		BD1185701E290B9000B98DD3 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				BD71815F1E758C4D00E801A1 /* Drawable.swift */,
-				BD9648131CEFB2D100D3F478 /* Visable.swift */,
-				BD1185A11E290BD000B98DD3 /* Color */,
-				BD71816B1E7608A200E801A1 /* Composition */,
-				BD7181681E76053A00E801A1 /* Drawing */,
-				BD1185A31E290C1B00B98DD3 /* Text */,
-			);
-			name = Graphics;
-			sourceTree = "<group>";
-		};
-		BD1185A11E290BD000B98DD3 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				BD1185731E290BC100B98DD3 /* Color.swift */,
-				BD1185741E290BC100B98DD3 /* Color+Components.swift */,
-				BD1185751E290BC100B98DD3 /* Color+Gray.swift */,
-				BD1185761E290BC100B98DD3 /* Color+Hex.swift */,
-				BD1185781E290BC100B98DD3 /* Color+RGB.swift */,
-			);
-			name = Color;
-			sourceTree = "<group>";
-		};
-		BD1185A31E290C1B00B98DD3 /* Text */ = {
-			isa = PBXGroup;
-			children = (
-				BDD5E2F01ED2CABB0005705F /* Text.Attributes.swift */,
-				BDDB80CC1EEBE6A0007B6E66 /* Text.Compound.swift */,
-				BDDB80D11EEC254F007B6E66 /* Text.Iterator.swift */,
-				BDDB80CF1EEBE74F007B6E66 /* Text.Run.swift */,
-				BD1185831E290BC100B98DD3 /* Text.swift */,
-				BDD5E2F41ED4540F0005705F /* Attributes */,
-			);
-			name = Text;
-			sourceTree = "<group>";
-		};
 		BD191C641E394DF1003BE2DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,7 +403,7 @@
 				BDC9F2E01F3E9FC40035441D /* Components */,
 				BDF1D4A31F2B8F640054265C /* Events */,
 				BDC9F2E41F3EA0D50035441D /* Geometry */,
-				BD1185701E290B9000B98DD3 /* Graphics */,
+				BDDC72D51F6E53DD002D1FED /* Graphics */,
 				BD3997E51C68A8F8002B3E01 /* Layout */,
 				BD8226681C936DE900D807A3 /* Platform */,
 			);
@@ -510,30 +472,6 @@
 				BD191C671E394E1E003BE2DC /* Utilities */,
 			);
 			name = Apple;
-			sourceTree = "<group>";
-		};
-		BD7181681E76053A00E801A1 /* Drawing */ = {
-			isa = PBXGroup;
-			children = (
-				BD1185721E290BC100B98DD3 /* Border.swift */,
-				BD11857A1E290BC100B98DD3 /* Gradient.swift */,
-				BD11857B1E290BC100B98DD3 /* Image.swift */,
-				BD11857D1E290BC100B98DD3 /* Paint.swift */,
-				BD1185811E290BC100B98DD3 /* Shadow.swift */,
-				BD807DAA1E9C8CDA00C03492 /* Blending.swift */,
-			);
-			name = Drawing;
-			sourceTree = "<group>";
-		};
-		BD71816B1E7608A200E801A1 /* Composition */ = {
-			isa = PBXGroup;
-			children = (
-				BD7181691E7605DC00E801A1 /* Composition.swift */,
-				BD807DA21E9B89DB00C03492 /* Composition+Drawing.swift */,
-				BD71816C1E760DD300E801A1 /* Composition+Convenience.swift */,
-				BD807DA41E9B8BEF00C03492 /* Composition+Transform.swift */,
-			);
-			name = Composition;
 			sourceTree = "<group>";
 		};
 		BD758F251F3206A0007B94DA /* Handling */ = {
@@ -747,14 +685,76 @@
 			path = Recognizer;
 			sourceTree = "<group>";
 		};
-		BDD5E2F41ED4540F0005705F /* Attributes */ = {
+		BDDC72D51F6E53DD002D1FED /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				BD71815F1E758C4D00E801A1 /* Drawable.swift */,
+				BD9648131CEFB2D100D3F478 /* Visable.swift */,
+				BDDC72D61F6E53F8002D1FED /* Color */,
+				BDDC72D71F6E53FF002D1FED /* Composition */,
+				BDDC72D81F6E540B002D1FED /* Drawing */,
+				BDDC72D91F6E5414002D1FED /* Text */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		BDDC72D61F6E53F8002D1FED /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				BD1185731E290BC100B98DD3 /* Color.swift */,
+				BD1185741E290BC100B98DD3 /* Color+Components.swift */,
+				BD1185751E290BC100B98DD3 /* Color+Gray.swift */,
+				BD1185761E290BC100B98DD3 /* Color+Hex.swift */,
+				BD1185781E290BC100B98DD3 /* Color+RGB.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		BDDC72D71F6E53FF002D1FED /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				BD7181691E7605DC00E801A1 /* Composition.swift */,
+				BD71816C1E760DD300E801A1 /* Composition+Convenience.swift */,
+				BD807DA21E9B89DB00C03492 /* Composition+Drawing.swift */,
+				BD807DA41E9B8BEF00C03492 /* Composition+Transform.swift */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		BDDC72D81F6E540B002D1FED /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				BD807DAA1E9C8CDA00C03492 /* Blending.swift */,
+				BD1185721E290BC100B98DD3 /* Border.swift */,
+				BD11857A1E290BC100B98DD3 /* Gradient.swift */,
+				BD11857B1E290BC100B98DD3 /* Image.swift */,
+				BD11857D1E290BC100B98DD3 /* Paint.swift */,
+				BD1185811E290BC100B98DD3 /* Shadow.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		BDDC72D91F6E5414002D1FED /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				BDD5E2F01ED2CABB0005705F /* Text.Attributes.swift */,
+				BDDB80CC1EEBE6A0007B6E66 /* Text.Compound.swift */,
+				BDDB80D11EEC254F007B6E66 /* Text.Iterator.swift */,
+				BDDB80CF1EEBE74F007B6E66 /* Text.Run.swift */,
+				BD1185831E290BC100B98DD3 /* Text.swift */,
+				BDDC72DA1F6E542D002D1FED /* Attributes */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		BDDC72DA1F6E542D002D1FED /* Attributes */ = {
 			isa = PBXGroup;
 			children = (
 				BD1185791E290BC100B98DD3 /* Font.swift */,
 				BD11857C1E290BC100B98DD3 /* LineBreak.swift */,
 				BD11857E1E290BC100B98DD3 /* ParagraphStyle.swift */,
 			);
-			name = Attributes;
+			path = Attributes;
 			sourceTree = "<group>";
 		};
 		BDE8A7991C95D52F00EAF68D /* Playgrounds */ = {
