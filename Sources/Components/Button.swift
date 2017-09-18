@@ -1,5 +1,5 @@
 
-public struct Button : Stylable, Visable, Component {
+public struct Button : Stylable, Viewable, Component {
 
 	public typealias Handler = () -> Void
 
@@ -24,8 +24,8 @@ public struct Button : Stylable, Visable, Component {
 	public let style:Style
 
 	public init (style:Style, actions:[Action]) {
-		let value = Value(currentDigit:nil)
-		self.scope = Scope(with:value)
+		let values = Values(currentDigit:nil)
+		self.scope = Scope(with:values)
 		self.actions = actions
 		self.style = style
 	}

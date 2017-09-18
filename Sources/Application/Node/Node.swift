@@ -70,7 +70,7 @@ extension Node : Hashable {
 }
 
 private extension Node {
-	var isVisible:Bool { return visable?.isVisible ?? false }
+	var isVisible:Bool { return viewable?.isVisible ?? false }
 //	var isResponsive:Bool { return !listeners.isEmpty }
-	var visable:Visable? { return element as? Visable }
+	var viewable:Viewable? { return element as? Viewable }
 }

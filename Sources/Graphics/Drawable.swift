@@ -1,5 +1,5 @@
 
-public protocol Drawable : Visable {
+public protocol Drawable : Viewable {
 
 	var pre:Composition { get }
 	var post:Composition { get }

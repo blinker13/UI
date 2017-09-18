@@ -8,10 +8,10 @@ internal extension CALayer {
 
 		masksToBounds = node.element.overflow.isHidden
 
-		if let view = node.element as? Visable {
-			update(view.background)
-			update(view.border)
-			update(view.shadow)
+		if let viewable = node.element as? Viewable {
+			update(viewable.background)
+			update(viewable.border)
+			update(viewable.shadow)
 		}
 
 		if node.element is Drawable {

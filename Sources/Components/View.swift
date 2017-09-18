@@ -1,5 +1,5 @@
 
-public struct View : Stylable, Visable, Element {
+public struct View : Stylable, Viewable, Element {
 
 	public let renderer:() -> [Element]
 	public let style:Style
