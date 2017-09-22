@@ -1,4 +1,6 @@
 
+import Geometry
+
 public extension Touch {
 	public struct Digit {
 		public let hashValue:Int

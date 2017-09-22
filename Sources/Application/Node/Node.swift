@@ -1,4 +1,7 @@
 
+import Geometry
+import Graphics
+
 public final class Node {
 
 	public typealias Update = () -> Void

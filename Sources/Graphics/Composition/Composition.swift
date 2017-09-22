@@ -1,4 +1,6 @@
 
+import Geometry
+
 public enum Composition {
 
 	public enum Rule {

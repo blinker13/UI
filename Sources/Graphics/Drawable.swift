@@ -1,4 +1,6 @@
 
+import Geometry
+
 public protocol Drawable : Viewable {
 
 	var pre:Composition { get }

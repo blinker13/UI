@@ -1,4 +1,6 @@
 
+import Geometry
+
 internal extension Flex {
 
 	internal struct Container {
@@ -7,7 +9,7 @@ internal extension Flex {
 
 			internal let arrangement:Arrangement
 			internal let constraint:Float
-			internal let edges:UI.Axis
+			internal let edges:Geometry.Axis
 
 			fileprivate init (_ arrangement:Arrangement, _ constraint:Size, _ padding:Space) {
 				self.constraint = constraint[arrangement]

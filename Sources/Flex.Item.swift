@@ -1,14 +1,16 @@
 
+import Geometry
+
 internal extension Flex {
 
 	internal struct Item {
 
-		internal struct Axis {
+		internal struct Axisis {
 
 			internal let alignment:Alignment
 			internal let arrangement:Arrangement
-			internal let dimensions:UI.Axis
-			internal let edges:UI.Axis
+			internal let dimensions:Axis
+			internal let edges:Axis
 
 			internal var length:Float
 
@@ -25,8 +27,8 @@ internal extension Flex {
 
 		internal let component:Element
 
-		internal var cross:Axis
-		internal var main:Axis
+		internal var cross:Axisis
+		internal var main:Axisis
 
 		internal init (_ component:Element, _ arrangement:Arrangement) {
 			self.cross = Axis(component, arrangement.crossed)
@@ -35,3 +37,4 @@ internal extension Flex {
 		}
 	}
 }
+

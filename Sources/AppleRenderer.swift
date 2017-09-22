@@ -1,5 +1,7 @@
 
 import QuartzCore
+import Geometry
+import Graphics
 
 internal final class AppleRenderer : NSObject {
 
@@ -12,26 +14,26 @@ internal final class AppleRenderer : NSObject {
 	}
 }
 
-extension AppleRenderer : Renderer {
-
-	func insert(_ node:Node, at index:Int) {
-		let layer = createLayer(for:node)
-		insert(layer, with:node, at:index)
-		layer.update(with:node)
-	}
-
-	func update(_ node:Node) {
-		let layer = fetchLayer(for:node)
-		layer.update(with:node)
-	}
-
-	func remove(_ node:Node) {
-		if let layer = layers.removeValue(forKey:node) {
-			_ = nodes.removeValue(forKey:layer)
-			layer.removeFromSuperlayer()
-		}
-	}
-}
+//extension AppleRenderer : Renderer {
+//
+//	func insert(_ node:Node, at index:Int) {
+//		let layer = createLayer(for:node)
+//		insert(layer, with:node, at:index)
+//		layer.update(with:node)
+//	}
+//
+//	func update(_ node:Node) {
+//		let layer = fetchLayer(for:node)
+//		layer.update(with:node)
+//	}
+//
+//	func remove(_ node:Node) {
+//		if let layer = layers.removeValue(forKey:node) {
+//			_ = nodes.removeValue(forKey:layer)
+//			layer.removeFromSuperlayer()
+//		}
+//	}
+//}
 
 extension AppleRenderer : CALayerDelegate {
 

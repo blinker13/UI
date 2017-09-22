@@ -1,4 +1,6 @@
 
+import Geometry
+
 public struct Touch {
 
 	public typealias Force = Double

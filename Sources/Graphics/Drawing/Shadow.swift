@@ -1,4 +1,6 @@
 
+import Geometry
+
 public struct Shadow : Codable {
 
 	public let color:Color

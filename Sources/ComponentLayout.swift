@@ -1,12 +1,14 @@
 
+import Geometry
+
 internal struct ComponentLayout {
 
 	internal struct Axis {
 
 		internal let alignment:Alignment
 		internal let arrangement:Arrangement
-		internal let dimensions:UI.Axis
-		internal let edges:UI.Axis
+		internal let dimensions:Axis
+		internal let edges:Axis
 
 		internal var length:Float
 
@@ -60,3 +62,4 @@ internal extension ComponentLayout.Axis {
 private extension ComponentLayout.Axis {
 	var value:(Arrangement, Float) { return (arrangement, length) }
 }
+

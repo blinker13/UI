@@ -7,49 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3790901F754C5A008B12F6 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3790911F754C5A008B12F6 /* libUI.a */; };
+		BD3790921F754CA8008B12F6 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3790911F754C5A008B12F6 /* libUI.a */; };
 		BDD458621E380BB800B95919 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD458611E380BB800B95919 /* main.swift */; };
 		BDD458691E380C7500B95919 /* iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD458681E380C7500B95919 /* iOS.xcassets */; };
-		BDD4588B1E380E7B00B95919 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD4588A1E380E7B00B95919 /* UI.framework */; };
-		BDD4588C1E380E7B00B95919 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDD4588A1E380E7B00B95919 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BDF81AE31E380EC300AF2E98 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD4588A1E380E7B00B95919 /* UI.framework */; };
-		BDF81AE41E380EC300AF2E98 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDD4588A1E380E7B00B95919 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF81AEC1E380EFB00AF2E98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD458611E380BB800B95919 /* main.swift */; };
 		BDF81AEE1E380F0F00AF2E98 /* macOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF81AE71E380EDF00AF2E98 /* macOS.xcassets */; };
 		BDF81AF71E38129A00AF2E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF81AF51E38129A00AF2E98 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		BDD4588D1E380E7B00B95919 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BDD4588C1E380E7B00B95919 /* UI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BDF81AE51E380EC300AF2E98 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BDF81AE41E380EC300AF2E98 /* UI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		BD3790911F754C5A008B12F6 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD4584A1E380B0800B95919 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD4585E1E380B5C00B95919 /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
 		BDD458611E380BB800B95919 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BDD458681E380C7500B95919 /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOS.xcassets; sourceTree = "<group>"; };
 		BDD4587A1E380E1900B95919 /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDD4588A1E380E7B00B95919 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF81AE61E380EDF00AF2E98 /* macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
 		BDF81AE71E380EDF00AF2E98 /* macOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = macOS.xcassets; sourceTree = "<group>"; };
 		BDF81AF61E38129A00AF2E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF81AE31E380EC300AF2E98 /* UI.framework in Frameworks */,
+				BD3790921F754CA8008B12F6 /* libUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDD4588B1E380E7B00B95919 /* UI.framework in Frameworks */,
+				BD3790901F754C5A008B12F6 /* libUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +87,7 @@
 		BDD458631E380C1100B95919 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BDD4588A1E380E7B00B95919 /* UI.framework */,
+				BD3790911F754C5A008B12F6 /* libUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,7 +121,6 @@
 				BDD458461E380B0800B95919 /* Sources */,
 				BDD458471E380B0800B95919 /* Frameworks */,
 				BDD458481E380B0800B95919 /* Resources */,
-				BDF81AE51E380EC300AF2E98 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,7 +138,6 @@
 				BDD458761E380E1900B95919 /* Sources */,
 				BDD458771E380E1900B95919 /* Frameworks */,
 				BDD458781E380E1900B95919 /* Resources */,
-				BDD4588D1E380E7B00B95919 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

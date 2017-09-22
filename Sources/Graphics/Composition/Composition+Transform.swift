@@ -1,4 +1,6 @@
 
+import Geometry
+
 public extension Composition {
 
 	static func rotate(by angle:Float) -> Composition {

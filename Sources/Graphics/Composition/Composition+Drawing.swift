@@ -1,4 +1,6 @@
 
+import Geometry
+
 public extension Composition {
 
 	static func clear(_ rects:Rect ...) -> Composition {

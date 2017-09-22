@@ -1,9 +1,12 @@
 
+import Geometry
+import Styling
+
 public enum Text {
 
 	public struct Run {
-		internal let string:String
-		internal let style:Style
+		public let string:String
+		public let style:Style
 	}
 
 	public struct Compound {
@@ -70,6 +73,12 @@ extension Text : CustomStringConvertible {
 	}
 }
 
+extension Text : Drawable {
+	public func draw(in rect:Rect) -> Composition {
+		return .print(self)
+	}
+}
+
 extension Text : Equatable {
 
 	public static func == (left:Text, right:Text) -> Bool {
@@ -90,5 +99,14 @@ extension Text : ExpressibleByStringLiteral {
 extension Text : Sequence {
 	public func makeIterator() -> Text.Iterator {
 		return Iterator(with:self)
+	}
+}
+
+extension Text : Stylable {
+	public var style:Style {
+		switch self {
+			case let .compound(compound): return compound.style
+			case let .run(run): return run.style
+		}
 	}
 }

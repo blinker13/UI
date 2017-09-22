@@ -1,4 +1,6 @@
 
+import Geometry
+
 internal final class Scene {
 
 	internal let root:Node
