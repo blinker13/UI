@@ -6,8 +6,9 @@ public protocol Touchable : Responder {
 	func onCancelled(_ touches:Set<Touch>, with gesture:Gesture)
 }
 
-internal extension Touchable {
-	var touchRecognizer:Touch.Recognizer {
-		return Touch.Recognizer(target:self)
-	}
-}
+//internal extension Touchable {
+//	var touchRecognizer:Touch.Recognizer {
+//		return Touch.Recognizer(target:self)
+//	}
+//}
+

@@ -6,10 +6,10 @@ public struct Gesture : Event {
 
 internal extension Gesture {
 
-	subscript (node:Node) -> Gesture {
-		let subset = touches.filter { $0.node == node }
-		return Gesture(touches:subset, timestamp:timestamp)
-	}
+//	subscript (node:Node) -> Gesture {
+//		let subset = touches.filter { $0.node == node }
+//		return Gesture(touches:subset, timestamp:timestamp)
+//	}
 
 	subscript (phase:Touch.Phase) -> Set<Touch>? {
 		let filtered = touches.filter { $0.phase == phase }

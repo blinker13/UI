@@ -55,19 +55,19 @@ public extension AppleViewController {
 
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
-		scene.update(currentSize)
+//		scene.update(currentSize)
 	}
 
 	public override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-		scene.display(with:renderer)
+//		scene.display(with:renderer)
 	}
 }
 
 // MARK: -
 
-private extension AppleViewController {
-	var layer:CALayer { return view.layer }
+internal extension AppleViewController {
+	var layer:CALayer { return view.layer! }
 }
 
 #endif

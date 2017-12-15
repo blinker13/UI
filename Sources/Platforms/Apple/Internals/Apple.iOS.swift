@@ -6,7 +6,10 @@ import UIKit
 internal final class Apple : UIResponder {
 
 	internal final class View : UIView {
-		var isMultipleTouchEnabled:Bool { return true }
+		override var isMultipleTouchEnabled:Bool {
+			get { return true }
+			set {}
+		}
 	}
 
 	internal final class Window : UIWindow {

@@ -1,13 +1,12 @@
 
-import Graphics
 import Styling
 
-public struct View : Stylable, Viewable, Element {
+public struct View : Element {
 
 	public let renderer:() -> [Element]
 	public let style:Style
 
-	public var children:[Element] {
+	public var content:[Element] {
 		return renderer()
 	}
 

@@ -4,7 +4,7 @@ public final class Application {
 	public static let shared = Application()
 
 	var name:String {
-		let sequence = path.characters.split(separator:"/")
+		let sequence = path.split(separator:"/")
 		let components = sequence.map(String.init)
 		return components.last!
 	}

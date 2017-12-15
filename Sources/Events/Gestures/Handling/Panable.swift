@@ -5,8 +5,9 @@ public protocol Panable : Responder {
 	func onEnded(_ pan:Pan)
 }
 
-internal extension Panable {
-	var panRecognizer:Pan.Recognizer {
-		return Pan.Recognizer(target:self)
-	}
-}
+//internal extension Panable {
+//	var panRecognizer:Pan.Recognizer {
+//		return Pan.Recognizer(target:self)
+//	}
+//}
+

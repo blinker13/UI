@@ -1,47 +1,41 @@
 
-public final class Scope {
+public protocol Scopable {
+	var scope:Scope { get }
+}
 
-	public typealias Value = Any
-	public typealias Update = () -> Void
-	public typealias Handle = (Update) -> Void
+public extension Scopable {
 
-	internal var handle:Handle?
-	internal var value:Value
-	internal var hash:Int?
-
-	public init (with value:Value = ()) {
-		self.value = value
+	var typeScope:Scope {
+		let kind = type(of:self)
+		let id = ObjectIdentifier(kind)
+		return .id(id)
 	}
+}
+
+// MARK: -
+
+public enum Scope : Hashable {
+	case id(ObjectIdentifier)
+	case key(String)
+	case tag(Int)
 }
 
 public extension Scope {
-	convenience init <ID>(with value:Value = (), identifier:ID) where ID : Hashable {
-		self.init(with:value)
-		self.hash = identifier.hashValue
+
+	static func == (left:Scope, right:Scope) -> Bool {
+		switch (left, right) {
+			case let (.id(l), .id(r)): return l == r
+			case let (.key(l), .key(r)): return l == r
+			case let (.tag(l), .tag(r)): return l == r
+			default: return false
+		}
+	}
+
+	var hashValue:Int {
+		switch self {
+			case let .id(x): return x.hashValue
+			case let .key(x): return x.hashValue
+			case let .tag(x): return x.hashValue
+		}
 	}
 }
-
-private extension Scope {
-	var identifier:ObjectIdentifier {
-		return ObjectIdentifier(self)
-	}
-}
-
-extension Scope : Hashable {
-
-	public static func == (left:Scope, right:Scope) -> Bool {
-		return left.hashValue == right.hashValue
-	}
-
-	public var hashValue:Int {
-		return hash ?? identifier.hashValue
-	}
-}
-
-//extension Scope : Listener {
-//	public func onEvent(_ event:Event) {
-//		for listener in listeners {
-//			listener.onEvent(event)
-//		}
-//	}
-//}

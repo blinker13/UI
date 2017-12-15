@@ -38,30 +38,30 @@ internal final class AppleRenderer : NSObject {
 extension AppleRenderer : CALayerDelegate {
 
 	func draw(_ layer:CALayer, in ctx:CGContext) {
-		guard let node = nodes[layer] else { return }
-		guard let surface = node.element as? Drawable else { return }
-
-		let rect = Rect(cg:layer.bounds)
-		let composition = surface.draw(in:rect)
-
-		ctx.saveGState()
-
-//		ctx.setAllowsFontSmoothing(true)
-		ctx.setShouldSmoothFonts(false)
-
-		ctx.setAllowsFontSubpixelPositioning(true)
-		ctx.setShouldSubpixelPositionFonts(true)
-
-		ctx.setAllowsFontSubpixelQuantization(true)
-		ctx.setShouldSubpixelQuantizeFonts(true)
-
-		ctx.textMatrix = .identity
-
-		ctx.draw(surface.pre)
-		ctx.draw(composition)
-		ctx.draw(surface.post)
-
-		ctx.restoreGState()
+//		guard let node = nodes[layer] else { return }
+//		guard let surface = node.element as? Drawable else { return }
+//
+//		let rect = Rect(cg:layer.bounds)
+//		let composition = surface.draw(in:rect)
+//
+//		ctx.saveGState()
+//
+////		ctx.setAllowsFontSmoothing(true)
+//		ctx.setShouldSmoothFonts(false)
+//
+//		ctx.setAllowsFontSubpixelPositioning(true)
+//		ctx.setShouldSubpixelPositionFonts(true)
+//
+//		ctx.setAllowsFontSubpixelQuantization(true)
+//		ctx.setShouldSubpixelQuantizeFonts(true)
+//
+//		ctx.textMatrix = .identity
+//
+//		ctx.draw(surface.pre)
+//		ctx.draw(composition)
+//		ctx.draw(surface.post)
+//
+//		ctx.restoreGState()
 	}
 
 	public func action(for layer: CALayer, forKey event: String) -> CAAction? {

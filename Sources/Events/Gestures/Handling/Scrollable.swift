@@ -6,8 +6,9 @@ public protocol Scrollable : Responder {
 	func onCancelled(_ scroll:Scroll)
 }
 
-internal extension Scrollable {
-	var scrollRecognizer:Scroll.Recognizer {
-		return Scroll.Recognizer(target:self)
-	}
-}
+//internal extension Scrollable {
+//	var scrollRecognizer:Scroll.Recognizer {
+//		return Scroll.Recognizer(target:self)
+//	}
+//}
+

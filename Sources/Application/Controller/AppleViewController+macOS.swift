@@ -6,8 +6,8 @@ import Geometry
 
 public extension AppleViewController {
 
-	override var preferredMinimumSize:NSSize { return CGSize(with:scene.minimumSize) }
-	override var preferredMaximumSize:NSSize { return CGSize(with:scene.maximumSize) }
+	override var preferredMinimumSize:NSSize { return CGSize(with:scene.minimum) }
+	override var preferredMaximumSize:NSSize { return CGSize(with:scene.maximum) }
 
 	// MARK: Lifecyle
 
@@ -40,14 +40,12 @@ public extension AppleViewController {
 
 	override func viewWillLayout() {
 		layer.contentsScale = view.window?.backingScaleFactor ?? 1
-//		scene.update(currentSize)
 		super.viewWillLayout()
 	}
 
-	override func viewDidLayout() {
-//		scene.display(with:renderer)
-		super.viewDidLayout()
-	}
+//	override func viewDidLayout() {
+//		super.viewDidLayout()
+//	}
 
 	// MARK: Events
 
@@ -66,20 +64,24 @@ public extension AppleViewController {
 
 // MARK: -
 
+internal extension AppleViewController {
+	var layer:CALayer { return view.layer! }
+}
+
+// MARK: -
+
 private extension AppleViewController {
 
-	var layer:CALayer { return view.layer! }
-
 	func forwardGesture(_ event:NSEvent) {
-		let location = convert(event.locationInWindow)
-		let digit = event.digitize(with:location)
-
-		guard let node = scene[digit] else { return }
-
-		let pointers = event.pointers(with:node, in:location)
-		let gesture = Gesture(touches:pointers, timestamp:event.timestamp)
-
-		scene.onEvent(gesture)
+//		let location = convert(event.locationInWindow)
+//		let digit = event.digitize(with:location)
+//
+//		guard let node = scene.test(digit) else { return }
+//
+//		let pointers = event.pointers(with:node, in:location)
+//		let gesture = Gesture(touches:pointers, timestamp:event.timestamp)
+//
+//		scene.onEvent(gesture)
 	}
 
 	func convert(_ point:CGPoint) -> Point {

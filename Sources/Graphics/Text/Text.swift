@@ -73,11 +73,11 @@ extension Text : CustomStringConvertible {
 	}
 }
 
-extension Text : Drawable {
-	public func draw(in rect:Rect) -> Composition {
-		return .print(self)
-	}
-}
+//extension Text : Drawable {
+//	public func draw(in rect:Rect) -> Composition {
+//		return .print(self)
+//	}
+//}
 
 extension Text : Equatable {
 
@@ -102,11 +102,12 @@ extension Text : Sequence {
 	}
 }
 
-extension Text : Stylable {
-	public var style:Style {
-		switch self {
-			case let .compound(compound): return compound.style
-			case let .run(run): return run.style
-		}
-	}
-}
+//extension Text : Stylable {
+//	public var style:Style {
+//		switch self {
+//			case let .compound(compound): return compound.style
+//			case let .run(run): return run.style
+//		}
+//	}
+//}
+

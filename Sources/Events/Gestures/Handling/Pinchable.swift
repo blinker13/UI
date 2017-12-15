@@ -6,8 +6,9 @@ public protocol Pinchable : Responder {
 	func onCancelled(_ pinch:Pinch)
 }
 
-internal extension Pinchable {
-	var pinchRecognizer:Pinch.Recognizer {
-		return Pinch.Recognizer(target:self)
-	}
-}
+//internal extension Pinchable {
+//	var pinchRecognizer:Pinch.Recognizer {
+//		return Pinch.Recognizer(target:self)
+//	}
+//}
+

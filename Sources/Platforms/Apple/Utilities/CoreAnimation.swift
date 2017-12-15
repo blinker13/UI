@@ -5,27 +5,19 @@ import Graphics
 internal extension CALayer {
 
 	func update(with node:Node) {
-		layout(with:node)
+		masksToBounds = node.overflow.isHidden
 
-		masksToBounds = node.element.overflow.isHidden
+		update(node.background)
+		update(node.border)
+		update(node.shadow)
 
-		if let viewable = node.element as? Viewable {
-			update(viewable.background)
-			update(viewable.border)
-			update(viewable.shadow)
-		}
-
-		if node.element is Drawable {
-			setNeedsDisplay()
-		}
+//		if node.element is Drawable {
+//			setNeedsDisplay()
+//		}
 	}
 }
 
 private extension CALayer {
-
-	func layout(with node:Node) {
-		frame = CGRect(with:node.frame)
-	}
 
 	func update(_ color:Color?) {
 		backgroundColor = color?.cgColor

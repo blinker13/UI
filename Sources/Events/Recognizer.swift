@@ -1,4 +1,4 @@
 
-internal protocol Recognizer : Responder {
-	func onEvent(_ event:Event)
+public protocol Recognizer {
+//	func onEvent(_ event:Event)
 }

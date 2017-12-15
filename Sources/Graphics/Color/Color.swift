@@ -1,5 +1,6 @@
 
 public typealias Alpha = Float
+public typealias Opacity = Alpha
 
 public struct Color : Codable {
 

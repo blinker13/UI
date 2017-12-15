@@ -2,7 +2,7 @@
 import Graphics
 import Styling
 
-public struct Button : Stylable, Viewable, Component {
+public struct Button : Component, Stylable, Viewable {
 
 	public typealias Handler = () -> Void
 
