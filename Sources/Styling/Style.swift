@@ -11,9 +11,6 @@ public struct Style {
 
 public extension Style {
 
-	static let compound = Attribute<Compound>("compound")
-	var compound:Compound? { return value as? Compound }
-
 	init <Kind>(key:Attribute<Kind>, value:Kind) {
 		self.identifier = key.name
 		self.value = value
@@ -28,13 +25,15 @@ public extension Style {
 	}
 
 	subscript <Kind>(key:Attribute<Kind>) -> Kind? {
-
-		switch value {
-			case let x as Kind: print(self, key, "->", x);return x
-			case let compound as Compound: return compound[key]
-			default: return nil
-		}
+		if let compound = value as? Compound { return compound[key] }
+		guard key.name == identifier else { return nil }
+		return value as? Kind
 	}
+}
+
+private extension Style {
+	static let compound = Attribute<Compound>("[Style]")
+	var compound:Compound? { return value as? Compound }
 }
 
 extension Style : Equatable {

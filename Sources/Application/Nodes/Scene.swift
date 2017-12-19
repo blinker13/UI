@@ -43,7 +43,7 @@ private extension Scene {
 
 	func update() -> Update? {
 		guard let node = next() else { return nil }
-		let elements = node.update { print($0) }
+		let elements = node.update { print($0) } //TODO: implementation
 		var changes = ChangeSet(with:node)
 		var children = [Node]()
 

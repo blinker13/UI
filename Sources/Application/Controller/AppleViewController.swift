@@ -49,16 +49,10 @@ public extension AppleViewController {
 		let frame = Rect(cg:layer.frame)
 		let calculator = node.layout(in:frame)
 
-		print("==========================================")
-		print(node, "->", frame)
-
 		for (index, rect) in calculator.enumerated() {
 			let child = layer.sublayers![index]
 			child.frame = CGRect(with:rect)
-			print("   ", rect)
 		}
-
-		print("==========================================")
 	}
 
 	func draw(_ layer:CALayer, in ctx:CGContext) {
@@ -90,7 +84,7 @@ public extension AppleViewController {
 
 	func action(for layer:CALayer, forKey event:String) -> CAAction? {
 		guard let node = nodes[layer] else { fatalError() }
-//		print(node, "->", event)
+		print(node, "->", event)
 		return NSNull()
 	}
 }
