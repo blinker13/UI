@@ -1,5 +1,6 @@
 
 import Geometry
+import Layouting
 import Styling
 
 internal typealias Ancestors = AnyIterator<Node>
@@ -47,13 +48,14 @@ internal extension Node {
 		}
 	}
 
-	func layout(in frame:Rect) {
+	func layout(in frame:Rect) -> Calculator {
 		defer { self.frame = frame }
-		
+		return layout(children, in:frame)
 	}
 }
 
 // MARK: -
+
 // TODO: remove or replcae logic (ugly)
 internal extension Array where Element == Node {
 

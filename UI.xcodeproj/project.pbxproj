@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0902DD1FE7BF62009DB9A8 /* Arrangeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0902DC1FE7BF62009DB9A8 /* Arrangeable.swift */; };
+		BD0902DF1FE7BF9E009DB9A8 /* Alignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0902DE1FE7BF9E009DB9A8 /* Alignable.swift */; };
 		BD3790A91F756C78008B12F6 /* Apple.macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE67C81E37E5D400FA45B6 /* Apple.macOS.swift */; };
 		BD3790AA1F756C81008B12F6 /* Apple.iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE67C61E37E36D00FA45B6 /* Apple.iOS.swift */; };
 		BD3E1C821F76AFA7008F2090 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E1C801F76A539008F2090 /* Change.swift */; };
@@ -67,8 +69,6 @@
 		BD3E1D041F77587D008F2090 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D21C68A8EA002B3E01 /* Arrangement.swift */; };
 		BD3E1D051F77587D008F2090 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D61C68A8EA002B3E01 /* Distribution.swift */; };
 		BD3E1D061F77587D008F2090 /* Overflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF256D71CF91FA60020F864 /* Overflow.swift */; };
-		BD3E1D071F77587D008F2090 /* ItemEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3790A21F756630008B12F6 /* ItemEnumerator.swift */; };
-		BD3E1D081F77587D008F2090 /* ItemIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3790A41F756644008B12F6 /* ItemIterator.swift */; };
 		BD3E1D091F7758AC008F2090 /* libLayouting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3E1CF71F7757DA008F2090 /* libLayouting.a */; };
 		BD3E1D0C1F77A3A6008F2090 /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E1D0A1F77A387008F2090 /* Lifecycle.swift */; };
 		BD41BB071FDD6A4D00519CE2 /* Trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41BB061FDD6A4D00519CE2 /* Trace.swift */; };
@@ -77,6 +77,8 @@
 		BD789DD41FD4695800DD474D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C7F801EC6F752006F0F1A /* View.swift */; };
 		BD789DD71FD55FDE00DD474D /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD789DD51FD55FB800DD474D /* Block.swift */; };
 		BD7AE61D1FE55C9200CD7862 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7AE61B1FE55BF700CD7862 /* Viewable.swift */; };
+		BD7AE6231FE56C5C00CD7862 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7AE6201FE56A0D00CD7862 /* Calculator.swift */; };
+		BD7AE6291FE634DA00CD7862 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7AE6281FE634DA00CD7862 /* Layout.swift */; };
 		BD9103D81E2CD658009BFD4F /* BorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CC1E2CD658009BFD4F /* BorderTests.swift */; };
 		BD9103D91E2CD658009BFD4F /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CD1E2CD658009BFD4F /* ColorTests.swift */; };
 		BD9103DA1E2CD658009BFD4F /* DimensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103CE1E2CD658009BFD4F /* DimensionsTests.swift */; };
@@ -89,6 +91,7 @@
 		BD9103E11E2CD658009BFD4F /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D51E2CD658009BFD4F /* SizeTests.swift */; };
 		BD9103E21E2CD658009BFD4F /* SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D61E2CD658009BFD4F /* SpaceTests.swift */; };
 		BD9103E31E2CD658009BFD4F /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9103D71E2CD658009BFD4F /* TransformTests.swift */; };
+		BDB6AEFB1FE75985009C5EBA /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB6AEF91FE7591E009C5EBA /* Dimension.swift */; };
 		BDBDBAAD1F75467D004EB183 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997D31C68A8EA002B3E01 /* Component.swift */; };
 		BDBDBAAE1F75467D004EB183 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB0399A1F3B62CC003771B9 /* Element.swift */; };
 		BDBDBAAF1F75467D004EB183 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1D49C1F2437C80054265C /* Scope.swift */; };
@@ -126,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		BD01133A1E34FFA700214A33 /* Application+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+iOS.swift"; sourceTree = "<group>"; };
+		BD0902DC1FE7BF62009DB9A8 /* Arrangeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrangeable.swift; sourceTree = "<group>"; };
+		BD0902DE1FE7BF9E009DB9A8 /* Alignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alignable.swift; sourceTree = "<group>"; };
 		BD11854F1E28DA1900B98DD3 /* Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
 		BD1185521E28DA1900B98DD3 /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		BD1185531E28DA1900B98DD3 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
@@ -158,8 +163,6 @@
 		BD21421E1CFCFBD800D3CD58 /* AppleViewController+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppleViewController+macOS.swift"; sourceTree = "<group>"; };
 		BD2142201CFCFF6000D3CD58 /* AppleViewController+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppleViewController+iOS.swift"; sourceTree = "<group>"; };
 		BD2142281CFD079D00D3CD58 /* ios.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ios.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		BD3790A21F756630008B12F6 /* ItemEnumerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEnumerator.swift; sourceTree = "<group>"; };
-		BD3790A41F756644008B12F6 /* ItemIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemIterator.swift; sourceTree = "<group>"; };
 		BD3997D11C68A8EA002B3E01 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		BD3997D21C68A8EA002B3E01 /* Arrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		BD3997D31C68A8EA002B3E01 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 		BD789DD51FD55FB800DD474D /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		BD7ACBD31CEE6C2C0067C6FC /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		BD7AE61B1FE55BF700CD7862 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
+		BD7AE6201FE56A0D00CD7862 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		BD7AE6281FE634DA00CD7862 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		BD807DA21E9B89DB00C03492 /* Composition+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composition+Drawing.swift"; sourceTree = "<group>"; };
 		BD807DA41E9B8BEF00C03492 /* Composition+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composition+Transform.swift"; sourceTree = "<group>"; };
 		BD807DAA1E9C8CDA00C03492 /* Blending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blending.swift; sourceTree = "<group>"; };
@@ -223,6 +228,7 @@
 		BDB0399A1F3B62CC003771B9 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		BDB0399C1F3B6361003771B9 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BDB0399E1F3B636E003771B9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BDB6AEF91FE7591E009C5EBA /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		BDBDBAA41F75463C004EB183 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC7347D1EED0CA700F955E9 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		BDC9F2CC1F3E058B0035441D /* Set+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Touch.swift"; sourceTree = "<group>"; };
@@ -291,6 +297,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD0902DB1FE7BF4F009DB9A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD0902DE1FE7BF9E009DB9A8 /* Alignable.swift */,
+				BD0902DC1FE7BF62009DB9A8 /* Arrangeable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BD0902E01FE7F239009DB9A8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BD7AE6201FE56A0D00CD7862 /* Calculator.swift */,
+				BDB6AEF91FE7591E009C5EBA /* Dimension.swift */,
+				BD7AE6281FE634DA00CD7862 /* Layout.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		BD0A2B601D9EB88700F26C1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,7 +407,8 @@
 				BDB0399C1F3B6361003771B9 /* Container.swift */,
 				BDB0399E1F3B636E003771B9 /* Item.swift */,
 				BD3790961F754F73008B12F6 /* Attributes */,
-				BD3790A11F756617008B12F6 /* Utilities */,
+				BD0902DB1FE7BF4F009DB9A8 /* Extensions */,
+				BD0902E01FE7F239009DB9A8 /* Utilities */,
 			);
 			path = Layouting;
 			sourceTree = "<group>";
@@ -431,15 +457,6 @@
 				BD479BFE1E804139008742B2 /* CoreAnimation.swift */,
 				BD4A6AAC1E7C4E83000E8921 /* CoreGraphics.swift */,
 				BDD5E2FB1EDA94CE0005705F /* CoreText.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		BD3790A11F756617008B12F6 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				BD3790A21F756630008B12F6 /* ItemEnumerator.swift */,
-				BD3790A41F756644008B12F6 /* ItemIterator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1030,13 +1047,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD3E1D071F77587D008F2090 /* ItemEnumerator.swift in Sources */,
 				BD3E1D041F77587D008F2090 /* Arrangement.swift in Sources */,
 				BD3E1D061F77587D008F2090 /* Overflow.swift in Sources */,
 				BD3E1D021F77587D008F2090 /* Item.swift in Sources */,
 				BD3E1D031F77587D008F2090 /* Alignment.swift in Sources */,
+				BD7AE6231FE56C5C00CD7862 /* Calculator.swift in Sources */,
 				BD3E1D011F775874008F2090 /* Container.swift in Sources */,
-				BD3E1D081F77587D008F2090 /* ItemIterator.swift in Sources */,
+				BD7AE6291FE634DA00CD7862 /* Layout.swift in Sources */,
+				BD0902DF1FE7BF9E009DB9A8 /* Alignable.swift in Sources */,
+				BD0902DD1FE7BF62009DB9A8 /* Arrangeable.swift in Sources */,
+				BDB6AEFB1FE75985009C5EBA /* Dimension.swift in Sources */,
 				BD3E1D051F77587D008F2090 /* Distribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1098,11 +1118,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD5A9D391DD3EE95006C0D9C /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1124,7 +1141,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1142,11 +1158,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD5A9D3A1DD3EE95006C0D9C /* Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1183,10 +1196,8 @@
 		BD1FE2151C4FF402005F95D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1196,10 +1207,8 @@
 		BD1FE2161C4FF402005F95D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgbabel.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1211,10 +1220,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1223,10 +1229,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1235,10 +1238,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1247,10 +1247,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1259,10 +1256,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1271,10 +1265,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1283,10 +1274,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1295,10 +1283,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1307,10 +1292,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1319,10 +1301,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

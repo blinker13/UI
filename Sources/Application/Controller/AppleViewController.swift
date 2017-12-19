@@ -28,6 +28,8 @@ public final class AppleViewController : ViewController, CALayerDelegate {
 	}
 }
 
+// MARK: -
+
 public extension AppleViewController {
 
 	convenience init (with element:Element) {
@@ -43,10 +45,20 @@ public extension AppleViewController {
 
 	func layoutSublayers(of layer:CALayer) {
 		guard let node = nodes[layer] else { fatalError() }
-		let frame = Rect(cg:layer.frame)
-		node.layout(in:frame)
 
+		let frame = Rect(cg:layer.frame)
+		let calculator = node.layout(in:frame)
+
+		print("==========================================")
 		print(node, "->", frame)
+
+		for (index, rect) in calculator.enumerated() {
+			let child = layer.sublayers![index]
+			child.frame = CGRect(with:rect)
+			print("   ", rect)
+		}
+
+		print("==========================================")
 	}
 
 	func draw(_ layer:CALayer, in ctx:CGContext) {
@@ -78,10 +90,12 @@ public extension AppleViewController {
 
 	func action(for layer:CALayer, forKey event:String) -> CAAction? {
 		guard let node = nodes[layer] else { fatalError() }
-		print(node, "->", event)
+//		print(node, "->", event)
 		return NSNull()
 	}
 }
+
+// MARK: -
 
 internal extension AppleViewController {
 
@@ -91,6 +105,8 @@ internal extension AppleViewController {
 		transaction.forEach(apply)
 	}
 }
+
+// MARK: -
 
 private extension AppleViewController {
 

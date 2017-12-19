@@ -29,9 +29,9 @@ public extension Style {
 
 	subscript <Kind>(key:Attribute<Kind>) -> Kind? {
 
-		switch value.self {
-			case is Kind: return value as? Kind
-			case is Compound: return compound?[key]
+		switch value {
+			case let x as Kind: print(self, key, "->", x);return x
+			case let compound as Compound: return compound[key]
 			default: return nil
 		}
 	}

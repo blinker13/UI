@@ -5,17 +5,34 @@ public enum Distribution : String, Codable {
 	case equal
 }
 
-//internal extension Distribution {
-//
-//	var calculation:(FlexibleLayoutEnumerator, Float, (Int, Float) -> Void) -> Float {
-//		switch self {
-//			case .proportional: return calcutateProportion
-//			case .ordered: return calcutateOrder
-//			case .equal: return calcutateEqual
-//		}
-//	}
-//}
-//
+// MARK: -
+
+internal extension Distribution {
+
+	func calculate(for layouts:[Layout], with remains:Float) -> [Float] {
+
+		switch self {
+			case .proportional: return proportion(for:layouts, with:remains)
+			case .ordered: return layouts.map(setEqualDistribution)
+			case .equal: return Array(repeating:1.0/2, count:2)
+		}
+	}
+}
+
+// MARK: -
+
+private extension Distribution {
+
+	func proportion(for layouts:[Layout], with remains:Float) -> [Float] {
+//		let flexibleMainSizes = layouts.map(filterFlexibleMainSize)
+		return []
+	}
+
+	func setEqualDistribution(layout:Layout) -> Float {
+		return layout.main.isFlexible ? 1.0 : 0.0
+	}
+}
+
 //private extension Distribution {
 //
 //	func calcutateEqual(_ layouts:FlexibleLayoutEnumerator, remainder:Float, body:(Int, Float) -> Void) -> Float {

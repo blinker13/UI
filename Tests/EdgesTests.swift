@@ -38,11 +38,6 @@ class EdgesTests: XCTestCase {
 		XCTAssertTrue(Edges(leading:0, trailing:0).isZero)
 	}
 
-	func test_total() {
-		let subject = Edges(leading:13, trailing:99)
-		XCTAssertEqual(subject.total, 112.0)
-	}
-
 	func test_description() {
 		let subject = Edges(leading:13, trailing:99)
 		XCTAssertEqual(subject.description, "13.0 |---| 99.0")
