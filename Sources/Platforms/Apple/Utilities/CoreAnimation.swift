@@ -21,6 +21,7 @@ private extension CALayer {
 
 	func update(_ color:Color?) {
 		backgroundColor = color?.cgColor
+		print(color)
 	}
 
 	func update(_ border:Border?) {

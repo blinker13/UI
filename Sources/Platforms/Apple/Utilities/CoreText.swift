@@ -4,38 +4,27 @@ import CoreText
 import Graphics
 import Styling
 
-internal extension Text {
-	var attributedString:NSAttributedString {
-		let string = NSMutableAttributedString()
-		string.append(self)
-		return string
-	}
+internal extension NSAttributedString {
+
+//	init (with text:Text) {
+//
+//	}
 }
 
-private extension Text.Run {
-	var attributedString:NSAttributedString {
+private extension NSAttributedString {
+
+	convenience init (with run:Text.Run) {
 		var attributes = [NSAttributedStringKey:Any]()
-//		attributes[kCTFontAttributeName as NSAttributedStringKey] = style[Text.font]
-		attributes[kCTKernAttributeName as NSAttributedStringKey] = style[Text.kern]
-		attributes[kCTForegroundColorAttributeName as NSAttributedStringKey] = style.tint?.cgColor
-		attributes[kCTBackgroundColorAttributeName as NSAttributedStringKey] = style.background?.cgColor
+////		attributes[kCTFontAttributeName as NSAttributedStringKey] = run.style[Text.font]
+//		attributes[kCTKernAttributeName as NSAttributedStringKey] = run.style[Text.kern]
+//		attributes[kCTForegroundColorAttributeName as NSAttributedStringKey] = run.style.tint?.cgColor
+//		attributes[kCTBackgroundColorAttributeName as NSAttributedStringKey] = run.style.background?.cgColor
+//
+////		if let decoration = style[Text.strikethrough] {
+////			attributes[kCTUnderlineStyleAttributeName as NSAttributedStringKey] =
+////				attributes[kCTUnderlineColorAttributeName as NSAttributedStringKey] = decoration.color?.cgColor
+////		}
 
-//		if let decoration = style[Text.strikethrough] {
-//			attributes[kCTUnderlineStyleAttributeName as NSAttributedStringKey] =
-//			attributes[kCTUnderlineColorAttributeName as NSAttributedStringKey] = decoration.color?.cgColor
-//		}
-
-		return NSAttributedString(string:string, attributes:attributes)
-	}
-}
-
-private extension NSMutableAttributedString {
-
-	func append(_ text:Text) {
-		text.forEach(append)
-	}
-
-	func append(run:Text.Run) {
-		append(run.attributedString)
+		self.init(string:run.string, attributes:attributes)
 	}
 }

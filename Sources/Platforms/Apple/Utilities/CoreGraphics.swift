@@ -22,7 +22,7 @@ internal extension CGContext {
 			case let .setBlending(value): setBlendMode(value.cgBlending)
 
 			case let .setTextMatrix(matrix): textMatrix = matrix.cgTransform
-			case let .print(text): print(text.attributedString)
+			case let .print(text): return //TODO: print(text.attributedString)
 
 			case let .setOpacity(value): setAlpha(CGFloat(value))
 			case let .setFill(color): setFillColor(color.cgColor)

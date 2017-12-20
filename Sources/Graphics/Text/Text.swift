@@ -1,39 +1,75 @@
 
 import Geometry
-import Styling
 
-public enum Text {
+public struct Text : Sequence, Equatable {
 
-	public struct Run {
+	public typealias Iterator = IndexingIterator<[Text.Run]>
+	public typealias Style = Set<Attribute>
+
+	public struct Attribute : Hashable {
+		public typealias Value = Codable
+		private let value:Value
+		private let key:String
+	}
+
+	public struct Run : Equatable {
 		public let string:String
 		public let style:Style
 	}
 
-	public struct Compound {
-		internal let separator:String
-		internal let style:Style
-		internal let runs:[Text]
-	}
-
-	case compound(Compound)
-	case run(Run)
+	internal let runs:[Run]
 }
 
 public extension Text {
 
-	init (_ string:String, style:Style) {
+	static func == (left:Text, right:Text) -> Bool {
+		return left.runs == right.runs
+	}
+
+	init (_ string:String, with style:Style) {
 		let run = Run(string:string, style:style)
-		self = .run(run)
+		self.runs = [run]
 	}
 
-	init (_ string:String, styles:Style ...) {
-		let style = Style(with:styles)
-		self.init(string, style:style)
+	init (_ string:String, _ attributes:Attribute ...) {
+		let style = Style(attributes)
+		self.init(string, with:style)
 	}
 
-	init (style:Style = Style(), separator:String = " ", _ runs:Text ...) {
-		let compound = Compound(separator:separator, style:style, runs:runs)
-		self = .compound(compound)
+//	init (style:Style = [], separator:String = " ", _ texts:Text ...) {
+//
+//		let runs = texts.map { text in
+//			let style = text.runs.
+//		}
+//
+//
+//		self.kind = .compound(runs)
+//		self.string = separator
+//		self.style = style
+//	}
+
+	func makeIterator() -> Iterator {
+		return runs.makeIterator()
+	}
+}
+
+// MARK: -
+
+public extension Text.Attribute {
+
+	static func == (left:Text.Attribute, right:Text.Attribute) -> Bool {
+		guard left.key == right.key else { return false }
+		return true //TODO: check .value -> compare encoding ???
+	}
+
+	var hashValue:Int { return key.hashValue }
+}
+
+// MARK: -
+
+public extension Text.Run {
+	static func == (left:Text.Run, right:Text.Run) -> Bool {
+		return left.string == right.string && left.style == right.style
 	}
 }
 
@@ -63,15 +99,15 @@ public extension Text {
 //	}
 //}
 
-extension Text : CustomStringConvertible {
-
-	public var description:String {
-		switch self {
-			case let .compound(compound): return compound.description
-			case let .run(run): return run.description
-		}
-	}
-}
+//extension Text : CustomStringConvertible {
+//
+//	public var description:String {
+//		switch self {
+//			case let .compound(compound): return compound.description
+//			case let .run(run): return run.description
+//		}
+//	}
+//}
 
 //extension Text : Drawable {
 //	public func draw(in rect:Rect) -> Composition {
@@ -79,28 +115,11 @@ extension Text : CustomStringConvertible {
 //	}
 //}
 
-extension Text : Equatable {
-
-	public static func == (left:Text, right:Text) -> Bool {
-		switch (left, right) {
-			case let (.compound(lefty), .compound(righty)): return lefty == righty
-			case let (.run(lefty), .run(righty)): return lefty == righty
-			default: return false
-		}
-	}
-}
-
-extension Text : ExpressibleByStringLiteral {
-	public init (unicodeScalarLiteral value:StringLiteralType) { self.init(stringLiteral:"\(value)") }
-	public init (extendedGraphemeClusterLiteral value:String) { self.init(stringLiteral:value) }
-	public init (stringLiteral value:String) { self.init(value) }
-}
-
-extension Text : Sequence {
-	public func makeIterator() -> Text.Iterator {
-		return Iterator(with:self)
-	}
-}
+//extension Text : ExpressibleByStringLiteral {
+//	public init (unicodeScalarLiteral value:StringLiteralType) { self.init(stringLiteral:"\(value)") }
+//	public init (extendedGraphemeClusterLiteral value:String) { self.init(stringLiteral:value) }
+//	public init (stringLiteral value:String) { self.init(value) }
+//}
 
 //extension Text : Stylable {
 //	public var style:Style {

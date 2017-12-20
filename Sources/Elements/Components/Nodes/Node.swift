@@ -1,7 +1,6 @@
 
 import Geometry
-import Layouting
-import Styling
+import Layout
 
 internal typealias Ancestors = AnyIterator<Node>
 
@@ -39,7 +38,7 @@ internal extension Node {
 	}
 
 	var ancestors:Ancestors {
-		// TODO: make generic sequence using key path getter
+		// FIXME: make generic sequence using key path getter
 		var current:Node? = self
 
 		return Ancestors {

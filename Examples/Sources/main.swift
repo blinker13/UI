@@ -1,6 +1,5 @@
 
 import Graphics
-import Styling
 import UI
 
 
@@ -51,11 +50,12 @@ let title = Style(
 
 Application.run(
 	View(style:root,
-		View(style:bar)//,
+		View(style:bar),
+		View(style:content),
 //		Button(style:content) { print("Hello World") },
-//		View(style:bar,
+		View(style:bar//,
 //			Text("Hello World", style:title)
-//		)
+		)
 	)
 )
 

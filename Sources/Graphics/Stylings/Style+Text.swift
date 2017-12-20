@@ -1,17 +1,6 @@
 
 import Styling
 
-public extension Text {
-	//	static let font = Attribute<Font>("text.font")
-	//	static let paragraphStyle = Attribute<ParagraphStyle>("text.paragraphStyle")
-	//	static let strikethrough = Attribute<Text.Decoration>("text.strikethrough")
-	//	static let underline = Attribute<Text.Decoration>("text.underline")
-	static let ligatures = Attribute<Ligatures>("text.ligatures")
-	static let shadow = Attribute<Shadow>("text.shadow")
-	//	static let stroke = Attribute<Text.Stroke>("text.stroke")
-	static let kern = Attribute<Float>("text.kern")
-}
-
 public extension Style {
 
 	//	static func font(_ font:Font) -> Style {

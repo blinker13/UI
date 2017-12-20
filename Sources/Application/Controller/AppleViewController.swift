@@ -83,8 +83,8 @@ public extension AppleViewController {
 	}
 
 	func action(for layer:CALayer, forKey event:String) -> CAAction? {
-		guard let node = nodes[layer] else { fatalError() }
-		print(node, "->", event)
+//		guard let node = nodes[layer] else { fatalError() }
+//		print(node, "->", event)
 		return NSNull()
 	}
 }

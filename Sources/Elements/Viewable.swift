@@ -16,9 +16,9 @@ public extension Viewable {
 }
 
 public extension Viewable where Self : Element {
-	var background:Color? { return style[Style.background] }
-	var border:Border? { return style[Style.border] }
-	var opacity:Opacity { return style[Style.opacity] ?? 1.0 }
-	var shadow:Shadow? { return style[Style.shadow] }
-	var tint:Color { return style[Style.tint] ?? Color.black }
+	var background:Color? { return style[#function] }
+	var border:Border? { return style[#function] }
+	var opacity:Opacity { return style[#function] ?? 1.0 }
+	var shadow:Shadow? { return style[#function] }
+	var tint:Color { return style[#function] ?? Color.black }
 }

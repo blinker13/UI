@@ -1,62 +1,83 @@
 
-public struct Style {
+public struct Style : Hashable, CustomStringConvertible, ExpressibleByArrayLiteral {
 
-	public typealias Compound = [Style]
-	public typealias Identifier = String
+	public typealias Compound = Set<Style>
 	public typealias Value = Codable
 
-	private let identifier:Identifier
 	private let value:Value
+	private let key:String
 }
+
+// MARK: -
 
 public extension Style {
 
-	init <Kind>(key:Attribute<Kind>, value:Kind) {
-		self.identifier = key.name
-		self.value = value
+	static func == (left:Style, right:Style) -> Bool {
+		guard left.hashValue == right.hashValue else { return false }
+		if left.isToken || right.isToken { return true }
+
+		guard left.key == right.key else { return false }
+		guard left.kind == right.kind else { return false }
+		return true //TODO: check .value -> compare encoding ???
 	}
 
-	init (with styles:Compound) {
-		self.init(key:Style.compound, value:styles)
+	var description:String { return "\(key) -> \(value)" }
+	var hashValue:Int { return key.hashValue }
+
+	init (key:String, value:Value) {
+		self.value = value
+		self.key = key
+	}
+
+	init (styles:[Style]) {
+		// ???: needs reverse()
+		let flat = styles.flatMap { $0.all }
+		self.value = Compound(flat)
+		self.key = "."
 	}
 
 	init (_ styles:Style ...) {
-		self.init(with:styles)
+		self.init(styles:styles)
 	}
 
-	subscript <Kind>(key:Attribute<Kind>) -> Kind? {
-		if let compound = value as? Compound { return compound[key] }
-		guard key.name == identifier else { return nil }
+	init (arrayLiteral elements:Style ...) {
+		self.init(styles:elements)
+	}
+
+	subscript <Kind>(_ aKey:String) -> Kind? {
+		if let next = forward?[aKey] { return next[aKey] }
+		guard aKey == key else { return nil }
 		return value as? Kind
 	}
 }
 
+// MARK: -
+
 private extension Style {
-	static let compound = Attribute<Compound>("[Style]")
-	var compound:Compound? { return value as? Compound }
-}
 
-extension Style : Equatable {
-	public static func == (left:Style, right:Style) -> Bool {
-		return left.identifier == right.identifier// && left.value == right.value
+	static func tokenize(_ key:String) -> Style {
+		return Style(key:key, value:key)
 	}
-}
 
-extension Style : ExpressibleByArrayLiteral {
-	public init (arrayLiteral elements:Style ...) {
-		self.init(with:elements)
-	}
-}
-
-public extension Array where Element == Style {
-	subscript <Kind>(key:Attribute<Kind>) -> Kind? {
-
-		for style in reversed() {
-			if let value = style[key] {
-				return value
-			}
+	var all:[Style] {
+		switch value {
+			case let compound as Compound: return Array(compound)
+			default: return [self]
 		}
+	}
 
-		return nil
+	var isToken:Bool { return key == value as? String }
+	var forward:Compound? { return value as? Compound }
+	var kind:Value.Type { return type(of:value) }
+}
+
+// MARK: -
+
+private extension Set where Element == Style {
+
+	subscript (key:String) -> Style? {
+		let token = Style.tokenize(key)
+		guard let index = index(of:token) else { return nil }
+		return self[index]
 	}
 }

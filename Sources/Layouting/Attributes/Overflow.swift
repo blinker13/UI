@@ -1,29 +1,17 @@
 
 public enum Overflow : String, Codable {
-	case hidden
-	case visible
+	case show
+	case hide
 }
 
 public extension Overflow {
-
-	var isHidden:Bool {
-		return self == .hidden
-	}
-
-	var isVisible:Bool {
-		return self == .visible
-	}
+	var isVisible:Bool { return self == .show }
+	var isHidden:Bool { return self == .hide }
 }
 
 extension Overflow : ExpressibleByBooleanLiteral {
 
 	public init (booleanLiteral value:Bool) {
-		self = value ? .visible : .hidden
+		self = value ? .show : .hide
 	}
 }
-
-//extension Overflow : Boolean {
-//	public var boolValue:Bool {
-//		return self == .visible
-//	}
-//}
