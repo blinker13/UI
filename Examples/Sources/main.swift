@@ -25,37 +25,17 @@ app.mainMenu = menubar
 // MARK: - Implementation
 
 let root = Style(
-	.background(.blue),
-	.distribute(.ordered),
+	.background(.white),
+	.distribute(.proportional),
 	.height(min:300.0),
 	.width(min:400.0)
 )
 
-let bar = Style(
-	.background(.white),
-	.height(44.0)
-)
-
-let content = Style(
-	.background(.orange),
-	.tint(.red),
-	.margin(50.0)
-)
-
-let title = Style(
-	.background(.yellow),
-//	.font(name:"Avenir Next", size:13.0),
-	.tint(.black)
-)
-
 Application.run(
 	View(style:root,
-		View(style:bar),
-		View(style:content),
-//		Button(style:content) { print("Hello World") },
-		View(style:bar//,
-//			Text("Hello World", style:title)
-		)
+		View(style:[.height(min:10.0), .background(.red)]),
+		View(style:[.height(min:20.0), .background(.yellow)]),
+		View(style:[.height(min:40.0), .background(.green)])
 	)
 )
 

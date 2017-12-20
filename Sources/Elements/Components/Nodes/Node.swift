@@ -47,9 +47,11 @@ internal extension Node {
 		}
 	}
 
-	func layout(in frame:Rect) -> Calculator {
+	func layout(in frame:Rect) -> [Rect] {
 		defer { self.frame = frame }
-		return layout(children, in:frame)
+
+		let rect = Rect(frame.size)
+		return layout(children, in:rect)
 	}
 }
 

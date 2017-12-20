@@ -2,9 +2,9 @@
 import Geometry
 
 internal struct Dimension : Alignable {
+	internal var sizes:Axis = .infinity
+	internal var axis:Axis = .infinity
 	internal var start:Float = 0
-	internal var sizes:Axis
-	internal var axis:Axis
 }
 
 // MARK: -

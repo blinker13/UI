@@ -1,7 +1,7 @@
 
 public struct Axis : Geometry {
-	public let start:Float
-	public let end:Float
+	public var start:Float
+	public var end:Float
 }
 
 public extension Axis {

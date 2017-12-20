@@ -47,9 +47,9 @@ public extension AppleViewController {
 		guard let node = nodes[layer] else { fatalError() }
 
 		let frame = Rect(cg:layer.frame)
-		let calculator = node.layout(in:frame)
+		let rects = node.layout(in:frame)
 
-		for (index, rect) in calculator.enumerated() {
+		for (index, rect) in rects.enumerated() {
 			let child = layer.sublayers![index]
 			child.frame = CGRect(with:rect)
 		}

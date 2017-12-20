@@ -14,9 +14,4 @@ internal extension Alignment {
 			case .trailing: return 1
 		}
 	}
-
-	func enumerate(for count:Int) -> StrideTo<Int> {
-		if self == .trailing { return stride(from:count - 1, to:-1, by:-1) }
-		else { return stride(from:0, to:count, by:1) }
-	}
 }
