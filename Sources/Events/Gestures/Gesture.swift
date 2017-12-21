@@ -1,24 +1,21 @@
 
 public struct Gesture : Event {
-	public var touches:Set<Touch>
-	public var timestamp:Timestamp
+	public let touches:Set<Touch>
+	public let timestamp:Timestamp
 }
 
-internal extension Gesture {
+// MARK: -
 
-//	subscript (node:Node) -> Gesture {
-//		let subset = touches.filter { $0.node == node }
-//		return Gesture(touches:subset, timestamp:timestamp)
-//	}
+internal extension Gesture {
 
 	subscript (phase:Touch.Phase) -> Set<Touch>? {
 		let filtered = touches.filter { $0.phase == phase }
 		return filtered.count > 0 ? filtered : nil
 	}
 
-	subscript (digit:Touch.Digit) -> Touch? {
-		return touches.first { $0.digit == digit }
-	}
+//	subscript (digit:Touch.Digit) -> Touch? {
+//		return touches.first { $0.digit == digit }
+//	}
 }
 
 extension Gesture : CustomStringConvertible {

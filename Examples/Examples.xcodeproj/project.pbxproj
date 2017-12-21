@@ -18,6 +18,9 @@
 
 /* Begin PBXFileReference section */
 		BD3790911F754C5A008B12F6 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8EE67E1FED382000B5B2C8 /* libGeometry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeometry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8EE67F1FED382000B5B2C8 /* libGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8EE6801FED382000B5B2C8 /* libLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD4584A1E380B0800B95919 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD4585E1E380B5C00B95919 /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
 		BDD458611E380BB800B95919 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -87,6 +90,9 @@
 		BDD458631E380C1100B95919 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD8EE67E1FED382000B5B2C8 /* libGeometry.a */,
+				BD8EE67F1FED382000B5B2C8 /* libGraphics.a */,
+				BD8EE6801FED382000B5B2C8 /* libLayout.a */,
 				BD3790911F754C5A008B12F6 /* libUI.a */,
 			);
 			name = Frameworks;
@@ -339,10 +345,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/iOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -389,7 +393,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/iOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.iOS;
@@ -448,7 +451,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.macOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

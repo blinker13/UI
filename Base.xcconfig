@@ -1,21 +1,29 @@
 
 SUPPORTED_PLATFORMS = macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator
 
-VALID_ARCHS[sdk=iphone*] = arm64 armv7 armv7s
-VALID_ARCHS[sdk=macosx*] = x86_64
-
+LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]  = @executable_path/../Frameworks @loader_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=iphone*]  = @executable_path/Frameworks @loader_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=appletv*] = @executable_path/Frameworks @loader_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=watch*]   = @executable_path/Frameworks @loader_path/Frameworks
-LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]  = @executable_path/../Frameworks @loader_path/Frameworks
+
+CODE_SIGN_IDENTITY[sdk=iphone*] = iPhone Developer
+CODE_SIGN_IDENTITY[sdk=macosx*] = Mac Developer
+CODE_SIGN_STYLE = Automatic
 
 MACOSX_DEPLOYMENT_TARGET   = 10.12
 IPHONEOS_DEPLOYMENT_TARGET = 11.0
 TVOS_DEPLOYMENT_TARGET     =  9.0
 WATCHOS_DEPLOYMENT_TARGET  =  3.0
 
-TARGETED_DEVICE_FAMILY = 1,2
+ALWAYS_SEARCH_USER_PATHS = NO
+TARGETED_DEVICE_FAMILY   = 1,2
 
-SWIFT_VERSION = 4.0
+VERSIONING_SYSTEM = apple-generic
 
-SKIP_INSTALL = YES
+PRODUCT_MODULE_NAME = $(TARGET_NAME)
+PRODUCT_NAME        = $(TARGET_NAME)
+
+SWIFT_VERSION    = 4.0
+
+COPY_PHASE_STRIP = NO
+SKIP_INSTALL     = YES

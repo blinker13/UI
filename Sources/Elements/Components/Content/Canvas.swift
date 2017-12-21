@@ -1,7 +1,6 @@
 
 import Geometry
 import Graphics
-import Styling
 
 public struct Canvas : Stylable, Drawable, Element {
 

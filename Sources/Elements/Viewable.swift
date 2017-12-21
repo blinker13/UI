@@ -1,6 +1,5 @@
 
 import Graphics
-import Styling
 
 public protocol Viewable {
 	var background:Color? { get }

@@ -2,7 +2,6 @@
 import Foundation
 import CoreText
 import Graphics
-import Styling
 
 internal extension NSAttributedString {
 

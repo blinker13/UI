@@ -21,6 +21,7 @@ public extension Arrangement {
 // MARK: -
 
 internal extension Arrangement {
+
 	var layoutKey:WritableKeyPath<Layout, Dimension> {
 		switch self {
 			case .horizontal: return \Layout.main

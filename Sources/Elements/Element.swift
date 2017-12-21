@@ -1,11 +1,10 @@
  
 import Geometry
-import Graphics
 import Layout
 
 public protocol Element : Container, Item {
-	var overflow:Overflow { get }
 	var content:[Element] { get }
+	var overflow:Overflow { get }
 	var style:Style { get }
 }
 

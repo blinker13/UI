@@ -3,13 +3,21 @@ internal struct ChangeSet : Sequence {
 
 	internal typealias Result = IndexingIterator<[Change]>
 
+	internal struct Trace : Hashable {
+		let model:Element
+		let position:Int
+		let origin:Int
+	}
+
 	private var traces:Set<Trace>
 	private var changes = [Change]()
 	private var origin = -1
 	private var offest = 0
 
 	internal init (with node:Node) {
-		self.traces = node.children.traced()
+		let iterator = node.children.enumerated()
+		let results = iterator.map(Trace.init)
+		self.traces = Set(results)
 	}
 }
 
@@ -58,5 +66,39 @@ private extension ChangeSet {
 
 	func removed(trace:Trace) -> Change {
 		return Change(remove:trace.node)
+	}
+}
+
+// MARK: -
+
+internal extension ChangeSet.Trace {
+
+	static func == (left:ChangeSet.Trace, right:ChangeSet.Trace) -> Bool {
+		return left.hashValue == right.hashValue
+	}
+
+	init (offset:Int, element:Node) {
+		self.position = offset
+		self.origin = offset
+		self.model = element
+	}
+
+	var hashValue:Int {
+		let scopee = model as? Scopable
+		let value = scopee?.scope.hashValue
+		return value ?? id.hashValue
+	}
+
+	var node:Node {
+		return model as! Node
+	}
+}
+
+// MARK: -
+
+private extension ChangeSet.Trace {
+
+	var id:ObjectIdentifier {
+		return ObjectIdentifier(ChangeSet.Trace.self)
 	}
 }

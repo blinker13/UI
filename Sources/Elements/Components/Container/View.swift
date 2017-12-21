@@ -1,27 +1,21 @@
 
-import Styling
-
 public struct View : Element {
 
-	public let renderer:() -> [Element]
+	public let content:[Element]
 	public let style:Style
 
-	public var content:[Element] {
-		return renderer()
-	}
-
-	public init (style:Style, renderer:@escaping () -> [Element]) {
-		self.renderer = renderer
-		self.style = style
-	}
-
-	public init (style:Style, elements:@autoclosure @escaping () -> [Element]) {
-		self.renderer = elements
+	public init (style:Style, elements:[Element]) {
+		self.content = elements
 		self.style = style
 	}
 
 	public init (style:Style, _ elements:Element ...) {
-		self.renderer = { return elements }
+		self.content = elements
+		self.style = style
+	}
+
+	public init (style:Style, renderer:() -> [Element]) {
+		self.content = renderer()
 		self.style = style
 	}
 }

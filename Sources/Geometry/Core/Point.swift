@@ -1,7 +1,7 @@
 
 public struct Point : Geometry {
-	public let x:Float
-	public let y:Float
+	public var x:Float
+	public var y:Float
 }
 
 public extension Point {

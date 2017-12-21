@@ -1,6 +1,6 @@
 
 public protocol Responder {
-	var recognizer:[Recognizer] { get }
+//	var recognizer:[Recognizer] { get }
 	var isResponsive:Bool { get }
 }
 

@@ -1,6 +1,4 @@
 
-import Styling
-
 public extension Style {
 
 	//	static func font(_ font:Font) -> Style {

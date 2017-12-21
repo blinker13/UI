@@ -1,46 +1,34 @@
 
-#if os(iOS)
-import UIKit
-public typealias ViewController = UIViewController
-#elseif os(OSX)
-import AppKit
-public typealias ViewController = NSViewController
-#endif
-
 import QuartzCore
 import Geometry
-import Graphics
 
-public final class AppleViewController : ViewController, CALayerDelegate {
+internal final class Renderer : NSObject, CALayerDelegate {
 
 	private var layers = [Node:CALayer]()
 	private var nodes = [CALayer:Node]()
 
+	internal let layer:CALayer
 	internal let scene:Scene
 
-	internal init (with scene:Scene) {
+	private init (scene:Scene, layer:CALayer) {
 		self.scene = scene
-		super.init(nibName:nil, bundle:nil)
-	}
-
-	public required init? (coder:NSCoder) {
-		fatalError()
+		self.layer = layer
+		super.init()
+		realize()
 	}
 }
 
 // MARK: -
 
-public extension AppleViewController {
+internal extension Renderer {
 
-	convenience init (with element:Element) {
-		let scene = Scene(with:element)
-		self.init(with:scene)
+	convenience init (with scene:Scene) {
+		self.init(scene:scene, layer:CALayer())
 	}
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		associate(scene, with:layer)
-		update()
+	func render() {
+		let transaction = scene.flush()
+		transaction.forEach(apply)
 	}
 
 	func layoutSublayers(of layer:CALayer) {
@@ -87,22 +75,10 @@ public extension AppleViewController {
 //		print(node, "->", event)
 		return NSNull()
 	}
+
 }
 
-// MARK: -
-
-internal extension AppleViewController {
-
-	func update() {
-		print("will update Scene")
-		let transaction = scene.flush()
-		transaction.forEach(apply)
-	}
-}
-
-// MARK: -
-
-private extension AppleViewController {
+private extension Renderer {
 
 	func apply(update:Update) {
 		let layer = layers[update.node]!
@@ -143,5 +119,9 @@ private extension AppleViewController {
 	func insert(_ layer:CALayer, with node:Node, at index:Int) {
 		let parent = layers[node.parent!]!
 		parent.insertSublayer(layer, at:UInt32(index))
+	}
+
+	func realize() {
+		associate(scene, with:layer)
 	}
 }

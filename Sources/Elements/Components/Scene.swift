@@ -20,6 +20,13 @@ internal extension Scene {
 	var minimum:Size { return Size(width.min, height.min) }
 	var maximum:Size { return Size(width.max, height.max) }
 
+	func send(_ event:Event) {
+		switch event {
+			case let gesture as Gesture: send(gesture)
+			default: fatalError("unsupported event: \(event)")
+		}
+	}
+
 	func update(_ node:Node) {
 		// TODO: check if node is descendant of scene
 		queue.insert(node)
@@ -74,6 +81,18 @@ private extension Scene {
 	func remove(change:Change) {
 		precondition(change.kind == .remove)
 		queue.remove(change.node)
+	}
+
+	func send(_ gesture:Gesture) {
+		print("->", gesture.touches)
+		let nodes = gesture.touches.map { $0.node }
+
+//		for node in Set(nodes) {
+//			if let touches = gesture[.began] { node.onBegan(touches, with:gesture) }
+//			if let touches = gesture[.moved] { node.onMoved(touches, with:gesture) }
+//			if let touches = gesture[.ended] { node.onEnded(touches, with:gesture) }
+//			if let touches = gesture[.cancelled] { node.onCancelled(touches, with:gesture) }
+//		}
 	}
 }
 

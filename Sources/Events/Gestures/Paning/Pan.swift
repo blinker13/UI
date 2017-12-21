@@ -1,4 +1,12 @@
 
+public protocol Panable : Responder {
+	func onBegan(_ pan:Pan)
+	func onMoved(_ pan:Pan)
+	func onEnded(_ pan:Pan)
+}
+
+// MARK: -
+
 public struct Pan : Event {
 
 	public enum Phase {

@@ -1,20 +1,15 @@
 
+import Dispatch
+
 public final class Application {
 
 	public static let shared = Application()
 
-	var name:String {
-		let sequence = path.split(separator:"/")
-		let components = sequence.map(String.init)
-		return components.last!
-	}
-
-	var path:String {
-		return CommandLine.arguments.first!
-	}
-
-	internal var window:Window?
+	internal let queue:DispatchQueue = .main
+	internal private(set) var keyWindow:Window!
 }
+
+// MARK: -
 
 public extension Application {
 
@@ -24,11 +19,11 @@ public extension Application {
 	}
 
 	static func run(with window:Window) {
-		shared.open(window)
-		shared.main()
+		shared.keyWindow = window
+		Apple.start()
 	}
 
 	static func terminate() {
-		shared.exit()
+		Apple.stop()
 	}
 }

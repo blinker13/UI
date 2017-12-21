@@ -1,7 +1,7 @@
 
 public struct Size : Geometry {
-	public let height:Float
-	public let width:Float
+	public var height:Float
+	public var width:Float
 }
 
 public extension Size {

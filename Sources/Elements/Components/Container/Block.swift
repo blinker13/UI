@@ -1,19 +1,14 @@
 
-import Styling
+public final class Block<State> : Component<State> {
 
-public final class Block : Component<Void> {
+	private let renderer:(State) -> Element
 
-//	public typealias Updater = ()
-
-	private let renderer:() -> Element
-
-	public init (/*with state:State, */renderer:@escaping () -> Element) {
+	public init (with state:State, renderer:@escaping (State) -> Element) {
 		self.renderer = renderer
-		super.init(initial:())
-//		self.state = state
+		super.init(initial:state)
 	}
 
 	public override func render() -> Element {
-		return renderer()
+		return renderer(current)
 	}
 }

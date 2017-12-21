@@ -6,9 +6,16 @@ public protocol Scrollable : Responder {
 	func onCancelled(_ scroll:Scroll)
 }
 
-//internal extension Scrollable {
-//	var scrollRecognizer:Scroll.Recognizer {
-//		return Scroll.Recognizer(target:self)
-//	}
-//}
+// MARK: -
 
+public struct Scroll : Event {
+
+	public enum Phase {
+		case began
+		case moved
+		case ended
+	}
+
+	public let phase:Phase
+	public let timestamp:Timestamp
+}

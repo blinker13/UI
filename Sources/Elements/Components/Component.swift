@@ -1,18 +1,21 @@
 
 import Geometry
-import Styling
+
+public typealias Entity = Hashable & Scopable
+public typealias Stateless = Component<Void>
 
 internal protocol Stateful {
 	typealias Delegate = (Event) -> Void
 	func update(with delegate:@escaping Delegate) -> [Element]
 	func reconcile(with element:Element)
+	func initialize()
 }
 
-public typealias Entity = Hashable & Scopable
-public typealias Stateless = Component<Void>
+// MARK: -
 
 open class Component<State> : Stateful, Element {
 
+//	private var environment:Gesture.Environment!
 	private var delegate:Delegate!
 	private var state:State
 
@@ -33,21 +36,13 @@ open class Component<State> : Stateful, Element {
 
 public extension Component {
 
-	var content:[Element] {
-		return model.content
-	}
+	var content:[Element] { return model.content }
+	var style:Style { return model.style }
+	var current:State { return state } // TODO: ensure thread safity
 
-	var style:Style {
-		return model.style
+	func update() {
+		// TODO: implement
 	}
-
-	var current:State {
-		// TODO: ensure thread safity
-		return state
-	}
-
-	// TODO: implement
-	func update() {}
 }
 
 // MARK: -
@@ -68,7 +63,14 @@ internal extension Component {
 
 	func reconcile(with element:Element) {
 		guard let this = element as? Component<State> else { return }
+//		self.environment = this.environment
 		self.state = this.state
+	}
+
+	func initialize() {
+//		environment = Gesture.Environment(
+//
+//		)
 	}
 }
 
@@ -76,9 +78,11 @@ internal extension Component {
 
 private extension Component {
 
+	
+
 	func prepare(_ next:Element) {
-		guard let old = model else { return }
 		guard let new = next as? Stateful else { return }
-		new.reconcile(with:old)
+		if let old = model { new.reconcile(with:old) }
+		else { new.initialize() }
 	}
 }

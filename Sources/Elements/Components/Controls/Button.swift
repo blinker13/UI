@@ -1,6 +1,5 @@
 
 import Graphics
-import Styling
 
 public struct Button : Component, Stylable, Viewable {
 

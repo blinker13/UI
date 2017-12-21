@@ -6,14 +6,6 @@ import Geometry
 
 internal extension NSEvent {
 
-	func digitize(with location:Point) -> Touch.Digit {
-		
-		return Touch.Digit(
-			hashValue:touchHash,
-			location:location
-		)
-	}
-
 	func pointers(with node:Node, in location:Point) -> Set<Touch> {
 
 		let pointer = Touch(

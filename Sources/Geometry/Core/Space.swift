@@ -4,8 +4,8 @@ public typealias Margin = Space
 public typealias Padding = Space
 
 public struct Space : Geometry {
-	public let horizontal:Axis
-	public let vertical:Axis
+	public var horizontal:Axis
+	public var vertical:Axis
 }
 
 public extension Space {
