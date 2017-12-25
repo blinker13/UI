@@ -6,10 +6,10 @@ import Geometry
 
 public final class AppleViewController : UIViewController {
 
-	internal let renderer:Renderer
+	internal let renderer:Apple.Renderer
 
 	internal init (with scene:Scene) {
-		self.renderer = Renderer(with:scene)
+		self.renderer = Apple.Renderer(with:scene)
 		super.init(nibName:nil, bundle:nil)
 	}
 
@@ -30,7 +30,7 @@ public extension AppleViewController {
 	override func loadView() {
 		view = Apple.View(frame:.zero)
 		view.isMultipleTouchEnabled = true
-		view.backgroundColor = UIColor.white
+		view.backgroundColor = UIColor.black
 		view.layer.addSublayer(layer)
 	}
 
@@ -67,8 +67,6 @@ public extension AppleViewController {
 
 // MARK: -
 
-	var foobar:TimeInterval = 0.0
-
 public extension AppleViewController {
 
 	override func touchesBegan(_ touches:Set<UITouch>, with event:UIEvent?) {
@@ -89,15 +87,11 @@ public extension AppleViewController {
 
 // MARK: -
 
-internal extension AppleViewController {
-	var scene:Scene { return renderer.scene }
-	var layer:CALayer { return renderer.layer }
-}
-
-// MARK: -
-
 private extension AppleViewController {
 
+	var scene:Scene { return renderer.scene }
+	var layer:CALayer { return renderer.layer }
+	
 	func process(_ event:UIEvent, with filter:(UITouch) -> Bool) {
 		guard let uiTouches = event.touches(for:view) else { return }
 		if uiTouches.contains(where:filter) { return }

@@ -14,7 +14,7 @@ public extension Scopable {
 
 // MARK: -
 
-public enum Scope : Hashable {
+public enum Scope : Hashable, Scopable {
 	case id(ObjectIdentifier)
 	case key(String)
 	case tag(Int)
@@ -37,5 +37,9 @@ public extension Scope {
 			case let .key(x): return x.hashValue
 			case let .tag(x): return x.hashValue
 		}
+	}
+
+	var scope:Scope {
+		return self
 	}
 }

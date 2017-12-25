@@ -1,5 +1,5 @@
 
-internal struct Update {
+internal struct Commit {
 	internal let changes:ChangeSet
 	internal let node:Node
 }

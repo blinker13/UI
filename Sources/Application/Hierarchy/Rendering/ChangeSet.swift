@@ -4,7 +4,7 @@ internal struct ChangeSet : Sequence {
 	internal typealias Result = IndexingIterator<[Change]>
 
 	internal struct Trace : Hashable {
-		let model:Element
+		let scopable:Scopable
 		let position:Int
 		let origin:Int
 	}
@@ -14,8 +14,8 @@ internal struct ChangeSet : Sequence {
 	private var origin = -1
 	private var offest = 0
 
-	internal init (with node:Node) {
-		let iterator = node.children.enumerated()
+	internal init (with children:[Node]) {
+		let iterator = children.enumerated()
 		let results = iterator.map(Trace.init)
 		self.traces = Set(results)
 	}
@@ -34,8 +34,9 @@ internal extension ChangeSet {
 		return results.makeIterator()
 	}
 
-	mutating func match(_ element:Element) -> Trace? {
-		let proxy = Trace(model:element, position:0, origin:0)
+	mutating func match(_ renderer:Renderer) -> Trace? {
+		guard let scopable = renderer as? Scopable else { return nil }
+		let proxy = Trace(scopable:scopable, position:0, origin:0)
 		return traces.remove(proxy)
 	}
 
@@ -77,28 +78,17 @@ internal extension ChangeSet.Trace {
 		return left.hashValue == right.hashValue
 	}
 
-	init (offset:Int, element:Node) {
+	init (offset:Int, node:Node) {
+		self.scopable = node
 		self.position = offset
 		self.origin = offset
-		self.model = element
 	}
 
 	var hashValue:Int {
-		let scopee = model as? Scopable
-		let value = scopee?.scope.hashValue
-		return value ?? id.hashValue
+		return scopable.scope.hashValue
 	}
 
 	var node:Node {
-		return model as! Node
-	}
-}
-
-// MARK: -
-
-private extension ChangeSet.Trace {
-
-	var id:ObjectIdentifier {
-		return ObjectIdentifier(ChangeSet.Trace.self)
+		return scopable as! Node
 	}
 }

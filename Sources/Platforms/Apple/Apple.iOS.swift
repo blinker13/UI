@@ -2,7 +2,6 @@
 #if os(iOS)
 
 import UIKit
-import Foundation
 
 internal final class Apple : UIResponder, UIApplicationDelegate {
 
@@ -29,13 +28,11 @@ internal extension Apple {
 	typealias Options = [UIApplicationLaunchOptionsKey:Any]
 
 	func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:Options? = nil) -> Bool {
-		guard let scene = Application.shared.keyWindow?.scene else { return false }
-
+		guard let scene = Application.shared.keyScene else { return false }
 		let viewController = AppleViewController(with:scene)
 		window = UIWindow(frame:UIScreen.main.bounds)
 		window?.rootViewController = viewController
 		window?.makeKeyAndVisible()
-
 		return true
 	}
 }

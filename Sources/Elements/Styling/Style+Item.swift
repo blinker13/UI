@@ -21,12 +21,22 @@ public extension Style {
 		return height(raw)
 	}
 
+	static func height(_ size:Float) -> Style {
+		let raw = Axis(min:size, max:size)
+		return height(raw)
+	}
+
 	static func width(_ raw:Axis) -> Style {
 		return Style(key:#function, value:raw)
 	}
 
 	static func width(min:Float = 0, max:Float = .infinity) -> Style {
 		let raw = Axis(min:min, max:max)
+		return width(raw)
+	}
+
+	static func width(_ size:Float) -> Style {
+		let raw = Axis(min:size, max:size)
 		return width(raw)
 	}
 

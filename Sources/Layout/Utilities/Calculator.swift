@@ -10,11 +10,12 @@ internal final class Calculator {
 	private var box:Layout
 
 	internal init (container:Container, in rect:Rect) {
+		let bounds = rect.inseted(container.padding)
 
 		let box = Layout(align:container.justify)
-		box.main.sizes = Axis(floatLiteral:rect.size[container.arrangement])
+		box.main.sizes = Axis(floatLiteral:bounds.size[container.arrangement])
 		box.main.axis = container.padding[container.arrangement]
-		box.cross.sizes = Axis(floatLiteral:rect.size[container.arrangement.flipped])
+		box.cross.sizes = Axis(floatLiteral:bounds.size[container.arrangement.flipped])
 		box.cross.axis = container.padding[container.arrangement.flipped]
 
 		self.distribute = container.distribution.calculate

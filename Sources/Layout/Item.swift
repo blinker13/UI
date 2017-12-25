@@ -11,7 +11,6 @@ public protocol Item {
 // MARK: -
 
 internal extension Item {
-
 	subscript (arrangement:Arrangement) -> Axis {
 		switch arrangement {
 			case .horizontal: return width

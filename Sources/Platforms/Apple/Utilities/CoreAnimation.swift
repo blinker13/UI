@@ -4,12 +4,12 @@ import Graphics
 
 internal extension CALayer {
 
-	func update(with node:Node) {
-		masksToBounds = node.overflow.isHidden
+	func update(with element:Element) {
+		masksToBounds = element.overflow.isHidden
 
-		update(node.background)
-		update(node.border)
-		update(node.shadow)
+		update(element.background)
+		update(element.border)
+		update(element.shadow)
 
 //		if node.element is Drawable {
 //			setNeedsDisplay()

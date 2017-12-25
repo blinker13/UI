@@ -1,16 +1,34 @@
  
 import Geometry
+import Graphics
 import Layout
 
-public protocol Element : Container, Item {
-	var content:[Element] { get }
-	var overflow:Overflow { get }
-	var style:Style { get }
+public protocol Renderer {
+	func render() -> Element
+}
+
+// MARK: -
+
+public struct Element : Container, Item, Renderer {
+
+	internal let children:[Renderer]
+	internal let style:Style
+
+	public func render() -> Element {
+		return self
+	}
 }
 
 // MARK: -
 
 public extension Element {
+
+	//TODO: move to Style+...
+	var background:Color? { return style[#function] }
+	var border:Border? { return style[#function] }
+	var opacity:Opacity { return style[#function] ?? 1.0 }
+	var shadow:Shadow? { return style[#function] }
+	var tint:Color { return style[#function] ?? Color.black }
 
 	var overflow:Overflow { return style[#function] ?? .show }
 

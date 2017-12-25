@@ -1,14 +1,13 @@
 
+import Dispatch
 import Geometry
-
-internal typealias Transaction = AnyIterator<Update>
 
 internal final class Scene : Node {
 
-	private var queue:Set<Node> = []
+	private var nodes:Set<Node> = []
 
-	internal override init (with element:Element) {
-		super.init(with:element)
+	internal override init (with renderer:Renderer) {
+		super.init(with:renderer)
 		self.update(self)
 	}
 }
@@ -17,8 +16,8 @@ internal final class Scene : Node {
 
 internal extension Scene {
 
-	var minimum:Size { return Size(width.min, height.min) }
-	var maximum:Size { return Size(width.max, height.max) }
+	var minimum:Size { return Size(element.width.min, element.height.min) }
+	var maximum:Size { return Size(element.width.max, element.height.max) }
 
 	func send(_ event:Event) {
 		switch event {
@@ -29,11 +28,12 @@ internal extension Scene {
 
 	func update(_ node:Node) {
 		// TODO: check if node is descendant of scene
-		queue.insert(node)
+		nodes.insert(node)
 	}
 
 	func flush() -> Transaction {
-		return Transaction(update)
+		defer { nodes.removeAll() }
+		return Transaction(with:nodes)
 	}
 }
 
@@ -41,46 +41,10 @@ internal extension Scene {
 
 private extension Scene {
 
-	func next() -> Node? {
-		guard let node = queue.first else { return nil }
-		let filteredNodes = node.ancestors.filter(queue.contains)
-		let next = filteredNodes.last ?? node
-		return queue.remove(next)
-	}
-
-	func update() -> Update? {
-		guard let node = next() else { return nil }
-		let elements = node.update { print($0) } //TODO: implementation
-		var changes = ChangeSet(with:node)
-		var children = [Node]()
-
-		for (index, element) in elements.enumerated() {
-
-			if let match = changes.match(element) {
-				children.append(match.node)
-				match.node.model = element
-				update(match.node)//TODO: soft update
-
-				if match.origin == index || changes.skip(index) { continue }
-				changes.move(match.node, to:index)
-
-			} else {//TODO: check current child for type conformance
-				let new = Node(with:element)
-				changes.insert(new, at:index)
-				children.append(new)
-				update(new)
-			}
+	var delegate:(Event) -> Void {
+		return { [weak self] event in
+			self?.send(event)
 		}
-
-		changes.deletions.forEach(remove)
-		node.children = children
-
-		return Update(changes:changes, node:node)
-	}
-
-	func remove(change:Change) {
-		precondition(change.kind == .remove)
-		queue.remove(change.node)
 	}
 
 	func send(_ gesture:Gesture) {

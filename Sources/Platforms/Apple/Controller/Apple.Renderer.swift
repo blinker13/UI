@@ -2,25 +2,27 @@
 import QuartzCore
 import Geometry
 
-internal final class Renderer : NSObject, CALayerDelegate {
+internal extension Apple {
+	internal final class Renderer : NSObject, CALayerDelegate {
 
-	private var layers = [Node:CALayer]()
-	private var nodes = [CALayer:Node]()
+		private var layers = [Node:CALayer]()
+		private var nodes = [CALayer:Node]()
 
-	internal let layer:CALayer
-	internal let scene:Scene
+		internal let layer:CALayer
+		internal let scene:Scene
 
-	private init (scene:Scene, layer:CALayer) {
-		self.scene = scene
-		self.layer = layer
-		super.init()
-		realize()
+		private init (scene:Scene, layer:CALayer) {
+			self.scene = scene
+			self.layer = layer
+			super.init()
+			realize()
+		}
 	}
 }
 
 // MARK: -
 
-internal extension Renderer {
+internal extension Apple.Renderer {
 
 	convenience init (with scene:Scene) {
 		self.init(scene:scene, layer:CALayer())
@@ -78,12 +80,12 @@ internal extension Renderer {
 
 }
 
-private extension Renderer {
+private extension Apple.Renderer {
 
-	func apply(update:Update) {
-		let layer = layers[update.node]!
-		layer.update(with:update.node)
-		update.changes.forEach(apply)
+	func apply(commit:Commit) {
+		let layer = layers[commit.node]!
+		layer.update(with:commit.node.element)
+		commit.changes.forEach(apply)
 	}
 
 	func apply(change:Change) {

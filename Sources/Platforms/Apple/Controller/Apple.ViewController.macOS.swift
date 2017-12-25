@@ -6,10 +6,10 @@ import Geometry
 
 public final class AppleViewController : NSViewController {
 
-	internal let renderer:Renderer
+	internal let renderer:Apple.Renderer
 
 	internal init (with scene:Scene) {
-		self.renderer = Renderer(with:scene)
+		self.renderer = Apple.Renderer(with:scene)
 		super.init(nibName:nil, bundle:nil)
 	}
 
@@ -22,8 +22,8 @@ public final class AppleViewController : NSViewController {
 
 public extension AppleViewController {
 
-	override var preferredMinimumSize:NSSize { return CGSize(with:renderer.scene.minimum) }
-	override var preferredMaximumSize:NSSize { return CGSize(with:renderer.scene.maximum) }
+	override var preferredMinimumSize:NSSize { return CGSize(with:scene.minimum) }
+	override var preferredMaximumSize:NSSize { return CGSize(with:scene.maximum) }
 
 	convenience init (with element:Element) {
 		let scene = Scene(with:element)
@@ -85,10 +85,13 @@ public extension AppleViewController {
 //	}
 //}
 
-//// MARK: -
-//
-//private extension AppleViewController {
-//
+// MARK: -
+
+private extension AppleViewController {
+
+	var scene:Scene { return renderer.scene }
+	var layer:CALayer { return renderer.layer }
+
 //	func forwardGesture(_ event:NSEvent) {
 ////		let location = convert(event.locationInWindow)
 ////		guard let node = node(for:location with:event) else { return }
@@ -106,6 +109,6 @@ public extension AppleViewController {
 //
 //		return renderer.scene.test(location)
 //	}
-//}
+}
 
 #endif
