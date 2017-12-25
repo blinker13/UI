@@ -4,10 +4,17 @@ import Geometry
 
 internal final class Scene : Node {
 
+	internal typealias Transaction = AnyIterator<Node>
+
+	private var focus:Node?
 	private var nodes:Set<Node> = []
 
-	internal override init (with renderer:Renderer) {
-		super.init(with:renderer)
+	internal override var next:Responder? {
+		return Application.shared
+	}
+
+	internal override init (with element:Element) {
+		super.init(with:element)
 		self.update(self)
 	}
 }
@@ -16,24 +23,22 @@ internal final class Scene : Node {
 
 internal extension Scene {
 
-	var minimum:Size { return Size(element.width.min, element.height.min) }
-	var maximum:Size { return Size(element.width.max, element.height.max) }
+//	var minimum:Size { return Size(element.width.min, element.height.min) }
+//	var maximum:Size { return Size(element.width.max, element.height.max) }
 
 	func send(_ event:Event) {
 		switch event {
 			case let gesture as Gesture: send(gesture)
-			default: fatalError("unsupported event: \(event)")
+			default: fatalError("FIXME: add support for \(event)")
 		}
 	}
 
 	func update(_ node:Node) {
-		// TODO: check if node is descendant of scene
 		nodes.insert(node)
 	}
 
 	func flush() -> Transaction {
-		defer { nodes.removeAll() }
-		return Transaction(with:nodes)
+		return Transaction(dequeue)
 	}
 }
 
@@ -41,53 +46,22 @@ internal extension Scene {
 
 private extension Scene {
 
-	var delegate:(Event) -> Void {
-		return { [weak self] event in
-			self?.send(event)
-		}
+	func dequeue() -> Node? {
+		guard let node = nodes.first else { return nil }
+		let filteredNodes = node.ancestors.filter(nodes.contains)
+		let next = filteredNodes.last ?? node
+		return nodes.remove(next)
 	}
 
 	func send(_ gesture:Gesture) {
-		print("->", gesture.touches)
-		let nodes = gesture.touches.map { $0.node }
+		for responder in gesture.nodes(for:self) {
 
-//		for node in Set(nodes) {
-//			if let touches = gesture[.began] { node.onBegan(touches, with:gesture) }
-//			if let touches = gesture[.moved] { node.onMoved(touches, with:gesture) }
-//			if let touches = gesture[.ended] { node.onEnded(touches, with:gesture) }
-//			if let touches = gesture[.cancelled] { node.onCancelled(touches, with:gesture) }
-//		}
+			for next in responder.chain {
+//				guard let node = next as? Node else { continue }
+//				guard let target = node.renderer as? Touchable else { continue }
+//				print("try", "->", target)
+			}
+			print("=======================")
+		}
 	}
 }
-
-//	private var responders = [Touch.Digit:Node]()
-//
-//	func test(_ digit:Touch.Digit) -> Node? {
-//		return responders[digit] ?? root.test(digit.location)
-//	}
-//
-//	func onEvent(_ event:Event) {
-//		for node in responding(to:event) {
-//			print(node)
-//		}
-//	}
-//
-//	func responding(to event:Event) -> [Node] {
-//
-//		switch event {
-//			case let gesture as Gesture: return gesture.touches.map(check)
-//			default: fatalError("unsupported event: \(event)")
-//		}
-//	}
-//
-//	func check(_ touch:Touch) -> Node {
-//
-//		switch touch.phase {
-//			case .began: responders[touch.digit] = touch.node
-//			case .ended, .cancelled: responders[touch.digit] = nil
-//			default: break
-//		}
-//
-//		return touch.node
-//	}
-//

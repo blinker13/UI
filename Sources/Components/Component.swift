@@ -1,23 +1,24 @@
 
 import Geometry
 
-internal protocol Stateful : Responder {
-	weak var delegate:Node? { get set }
-	func update(with renderer:Renderer)
+internal protocol Stateful {
+	weak var node:Node? { get set }
+	func reconcile(with element:Element)
 }
 
 // MARK: -
 
-open class Component<State> : Stateful, Renderer {
+open class Component<State> : Stateful, Element {
 
-	internal weak var delegate:Node?
-	internal var state:State
+	private var state:State
+
+	internal weak var node:Node?
 
 	public init (initial state:State) {
 		self.state = state
 	}
 
-	open func render() -> Element {
+	open func render() -> View {
 		fatalError()
 	}
 }
@@ -31,12 +32,14 @@ public extension Component {
 		return state
 	}
 
+	var next:Responder? { return node }
+
 	func modify(using block:@escaping (inout State) -> Void) {
-		sendUpdate { block(&self.state) }
+		send { block(&self.state); return $0.update }
 	}
 
 	func update(using block:@escaping (State) -> State) {
-		sendUpdate { self.state = block(self.state) }
+		send { self.state = block(self.state); return $0.update }
 	}
 
 	func set(_ state:State) {
@@ -48,9 +51,8 @@ public extension Component {
 
 internal extension Component {
 
-	func update(with renderer:Renderer) {
-		guard let previous = renderer as? Component<State> else { return }
-		// TODO: update gesture recognizer
+	func reconcile(with element:Element) {
+		guard let previous = element as? Component<State> else { return }
 		self.state = previous.state
 	}
 }
@@ -59,10 +61,7 @@ internal extension Component {
 
 private extension Component {
 
-	func sendUpdate(_ handler:@escaping () -> Void) {
-		let action = Action(send:Scene.update, from:delegate!)
-		Application.shared.send(action) { success in
-			if success { handler() }
-		}
+	func send(update:@escaping (Scene) -> (Node) -> Void) {
+		Application.shared.send(update, from:node!)
 	}
 }

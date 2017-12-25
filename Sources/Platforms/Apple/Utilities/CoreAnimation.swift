@@ -4,35 +4,12 @@ import Graphics
 
 internal extension CALayer {
 
-	func update(with element:Element) {
-		masksToBounds = element.overflow.isHidden
-
-		update(element.background)
-		update(element.border)
-		update(element.shadow)
-
-//		if node.element is Drawable {
-//			setNeedsDisplay()
-//		}
-	}
-}
-
-private extension CALayer {
-
-	func update(_ color:Color?) {
-		backgroundColor = color?.cgColor
+	convenience init (delegate:CALayerDelegate) {
+		defer { self.delegate = delegate }
+		self.init()
 	}
 
-	func update(_ border:Border?) {
-		cornerRadius = CGFloat(border?.radius ?? 0)
-		borderWidth = CGFloat(border?.width ?? 0)
-		borderColor = border?.color.cgColor
-	}
-
-	func update(_ shadow:Shadow?) {
-		shadowColor = shadow?.color.cgColor
-		shadowOffset = CGSize(width:CGFloat(shadow?.offset.x ?? 0), height:CGFloat(-(shadow?.offset.y ?? 0)))
-		shadowRadius = CGFloat(shadow?.radius ?? 3)
-		shadowOpacity = Float(shadow?.opacity ?? 0)
+	func insert(_ layer:CALayer, at index:Int) {
+		insertSublayer(layer, at:UInt32(index))
 	}
 }

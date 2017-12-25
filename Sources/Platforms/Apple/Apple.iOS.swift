@@ -5,27 +5,9 @@ import UIKit
 
 internal final class Apple : UIResponder, UIApplicationDelegate {
 
-	static func start() {
-		let count = Int(CommandLine.argc)
-		let delegate = NSStringFromClass(self)
-		let destination = UnsafeMutablePointer<Int8>.self
-		let rawUnsafeArgv = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
-		let argv = rawUnsafeArgv.bindMemory(to:destination, capacity:count)
-		UIApplicationMain(CommandLine.argc, argv, nil, delegate)
-	}
-
-	static func stop() {
-		exit(EXIT_SUCCESS)
-	}
-
-	internal var window:UIWindow?
-}
-
-// MARK: -
-
-internal extension Apple {
-
 	typealias Options = [UIApplicationLaunchOptionsKey:Any]
+
+	var window:UIWindow?
 
 	func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:Options? = nil) -> Bool {
 		guard let scene = Application.shared.keyScene else { return false }

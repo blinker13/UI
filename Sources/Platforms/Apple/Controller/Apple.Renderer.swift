@@ -5,17 +5,19 @@ import Geometry
 internal extension Apple {
 	internal final class Renderer : NSObject, CALayerDelegate {
 
-		private var layers = [Node:CALayer]()
-		private var nodes = [CALayer:Node]()
+		private var layers:[Node:CALayer]
+		private var nodes:[CALayer:Node]
 
 		internal let layer:CALayer
 		internal let scene:Scene
 
 		private init (scene:Scene, layer:CALayer) {
-			self.scene = scene
+			defer { layer.delegate = self }
+			self.layers = [scene:layer]
+			self.nodes = [layer:scene]
 			self.layer = layer
+			self.scene = scene
 			super.init()
-			realize()
 		}
 	}
 }
@@ -28,9 +30,19 @@ internal extension Apple.Renderer {
 		self.init(scene:scene, layer:CALayer())
 	}
 
-	func render() {
-		let transaction = scene.flush()
-		transaction.forEach(apply)
+	func render(_ change:Change) {
+		switch change.kind {
+			case .insert(let index): insert(change.node, at:index)
+			case .move(let index): move(change.node, to:index)
+			case .update: update(change.node)
+			case .remove: remove(change.node)
+		}
+	}
+
+	func action(for layer:CALayer, forKey event:String) -> CAAction? {
+//		guard let node = nodes[layer] else { fatalError() }
+//		print(node, "->", event)
+		return NSNull()
 	}
 
 	func layoutSublayers(of layer:CALayer) {
@@ -71,59 +83,53 @@ internal extension Apple.Renderer {
 //
 //		ctx.restoreGState()
 	}
-
-	func action(for layer:CALayer, forKey event:String) -> CAAction? {
-//		guard let node = nodes[layer] else { fatalError() }
-//		print(node, "->", event)
-		return NSNull()
-	}
-
 }
+
+// MARK: -
 
 private extension Apple.Renderer {
 
-	func apply(commit:Commit) {
-		let layer = layers[commit.node]!
-		layer.update(with:commit.node.element)
-		commit.changes.forEach(apply)
-	}
-
-	func apply(change:Change) {
-		switch change.kind {
-			case .insert(let index): insert(change.node, at:index)
-			case .move(let index): move(change.node, to:index)
-			case .remove: remove(change.node)
-		}
-	}
-
 	func insert(_ node:Node, at index:Int) {
-		let layer = CALayer()
-		insert(layer, with:node, at:index)
-		associate(node, with:layer)
+		guard let key = node.parent else { fatalError() }
+		guard let parent = layers[key] else { fatalError() }
+
+		let layer = CALayer(delegate:self)
+		parent.insert(layer, at:index)
+
+		layers[node] = layer
+		nodes[layer] = node
+	}
+
+	func update(_ node:Node) {
+		guard let layer = layers[node] else { fatalError() }
+
+		layer.masksToBounds = node.overflow.isHidden
+
+		layer.backgroundColor = node.background?.cgColor
+		layer.cornerRadius = CGFloat(node.border?.radius ?? 0)
+		layer.borderWidth = CGFloat(node.border?.width ?? 0)
+		layer.borderColor = node.border?.color.cgColor
+
+		layer.shadowColor = node.shadow?.color.cgColor
+		layer.shadowOffset = CGSize(width:CGFloat(node.shadow?.offset.x ?? 0), height:CGFloat(-(node.shadow?.offset.y ?? 0)))
+		layer.shadowRadius = CGFloat(node.shadow?.radius ?? 3)
+		layer.shadowOpacity = Float(node.shadow?.opacity ?? 0)
+
+//		if node.element is Drawable {
+//			layer.setNeedsDisplay()
+//		}
 	}
 
 	func move(_ node:Node, to index:Int) {
-		insert(layers[node]!, with:node, at:index)
+		guard let key = node.parent else { fatalError() }
+		guard let child = layers[node] else { fatalError() }
+		guard let parent = layers[key] else { fatalError() }
+		parent.insert(child, at:index)
 	}
 
 	func remove(_ node:Node) {
 		let layer = layers.removeValue(forKey:node)!
 		_ = nodes.removeValue(forKey:layer)
 		layer.removeFromSuperlayer()
-	}
-
-	func associate(_ node:Node, with layer:CALayer) {
-		layer.delegate = self
-		layers[node] = layer
-		nodes[layer] = node
-	}
-
-	func insert(_ layer:CALayer, with node:Node, at index:Int) {
-		let parent = layers[node.parent!]!
-		parent.insertSublayer(layer, at:UInt32(index))
-	}
-
-	func realize() {
-		associate(scene, with:layer)
 	}
 }

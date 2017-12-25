@@ -4,6 +4,7 @@ internal struct Change {
 	internal enum Kind : Equatable {
 		case insert(Int)
 		case move(Int)
+		case update
 		case remove
 	}
 
@@ -22,6 +23,11 @@ internal extension Change {
 
 	init (move node:Node, to index:Int) {
 		self.kind = .move(index)
+		self.node = node
+	}
+
+	init (update node:Node) {
+		self.kind = .update
 		self.node = node
 	}
 

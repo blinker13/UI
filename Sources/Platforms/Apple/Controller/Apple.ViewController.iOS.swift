@@ -6,7 +6,8 @@ import Geometry
 
 public final class AppleViewController : UIViewController {
 
-	internal let renderer:Apple.Renderer
+	private var responder:[UITouch:Node] = [:]
+	private let renderer:Apple.Renderer
 
 	internal init (with scene:Scene) {
 		self.renderer = Apple.Renderer(with:scene)
@@ -36,7 +37,11 @@ public extension AppleViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		renderer.render()
+
+		for node in scene.flush() {
+			let changes = node.update()
+			changes.forEach(renderer.render)
+		}
 	}
 }
 
@@ -79,9 +84,11 @@ public extension AppleViewController {
 
 	override func touchesEnded(_ touches:Set<UITouch>, with event:UIEvent?) {
 		process(event!) { return $0.phase == .began || $0.phase == .moved }
+		touches.forEach(remove)
 	}
 	override func touchesCancelled(_ touches:Set<UITouch>, with event:UIEvent?) {
 		process(event!) { return $0.phase != .stationary || $0.phase != .cancelled }
+		touches.forEach(remove)
 	}
 }
 
@@ -98,24 +105,35 @@ private extension AppleViewController {
 		if uiTouches.isEmpty { return }
 
 		let touches = uiTouches.map(transform)
-		let gesture = Gesture(touches:Set(touches), timestamp:event.timestamp)
+		let gesture = Gesture(timestamp:event.timestamp, touches:Set(touches))
 		scene.send(gesture)
 	}
 
-	func transform(uiTouch:UITouch) -> Touch {
-		let point = uiTouch.location(in:view)
+	func transform(touch:UITouch) -> Touch {
+		let point = touch.location(in:view)
 		let location = Point(cg:point)
-		let node = scene.test(location)
 
 		return Touch(
-			hashValue:uiTouch.hashValue,
-			timestamp:uiTouch.timestamp,
+			hashValue:touch.hashValue,
+			timestamp:touch.timestamp,
 			location:location,
-			force:Touch.Force(uiTouch.force),
-			phase:uiTouch.phase.touchPhase,
-			count:uiTouch.tapCount,
-			node:node!
+			force:Touch.Force(touch.force),
+			phase:touch.phase.touchPhase,
+			count:touch.tapCount,
+			scene:scene,
+			node:test(touch, in:location)
 		)
+	}
+
+	func test(_ touch:UITouch, in location:Point) -> Node? {
+		if let node = responder[touch] { return node }
+		guard let node = scene.test(location) else { return nil }
+		responder[touch] = node
+		return node
+	}
+
+	func remove(touch:UITouch) {
+		responder.removeValue(forKey:touch)
 	}
 }
 

@@ -1,7 +1,7 @@
 
 import Geometry
 
-internal final class Calculator {
+public final class Calculator {
 
 	private let container:Container
 	private let distribute:(Float, Float) -> Float
@@ -9,7 +9,7 @@ internal final class Calculator {
 	private var offset:Float = 0.0
 	private var box:Layout
 
-	internal init (container:Container, in rect:Rect) {
+	public init (container:Container, in rect:Rect) {
 		let bounds = rect.inseted(container.padding)
 
 		let box = Layout(align:container.justify)
@@ -26,32 +26,22 @@ internal final class Calculator {
 
 // MARK: -
 
-internal extension Calculator {
+public extension Calculator {
 
-	func prepare(_ items:[Item]) -> [Layout] {
-		return items.map(makeLayout)
-	}
+	func layout(_ items:[Item]) -> [Rect] {
+		let layouts = items.map(prepare)
 
-	func distribute(_ layouts:[Layout]) -> Bool {
-		var flexibles = layouts.filter(flexibleLayouts)
-		if flexibles.isEmpty { return false }
+		while remainder > 0 {
+			var flexibles = layouts.filter(flexibleLayouts)
+			if flexibles.isEmpty { break }
 
-		if justify == .trailing { flexibles = flexibles.reversed() }
-		factor = distribution.determineFactor(for:flexibles)
-		remainder = flexibles.reduce(remainder, distribute)
-		offset = remainder * justify.factor + box.main[justify]
+			if justify == .trailing { flexibles = flexibles.reversed() }
+			factor = distribution.determineFactor(for:flexibles)
+			remainder = flexibles.reduce(remainder, distribute)
+			offset = remainder * justify.factor + box.main[justify]
+		}
 
-		return remainder > 0
-	}
-
-	func finalize(layout:Layout) -> Rect {
-		defer { offset += layout.main.length }
-		layout.cross.start = layout.cross.axis.leading + layout.justify(box)
-		layout.main.start = offset + layout.main.axis.leading
-
-		let x = layout[keyPath:arrangement.layoutKey]
-		let y = layout[keyPath:arrangement.flipped.layoutKey]
-		return Rect(x.start, y.start, x.size, y.size)
+		return layouts.map(finalize)
 	}
 }
 
@@ -69,7 +59,7 @@ private extension Calculator {
 	var justify:Alignment { return container.justify }
 	var padding:Padding { return container.padding }
 
-	func makeLayout(for item:Item) -> Layout {
+	func prepare(item:Item) -> Layout {
 		let layout = Layout(align:item.alignment)
 
 		layout.main.sizes = item[arrangement]
@@ -97,5 +87,15 @@ private extension Calculator {
 		let result = Swift.max(minimum, 1.0).rounded()
 		layout.main.sizes.start += result
 		return remains - result
+	}
+
+	func finalize(layout:Layout) -> Rect {
+		defer { offset += layout.main.length }
+		layout.cross.start = layout.cross.axis.leading + layout.justify(box)
+		layout.main.start = offset + layout.main.axis.leading
+
+		let x = layout[keyPath:arrangement.layoutKey]
+		let y = layout[keyPath:arrangement.flipped.layoutKey]
+		return Rect(x.start, y.start, x.size, y.size)
 	}
 }

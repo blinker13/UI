@@ -3,22 +3,21 @@ public protocol Scopable {
 	var scope:Scope { get }
 }
 
-public extension Scopable {
+// MARK: -
 
-	var typeScope:Scope {
-		let kind = type(of:self)
-		let id = ObjectIdentifier(kind)
-		return .id(id)
+public enum Scope : Hashable, Scopable {
+
+	case id(ObjectIdentifier)
+	case key(String)
+	case tag(Int)
+
+	public init (_ this:Swift.AnyObject) {
+		let identifier = ObjectIdentifier(this)
+		self = .id(identifier)
 	}
 }
 
 // MARK: -
-
-public enum Scope : Hashable, Scopable {
-	case id(ObjectIdentifier)
-	case key(String)
-	case tag(Int)
-}
 
 public extension Scope {
 

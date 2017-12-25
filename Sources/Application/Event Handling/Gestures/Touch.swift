@@ -29,7 +29,8 @@ public struct Touch : Hashable, CustomStringConvertible {
 	public let phase:Phase
 	public let count:Int
 
-	internal let node:Node
+	internal let scene:Scene?
+	internal let node:Node?
 }
 
 // MARK: -

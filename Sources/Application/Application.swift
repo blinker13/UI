@@ -1,7 +1,7 @@
 
 import Dispatch
 
-public final class Application {
+public final class Application : Responder {
 
 	public static let shared = Application()
 
@@ -18,34 +18,26 @@ public extension Application {
 	static func run(_ element:Element) {
 		let scene = Scene(with:element)
 		shared.keyScene = scene
-		Apple.start()
+		shared.main()
 	}
 
-	func send<Target, Sender>(_ action:Action<Target, Sender>, completion handler:@escaping (Bool) -> Void) {
-		let operation = Action.Operation(action:action, completion:handler)
-		queue.async(execute:operation.run)
+	var next:Responder? { return nil }
+
+	func send<Target, Sender>(_ message:@escaping (Target) -> (Sender) -> Void, to target:Target? = nil, from sender:Sender) {
+		let action = Action(send:message, to:target, from:sender)
+		queue.async(execute:action.perform)
 	}
 
 	func send(_ event:Event) {
-		// TODO: is main thread
-
 		switch event {
-			case let gesture as Gesture: keyScene.send(gesture)
-			default: scenes.forEach { $0.send(event) }
+			case let gesture as Gesture: gesture.scenes.forEach { $0.send(gesture) }
+//			case let gesture as Gesture: gesture.scenes.perform(Scene.send, gesture) }
+//			case let this as Discrete.Event: send(Node.forward, to:this.target, from:event)
+			default: keyScene.send(event)
 		}
 	}
 
 	func terminate() {
-		Apple.stop()
-	}
-}
-
-// MARK: -
-
-private extension Application {
-
-	func deliver<Target, Sender>(_ action:Action<Target, Sender>) {
-		if let this = action.target { action.perform(with:this) }
-		// TODO: search sender
+		exit()
 	}
 }

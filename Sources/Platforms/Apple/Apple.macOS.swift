@@ -5,27 +5,6 @@ import AppKit
 
 internal final class Apple {
 
-	static func start() {
-		let viewController = AppleViewController(with:Application.shared.keyScene)
-		let mask:NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
-		let new = NSWindow(contentRect:bounds, styleMask:mask, backing:.buffered, defer:false)
-		new.contentViewController = viewController //TODO: beautify
-		new.contentMinSize = viewController.preferredMinimumSize
-		new.contentMaxSize = viewController.preferredMaximumSize
-		new.titlebarAppearsTransparent = true
-		new.titleVisibility = .hidden
-		new.makeKeyAndOrderFront(nil)
-		NSApplication.shared.run()
-	}
-
-	static func stop() {
-		NSApp.terminate(nil)
-	}
-}
-
-// MARK: -
-
-internal extension Apple {
 	static var bounds:NSRect {
 		guard let screen = NSScreen.main else { return .zero }
 

@@ -2,24 +2,28 @@
 import Geometry
 import Layout
 
-internal class Node : Hashable, Scopable, Container, Item, Renderer {
+internal class Node : Hashable, Scopable, Stylable, Responder {
+
+	internal typealias Ancestors = TreeIterator<Node>
+	internal typealias Identifier = ObjectIdentifier
 
 	internal private(set) weak var parent:Node?
-
-	internal private(set) var element:Element!
+	internal private(set) var style:Style = .empty
 	internal private(set) var frame:Rect = .zero
+	internal private(set) var element:Element
 
-	internal var children:[Node] = [] {
+	internal private(set) var children:[Node] = [] {
 		willSet { children.forEach(unmount) }
 		didSet { children.forEach(mount) }
 	}
 
-	internal var renderer:Renderer {
-		willSet { reconcile(newValue) }
+	internal var next:Responder? {
+		guard let next = parent else { return nil }
+		return next.responder ?? next
 	}
 
-	public init (with renderer:Renderer) {
-		self.renderer = renderer
+	internal init (with element:Element) {
+		self.element = element
 	}
 }
 
@@ -31,34 +35,21 @@ internal extension Node {
 		return left.scope == right.scope
 	}
 
-	var hashValue:Int { return identifier.hashValue }
-	var scope:Scope { return scopable?.scope ?? .id(identifier) }
-	var ancestors:Ancestors { return Ancestors(current:self) }
-
-	var arrangement:Arrangement { return element.arrangement }
-	var distribution:Distribution { return element.distribution }
-	var justify:Alignment { return element.justify }
-	var padding:Padding { return element.padding }
-
-	var alignment:Alignment { return element.alignment }
-	var margin:Margin { return element.margin }
-	var height:Axis { return element.height }
-	var width:Axis { return element.width }
-
-	func layout(in rect:Rect) -> [Rect] {
-		defer { self.frame = rect }
-		let bounds = Rect(size:rect.size)
-		return layout(children, in:bounds)
+	var ancestors:Ancestors {
+		return Ancestors(parent) { $0.parent }
 	}
 
-	func render() -> Element {
-		element = renderer.render()
-		return element
+	var hashValue:Int { return idendifier.hashValue }
+	var scope:Scope { return scopable?.scope ?? Scope(self) }
+
+	func process(_ event:Event) {
+//		guard renderer is Responder else { event.send(to:self) }
+//		else { parent?.process(event) }
 	}
 
 	func test(_ hit:Point) -> Node? {
 		guard bounds.contains(hit) else { return nil }
-		guard isVisible else { return nil }
+//		guard isVisible else { return nil }
 
 		for child in children.reversed() {
 			let point = hit.converted(to:child.frame)
@@ -67,8 +58,26 @@ internal extension Node {
 			}
 		}
 
-//		guard isResponsive else { return nil }
 		return self
+	}
+
+	func update(with next:Element) {
+		defer { self.element = next }
+		guard let component = next as? Stateful else { return }
+		component.reconcile(with:element)
+	}
+
+	func update() -> [Change] {
+		let view = element.render()
+		let reconciler = Reconciler(with:self)
+		children = reconciler.update(view.children)
+		style = reconciler.update(view.style)
+		return reconciler.results
+	}
+
+	func layout(in rect:Rect) -> [Rect] {
+		self.frame = rect
+		return layout()
 	}
 }
 
@@ -77,15 +86,16 @@ internal extension Node {
 private extension Node {
 
 	var bounds:Rect { return Rect(size:frame.size) }
-	var identifier:ObjectIdentifier { return ObjectIdentifier(self) }
+	var idendifier:Identifier { return Identifier(self) }
+	var component:Stateful? { return element as? Stateful }
+	var responder:Responder? { return element as? Responder }
 	var scopable:Scopable? { return element as? Scopable }
-	var isVisible:Bool { return element.opacity > 0.01 }
 
-	func mount(child:Node) { child.parent = self }
 	func unmount(child:Node) { child.parent = nil }
+	func mount(child:Node) { child.parent = self }
 
-	func reconcile(_ new:Renderer) {
-		guard let stateful = new as? Stateful else { return }
-		stateful.update(with:renderer)
+	func layout() -> [Rect] {
+		let calculator = Calculator(container:self, in:bounds)
+		return calculator.layout(children)
 	}
 }

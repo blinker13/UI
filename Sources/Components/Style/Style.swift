@@ -1,5 +1,5 @@
 
-public struct Style : Hashable, CustomStringConvertible, ExpressibleByArrayLiteral {
+public struct Style : Stylable, Hashable, CustomStringConvertible, ExpressibleByArrayLiteral {
 
 	public typealias Compound = Set<Style>
 	public typealias Value = Codable
@@ -12,6 +12,8 @@ public struct Style : Hashable, CustomStringConvertible, ExpressibleByArrayLiter
 
 public extension Style {
 
+	static var empty:Style = []
+
 	static func == (left:Style, right:Style) -> Bool {
 		guard left.hashValue == right.hashValue else { return false }
 		if left.isToken || right.isToken { return true }
@@ -23,7 +25,8 @@ public extension Style {
 
 	var description:String { return "\(key) -> \(value)" }
 	var hashValue:Int { return key.hashValue }
-
+	var style:Style { return self }
+	
 	init (key:String, value:Value) {
 		self.value = value
 		self.key = key
