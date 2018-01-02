@@ -1,5 +1,12 @@
 
 import Graphics
+import Layout
+
+public protocol Element {
+	func render() -> View
+}
+
+// MARK: -
 
 public protocol Viewable {
 	var background:Color? { get }

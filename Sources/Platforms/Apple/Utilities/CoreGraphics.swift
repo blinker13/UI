@@ -7,7 +7,7 @@ import Graphics
 
 internal extension CGContext {
 
-	func draw(_ composition:Composition) {
+	func draw(_ composition:Canvas) {
 
 		switch composition {
 			case .save: saveGState()
@@ -196,7 +196,7 @@ internal extension Blending {
 	}
 }
 
-internal extension Composition.Rule {
+internal extension Canvas.Rule {
 
 	var cgFillRule:CGPathDrawingMode {
 		switch self {

@@ -11,6 +11,8 @@ public protocol Alignable {
 	subscript (alignment:Alignment) -> Self.AlignedValue { get }
 }
 
+// MARK: -
+
 public extension Alignable {
 	subscript (alignment:Alignment) -> Self.AlignedValue {
 		switch alignment {

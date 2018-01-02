@@ -1,7 +1,7 @@
 
 import Geometry
 
-public enum Composition {
+public enum Canvas {
 
 	public enum Rule {
 		case nonzero
@@ -11,7 +11,7 @@ public enum Composition {
 	case save
 	case restore
 
-	case compound([Composition])
+	case compound([Canvas])
 
 	case setFlatness(Float)
 	case setLineCap(Line.Cap)
@@ -36,20 +36,20 @@ public enum Composition {
 	case stroking
 }
 
-public extension Composition {
+public extension Canvas {
 
-	init (with compositions:[Composition]) {
-		self = .compound(compositions)
+	init (with canvas:[Canvas]) {
+		self = .compound(canvas)
 	}
 
-	init (_ compositions:Composition ...) {
-		self = .compound(compositions)
+	init (_ canvas:Canvas ...) {
+		self = .compound(canvas)
 	}
 }
 
-extension Composition : ExpressibleByArrayLiteral {
+extension Canvas : ExpressibleByArrayLiteral {
 
-	public init(arrayLiteral elements:Composition ...) {
+	public init(arrayLiteral elements:Canvas ...) {
 		self = .compound(elements)
 	}
 }
