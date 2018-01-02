@@ -99,26 +99,9 @@ public extension Rect {
 	}
 }
 
-extension Rect : CustomPlaygroundQuickLookable {
-	public var customPlaygroundQuickLook:PlaygroundQuickLook {
-		return .rectangle(
-			Float64(origin.x),
-			Float64(origin.y),
-			Float64(size.width),
-			Float64(size.height)
-		)
-	}
-}
-
 extension Rect : CustomStringConvertible {
 	public var description:String {
 		return "\(origin), \(size)"
-	}
-}
-
-extension Rect : Equatable {
-	public static func == (left:Rect, right:Rect) -> Bool {
-		return left.origin == right.origin && left.size == right.size
 	}
 }
 

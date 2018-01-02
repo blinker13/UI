@@ -1,5 +1,5 @@
 
-public protocol Geometry : Codable {
+public protocol Geometry : Codable, Hashable {
 
 	static var infinity:Self { get }
 	static var zero:Self { get }
@@ -9,7 +9,7 @@ public protocol Geometry : Codable {
 	var isZero:Bool { get }
 }
 
-public extension Geometry where Self : Equatable {
+public extension Geometry {
 	var isFinite:Bool { return self != Self.infinity }
 	var isInfinite:Bool { return self == Self.infinity }
 	var isZero:Bool { return self == Self.zero }

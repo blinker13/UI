@@ -16,8 +16,7 @@ let quitMenuItem = NSMenuItem(title:"Quit Cocoa", action:#selector(NSApplication
 appMenu.addItem(quitMenuItem)
 appMenuItem.submenu = appMenu
 
-let app = NSApplication.shared()
-app.mainMenu = menubar
+NSApplication.shared.mainMenu = menubar
 
 #endif
 
@@ -37,9 +36,8 @@ Application.run(
 		View(style:[.height(min:10.0), .background(.red)]),
 		Horizontal(style:[.height(min:20.0), .background(.black), .padding(10.0)],
 			View(style:[.height(min:20.0), .width(min:10.0), .background(.yellow)]),
-			View(style:[.width(min:40.0), .background(.blue)])
+			Button(style:[.width(min:40.0), .background(.blue)])
 		),
 		View(style:[.height(min:40.0), .background(.green)])
 	)
 )
-

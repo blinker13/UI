@@ -1,7 +1,7 @@
 
 public struct Path : Shape {
 
-	public enum Element {
+	public enum Element : Hashable {
 		case move(to:Point)
 		case line(to:Point)
 		case cubicCurve(to:Point, Point, Point)
@@ -65,7 +65,7 @@ extension Path.Element : Codable {
 
 	public init (from decoder:Decoder) throws {
 		let container = try decoder.container(keyedBy:Keys.self)
-		
+
 		switch container.allKeys.first! {
 			case .move: let point = try container.decode(Point.self, forKey:.move); self = .move(to:point)
 			case .line: let point = try container.decode(Point.self, forKey:.line); self = .line(to:point)
@@ -88,18 +88,18 @@ extension Path.Element : Codable {
 	}
 }
 
-extension Path.Element : Equatable {
-	public static func == (left:Path.Element, right:Path.Element) -> Bool {
-		switch (left, right) {
-			case let (.move(to:lp), .move(to:rp)): return lp == rp
-			case let (.line(to:lp), .line(to:rp)): return lp == rp
-			case let (.cubicCurve(to:lp0, lp1, lp2), .cubicCurve(to:rp0, rp1, rp2)): return lp0 == rp0 && lp1 == rp1 && lp2 == rp2
-			case let (.quadCurve(lp0, lp1), .quadCurve(rp0, rp1)): return lp0 == rp0 && lp1 == rp1
-			case (.close, .close): return true
-			default: return false
-		}
-	}
-}
+//extension Path.Element : Equatable {
+//	public static func == (left:Path.Element, right:Path.Element) -> Bool {
+//		switch (left, right) {
+//			case let (.move(to:lp), .move(to:rp)): return lp == rp
+//			case let (.line(to:lp), .line(to:rp)): return lp == rp
+//			case let (.cubicCurve(to:lp0, lp1, lp2), .cubicCurve(to:rp0, rp1, rp2)): return lp0 == rp0 && lp1 == rp1 && lp2 == rp2
+//			case let (.quadCurve(lp0, lp1), .quadCurve(rp0, rp1)): return lp0 == rp0 && lp1 == rp1
+//			case (.close, .close): return true
+//			default: return false
+//		}
+//	}
+//}
 
 extension Path : Transformable {
 	public func transformed(by transform:Transform) -> Path {

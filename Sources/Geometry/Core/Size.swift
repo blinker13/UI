@@ -28,24 +28,9 @@ public extension Size {
 	}
 }
 
-extension Size : CustomPlaygroundQuickLookable {
-	public var customPlaygroundQuickLook:PlaygroundQuickLook {
-		return .size(
-			Float64(width),
-			Float64(height)
-		)
-	}
-}
-
 extension Size : CustomStringConvertible {
 	public var description:String {
 		return "width:\(width), height:\(height)"
-	}
-}
-
-extension Size : Equatable {
-	public static func == (left:Size, right:Size) -> Bool {
-		return left.width == right.width && left.height == right.height
 	}
 }
 

@@ -2,18 +2,19 @@
 import Graphics
 import Layout
 
-public protocol Element {
-	func render() -> View
+public protocol Viewable {
+	var isVisible:Bool { get }
+	var background:Color? { get }
+	var border:Border? { get }
+	var opacity:Opacity { get }
+	var shadow:Shadow? { get }
+	var tint:Color? { get }
 }
 
 // MARK: -
 
-public protocol Viewable {
-	var background:Color? { get }
-	var border:Border? { get }
-	var opacity:Opacity? { get }
-	var shadow:Shadow? { get }
-	var tint:Color? { get }
+public extension Viewable {
+	var isVisible:Bool { return opacity > 0.01 }
 }
 
 // MARK: -

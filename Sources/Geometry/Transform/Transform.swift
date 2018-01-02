@@ -1,5 +1,5 @@
 
-public struct Transform : Equatable {
+public struct Transform : Hashable {
 
 	public let a:Float
 	public let b:Float
@@ -16,10 +16,6 @@ public struct Transform : Equatable {
 public extension Transform {
 
 	static let identity = Transform(1, 0, 0, 1, 0, 0)
-
-	static func == (left:Transform, right:Transform) -> Bool {
-		return left.a == right.a && left.b == right.b && left.c == right.c && left.d == right.d && left.x == right.x && left.y == right.y
-	}
 
 	var inverted:Transform {
 		let determinant = 1 / (a * d - b * c)

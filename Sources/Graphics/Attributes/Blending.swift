@@ -1,5 +1,6 @@
 
-public enum Blending {
+public enum Blending : Hashable {
+
 	case normal
 	case multiply
 	case screen

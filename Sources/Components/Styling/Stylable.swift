@@ -3,7 +3,7 @@ import Geometry
 import Graphics
 import Layout
 
-public protocol Stylable : Viewable, Container, Item {
+public protocol Stylable : Viewable, Box {
 	var style:Style { get }
 }
 
@@ -25,7 +25,7 @@ public extension Stylable {
 
 	var background:Color? { return style[#function] }
 	var border:Border? { return style[#function] }
-	var opacity:Opacity? { return style[#function] }
+	var opacity:Opacity { return style[#function] ?? 1.0 }
 	var shadow:Shadow? { return style[#function] }
 	var tint:Color? { return style[#function] }
 }

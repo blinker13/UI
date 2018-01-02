@@ -1,15 +1,14 @@
 
-import Dispatch
 import Geometry
 
-internal final class Scene : Node {
+public final class Scene : Node {
 
 	internal typealias Transaction = AnyIterator<Node>
 
 	private var focus:Node?
 	private var nodes:Set<Node> = []
 
-	internal override var next:Responder? {
+	public override var next:Responder? {
 		return Application.shared
 	}
 
@@ -23,12 +22,12 @@ internal final class Scene : Node {
 
 internal extension Scene {
 
-//	var minimum:Size { return Size(element.width.min, element.height.min) }
-//	var maximum:Size { return Size(element.width.max, element.height.max) }
+	var minimum:Size { return Size(width.min, height.min) }
+	var maximum:Size { return Size(width.max, height.max) }
 
 	func send(_ event:Event) {
 		switch event {
-			case let gesture as Gesture: send(gesture)
+			case let gesture as Gesture: process(gesture)
 			default: fatalError("FIXME: add support for \(event)")
 		}
 	}
@@ -53,15 +52,21 @@ private extension Scene {
 		return nodes.remove(next)
 	}
 
-	func send(_ gesture:Gesture) {
+	func process(_ gesture:Gesture) {
+
 		for responder in gesture.nodes(for:self) {
 
 			for next in responder.chain {
-//				guard let node = next as? Node else { continue }
-//				guard let target = node.renderer as? Touchable else { continue }
-//				print("try", "->", target)
+				guard let node = next as? Node else { continue }
+				guard let target = node.element as? Touchable else { continue }
+
+				if let touches = gesture.touches(for:node, with:.began) { target.onBegan(touches, with:gesture) }
+				if let touches = gesture.touches(for:node, with:.moved) { target.onMoved(touches, with:gesture) }
+				if let touches = gesture.touches(for:node, with:.ended) { target.onEnded(touches, with:gesture) }
+				if let touches = gesture.touches(for:node, with:.cancelled) { target.onCancelled(touches, with:gesture) }
+
+				break // ???: forwarding
 			}
-			print("=======================")
 		}
 	}
 }

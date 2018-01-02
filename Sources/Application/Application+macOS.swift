@@ -6,7 +6,8 @@ import AppKit
 internal extension Application {
 
 	func main() {
-		let viewController = AppleViewController(with:Application.shared.keyScene)
+		let bounds = Platform.bounds
+		let viewController = Scene.Controller(with:Application.shared.keyScene)
 		let mask:NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
 		let new = NSWindow(contentRect:bounds, styleMask:mask, backing:.buffered, defer:false)
 		new.contentViewController = viewController //TODO: beautify

@@ -3,9 +3,18 @@
 
 import AppKit
 
-internal final class Apple {
+public final class Platform : NSResponder {
 
-	static var bounds:NSRect {
+	public typealias ViewController = NSViewController
+
+	internal typealias Layer = CALayer
+	internal typealias View = NSView
+}
+
+// MARK: -
+
+internal extension Platform {
+	static var bounds:CGRect {
 		guard let screen = NSScreen.main else { return .zero }
 
 		let vertical = round(screen.frame.height * 0.15)

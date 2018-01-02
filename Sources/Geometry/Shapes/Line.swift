@@ -1,5 +1,5 @@
 
-public struct Line : Shape {
+public struct Line : Hashable, Shape {
 
 	public typealias Width = Float
 
@@ -43,12 +43,6 @@ public extension Line {
 	func contains(_ point:Point) -> Bool {
 		// TODO: implementation
 		return false
-	}
-}
-
-extension Line : Equatable {
-	public static func == (left:Line, right:Line) -> Bool {
-		return left.from == right.from && left.to == right.to
 	}
 }
 

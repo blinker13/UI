@@ -27,12 +27,6 @@ extension Space : CustomStringConvertible {
 	}
 }
 
-extension Space : Equatable {
-	public static func == (left:Space, right:Space) -> Bool {
-		return left.top == right.top && left.right == right.right && left.bottom == right.bottom && left.left == right.left
-	}
-}
-
 extension Space : ExpressibleByFloatLiteral {
 	public init (floatLiteral value:Float) {
 		self.init(top:value, right:value, bottom:value, left:value)

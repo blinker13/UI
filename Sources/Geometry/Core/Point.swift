@@ -52,24 +52,9 @@ extension Point : Arithmetic {
 	}
 }
 
-extension Point : CustomPlaygroundQuickLookable {
-	public var customPlaygroundQuickLook:PlaygroundQuickLook {
-		return .point(
-			Float64(x),
-			Float64(y)
-		)
-	}
-}
-
 extension Point : CustomStringConvertible {
 	public var description:String {
 		return "x:\(x), y:\(y)"
-	}
-}
-
-extension Point : Equatable {
-	public static func == (left:Point, right:Point) -> Bool {
-		return left.x == right.x && left.y == right.y
 	}
 }
 

@@ -2,7 +2,7 @@
 public struct Style : Stylable, Hashable, CustomStringConvertible, ExpressibleByArrayLiteral {
 
 	public typealias Compound = Set<Style>
-	public typealias Value = Codable
+	public typealias Value = Any// = Codable
 
 	private let value:Value
 	private let key:String

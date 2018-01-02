@@ -54,24 +54,3 @@ extension Color.Components : CustomStringConvertible {
 		}
 	}
 }
-
-extension Color.Components : Hashable {
-
-	public static func == (left:Color.Components, right:Color.Components) -> Bool {
-		return left.hashValue == right.hashValue
-	}
-
-	public var hashValue:Int {
-		switch self {
-			case let .rgb(r, g, b): return hashify(r, g, b)
-			case let .gray(x): return hashify(x, x, x)
-		}
-	}
-
-	private func hashify(_ r:Value, _ g:Value, _ b:Value) -> Int {
-		let x = Int(r * 255) << 16
-		let y = Int(g * 255) << 8
-		let z = Int(b * 255)
-		return x + y + z
-	}
-}

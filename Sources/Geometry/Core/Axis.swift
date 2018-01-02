@@ -44,12 +44,6 @@ extension Axis : CustomStringConvertible {
 	}
 }
 
-extension Axis : Equatable {
-	public static func == (left:Axis, right:Axis) -> Bool {
-		return left.start == right.start && left.end == right.end
-	}
-}
-
 extension Axis : ExpressibleByFloatLiteral {
 	public init (floatLiteral value:Float) {
 		(self.start, self.end) = (value, value)

@@ -17,7 +17,7 @@ public extension Application {
 
 	static func run(_ element:Element) {
 		let scene = Scene(with:element)
-		shared.keyScene = scene
+		shared.show(scene)
 		shared.main()
 	}
 
@@ -30,8 +30,7 @@ public extension Application {
 
 	func send(_ event:Event) {
 		switch event {
-			case let gesture as Gesture: gesture.scenes.forEach { $0.send(gesture) }
-//			case let gesture as Gesture: gesture.scenes.perform(Scene.send, gesture) }
+			case let gesture as Gesture: gesture.scenes.send(gesture)
 //			case let this as Discrete.Event: send(Node.forward, to:this.target, from:event)
 			default: keyScene.send(event)
 		}
@@ -39,5 +38,20 @@ public extension Application {
 
 	func terminate() {
 		exit()
+	}
+}
+
+// MARK: -
+
+internal extension Application {
+
+	func focus(_ scene:Scene) {
+		precondition(scenes.contains(scene))
+		keyScene = scene
+	}
+
+	func show(_ scene:Scene) {
+		scenes.insert(scene)
+		focus(scene)
 	}
 }

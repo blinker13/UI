@@ -2,9 +2,9 @@
 public typealias Alpha = Float
 public typealias Opacity = Alpha
 
-public struct Color : Codable {
+public struct Color : Codable, Hashable {
 
-	public enum Components {
+	public enum Components : Hashable {
 		case rgb(Float, Float, Float)
 		case gray(Float)
 	}
@@ -30,18 +30,6 @@ public extension Color {
 extension Color : CustomStringConvertible {
 	public var description:String {
 		return "Color(\(components), alpha:\(alpha))"
-	}
-}
-
-extension Color : Hashable {
-
-	public static func == (left:Color, right:Color) -> Bool {
-		return left.hashValue == right.hashValue
-	}
-
-	public var hashValue:Int {
-		let hash = components.hashValue << 8
-		return hash + Int(alpha * 255)
 	}
 }
 

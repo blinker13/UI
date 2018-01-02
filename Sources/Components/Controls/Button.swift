@@ -1,104 +1,37 @@
 
 import Graphics
 
-public struct Button : Component, Stylable, Viewable {
+public final class Button : Component<Void> {
 
-	public typealias Handler = () -> Void
-
-	public struct Action {
-
-		public typealias Trigger = Touch.Action
-
-		public let trigger:Trigger
-		public let handler:Handler
-
-		public init (on trigger:Trigger, do handler:@escaping Handler) {
-			(self.trigger, self.handler) = (trigger, handler)
-		}
-	}
-
-	public struct Values {
-		let currentDigit:Touch.Digit?
-	}
-
-	public let actions:[Action]
-	public let scope:Scope
 	public let style:Style
 
-	public init (style:Style, actions:[Action]) {
-		let values = Values(currentDigit:nil)
-		self.scope = Scope(with:values)
-		self.actions = actions
+	public init (style:Style) {
 		self.style = style
+		super.init(initial:())
 	}
 
-	public func render(with state:State<Values>) -> [Element] {
-		return []
+	override open func render() -> View {
+		return View(style:style)
 	}
 }
+
+// MARK: -
 
 public extension Button {
 
-	init (style:Style, onTap:@escaping Handler) {
-		let action = Action(on:.up(.inside), do:onTap)
-		self.init(style:style, actions:[action])
-	}
-}
-
-private extension Button {
-
-	var currentDigit:Touch.Digit? {
-		return state.current.currentDigit
+	func onBegan(_ touches:Set<Touch>, with gesture:Gesture) {
+		print(#function, "->", touches)
 	}
 
-	func send(_ action:Touch.Action) {
-		let filteredActions = actions.filter { $0.trigger == action }
-		filteredActions.forEach { $0.handler() }
-		print("-->", action)
+	func onMoved(_ touches:Set<Touch>, with gesture:Gesture) {
+		print(#function, "->", touches)
 	}
 
-	func update(_ digit:Touch.Digit?) {
-		let value = Values(currentDigit:digit)
-		state.set(value)
-	}
-}
-
-extension Button : Touchable {
-
-	public func onBegan(_ touches:Set<Touch>, with gesture:Gesture) {
-		guard currentDigit == nil, let touch = touches.first else { return }
-		send(.down(touch.count))
-		update(touch.digit)
+	func onEnded(_ touches:Set<Touch>, with gesture:Gesture) {
+		print(#function, "->", touches)
 	}
 
-	public func onMoved(_ touches:Set<Touch>, with gesture:Gesture) {
-		guard let digit = currentDigit else { return }
-		guard let touch = touches[digit] else { return }
-
-		let movedDigit = touch.digit
-
-//		switch (digit.area, movedDigit.area) {
-//			case (.inside, .outside): send(.exit)
-//			case (.outside, .inside): send(.enter)
-//			default: send(.move(movedDigit.area))
-//		}
-
-		send(.move(.inside))
-		update(movedDigit)
-	}
-
-	public func onEnded(_ touches:Set<Touch>, with gesture:Gesture) {
-		guard let digit = currentDigit else { return }
-		guard let touch = touches[digit] else { return }
-		print(touch.description)
-//		send(.up(touch.area))
-		send(.up(.inside))
-		update(nil)
-	}
-
-	public func onCancelled(_ touches:Set<Touch>, with gesture:Gesture) {
-		guard currentDigit != nil else { return }
-		send(.cancel)
-		update(nil)
+	func onCancelled(_ touches:Set<Touch>, with gesture:Gesture) {
+		print(#function, "->", touches)
 	}
 }

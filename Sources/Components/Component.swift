@@ -32,8 +32,6 @@ public extension Component {
 		return state
 	}
 
-	var next:Responder? { return node }
-
 	func modify(using block:@escaping (inout State) -> Void) {
 		send { block(&self.state); return $0.update }
 	}
