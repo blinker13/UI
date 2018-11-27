@@ -1,8 +1,4 @@
 
-public typealias Inset = Space
-public typealias Margin = Space
-public typealias Padding = Space
-
 public struct Space : Geometry {
 	public var horizontal:Axis
 	public var vertical:Axis

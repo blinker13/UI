@@ -112,8 +112,6 @@
 		BDBDBB1D1F75467D004EB183 /* CoreText+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD5E2FB1EDA94CE0005705F /* CoreText+UI.swift */; };
 		BDCC87F11FF6517100697E0C /* TreeIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC87EF1FF6516D00697E0C /* TreeIterator.swift */; };
 		BDCC87F71FF787C800697E0C /* Reconciler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC87F61FF787C800697E0C /* Reconciler.swift */; };
-		BDD29DCF1FEED1ED0047ABC8 /* Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD29DCE1FEED1ED0047ABC8 /* Containment.swift */; };
-		BDD29DD31FEF67570047ABC8 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD29DD21FEF67570047ABC8 /* Convenience.swift */; };
 		BDD4DD081FEE85B500C568EF /* UITouch+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD4DD071FEE85B500C568EF /* UITouch+UI.swift */; };
 		BDF3FF381FF0912F0068B23B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3FF371FF0912F0068B23B /* Action.swift */; };
 		BDF82B891FEB6BAD00FE30D2 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF82B881FEB6BAD00FE30D2 /* Calculator.swift */; };
@@ -230,8 +228,6 @@
 		BDCC87F61FF787C800697E0C /* Reconciler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reconciler.swift; sourceTree = "<group>"; };
 		BDD10F9F1F2D985D00A4FCAA /* Pan.Recognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pan.Recognizer.swift; sourceTree = "<group>"; };
 		BDD1E3641F30C5620069C079 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		BDD29DCE1FEED1ED0047ABC8 /* Containment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Containment.swift; sourceTree = "<group>"; };
-		BDD29DD21FEF67570047ABC8 /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		BDD4DD071FEE85B500C568EF /* UITouch+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITouch+UI.swift"; sourceTree = "<group>"; };
 		BDD5E2F01ED2CABB0005705F /* Stroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		BDD5E2FB1EDA94CE0005705F /* CoreText+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreText+UI.swift"; sourceTree = "<group>"; };
@@ -359,12 +355,10 @@
 		BD1FE1FF1C4FF1A4005F95D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BDC9F2DC1F3E9F820035441D /* Application */,
-				BDC9F2E01F3E9FC40035441D /* Components */,
-				BDCC87EE1FF6515500697E0C /* Extensions */,
 				BDC9F2E41F3EA0D50035441D /* Geometry */,
 				BDDC72D51F6E53DD002D1FED /* Graphics */,
 				BD3790931F754F53008B12F6 /* Layout */,
+				BD2FA97B21AD71EE00F9636B /* UI */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -386,6 +380,60 @@
 				BD9103D71E2CD658009BFD4F /* TransformTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		BD2FA97A21AD716000F9636B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BD3997D31C68A8EA002B3E01 /* Component.swift */,
+			);
+			name = Components;
+			path = Components/Components;
+			sourceTree = "<group>";
+		};
+		BD2FA97B21AD71EE00F9636B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
+				BDF1D49C1F2437C80054265C /* Scope.swift */,
+				BDC9F2DC1F3E9F820035441D /* Application */,
+				BD2FA97A21AD716000F9636B /* Components */,
+				BD3E1C7F1F76A101008F2090 /* Container */,
+				BD3E1C7C1F769F84008F2090 /* Controls */,
+				BDF1D4A31F2B8F640054265C /* Events */,
+				BD2FA97C21AD74A900F9636B /* Nodes */,
+				BDC9F2DB1F3E9F5B0035441D /* Styling */,
+				BDCC87EE1FF6515500697E0C /* Utility */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BD2FA97C21AD74A900F9636B /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				BD8226641C936DD700D807A3 /* Node.swift */,
+				BD8226651C936DD700D807A3 /* Scene.swift */,
+				BD2FA97D21AD74C300F9636B /* Reconcilation */,
+				BD2FA97E21AD750200F9636B /* Rendering */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		BD2FA97D21AD74C300F9636B /* Reconcilation */ = {
+			isa = PBXGroup;
+			children = (
+				BDCC87F61FF787C800697E0C /* Reconciler.swift */,
+				BD3E1C801F76A539008F2090 /* Change.swift */,
+			);
+			path = Reconcilation;
+			sourceTree = "<group>";
+		};
+		BD2FA97E21AD750200F9636B /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				BD1DCF11205543CB00A1F483 /* Renderer.swift */,
+			);
+			path = Rendering;
 			sourceTree = "<group>";
 		};
 		BD3790931F754F53008B12F6 /* Layout */ = {
@@ -433,6 +481,7 @@
 		BD3E1C7F1F76A101008F2090 /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				BD7200AF1FFBABB300B0BF9C /* View.swift */,
 				BD789DD51FD55FB800DD474D /* Block.swift */,
 			);
 			path = Container;
@@ -441,10 +490,7 @@
 		BD72009D1FF7EF6900B0BF9C /* Hierarchy */ = {
 			isa = PBXGroup;
 			children = (
-				BD8226641C936DD700D807A3 /* Node.swift */,
-				BD8226651C936DD700D807A3 /* Scene.swift */,
 				BD1DCF0F20553C4A00A1F483 /* Controller */,
-				BDC9F2DF1F3E9FA10035441D /* Renderer */,
 				BD1861EF1FEE021600BD351E /* View */,
 			);
 			path = Hierarchy;
@@ -496,36 +542,10 @@
 				BDE17C7F1E34BB33006D80C7 /* Application.swift */,
 				BD7200991FF7ECA400B0BF9C /* Application+iOS.swift */,
 				BD72009B1FF7ED7900B0BF9C /* Application+macOS.swift */,
-				BDF1D4A31F2B8F640054265C /* Event Handling */,
 				BD72009D1FF7EF6900B0BF9C /* Hierarchy */,
 				BD3790941F754F5D008B12F6 /* Platform */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		BDC9F2DF1F3E9FA10035441D /* Renderer */ = {
-			isa = PBXGroup;
-			children = (
-				BD3E1C801F76A539008F2090 /* Change.swift */,
-				BDCC87F61FF787C800697E0C /* Reconciler.swift */,
-				BD1DCF11205543CB00A1F483 /* Renderer.swift */,
-			);
-			path = Renderer;
-			sourceTree = "<group>";
-		};
-		BDC9F2E01F3E9FC40035441D /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				BD3997D31C68A8EA002B3E01 /* Component.swift */,
-				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
-				BDF1D49C1F2437C80054265C /* Scope.swift */,
-				BD7200AF1FFBABB300B0BF9C /* View.swift */,
-				BD3E1C7F1F76A101008F2090 /* Container */,
-				BD3E1C7C1F769F84008F2090 /* Controls */,
-				BDC9F2DB1F3E9F5B0035441D /* Styling */,
-				BDD29DCD1FEECFE40047ABC8 /* Views */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		BDC9F2E41F3EA0D50035441D /* Geometry */ = {
@@ -580,7 +600,7 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		BDCC87EE1FF6515500697E0C /* Extensions */ = {
+		BDCC87EE1FF6515500697E0C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				BD1DCF002054F20600A1F483 /* CALayer+UI.swift */,
@@ -592,16 +612,7 @@
 				BDCC87EF1FF6516D00697E0C /* TreeIterator.swift */,
 				BDD4DD071FEE85B500C568EF /* UITouch+UI.swift */,
 			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BDD29DCD1FEECFE40047ABC8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BDD29DCE1FEED1ED0047ABC8 /* Containment.swift */,
-				BDD29DD21FEF67570047ABC8 /* Convenience.swift */,
-			);
-			path = Views;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		BDDC72D51F6E53DD002D1FED /* Graphics */ = {
@@ -684,7 +695,7 @@
 			path = Playgrounds;
 			sourceTree = "<group>";
 		};
-		BDF1D4A31F2B8F640054265C /* Event Handling */ = {
+		BDF1D4A31F2B8F640054265C /* Events */ = {
 			isa = PBXGroup;
 			children = (
 				BDF3FF371FF0912F0068B23B /* Action.swift */,
@@ -693,7 +704,7 @@
 				BDF1D4A81F2B90070054265C /* Gestures */,
 				BD95CD4D1FCAEA8D00AB896A /* Lifecycle */,
 			);
-			path = "Event Handling";
+			path = Events;
 			sourceTree = "<group>";
 		};
 		BDF1D4A81F2B90070054265C /* Gestures */ = {
@@ -952,7 +963,6 @@
 				BD0EB5C41FF2235500FD7512 /* Touch.Recognizer.swift in Sources */,
 				BD3E1D0C1F77A3A6008F2090 /* Lifecycle.swift in Sources */,
 				BD1DCF0C205500E400A1F483 /* CGGeometry+UI.swift in Sources */,
-				BDD29DD31FEF67570047ABC8 /* Convenience.swift in Sources */,
 				BDBDBAB91F75467D004EB183 /* Application.swift in Sources */,
 				BD7200AD1FFBA87A00B0BF9C /* Stylable.swift in Sources */,
 				BD1DCF0A2055006A00A1F483 /* CGContext+UI.swift in Sources */,
@@ -974,7 +984,6 @@
 				BDBDBB181F75467D004EB183 /* Geometry+CG.swift in Sources */,
 				BD0EB5C61FF231D800FD7512 /* Gesture.Environment.swift in Sources */,
 				BD1DCEFC2054ECEE00A1F483 /* Element.swift in Sources */,
-				BDD29DCF1FEED1ED0047ABC8 /* Containment.swift in Sources */,
 				BD1DCF14205544A200A1F483 /* Scene.View.swift in Sources */,
 				BD1DCF12205543CB00A1F483 /* Renderer.swift in Sources */,
 				BDB348A41FEA376300D9D670 /* Style+Graphics.swift in Sources */,

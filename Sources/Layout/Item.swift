@@ -1,6 +1,8 @@
 
 import Geometry
 
+public typealias Margin = Space
+
 public protocol Item {
 	var alignment:Alignment { get }
 	var margin:Margin { get }
