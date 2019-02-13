@@ -5,13 +5,23 @@ import UIKit
 
 internal extension Application {
 
+	private final class Delegate : UIResponder, UIApplicationDelegate {
+
+		var window:UIWindow?
+
+		func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey:Any]? = nil) -> Bool {
+			guard let scene = Application.shared.keyScene else { return false }
+			let viewController = UIKitViewController(with:scene)
+			window = UIWindow(frame:UIScreen.main.bounds)
+			window?.rootViewController = viewController
+			window?.makeKeyAndVisible()
+			return true
+		}
+	}
+
 	func main() {
-		let count = Int(CommandLine.argc)
-		let delegate = NSStringFromClass(Platform.self)
-		let destination = UnsafeMutablePointer<Int8>.self
-		let rawUnsafeArgv = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
-		let argv = rawUnsafeArgv.bindMemory(to:destination, capacity:count)
-		UIApplicationMain(CommandLine.argc, argv, nil, delegate)
+		let delegate = NSStringFromClass(Delegate.self)
+		UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, delegate)
 	}
 
 	func exit() {

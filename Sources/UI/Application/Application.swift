@@ -3,9 +3,9 @@ import Dispatch
 
 public final class Application : Responder {
 
-	public static let shared = Application()
+	internal static let shared = Application()
 
-	internal private(set) var keyScene:Scene!
+	internal private(set) var keyScene:Scene?
 
 	private let queue:DispatchQueue = .main
 	private var scenes:Set<Scene> = []
@@ -15,8 +15,8 @@ public final class Application : Responder {
 
 public extension Application {
 
-	static func run(_ element:Element) {
-		let scene = Scene(with:element)
+	static func run(_ view:View) {
+		let scene = Scene(with:view)
 		shared.show(scene)
 		shared.main()
 	}
@@ -29,11 +29,11 @@ public extension Application {
 	}
 
 	func send(_ event:Event) {
-		switch event {
-			case let gesture as Gesture: gesture.scenes.send(gesture)
-//			case let this as Discrete.Event: send(Node.forward, to:this.target, from:event)
-			default: keyScene.send(event)
-		}
+//		switch event {
+//			case let gesture as Gesture: gesture.scenes.send(gesture)
+////			case let this as Discrete.Event: send(Node.forward, to:this.target, from:event)
+//			default: keyScene.send(event)
+//		}
 	}
 
 	func terminate() {

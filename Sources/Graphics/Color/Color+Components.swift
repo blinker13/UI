@@ -39,7 +39,7 @@ extension Color.Components : Codable {
 	public func encode(to encoder:Encoder) throws {
 		var container = encoder.container(keyedBy:Keys.self)
 
-		switch (self) {
+		switch self {
 			case let .rgb(r, g, b): try container.encode([r, g, b], forKey:.rgb)
 			case let .gray(x): try container.encode(x, forKey:.gray)
 		}

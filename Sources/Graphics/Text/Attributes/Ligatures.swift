@@ -4,5 +4,3 @@ public enum Ligatures : String, Codable {
 	case standart
 	case all
 }
-
-

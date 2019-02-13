@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		BD3790901F754C5A008B12F6 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3790911F754C5A008B12F6 /* libUI.a */; };
 		BD3790921F754CA8008B12F6 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3790911F754C5A008B12F6 /* libUI.a */; };
+		BDCC7AB921CA4C800061756C /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCC7AB821CA4C800061756C /* libCore.a */; };
+		BDCC7ABA21CA4C800061756C /* libGeometry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8EE67E1FED382000B5B2C8 /* libGeometry.a */; };
+		BDCC7ABB21CA4C800061756C /* libGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8EE67F1FED382000B5B2C8 /* libGraphics.a */; };
+		BDCC7ABC21CA4C800061756C /* libLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8EE6801FED382000B5B2C8 /* libLayout.a */; };
+		BDCC7ABE21CA4C8B0061756C /* libGeometry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8EE67E1FED382000B5B2C8 /* libGeometry.a */; };
+		BDCC7ABF21CA4C8B0061756C /* libGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8EE67F1FED382000B5B2C8 /* libGraphics.a */; };
+		BDCC7AC021CA4C8B0061756C /* libLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8EE6801FED382000B5B2C8 /* libLayout.a */; };
 		BDD458621E380BB800B95919 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD458611E380BB800B95919 /* main.swift */; };
 		BDD458691E380C7500B95919 /* iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD458681E380C7500B95919 /* iOS.xcassets */; };
 		BDF81AEC1E380EFB00AF2E98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD458611E380BB800B95919 /* main.swift */; };
@@ -21,12 +28,13 @@
 		BD8EE67E1FED382000B5B2C8 /* libGeometry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGeometry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8EE67F1FED382000B5B2C8 /* libGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8EE6801FED382000B5B2C8 /* libLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCC7AB821CA4C800061756C /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD4584A1E380B0800B95919 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDD4585E1E380B5C00B95919 /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
-		BDD458611E380BB800B95919 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BDD4585E1E380B5C00B95919 /* iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
+		BDD458611E380BB800B95919 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BDD458681E380C7500B95919 /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOS.xcassets; sourceTree = "<group>"; };
 		BDD4587A1E380E1900B95919 /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDF81AE61E380EDF00AF2E98 /* macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
+		BDF81AE61E380EDF00AF2E98 /* macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
 		BDF81AE71E380EDF00AF2E98 /* macOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = macOS.xcassets; sourceTree = "<group>"; };
 		BDF81AF61E38129A00AF2E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +44,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCC7AB921CA4C800061756C /* libCore.a in Frameworks */,
+				BDCC7ABA21CA4C800061756C /* libGeometry.a in Frameworks */,
+				BDCC7ABB21CA4C800061756C /* libGraphics.a in Frameworks */,
+				BDCC7ABC21CA4C800061756C /* libLayout.a in Frameworks */,
 				BD3790921F754CA8008B12F6 /* libUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCC7ABE21CA4C8B0061756C /* libGeometry.a in Frameworks */,
+				BDCC7ABF21CA4C8B0061756C /* libGraphics.a in Frameworks */,
+				BDCC7AC021CA4C8B0061756C /* libLayout.a in Frameworks */,
 				BD3790901F754C5A008B12F6 /* libUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +105,7 @@
 		BDD458631E380C1100B95919 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDCC7AB821CA4C800061756C /* libCore.a */,
 				BD8EE67E1FED382000B5B2C8 /* libGeometry.a */,
 				BD8EE67F1FED382000B5B2C8 /* libGraphics.a */,
 				BD8EE6801FED382000B5B2C8 /* libLayout.a */,

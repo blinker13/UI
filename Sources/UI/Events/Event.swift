@@ -1,4 +1,6 @@
 
+import Runtime
+
 public typealias Timestamp = Double
 
 public protocol Event {
@@ -10,6 +12,6 @@ public protocol Event {
 internal extension Set where Element == Scene {
 
 	func send(_ event:Event) {
-		forEach { $0.send(event) }
+//		forEach { $0.send(event) }
 	}
 }

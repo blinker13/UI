@@ -78,7 +78,7 @@ extension Path.Element : Codable {
 	public func encode(to encoder:Encoder) throws {
 		var container = encoder.container(keyedBy:Keys.self)
 
-		switch (self) {
+		switch self {
 			case let .move(to:point): try container.encode(point, forKey:.move)
 			case let .line(to:point): try container.encode(point, forKey:.line)
 			case let .cubicCurve(to:p0, p1, p2): try container.encode([p0, p1, p2], forKey:.cubicCurve)

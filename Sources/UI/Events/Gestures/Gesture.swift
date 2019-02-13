@@ -1,24 +1,12 @@
 
-public struct Gesture : Event, CustomStringConvertible {
-
+public struct Gesture : Event {
 	public let timestamp:Timestamp
 	public let touches:Set<Touch>
-
-	internal init (timestamp:Timestamp, touches:Set<Touch>) {
-		self.timestamp = timestamp
-		self.touches = touches
-	}
 }
 
 // MARK: -
 
 public extension Gesture {
-
-	var description:String {
-		// TODO: Make this multiline with scoped pointers description
-		return "Gesture(from \(timestamp) with \(touches))"
-	}
-
 	func send(to responder:Responder) -> Bool {
 		print("->", responder)
 //		guard let target = responder as? Touchable else { return false }
@@ -39,11 +27,11 @@ internal extension Gesture {
 		return Set(activeTouches.compactMap { $0.scene })
 	}
 
-	func nodes(for scene:Scene) -> Set<Node> {
-		let activeTouches = touches.lazy.filter { $0.phase != .stationary }
-		let nodes = activeTouches.lazy.compactMap { $0.node }
-		return Set(nodes.filter { $0.scene == scene })
-	}
+//	func nodes(for scene:Scene) -> Set<Node> {
+//		let activeTouches = touches.lazy.filter { $0.phase != .stationary }
+//		let nodes = activeTouches.lazy.compactMap { $0.node }
+//		return Set(nodes.filter { $0.scene == scene })
+//	}
 
 	func touches(for node:Node, with phase:Touch.Phase) -> Set<Touch>? {
 		let result = touches.filter { $0.phase == phase && $0.node == node }
