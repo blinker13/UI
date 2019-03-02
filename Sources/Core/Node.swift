@@ -21,4 +21,8 @@ public extension Node {
 		let idendifier = ObjectIdentifier(self)
 		return idendifier.hashValue
 	}
+
+	func encode(to encoder:Encoder) throws {
+		try element.encode(to:encoder)
+	}
 }

@@ -1,4 +1,4 @@
 
-public protocol Element {
+public protocol Element : Encodable {
 
 }
