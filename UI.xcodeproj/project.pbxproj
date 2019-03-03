@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DCEFB2054ECEE00A1F483 /* Element.swift */; };
 		BDDFC67D222A242C004450CE /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDFC67C222A242C004450CE /* Node.swift */; };
+		BDDFC688222B8503004450CE /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDFC687222B8503004450CE /* Component.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BDD5E7BC2226C07500A50D86 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		BDD5E7BD2226C07600A50D86 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		BDDFC67C222A242C004450CE /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		BDDFC687222B8503004450CE /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -66,6 +68,7 @@
 		BDD5E71B22218DF000A50D86 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				BDDFC687222B8503004450CE /* Component.swift */,
 				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
 				BDDFC67C222A242C004450CE /* Node.swift */,
 			);
@@ -131,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */,
+				BDDFC688222B8503004450CE /* Component.swift in Sources */,
 				BDDFC67D222A242C004450CE /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
