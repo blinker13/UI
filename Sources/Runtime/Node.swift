@@ -2,10 +2,11 @@
 public class Node : Hashable, Element {
 
 	private weak var parent:Node?
-	private var element:Element
+	private var children:[Node] = []
+	private var model:Element
 
 	internal init (with element:Element) {
-		self.element = element
+		self.model = element
 	}
 }
 
@@ -23,6 +24,35 @@ public extension Node {
 	}
 
 	func encode(to encoder:Encoder) throws {
-		try element.encode(to:encoder)
+		try model.encode(to:encoder)
+	}
+}
+
+// MARK: -
+
+internal extension Node {
+
+	func mount() {
+		let elements = model.render()
+		let nodes = elements.map(realize)
+		nodes.forEach { $0.mount() }
+		children = nodes
+	}
+
+	func unmount() {
+		children.forEach { $0.unmount() }
+		children.removeAll()
+		parent = nil
+	}
+}
+
+// MARK: -
+
+private extension Node {
+
+	func realize(element:Element) -> Node {
+		let node = Node(with:element)
+		node.parent = self
+		return node
 	}
 }
