@@ -11,6 +11,7 @@
 		BDDFC67D222A242C004450CE /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDFC67C222A242C004450CE /* Node.swift */; };
 		BDDFC688222B8503004450CE /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDFC687222B8503004450CE /* Component.swift */; };
 		BDDFC68A222B8534004450CE /* Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDFC689222B8534004450CE /* Children.swift */; };
+		BDDFC68F222BEF25004450CE /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDFC68E222BEF25004450CE /* Scope.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		BDDFC67C222A242C004450CE /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		BDDFC687222B8503004450CE /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		BDDFC689222B8534004450CE /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
+		BDDFC68E222BEF25004450CE /* Scope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -74,8 +76,17 @@
 				BDDFC687222B8503004450CE /* Component.swift */,
 				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
 				BDDFC67C222A242C004450CE /* Node.swift */,
+				BDDFC690222BF008004450CE /* Reconcile */,
 			);
 			path = Runtime;
+			sourceTree = "<group>";
+		};
+		BDDFC690222BF008004450CE /* Reconcile */ = {
+			isa = PBXGroup;
+			children = (
+				BDDFC68E222BEF25004450CE /* Scope.swift */,
+			);
+			path = Reconcile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 				BDDFC688222B8503004450CE /* Component.swift in Sources */,
 				BDDFC68A222B8534004450CE /* Children.swift in Sources */,
 				BDDFC67D222A242C004450CE /* Node.swift in Sources */,
+				BDDFC68F222BEF25004450CE /* Scope.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

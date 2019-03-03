@@ -18,10 +18,8 @@ public extension Node {
 		return left.hashValue == right.hashValue
 	}
 
-	var hashValue:Int {
-		let idendifier = ObjectIdentifier(self)
-		return idendifier.hashValue
-	}
+	var hashValue:Int { return idendifier.hashValue }
+	var scope:Scope { return model.scope }
 
 	func encode(to encoder:Encoder) throws {
 		try model.encode(to:encoder)
@@ -49,6 +47,10 @@ internal extension Node {
 // MARK: -
 
 private extension Node {
+
+	var idendifier:ObjectIdentifier {
+		return ObjectIdentifier(self)
+	}
 
 	func realize(element:Element) -> Node {
 		let node = Node(with:element)
