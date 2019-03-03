@@ -58,18 +58,18 @@
 		BD1FE1FF1C4FF1A4005F95D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BDD5E71B22218DF000A50D86 /* Core */,
+				BDD5E71B22218DF000A50D86 /* Runtime */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		BDD5E71B22218DF000A50D86 /* Core */ = {
+		BDD5E71B22218DF000A50D86 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
 				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
 				BDDFC67C222A242C004450CE /* Node.swift */,
 			);
-			path = Core;
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
