@@ -33,7 +33,7 @@ public extension Node {
 internal extension Node {
 
 	func mount() {
-		let elements = model.render()
+		let elements = render()
 		let nodes = elements.map(realize)
 		nodes.forEach { $0.mount() }
 		children = nodes
@@ -54,5 +54,17 @@ private extension Node {
 		let node = Node(with:element)
 		node.parent = self
 		return node
+	}
+
+	func render() -> Children {
+
+		switch model {
+			case let children as Children: return children
+			case let component as Component: switch component.render() {
+				case let children as Children: return children
+				case let child: return [child]
+			}
+			default: return []
+		}
 	}
 }
