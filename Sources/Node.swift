@@ -1,0 +1,14 @@
+
+public class Node : Element {
+
+	internal typealias Children = [Node]
+
+	private weak var parent:Node?
+	private var children:Children
+	private var model:Element
+
+	internal init (with element:Element) {
+		self.children = Children()
+		self.model = element
+	}
+}
