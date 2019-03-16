@@ -41,9 +41,9 @@ private extension Reconciler.Key {
 
 	static func == (left:Reconciler.Key, right:Reconciler.Key) -> Bool {
 		switch (left.scope, right.scope) {
-		case (.none, .none): return left.index == right.index
-		case (.key(let l), .key(let r)): return l == r
-		default: return false
+			case (.none, .none): return left.index == right.index
+			case (.key(let l), .key(let r)): return l == r
+			default: return false
 		}
 	}
 

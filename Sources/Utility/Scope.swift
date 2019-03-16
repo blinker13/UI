@@ -11,9 +11,9 @@ public extension Scope {
 	static func == (left:Scope, right:Scope) -> Bool {
 
 		switch (left, right) {
-		case (.key(let l), .key(let r)): return l == r
-		case (.none, .none): return true
-		default: return false
+			case (.key(let l), .key(let r)): return l == r
+			case (.none, .none): return true
+			default: return false
 		}
 	}
 
