@@ -10,6 +10,7 @@
 		BD0767AB223D535A002B5855 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0767AA223D535A002B5855 /* Fragment.swift */; };
 		BD07B64D222FEDE400A45924 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64C222FEDE400A45924 /* Component.swift */; };
 		BD07B64F222FEE4500A45924 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64E222FEE4500A45924 /* Node.swift */; };
+		BD3D4CC7223D547600F3532B /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D4CC6223D547600F3532B /* Alias.swift */; };
 		BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DCEFB2054ECEE00A1F483 /* Element.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		BD1DCEFB2054ECEE00A1F483 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		BD1FE1FD1C4FF1A4005F95D3 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BD1FE1FE1C4FF1A4005F95D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BD3D4CC6223D547600F3532B /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		BD51E2831D172618002221F2 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		BDBDBAA41F75463C004EB183 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD5E7BB2226C07500A50D86 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -31,6 +33,7 @@
 		BD0767A9223D5347002B5855 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				BD3D4CC6223D547600F3532B /* Alias.swift */,
 				BD0767AA223D535A002B5855 /* Fragment.swift */,
 			);
 			path = Utility;
@@ -140,6 +143,7 @@
 				BD0767AB223D535A002B5855 /* Fragment.swift in Sources */,
 				BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */,
 				BD07B64D222FEDE400A45924 /* Component.swift in Sources */,
+				BD3D4CC7223D547600F3532B /* Alias.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
