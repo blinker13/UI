@@ -1,6 +1,7 @@
 
 public protocol Element {
 	var alias:Alias { get }
+	var scope:Scope { get }
 }
 
 // MARK: -

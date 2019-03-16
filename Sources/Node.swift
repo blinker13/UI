@@ -17,4 +17,5 @@ public class Node : Element {
 
 public extension Node {
 	var alias:Alias { return model.alias }
+	var scope:Scope { return model.scope }
 }
