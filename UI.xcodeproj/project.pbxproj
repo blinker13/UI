@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0767AB223D535A002B5855 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0767AA223D535A002B5855 /* Fragment.swift */; };
 		BD07B64D222FEDE400A45924 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64C222FEDE400A45924 /* Component.swift */; };
 		BD07B64F222FEE4500A45924 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64E222FEE4500A45924 /* Node.swift */; };
 		BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DCEFB2054ECEE00A1F483 /* Element.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD0767AA223D535A002B5855 /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
 		BD07B64C222FEDE400A45924 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		BD07B64E222FEE4500A45924 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		BD1DCEFB2054ECEE00A1F483 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
@@ -26,6 +28,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		BD0767A9223D5347002B5855 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BD0767AA223D535A002B5855 /* Fragment.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		BD0A2B601D9EB88700F26C1F /* Package */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 				BD07B64C222FEDE400A45924 /* Component.swift */,
 				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
 				BD07B64E222FEE4500A45924 /* Node.swift */,
+				BD0767A9223D5347002B5855 /* Utility */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD07B64F222FEE4500A45924 /* Node.swift in Sources */,
+				BD0767AB223D535A002B5855 /* Fragment.swift in Sources */,
 				BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */,
 				BD07B64D222FEDE400A45924 /* Component.swift in Sources */,
 			);
