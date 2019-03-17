@@ -1,5 +1,5 @@
 
-public typealias Fragment = [Element]
+public typealias Compound = [Element]
 
 extension Array : UI.Element where Element == UI.Element {
 	public var scope:Scope { return .none }

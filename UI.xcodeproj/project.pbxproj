@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD0767AB223D535A002B5855 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0767AA223D535A002B5855 /* Fragment.swift */; };
+		BD0767AB223D535A002B5855 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0767AA223D535A002B5855 /* Compound.swift */; };
 		BD07B64D222FEDE400A45924 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64C222FEDE400A45924 /* Component.swift */; };
 		BD07B64F222FEE4500A45924 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64E222FEE4500A45924 /* Node.swift */; };
 		BD3D4CC7223D547600F3532B /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D4CC6223D547600F3532B /* Alias.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BD0767AA223D535A002B5855 /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
+		BD0767AA223D535A002B5855 /* Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
 		BD07B64C222FEDE400A45924 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		BD07B64E222FEE4500A45924 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		BD1DCEFB2054ECEE00A1F483 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
@@ -38,7 +38,6 @@
 			isa = PBXGroup;
 			children = (
 				BD3D4CC6223D547600F3532B /* Alias.swift */,
-				BD0767AA223D535A002B5855 /* Fragment.swift */,
 				BD3D4CC8223D553500F3532B /* Scope.swift */,
 			);
 			path = Utility;
@@ -79,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				BD07B64C222FEDE400A45924 /* Component.swift */,
+				BD0767AA223D535A002B5855 /* Compound.swift */,
 				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
 				BD07B64E222FEE4500A45924 /* Node.swift */,
 				BD3D4CCA223D55C000F3532B /* Render */,
@@ -154,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD07B64F222FEE4500A45924 /* Node.swift in Sources */,
-				BD0767AB223D535A002B5855 /* Fragment.swift in Sources */,
+				BD0767AB223D535A002B5855 /* Compound.swift in Sources */,
 				BD3D4CCC223D55DF00F3532B /* Reconciler.swift in Sources */,
 				BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */,
 				BD07B64D222FEDE400A45924 /* Component.swift in Sources */,
