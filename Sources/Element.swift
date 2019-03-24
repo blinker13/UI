@@ -1,2 +1,4 @@
 
-public protocol Element {}
+public protocol Element {
+	var scope:Scope { get }
+}

@@ -12,3 +12,9 @@ public class Node : Element {
 		self.model = element
 	}
 }
+
+// MARK: -
+
+public extension Node {
+	var scope:Scope { return model.scope }
+}

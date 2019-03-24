@@ -11,6 +11,7 @@
 		BD07B64D222FEDE400A45924 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64C222FEDE400A45924 /* Component.swift */; };
 		BD07B64F222FEE4500A45924 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD07B64E222FEE4500A45924 /* Node.swift */; };
 		BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DCEFB2054ECEE00A1F483 /* Element.swift */; };
+		BDD74A1C2247389300CE698F /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD74A1B2247389300CE698F /* Scope.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		BDD5E7BB2226C07500A50D86 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		BDD5E7BC2226C07500A50D86 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		BDD5E7BD2226C07600A50D86 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		BDD74A1B2247389300CE698F /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -66,8 +68,17 @@
 				BD0767AA223D535A002B5855 /* Compound.swift */,
 				BD1DCEFB2054ECEE00A1F483 /* Element.swift */,
 				BD07B64E222FEE4500A45924 /* Node.swift */,
+				BDD74A1A2247387200CE698F /* Rendering */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		BDD74A1A2247387200CE698F /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				BDD74A1B2247389300CE698F /* Scope.swift */,
+			);
+			path = Rendering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +143,7 @@
 				BD0767AB223D535A002B5855 /* Compound.swift in Sources */,
 				BDD5E74E22254B7E00A50D86 /* Element.swift in Sources */,
 				BD07B64D222FEDE400A45924 /* Component.swift in Sources */,
+				BDD74A1C2247389300CE698F /* Scope.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
