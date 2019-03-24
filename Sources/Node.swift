@@ -1,5 +1,5 @@
 
-public class Node : Element {
+public class Node {
 
 	internal typealias Children = [Node]
 
@@ -11,10 +11,4 @@ public class Node : Element {
 		self.children = Children()
 		self.model = element
 	}
-}
-
-// MARK: -
-
-public extension Node {
-	var scope:Scope { return model.scope }
 }
