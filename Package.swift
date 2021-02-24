@@ -11,6 +11,8 @@ _ = Package(
 	targets: [
 		.target(name: "Canvas"),
 		.target(name: "Geometry"),
+		.target(name: "Runtime"),
+
 		.testTarget(name: "Tests", dependencies: ["Canvas", "Geometry"], path: "Tests"),
 	]
 )
