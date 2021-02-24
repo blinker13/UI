@@ -5,11 +5,12 @@ _ = Package(
 	name: "UI",
 
 	products: [
-		.library(name: "UI", targets: ["Geometry"]),
+		.library(name: "UI", targets: ["Canvas", "Geometry"]),
 	],
 
 	targets: [
+		.target(name: "Canvas"),
 		.target(name: "Geometry"),
-		.testTarget(name: "Tests", dependencies: ["Geometry"], path: "Tests"),
+		.testTarget(name: "Tests", dependencies: ["Canvas", "Geometry"], path: "Tests"),
 	]
 )
