@@ -9,7 +9,7 @@ _ = Package(
 	],
 
 	targets: [
-		.target(name: "Canvas"),
+		.target(name: "Canvas", dependencies: ["Geometry"]),
 		.target(name: "Geometry"),
 		.target(name: "Runtime"),
 
