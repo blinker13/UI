@@ -2,5 +2,14 @@
 import PackageDescription
 
 _ = Package(
-	name: "UI"
+	name: "UI",
+
+	products: [
+		.library(name: "UI", targets: ["Geometry"]),
+	],
+
+	targets: [
+		.target(name: "Geometry"),
+		.testTarget(name: "Tests", dependencies: ["Geometry"], path: "Tests"),
+	]
 )
