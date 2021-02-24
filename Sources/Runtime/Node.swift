@@ -1,5 +1,5 @@
 
-public final class Node: Hashable {
+public final class Node : Hashable {
 
 	private weak var parent: Node?
 	private var children: [Node] = []
@@ -10,9 +10,11 @@ public final class Node: Hashable {
 	}
 }
 
+// MARK: -
+
 public extension Node {
 	static func == (left: Node, right: Node) -> Bool {
-		left.hashValue == right.hashValue
+		left.id == right.id
 	}
 
 	func hash(into hasher: inout Hasher) {
@@ -20,13 +22,16 @@ public extension Node {
 	}
 }
 
+// MARK: -
+
 internal extension Node {
 //	func reconcile(using reconciler: Reconciler) {
 //
 //	}
 }
 
+// MARK: -
+
 private extension Node {
 	var id: ObjectIdentifier { .init(self) }
 }
-
